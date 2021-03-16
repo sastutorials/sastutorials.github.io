@@ -3,7 +3,6 @@ layout: default
 author: Anna
 --- 
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Intro to SAS</title>
@@ -18,7 +17,7 @@ author: Anna
 
 <div class="header">
   <h1>Introduction to SAS</h1>
-  <p>Getting to know SAS Software and SAS studio<b>SAS</b>.</p>
+  <p>Getting to know SAS Software and SAS studio.</p>
 </div>
 
 <div class="navbar">
