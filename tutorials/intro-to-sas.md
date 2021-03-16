@@ -1,3 +1,8 @@
+--- 
+layout: default
+author: Anna
+--- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
