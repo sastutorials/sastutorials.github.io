@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{{ page.title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="{{'/css/main.css' | prepend: site.baseurl}}">
+</head>
+
+<body class="home">
+
+      {{content}}
+
+    {% include footer.html %}
+</body>
