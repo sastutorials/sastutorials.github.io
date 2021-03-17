@@ -67,7 +67,7 @@ html {
 }
 
 /* Active/current link */
-.navbar a.activebar {
+.navbar a.active {
   background-color: #666;
   color: white;
 }
