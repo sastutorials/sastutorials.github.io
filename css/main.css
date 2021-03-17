@@ -67,7 +67,7 @@ html {
 }
 
 /* Active/current link */
-.navbar a.active {
+.navbar a.activebar {
   background-color: #666;
   color: white;
 }
@@ -201,6 +201,6 @@ html {
   margin-left: 5px;
 }
 
-.active:after {
+.accordion, .active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
