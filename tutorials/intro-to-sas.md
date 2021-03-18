@@ -18,13 +18,14 @@ subtitle: Get started with SAS software and SAS Studio.
 ## Structure: 
 
 1. Introduction: what is SAS? 
+   
     - origins
     - purpose and applications 
     - comparison with other programming languages
-    - SAS components 
-    - SAS platforms 
-
+    - SAS toolkit
+   
 2. SAS studio 
+   
     - Register and LogIn to OnDemand Academics
     - Interface
     - Windows
@@ -81,7 +82,7 @@ Here we offer a summary on advantages and disantavantages of using SAS compared 
 | | slow adapting to new techniques | limited syntax | no official support | no official support | 
 | | different programs for visualisation and data mining | slow in handling large datasets | no user interface | no user interface | 
 
-## SAS tools 
+## SAS toolkit 
 
 SAS does not come as one unique interface for each of its applications and functionalities, but serves of a variety of tools, each specified on a particular task.
 
@@ -115,3 +116,5 @@ Here is an overlook at the main  ones (there are more!):
 
 As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. 
 
+
+# SAS studio (OnDemand)
