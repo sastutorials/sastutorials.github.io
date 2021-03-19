@@ -114,7 +114,12 @@ Here is an overlook at the main  ones (there are more!):
 
 * [SAS/STAT](https://support.sas.com/en/software/sas-stat-support.html#documentation) provides a comprehensive set of tools for statistical methods and visualisation techniques.
 
-As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. 
-
+As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. Now let's move on to more practical stuff! Let's open **SAS Studiio**, a free and open platform for you to practice with SAS.
 
 # SAS studio (OnDemand)
+
+## What is SAS Studio? 
+
+## Instructions to Log in
+
+## Demonstration of using SAS Studio environment
