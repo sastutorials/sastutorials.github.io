@@ -17,22 +17,35 @@ subtitle: Get started with SAS software and SAS Studio.
 
 ## Structure: 
 
-1. Introduction: what is SAS? 
-   
-    - origins
-    - purpose and applications 
-    - comparison with other programming languages
-    - SAS toolkit
-   
-2. SAS studio 
-   
-    - Register and LogIn to OnDemand Academics
-    - Interface
-    - Windows
-    - How to use it
+<a href="#sect1">1. Introduction: what is SAS?</a>   
 
+<a href="#subsect1">- Origins</a>
+
+<a href="#subsect2">-  Where does SAS belong in the hierarchy of programming language generations?</a>
+
+<a href="#subsect3">- Use and applications</a>
+
+<a href="#subsect4">- Comparison with other programming languages</a>
+
+<a href="#subsect5">- SAS toolkit</a>
+
+   
+<a href="#sect2">2. SAS studio</a>
+
+<a href="#subsect6">- Register and LogIn to OnDemand Academics</a>
+
+<a href="#subsect7">- Interface</a>
+
+<a href="#subsect7">- Windows</a>
+
+<a href="#subsect8">- How to use it</a>
+
+
+<a name="#sect1"></a>
 
 # 1. Introduction: what is SAS? 
+
+<a name="#subsect1"></a>
 
 ## Origins of SAS
 
@@ -44,6 +57,8 @@ Over the years, SAS developers included an increasingly larger amount of product
 
 SAS is considered to be part of the 4th generation of programming languages. It is, in fact, much simpler than its predecessors, like Pascal and C, as it already possesses built-in functions to make programming much easier and user-friendly. 
 
+<a name="#subsect2"></a>
+
 ## Where does SAS belong in the hierarchy of programming language generations? 
 
 | Generations | Description | Language (examples) | 
@@ -54,6 +69,8 @@ SAS is considered to be part of the 4th generation of programming languages. It 
 | Fourth | Advanced upon third-generation programming languages. Higher level of abstraction of the internal computer driver details. Programmer-friendlier, versatile, powerful. | **SAS**, Python, R, SPSS | 
 | Fifth | Constraint-based and logic programming languages. Based on problem-solving using constraints given to the program. | OPS5, Mercury |
 
+<a name="#subsect3"></a>
+
 ## Use and applications
 
 Today, SAS is an extremely powerful, general-purpose programming language. 
@@ -61,6 +78,8 @@ Today, SAS is an extremely powerful, general-purpose programming language.
 It is primarily used for carrying out **advanced analytics, business intelligience, data management, and predictive analytics.**
 
 SAS has become the undisputed market leader in commercial analytics, offering a huge array of statistical functions for people to **learn quickly**, and provides great **technical support** for troubleshooting. 
+
+<a name="#subsect4"></a>
 
 ## Comparison with other programming languages 
 
@@ -81,6 +100,8 @@ Here we offer a summary on advantages and disantavantages of using SAS compared 
 | | does not provide an interface for non-standard options (need to code) | requires different licenses for different functionalities | steep learning curve | | 
 | | slow adapting to new techniques | limited syntax | no official support | no official support | 
 | | different programs for visualisation and data mining | slow in handling large datasets | no user interface | no user interface | 
+
+<a name="#subsect5"></a>
 
 ## SAS toolkit 
 
@@ -115,6 +136,8 @@ Here is an overlook at the main  ones (there are more!):
 * [SAS/STAT](https://support.sas.com/en/software/sas-stat-support.html#documentation) provides a comprehensive set of tools for statistical methods and visualisation techniques.
 
 As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. Now let's move on to more practical stuff! Let's open **SAS Studiio**, a free and open platform for you to practice with SAS.
+
+<a name="#sect2"></a>
 
 # SAS studio (OnDemand)
 
