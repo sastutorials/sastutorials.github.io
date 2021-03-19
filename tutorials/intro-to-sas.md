@@ -141,6 +141,29 @@ As you might have noticed, **SAS is truly wide and varied** in the range of appl
 
 ## What is SAS Studio? 
 
+[SAS Studio](https://www.sas.com/it_it/software/studio.html) is the web browser-based programming environment. You can access to existing data files, libraries and prograrms or create your own. 
+
+SAS Studio connects to a SAS server, to be able to elaborate SAS commands. This server can be internal to the cloud environment, a server in your local environment or a copy of the SAS server in your local machine. 
+
+Once code has been elaborated by the software, the formatted results are returned to SAS studio. 
+
+Let's start exploring the interface!
+
 ## Instructions to Log in
 
+To access SAS Studio, you first need to [register here](https://www.sas.com/profile/ui/#/create), to create a **SAS profile**. 
+
+![log_in_studio](https://user-images.githubusercontent.com/80749213/111760264-cb2f0a00-889e-11eb-9d56-d58cae05e8c7.PNG)
+
+Fill in the blanks with your personal information and credentials. 
+
+Once you've done that, and verified your email, you can head to the [log in page](https://welcome.oda.sas.com/login) and enter your email address and password. 
+
+![login_studio](https://user-images.githubusercontent.com/80749213/111760465-09c4c480-889f-11eb-8b23-cd20a64691ac.PNG)
+
+When the next window opens, click on SAS Studio so we can start exploring the environment!
+
+![open_studio](https://user-images.githubusercontent.com/80749213/111761263-01b95480-88a0-11eb-9ad9-ae192033633e.PNG)
+
 ## Exploring the SAS Studio environment
+
