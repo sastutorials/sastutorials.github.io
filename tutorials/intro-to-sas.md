@@ -3,6 +3,7 @@ layout: default
 author: Anna
 title: Intro to SAS pt. I
 subtitle: Get started with SAS software and SAS Studio.
+redirect_from: 
 --- 
 
 ## Learning Objectives: 
@@ -153,7 +154,7 @@ Let's start exploring the interface!
 
 To access SAS Studio, you first need to [register here](https://www.sas.com/profile/ui/#/create), to create a **SAS profile**. 
 
-![log_in_studio](https://user-images.githubusercontent.com/80749213/111760264-cb2f0a00-889e-11eb-9d56-d58cae05e8c7.PNG)
+<img src="https://user-images.githubusercontent.com/80749213/111760264-cb2f0a00-889e-11eb-9d56-d58cae05e8c7.PNG" alt="log_in_studio" class="center">
 
 Fill in the blanks with your personal information and credentials. 
 
