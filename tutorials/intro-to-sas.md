@@ -17,7 +17,7 @@ subtitle: Get started with SAS software and SAS Studio.
 
 ## Structure: 
 
-<a href="#sect1">1. Introduction: what is SAS?</a>   
+<a href="#sect1"># Introduction: what is SAS?</a>   
 
 <a href="#subsect1"><sub>a) Origins</sub></a>
 
