@@ -19,26 +19,24 @@ subtitle: Get started with SAS software and SAS Studio.
 
 <a href="#sect1">1. Introduction: what is SAS?</a>   
 
-<a href="#subsect1">- Origins</a>
+<a href="#subsect1"><sub>a) Origins</sub></a>
 
-<a href="#subsect2">-  Where does SAS belong in the hierarchy of programming language generations?</a>
+<a href="#subsect2"><sub>b)  Where does SAS belong in the hierarchy of programming language generations?</sub></a>
 
-<a href="#subsect3">- Use and applications</a>
+<a href="#subsect3"><sub>c) Use and applications</sub></a>
 
-<a href="#subsect4">- Comparison with other programming languages</a>
+<a href="#subsect4"><sub>d) Comparison with other programming languages</sub></a>
 
-<a href="#subsect5">- SAS toolkit</a>
+<a href="#subsect5"><sub>e) SAS toolkit</sub></a>
 
    
 <a href="#sect2">2. SAS studio</a>
 
-<a href="#subsect6">- Register and LogIn to OnDemand Academics</a>
+<a href="#subsect6"><sub>a) What is SAS Studio?</sub></a>
 
-<a href="#subsect7">- Interface</a>
+<a href="#subsect7"><sub>b) Instructions to Log in</sub></a>
 
-<a href="#subsect7">- Windows</a>
-
-<a href="#subsect8">- How to use it</a>
+<a href="#subsect7"><sub>c) Exploring the SAS Studio environment</sub></a>
 
 
 <a name="#sect1"></a>
@@ -145,4 +143,4 @@ As you might have noticed, **SAS is truly wide and varied** in the range of appl
 
 ## Instructions to Log in
 
-## Demonstration of using SAS Studio environment
+## Exploring the SAS Studio environment
