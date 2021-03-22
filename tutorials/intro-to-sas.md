@@ -150,21 +150,21 @@ SAS has several programming interfaces where you can **actively write and submit
 
 * It is also possible to run SAS and its tools on other applications, such as **Jupyter Notebbok**, but this way you **won't have access to some of the programming tools that SAS offers**.
 
-We are going to work on **SAS Studio**, and below we are going to explore its environment and windows.
+We are going to work on **SAS Studio**, and today we are going to explore its environment and windows.
 
 ## What is SAS Studio? 
 
-[SAS Studio](https://www.sas.com/it_it/software/studio.html) is the web browser-based programming environment. You can access to existing data files, libraries and prograrms or create your own. 
+[SAS Studio](https://www.sas.com/it_it/software/studio.html) is the web browser-based programming environment. You can access existing data files, libraries and prograrms or create your own directly from the web. 
 
-SAS Studio connects to a SAS server, to be able to elaborate SAS commands. This server can be internal to the cloud environment, a server in your local environment or a copy of the SAS server in your local machine. 
+SAS Studio connects to a SAS server, to be able to elaborate SAS commands. This server can be an internal one to the cloud environment, a server in your local environment or a copy of the SAS server in your local machine. 
 
-Once code has been elaborated by the software, the formatted results are returned to SAS studio. 
+Once code has been elaborated by the software, the formatted results are returned back to SAS studio. 
 
 Let's start exploring the interface!
 
 ## Instructions to Log in
 
-To access SAS Studio, you first need to [register here](https://www.sas.com/profile/ui/#/create), to create a **SAS profile**. 
+To access SAS Studio, you first need to [**register**](https://www.sas.com/profile/ui/#/create) to create a SAS profile. 
 
 <img src="https://user-images.githubusercontent.com/80749213/111760264-cb2f0a00-889e-11eb-9d56-d58cae05e8c7.PNG" alt="log_in_studio" class="center">
 
@@ -179,4 +179,58 @@ When the next window opens, click on SAS Studio so we can start exploring the en
 ![open_studio](https://user-images.githubusercontent.com/80749213/111761263-01b95480-88a0-11eb-9ad9-ae192033633e.PNG)
 
 ## Exploring the SAS Studio environment
+
+SAS Studio (like any other SAS interface) is equipped with **three main environments**:
+
+1. **Editor**
+
+INSERT IMAGE OF EDITOR HERE 
+
+The editor environment allows you to open all SAS programs in which you can write code.
+
+2. **Log**
+
+INSERT IMAGE OF LOG HERE 
+
+The log environment allows you to read messages and errors related to the code you've submitted. 
+
+3. **Results**
+
+INSERT IMAGE OF RESULTS TAB HERE 
+
+This environment allows you to view the data outputs created by your programs. 
+
+However, unlike the other interfaces, SAS Studio presents **smart features** that ease up your programming efforts, like **code completion, formatting and syntax coloring** features. 
+
+Let's have a look at the other features present in the SAS Studio interface. 
+
+On the left hand side, you'll see different tabs that you can click on. 
+
+* The **Server Files and Folders** tab shows you your "home directory" where you can create new folders where to store data you imported and programs you created. These are permanent and you can move them or delete them as you please. 
+
+INSERT IMG TAB1 
+
+* The **Tasks and Utilities** tab shows you all the built-in features for data analytics, visualisation, statistical testing, etc. You can also add your own and these are going to be stored in the **My Tasks** folder (the first one at the top). 
+
+INSERT IMG ON TAB2
+
+INSERT IMG ON TAB2_APERTO 
+
+* The **Snippets** tab offers you pre-made snippets of code that can come in handy so that you don't have to code entirely from scratch. As you can see in the example, I have clicked on the *Edit a SOURCE Entry* from the list of **Catalogs** inside the **Snippets** folder, and a new program appears with the *code snippet* already written inside of it. You can click on multiple snippets and these will just be added in the same program page. As for the *Tasks and Utilities* tab, you can create your own code snippets which are going to be stored in the **My Snippets** folder.
+
+INSERT IMG SNIPPETS (TAB3)
+
+* The **Libraries** tab shows you all the built-in libraries offered by SAS. Some of them are: 
+
+1. **SASHELP** library offers a large variety of *read-only* datasets; 
+
+INSERT IMG SASHELP LIB HERE
+
+2. **SASUSER** is an empty library initally, where you can *permanently save your datasets; 
+   
+3. **WORK** another empty library, where you can *store your data temporarily*. It is the default library in which data is stored, unless differently specified. 
+
+* The **File Shortcuts** tab offers you a quicker way to access your files. You can create a new file shortcut by **clicking on the curved arrow** symbol, inserting a shortcut name and the path that leads you to the original file. You can also delete the shortcuts, see their properties and / or refresh the shortcut list when you need to update it. 
+
+INSERT IMG OF SHORTCUT FILES TAB - TAB5_STUDIO 
 
