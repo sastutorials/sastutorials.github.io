@@ -140,6 +140,18 @@ As you might have noticed, **SAS is truly wide and varied** in the range of appl
 
 # SAS studio (OnDemand)
 
+SAS has several programming interfaces where you can **actively write and submit code**. 
+
+* SAS **windowing environment** is the interface that is *part of SAS*; 
+
+* SAS **Enterprise Guide** is a *client application* that runs on your laptop and connects to SAS on a *local or remote server*; 
+
+* SAS **Studio** is a *web-based interface* that connects to SAS on a server. There is no download necessary, and for that *you can use it* on *any computer*. 
+
+* It is also possible to run SAS and its tools on other applications, such as **Jupyter Notebbok**, but this way you **won't have access to some of the programming tools that SAS offers**.
+
+We are going to work on **SAS Studio**, and below we are going to explore its environment and windows.
+
 ## What is SAS Studio? 
 
 [SAS Studio](https://www.sas.com/it_it/software/studio.html) is the web browser-based programming environment. You can access to existing data files, libraries and prograrms or create your own. 
