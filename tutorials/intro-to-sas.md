@@ -39,6 +39,8 @@ redirect_from:
 
 <a href="#subsect7"><sub>c) Exploring the SAS Studio environment</sub></a>
 
+<a href="#sect3">Resources</a>
+
 
 <a name="#sect1"></a>
 
@@ -254,6 +256,22 @@ On the **blue bar** at the top of the SAS Studio interface (where you can see th
 * Last button refers you to **SAS Support**, where you can access help guidelines, documentation and interact with SAS community. It also shows you keyboard shortcuts for using the application. 
 
 
+You have completed this tutorial! 
 
+
+Hopefully now you have a clear understanding of what SAS is and how SAS Studio is structured. 
+
+We are going to start working with SAS Studio in the following tutorials. 
+
+
+<a name="#sect3"></a>
+
+## Resources 
+
+* [SAS documentation](https://support.sas.com/en/documentation.html)
+
+* [SAS Support: SAS Studio](https://support.sas.com/en/software/studio-support.html)
+
+* [Becoming a more efficient programmer with SAS Studio](https://www.pharmasug.org/proceedings/2016/QT/PharmaSUG-2016-QT17.pdf)
 
 
