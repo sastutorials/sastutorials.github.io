@@ -168,7 +168,7 @@ Let's start exploring the interface!
 
 ## Instructions to Log in
 
-To access SAS Studio, you first need to [**register**](https://www.sas.com/profile/ui/#/create) to create a SAS profile. 
+To access SAS Studio, you first need to [**register here**](https://www.sas.com/profile/ui/#/create) to create a SAS profile. 
 
 <img src="https://user-images.githubusercontent.com/80749213/111760264-cb2f0a00-889e-11eb-9d56-d58cae05e8c7.PNG" alt="log_in_studio" class="center">
 
