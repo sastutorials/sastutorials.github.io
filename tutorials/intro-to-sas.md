@@ -18,7 +18,7 @@ redirect_from:
 
 ## Structure: 
 
-<a href="#sect1"># Introduction: what is SAS?</a>   
+<a href="#sect1">1. Introduction: what is SAS?</a>   
 
 <a href="#subsect1"><sub>a) Origins</sub></a>
 
@@ -182,23 +182,28 @@ When the next window opens, click on SAS Studio so we can start exploring the en
 
 SAS Studio (like any other SAS interface) is equipped with **three main environments**:
 
-1. **Editor**
-
-![editor_studio](https://user-images.githubusercontent.com/80749213/112123049-317a9c00-8bc1-11eb-86ad-6675bdd7aa55.PNG)
+#### **Editor**
 
 The editor environment allows you to open all SAS programs in which you can write code.
 
-2. **Log**
+![editor_studio](https://user-images.githubusercontent.com/80749213/112123049-317a9c00-8bc1-11eb-86ad-6675bdd7aa55.PNG)
 
-![log_studio](https://user-images.githubusercontent.com/80749213/112123087-3a6b6d80-8bc1-11eb-8d3d-85e68ff993ad.PNG)
+
+#### **Log**
 
 The log environment allows you to read messages and errors related to the code you've submitted. 
 
-3. **Results**
+![log_studio](https://user-images.githubusercontent.com/80749213/112123087-3a6b6d80-8bc1-11eb-8d3d-85e68ff993ad.PNG)
+
+
+#### **Results**
+
+This environment allows you to view the data outputs created by your programs. 
+
 
 ![results_studio](https://user-images.githubusercontent.com/80749213/112123121-41927b80-8bc1-11eb-8f0c-af4d46d80170.PNG)
 
-This environment allows you to view the data outputs created by your programs. 
+
 
 However, unlike the other interfaces, SAS Studio presents **smart features** that ease up your programming efforts, like **code completion, formatting and syntax coloring** features. 
 
@@ -212,8 +217,6 @@ On the left hand side, you'll see different tabs that you can click on.
 
 * The **Tasks and Utilities** tab shows you all the built-in features for data analytics, visualisation, statistical testing, etc. You can also add your own and these are going to be stored in the **My Tasks** folder (the first one at the top). 
 
-![tab2_studio](https://user-images.githubusercontent.com/80749213/112123181-4f480100-8bc1-11eb-8e42-4ffebb8269bb.PNG)
-
 ![tab2_aperto_studio](https://user-images.githubusercontent.com/80749213/112123170-4e16d400-8bc1-11eb-94f8-aa7749b2ef1f.PNG)
 
 * The **Snippets** tab offers you pre-made snippets of code that can come in handy so that you don't have to code entirely from scratch. As you can see in the example, I have clicked on the *Edit a SOURCE Entry* from the list of **Catalogs** inside the **Snippets** folder, and a new program appears with the *code snippet* already written inside of it. You can click on multiple snippets and these will just be added in the same program page. As for the *Tasks and Utilities* tab, you can create your own code snippets which are going to be stored in the **My Snippets** folder.
@@ -222,13 +225,13 @@ On the left hand side, you'll see different tabs that you can click on.
 
 * The **Libraries** tab shows you all the built-in libraries offered by SAS. Some of them are: 
 
-1. **SASHELP** library offers a large variety of *read-only* sample SAS datasets; 
+##### **SASHELP** library offers a large variety of *read-only* sample SAS datasets; 
 
 ![tab4_sashelp](https://user-images.githubusercontent.com/80749213/112123241-61c23a80-8bc1-11eb-8dfd-77c53049d5a4.PNG)
 
-2. **SASUSER** is an empty library initally, where you can *permanently* save your datasets; 
+##### **SASUSER** is an empty library initally, where you can *permanently* save your datasets; 
    
-3. **WORK** is another empty library, where you can *store your data temporarily*. It is the default library in which data is stored, **unless differently specified**. 
+##### **WORK** is another empty library, where you can *store your data temporarily*. It is the default library in which data is stored, **unless differently specified**. 
 
 * The **File Shortcuts** tab offers you a quicker way to access your files. You can create a new file shortcut by **clicking on the curved arrow** symbol, inserting a shortcut name and the path that leads you to the original file. You can also delete the shortcuts, see their properties and / or refresh the shortcut list when you need to update it. 
 
@@ -249,6 +252,8 @@ On the **blue bar** at the top of the SAS Studio interface (where you can see th
 * The *more application options* button allows you to edit the **autoexec file** (code that starts automatically whenever you start the applicaton), to change which tabs on the left-hand side are displayed (default is all of them),  change preferences and restart the session. 
 
 * Last button refers you to **SAS Support**, where you can access help guidelines, documentation and SAS community. It also shows you keyboard shortcuts for using the application. 
+
+
 
 
 
