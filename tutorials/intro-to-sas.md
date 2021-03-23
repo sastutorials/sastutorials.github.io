@@ -138,7 +138,7 @@ As you might have noticed, **SAS is truly wide and varied** in the range of appl
 
 <a name="#sect2"></a>
 
-# SAS studio (OnDemand)
+# SAS studio (OnDemand for Academics)
 
 SAS has several programming interfaces where you can **actively write and submit code**. 
 
