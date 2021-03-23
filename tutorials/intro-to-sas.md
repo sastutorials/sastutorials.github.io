@@ -184,19 +184,19 @@ SAS Studio (like any other SAS interface) is equipped with **three main environm
 
 1. **Editor**
 
-INSERT IMAGE OF EDITOR HERE 
+![editor_studio](https://user-images.githubusercontent.com/80749213/112123049-317a9c00-8bc1-11eb-86ad-6675bdd7aa55.PNG)
 
 The editor environment allows you to open all SAS programs in which you can write code.
 
 2. **Log**
 
-INSERT IMAGE OF LOG HERE 
+![log_studio](https://user-images.githubusercontent.com/80749213/112123087-3a6b6d80-8bc1-11eb-8d3d-85e68ff993ad.PNG)
 
 The log environment allows you to read messages and errors related to the code you've submitted. 
 
 3. **Results**
 
-INSERT IMAGE OF RESULTS TAB HERE 
+![results_studio](https://user-images.githubusercontent.com/80749213/112123121-41927b80-8bc1-11eb-8f0c-af4d46d80170.PNG)
 
 This environment allows you to view the data outputs created by your programs. 
 
@@ -208,29 +208,47 @@ On the left hand side, you'll see different tabs that you can click on.
 
 * The **Server Files and Folders** tab shows you your "home directory" where you can create new folders where to store data you imported and programs you created. These are permanent and you can move them or delete them as you please. 
 
-INSERT IMG TAB1 
+![tab1_studio](https://user-images.githubusercontent.com/80749213/112123145-48b98980-8bc1-11eb-8252-f0b2d0469492.PNG)
 
 * The **Tasks and Utilities** tab shows you all the built-in features for data analytics, visualisation, statistical testing, etc. You can also add your own and these are going to be stored in the **My Tasks** folder (the first one at the top). 
 
-INSERT IMG ON TAB2
+![tab2_studio](https://user-images.githubusercontent.com/80749213/112123181-4f480100-8bc1-11eb-8e42-4ffebb8269bb.PNG)
 
-INSERT IMG ON TAB2_APERTO 
+![tab2_aperto_studio](https://user-images.githubusercontent.com/80749213/112123170-4e16d400-8bc1-11eb-94f8-aa7749b2ef1f.PNG)
 
 * The **Snippets** tab offers you pre-made snippets of code that can come in handy so that you don't have to code entirely from scratch. As you can see in the example, I have clicked on the *Edit a SOURCE Entry* from the list of **Catalogs** inside the **Snippets** folder, and a new program appears with the *code snippet* already written inside of it. You can click on multiple snippets and these will just be added in the same program page. As for the *Tasks and Utilities* tab, you can create your own code snippets which are going to be stored in the **My Snippets** folder.
 
-INSERT IMG SNIPPETS (TAB3)
+![TAB3_STUDIO](https://user-images.githubusercontent.com/80749213/112123210-58d16900-8bc1-11eb-9a4e-ba568facf99e.PNG)
 
 * The **Libraries** tab shows you all the built-in libraries offered by SAS. Some of them are: 
 
-1. **SASHELP** library offers a large variety of *read-only* datasets; 
+1. **SASHELP** library offers a large variety of *read-only* sample SAS datasets; 
 
-INSERT IMG SASHELP LIB HERE
+![tab4_sashelp](https://user-images.githubusercontent.com/80749213/112123241-61c23a80-8bc1-11eb-8dfd-77c53049d5a4.PNG)
 
-2. **SASUSER** is an empty library initally, where you can *permanently save your datasets; 
+2. **SASUSER** is an empty library initally, where you can *permanently* save your datasets; 
    
-3. **WORK** another empty library, where you can *store your data temporarily*. It is the default library in which data is stored, unless differently specified. 
+3. **WORK** is another empty library, where you can *store your data temporarily*. It is the default library in which data is stored, **unless differently specified**. 
 
 * The **File Shortcuts** tab offers you a quicker way to access your files. You can create a new file shortcut by **clicking on the curved arrow** symbol, inserting a shortcut name and the path that leads you to the original file. You can also delete the shortcuts, see their properties and / or refresh the shortcut list when you need to update it. 
 
-INSERT IMG OF SHORTCUT FILES TAB - TAB5_STUDIO 
+![tab4_studio](https://user-images.githubusercontent.com/80749213/112123324-743c7400-8bc1-11eb-9a98-83ff270aade8.PNG)
+
+On the **blue bar** at the top of the SAS Studio interface (where you can see the application's name), you also have other options to speed up your programming and set your interface according to your preferences.
+
+![top_tab_studio](https://user-images.githubusercontent.com/80749213/112124540-be722500-8bc2-11eb-8538-1254e3e6b843.PNG)
+
+* Starting from the left, you have a search button where you can **browse for files and folders within each of these tabs more quickly**. This will come handy once your libraries and folders will become populated with more and more datasets and outputs. 
+
+* Next to it you can see the *opened folder* symbol, **useful for opening existing folders and programs, by searching through your directory**. 
+
+* You can also click on the *new options* symbol (**dots**), and if you click on it you can see that you can choose between **opening open a new SAS program, importing new data, writing a new query or XML program, closing all tabs and maximising the view of your environment**. 
+
+* You can switch between **SAS Programmer and Visual programmer** *perspectives*, by clicking on the scroll-down menu and selecting either. Default is set to *SAS Programmer*, which contains **features most commonly needed for developing a SAS program**. On the other hand, *Visual programmer* perspective contains tools needed for managing various processes - you can define your dataset, task and variabes using **easy-to-understand drag-and-drop methods**.  
+
+* The *more application options* button allows you to edit the **autoexec file** (code that starts automatically whenever you start the applicaton), to change which tabs on the left-hand side are displayed (default is all of them),  change preferences and restart the session. 
+
+* Last button refers you to **SAS Support**, where you can access help guidelines, documentation and SAS community. It also shows you keyboard shortcuts for using the application. 
+
+
 
