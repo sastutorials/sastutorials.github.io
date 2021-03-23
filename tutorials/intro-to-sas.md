@@ -225,13 +225,13 @@ On the left hand side, you'll see different tabs that you can click on.
 
 * The **Libraries** tab shows you all the built-in libraries offered by SAS. Some of them are: 
 
-##### **SASHELP** library offers a large variety of *read-only* sample SAS datasets; 
+###### **SASHELP** library offers a large variety of *read-only* sample SAS datasets; 
 
 ![tab4_sashelp](https://user-images.githubusercontent.com/80749213/112123241-61c23a80-8bc1-11eb-8dfd-77c53049d5a4.PNG)
 
-##### **SASUSER** is an empty library initally, where you can *permanently* save your datasets; 
+###### **SASUSER** is an empty library initally, where you can *permanently* save your datasets; 
    
-##### **WORK** is another empty library, where you can *store your data temporarily*. It is the default library in which data is stored, **unless differently specified**. 
+###### **WORK** is another empty library, where you can *store your data temporarily*. It is the default library in which data is stored, **unless differently specified**. 
 
 * The **File Shortcuts** tab offers you a quicker way to access your files. You can create a new file shortcut by **clicking on the curved arrow** symbol, inserting a shortcut name and the path that leads you to the original file. You can also delete the shortcuts, see their properties and / or refresh the shortcut list when you need to update it. 
 
@@ -251,7 +251,7 @@ On the **blue bar** at the top of the SAS Studio interface (where you can see th
 
 * The *more application options* button allows you to edit the **autoexec file** (code that starts automatically whenever you start the applicaton), to change which tabs on the left-hand side are displayed (default is all of them),  change preferences and restart the session. 
 
-* Last button refers you to **SAS Support**, where you can access help guidelines, documentation and SAS community. It also shows you keyboard shortcuts for using the application. 
+* Last button refers you to **SAS Support**, where you can access help guidelines, documentation and interact with SAS community. It also shows you keyboard shortcuts for using the application. 
 
 
 
