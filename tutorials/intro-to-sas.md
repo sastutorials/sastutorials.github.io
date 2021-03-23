@@ -223,7 +223,7 @@ On the left hand side, you'll see different tabs that you can click on.
 
 ![TAB3_STUDIO](https://user-images.githubusercontent.com/80749213/112123210-58d16900-8bc1-11eb-9a4e-ba568facf99e.PNG)
 
-* The **Libraries** tab shows you all the built-in libraries offered by SAS. Some of them are: 
+* The **Libraries** tab shows you all the built-in libraries offered by SAS. 
 
 ###### **SASHELP** library offers a large variety of *read-only* sample SAS datasets; 
 
