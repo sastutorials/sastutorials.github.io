@@ -30,7 +30,8 @@ html {
 .header {
   padding: 45px;
   text-align: center;
-  background: #1abc9c;
+  background: rgb(240,125,0);
+  background: radial-gradient(circle, rgba(240,125,0,1) 0%, rgba(207,2,45,0.9252743333661589) 100%);
   color: white;
 }
 
@@ -151,7 +152,8 @@ html {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #1abc9c;
+  background: rgb(240,125,0);
+  background: radial-gradient(circle, rgba(240,125,0,1) 0%, rgba(207,2,45,0.9252743333661589) 100%);
   color: white;
 }
 
