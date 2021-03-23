@@ -221,19 +221,6 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
-
-a:link{
-  color:#F07D00;
-}
-a:hover{
-  color:#CF022D;
-}
-a:active{
-  color:#CF022D;
-}
-a:visited{
-  color:#F07D00;
-}
 h2{
   color:#CF022D;
 }
