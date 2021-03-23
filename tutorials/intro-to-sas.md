@@ -245,7 +245,7 @@ On the **blue bar** at the top of the SAS Studio interface (where you can see th
 
 * Next to it you can see the *opened folder* symbol, **useful for opening existing folders and programs, by searching through your directory**. 
 
-* You can also click on the *new options* symbol (**dots**), and if you click on it you can see that you can choose between **opening open a new SAS program, importing new data, writing a new query or XML program, closing all tabs and maximising the view of your environment**. 
+* You can also click on the *new options* symbol, and if you click on it you can see that you can choose between **opening a new SAS program, importing new data, writing a new query or XML program, closing all tabs and maximising the view of your environment**. 
 
 * You can switch between **SAS Programmer and Visual programmer** *perspectives*, by clicking on the scroll-down menu and selecting either. Default is set to *SAS Programmer*, which contains **features most commonly needed for developing a SAS program**. On the other hand, *Visual programmer* perspective contains tools needed for managing various processes - you can define your dataset, task and variabes using **easy-to-understand drag-and-drop methods**.  
 
