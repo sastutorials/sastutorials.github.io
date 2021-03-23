@@ -136,7 +136,9 @@ Here is an overlook at the main  ones (there are more!):
 
 * [SAS/STAT](https://support.sas.com/en/software/sas-stat-support.html#documentation) provides a comprehensive set of tools for statistical methods and visualisation techniques.
 
-As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. Now let's move on to more practical stuff! Let's open **SAS Studiio**, a free and open platform for you to practice with SAS.
+As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. 
+
+Now let's move on to more practical stuff! Let's open **SAS Studiio**, a free and open platform for you to practice with SAS.
 
 <a name="#sect2"></a>
 
@@ -225,7 +227,7 @@ On the left hand side, you'll see different tabs that you can click on.
 
 ![TAB3_STUDIO](https://user-images.githubusercontent.com/80749213/112123210-58d16900-8bc1-11eb-9a4e-ba568facf99e.PNG)
 
-* The **Libraries** tab shows you all the built-in libraries offered by SAS. 
+* The **Libraries** tab shows you all the built-in libraries offered by SAS. A few examples:
 
 ###### **SASHELP** library offers a large variety of *read-only* sample SAS datasets; 
 
