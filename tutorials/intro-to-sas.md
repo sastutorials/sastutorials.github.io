@@ -87,7 +87,7 @@ SAS has become the undisputed market leader in commercial analytics, offering a 
 Comparing SAS to other programming languages, in terms of quantity of jobs available, is evident that SAS *is not the most popular language in the market*. That is due to two main reasons: 
 
 1. SAS is not free, and many companies will opt for open-source alternatives; 
-2. The jobs that do have SAS are more dedicated to report-writing than pure datascience. 
+2. The jobs that do require SAS are more dedicated to report-writing than pure datascience. 
 
 ![n_datascience_jobs_comparison](https://user-images.githubusercontent.com/80749213/112302858-d8cc0180-8c9b-11eb-8e79-11878d963346.png)
 
