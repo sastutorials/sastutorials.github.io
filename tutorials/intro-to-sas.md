@@ -42,11 +42,11 @@ redirect_from:
 <a href="#sect3">Resources</a>
 
 
-<a name="#sect1"></a>
+<a name="sect1"></a>
 
 # 1. Introduction: what is SAS? 
 
-<a name="#subsect1"></a>
+<a name="subsect1"></a>
 
 ## Origins of SAS
 
@@ -58,7 +58,7 @@ Over the years, SAS developers included an increasingly larger amount of product
 
 SAS is considered to be part of the 4th generation of programming languages. It is, in fact, much simpler than its predecessors, like Pascal and C, as it already possesses built-in functions to make programming much easier and user-friendly. 
 
-<a name="#subsect2"></a>
+<a name="subsect2"></a>
 
 ## Where does SAS belong in the hierarchy of programming language generations? 
 
@@ -70,7 +70,7 @@ SAS is considered to be part of the 4th generation of programming languages. It 
 | Fourth | Advanced upon third-generation programming languages. Higher level of abstraction of the internal computer driver details. Programmer-friendlier, versatile, powerful. | **SAS**, Python, R, SPSS | 
 | Fifth | Constraint-based and logic programming languages. Based on problem-solving using constraints given to the program. | OPS5, Mercury |
 
-<a name="#subsect3"></a>
+<a name="subsect3"></a>
 
 ## Use and applications
 
@@ -80,7 +80,7 @@ It is primarily used for carrying out **advanced analytics, business intelligien
 
 SAS has become the undisputed market leader in commercial analytics, offering a huge array of statistical functions for people to **learn quickly**, and provides great **technical support** for troubleshooting. 
 
-<a name="#subsect4"></a>
+<a name="subsect4"></a>
 
 ## Comparison with other programming languages 
 
@@ -94,7 +94,7 @@ Here we offer a summary on advantages and disantavantages of using SAS compared 
 | | flow-based interface, drag and drop | good user interface, extensive documentation | free | general purpose language | 
 | | official support | click & play functionality | early adopter in explanatory and predictive modelling | easy to learn | 
 | | handles large datasets| easy coding with "paste" button | easy to connect to data sources, incl. NoSQL and webscraping | good in ML | 
-| | SQL integration ("PROC SQL") | official suppport | | big community | 
+| | SQL integration ("PROC SQL") | official support | | big community | 
 | | | | | free | 
 | **Disadvantages** | | | | |
 | | relatively high cost | relatively high cost | can be slow with big datasets | not as strong in explanatory modelling | 
@@ -102,7 +102,7 @@ Here we offer a summary on advantages and disantavantages of using SAS compared 
 | | slow adapting to new techniques | limited syntax | no official support | no official support | 
 | | different programs for visualisation and data mining | slow in handling large datasets | no user interface | no user interface | 
 
-<a name="#subsect5"></a>
+<a name="subsect5"></a>
 
 ## SAS toolkit 
 
@@ -140,7 +140,7 @@ As you might have noticed, **SAS is truly wide and varied** in the range of appl
 
 Now let's move on to more practical stuff! Let's open **SAS Studiio**, a free and open platform for you to practice with SAS.
 
-<a name="#sect2"></a>
+<a name="sect2"></a>
 
 # SAS studio (OnDemand for Academics)
 
@@ -266,7 +266,7 @@ Hopefully now you have a clear understanding of what SAS is and how SAS Studio i
 We are going to start working with SAS Studio in the following tutorials. 
 
 
-<a name="#sect3"></a>
+<a name="sect3"></a>
 
 ## Resources 
 
