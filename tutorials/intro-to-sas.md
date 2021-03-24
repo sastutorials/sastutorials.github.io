@@ -84,6 +84,17 @@ SAS has become the undisputed market leader in commercial analytics, offering a 
 
 ## Comparison with other programming languages 
 
+Comparing SAS to other programming languages, in terms of quantity of jobs available, is evident that SAS *is not the most popular language in the market*. That is due to two main reasons: 
+
+1. SAS is not free, and many companies will opt for open-source alternatives; 
+2. The jobs that do have SAS are more dedicated to report-writing than pure datascience. 
+
+![n_datascience_jobs_comparison](https://user-images.githubusercontent.com/80749213/112302858-d8cc0180-8c9b-11eb-8e79-11878d963346.png)
+
+SAS continues to be a leader and important tool in data management and report writing. 
+
+![Gartner-2019](https://user-images.githubusercontent.com/80749213/112304355-ad4a1680-8c9d-11eb-81cd-1a25c39ae141.png)
+
 Here we offer a summary on advantages and disantavantages of using SAS compared to other programming languages (SPSS, R and Python).
 
 
@@ -112,7 +123,7 @@ Here is an overlook at the main  ones (there are more!):
 
 * [SAS/ACCESS](https://support.sas.com/en/software/sas-access.html#documentation) provides data access to a wide extension of data sources and formats. It provides data integration between SAS and third-party databases, to read, write and update data from all types of native databases and platforms you use; 
 
-* [SAS/AF](https://support.sas.com/en/software/sasaf-support.html) creates portable, point-and-click applications in a development environment. You have access to SAS Component Language (SCL), too, an object-oriented programming laguage that helps you access and display your data, control interfaces, read and write data to SAS tables and files; 
+* [SAS/AF](https://support.sas.com/en/software/sasaf-support.html) creates portable, point-and-click applications in a development environment. With it, you have access to SAS Component Language (SCL), an object-oriented programming laguage that helps you access and display your data, control interfaces, read and write data to SAS tables and files; 
 
 * [SAS/ASSIST](https://support.sas.com/en/software/sas-assist-support.html#documentation) is a user-friendly software to the SAS System, providing options for completing tasks without having to write code, for saving programs and running them repetitively and for customising the interface to better suit your needs; 
 
@@ -136,7 +147,7 @@ Here is an overlook at the main  ones (there are more!):
 
 * [SAS/STAT](https://support.sas.com/en/software/sas-stat-support.html#documentation) provides a comprehensive set of tools for statistical methods and visualisation techniques.
 
-As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. 
+As you might have noticed, **SAS is truly wide and varied** in the range of applications and tools it offers. However, **these are not freely available**, for some you require a *specific license*, for others you need to have the tool *installed on your SAS Server first*.
 
 Now let's move on to more practical stuff! Let's open **SAS Studiio**, a free and open platform for you to practice with SAS.
 
@@ -152,7 +163,7 @@ SAS has several programming interfaces where you can **actively write and submit
 
 * SAS **Studio** is a *web-based interface* that connects to SAS on a server. There is no download necessary, and for that *you can use it* on *any computer*. 
 
-* It is also possible to run SAS and its tools on other applications, such as **Jupyter Notebbok**, but this way you **won't have access to some of the programming tools that SAS offers**.
+* It is also possible to run SAS and its tools on other applications, such as **Jupyter Notebook**, but this way you **won't have access to some of the programming tools that SAS offers**.
 
 We are going to work on **SAS Studio**, and today we are going to explore its environment and windows.
 
