@@ -2,6 +2,11 @@ img {
             width: 50%;
             height: 40%;
 }
+.correction{
+        width: 350;
+        height: 500;
+        
+      }
 * {
   box-sizing: border-box;
 }
