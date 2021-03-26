@@ -124,7 +124,7 @@ In this example, you can see that there are *4 errors* and *5 warnings* (notes a
 ![error_dataset_name](https://user-images.githubusercontent.com/80749213/112657426-b4feec00-8e52-11eb-9541-d670ea01c690.png)
  
 
-#### 1.2 Blank spaces automatically define two separate entities
+#### 1.3 Blank spaces automatically define two separate entities
 
 Let's see an example of this. Let's say you want to create two columns named *id employees* and *age*. 
 
@@ -189,7 +189,7 @@ If you run the program now, you will see that the output is **finally what we ha
 
 ![correct_dataset_name](https://user-images.githubusercontent.com/80749213/112659619-d82a9b00-8e54-11eb-9440-491664d23e07.png)
 
-#### 1.3 SAS code is CASE IN-sensitive
+#### 1.4 SAS code is CASE IN-sensitive
 
 This means that you could be writing your statements, functions, variable and value names either of these ways: 
 
@@ -232,7 +232,7 @@ You can try and revert the order of occurrence of the two variables, to see that
 
 ![case_insensitive_ex2](https://user-images.githubusercontent.com/80749213/112663328-fa261c80-8e58-11eb-8711-de03320de723.png)
 
-#### 1.4 By default, values cannot be longer than 8 characters in length
+#### 1.5 By default, values cannot be longer than 8 characters in length
 
 Let's use a new example, taking into consideration character strings as values. 
 
