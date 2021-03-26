@@ -280,7 +280,7 @@ We are going to start working with SAS Studio in the following tutorials.
 
 <a name="sect3"></a>
 
-## 3. Resources 
+# 3. Resources 
 
 * [SAS documentation](https://support.sas.com/en/documentation.html)
 
