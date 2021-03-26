@@ -36,7 +36,7 @@ subtitle: Troubleshooting and how to find help.
 
 Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to **avoid running into simple errors**. 
 
-#### 1. Names for datasets **must** start with a **character** or **underscore**. If you, instead, place a **special character or a number** you will run into error. 
+### Names for datasets **must** start with a **character** or **underscore**. If you, instead, place a **special character or a number** you will run into error. 
 
 At the moment, don't worry about the logic behind the code and syntax, as you will learn about them in the next tutorials. What matters now is the naming of your dataset and comparing when it works and when it does not. 
 
@@ -91,7 +91,7 @@ In this example, you can see that there are *4 errors* and *5 warnings* (notes a
 
 ![error_dataset_name](https://user-images.githubusercontent.com/80749213/112657426-b4feec00-8e52-11eb-9541-d670ea01c690.png)
  
-#### 2. Blank spaces automatically define two separate entities
+### Blank spaces automatically define two separate entities
 
 Let's see an example of this. Let's say you want to create two columns named *id employees* and *age*. 
 
@@ -117,7 +117,7 @@ run;
 
 If you run the program with the code written above, you are going to see the output is *not quite what we had in mind*. 
 
-What happened? The space between the words *id* and *employees* treats them as **two separate variables**, instead of one! Since underneath you have written values for only the first two variables, the variable **age** does not even appear and is, instead, substituted by the word **employees**, which appears first.
+What happened? The space between the words *id* and *employees* treats them as **two separate variables**, instead of one! Since underneath the variables names there is a list of values also separated by one blank space, which defines them as two separate columns, the variable **age** does not even appear and is, instead, substituted by the word **employees**, which appears first.
 
 ![blank_spaces](https://user-images.githubusercontent.com/80749213/112658624-de6c4780-8e53-11eb-9330-88ffede130f1.png)
 
@@ -152,12 +152,11 @@ cards;
 run; 
 ```
 
-If you run the program now, you will see that the output is **finally what we had expected**. 
+If you run the program now, you will see that the output is **finally what we had expected**. The first variable is, in fact, called *id employees* and the second one is called *age*. 
 
 ![correct_dataset_name](https://user-images.githubusercontent.com/80749213/112659619-d82a9b00-8e54-11eb-9440-491664d23e07.png)
 
-
-The first variable is called *id employees* and the second one is *age*. 
+#### 3. 
 
 <a name="sect2"></a>
 
