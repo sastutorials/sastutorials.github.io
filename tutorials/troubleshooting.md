@@ -191,13 +191,53 @@ var "id EMpLoYEEs"n;
 run;
 ```
 
-As you can see, the **data step** has the variable *id employees* written entirely in lower case. In the **proc step**, instead, is a mix of lower and upper case - a mess. If you check the *results* window, however, you can see that SAS will print the first occurence of the variable name, thus keeping it in lower case. 
+As you can see, the **data step** has the variable *id employees* written entirely in lower case. In the **proc step**, instead, is a mix of lower and upper case - a mess. If you check the *results* window, however, you can see that SAS will print the case from the first occurrence of the variable name, which is lower case in this example. 
 
 ![case_insensitive_ex](https://user-images.githubusercontent.com/80749213/112662980-97cd1c00-8e58-11eb-9e3b-521f32069367.png)
 
-You can try and rever the order of occurrence of the two variables, to see that the output is going to change. 
+You can try and revert the order of occurrence of the two variables, to see that the output does change according to the new first occurrence. 
 
 ![case_insensitive_ex2](https://user-images.githubusercontent.com/80749213/112663328-fa261c80-8e58-11eb-8711-de03320de723.png)
+
+#### 1.4 By default, values cannot be longer than 8 characters in length
+
+Let's use a new example, taking into consideration character strings as values. 
+
+```
+data trial; 
+input name $ age; 
+cards; 
+Anna 23
+Johnathan-Smith 40
+Rodolphus 34 
+Mattie 32
+Mary 26 
+; 
+run; 
+
+```
+
+If you run this new program, you can see that the output cuts the names written in the first column, after the 8th character.
+
+![char_length_values](https://user-images.githubusercontent.com/80749213/112664390-33ab5780-8e5a-11eb-96fd-c55ac50441b1.png)
+
+To fix it, we need to tell SAS that we want to increase the length of our values. WE WILL TALK ABOUT THIS IN THE NEXT TUTORIAL?????
+
+#### 1.5 Library names cannot exceed 8 characters in length 
+
+If we tried to absurdly write a very long library name (**remember to write your own path to your home directory**), it would result in error. 
+
+```
+libname thislibnameiswaytoolongtoexist "your/path/to/your/home/directory";
+```
+
+The log window would report this error, specifically. 
+
+![library_name_length](https://user-images.githubusercontent.com/80749213/112665668-9a7d4080-8e5b-11eb-83bd-9e427525b422.png)
+
+SAS is telling you the library name **is not a valid SAS name** because **it definitely exceeds the maximum allowed of 8 characters in length**. 
+
+In this case, and contrary to value names, **you cannot change this option**. 
 
 <a name="sect2"></a>
 
