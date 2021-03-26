@@ -30,14 +30,15 @@ redirect_from:
 
 <a href="#subsect5"><sub>SAS toolkit</sub></a>
 
+<a href="#subsect6"><sub>Workflow</sub></a>
    
 <a href="#sect2">2. SAS studio</a>
 
-<a href="#subsect6"><sub>What is SAS Studio?</sub></a>
+<a href="#subsect7"><sub>What is SAS Studio?</sub></a>
 
-<a href="#subsect7"><sub>Instructions to Log in</sub></a>
+<a href="#subsect8"><sub>Instructions to Log in</sub></a>
 
-<a href="#subsect7"><sub>Exploring the SAS Studio environment</sub></a>
+<a href="#subsect9"><sub>Exploring the SAS Studio environment</sub></a>
 
 <a href="#sect3">3. Resources</a>
 
@@ -152,6 +153,22 @@ As you might have noticed, **SAS is truly wide and varied** in the range of appl
 
 Now let's move on to more practical stuff! Let's open **SAS Studiio**, a free and open platform for you to practice with SAS.
 
+<a name="subsect6"></a>
+
+## Workflow
+
+Have a look at the general SAS workflow, at the base of every program you are going to write: 
+
+![sas_workflow](https://user-images.githubusercontent.com/80749213/112639053-26816f00-8e40-11eb-99f5-a7adce9567f0.png)
+
+As you can see from the schematic structure of the workflow above, you will first: 
+
+* **import** the data, whether these are external (.xls, .csv, .txt, etc.) or SAS datasets; 
+
+* use statements and commands from the **DATA STEP**, whose main purpose is to read and modify data, and to **output a dataset in "SAS" format**;
+
+* use statements and commands from the **PROC STEP**, whose main purpose is to analyse data and use utility functions (see this [**link**](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=proc&docsetTarget=p1d7hxx6hdao18n1lyd1h3ekss3y.htm&locale=en) to check out the list of utility procedures grouped according to task). Not only, through the **PROC STEP** you can create beautiful and informative reports of your output. 
+
 <a name="sect2"></a>
 
 # SAS studio (OnDemand for Academics)
@@ -168,6 +185,8 @@ SAS has several programming interfaces where you can **actively write and submit
 
 We are going to work on **SAS Studio**, and today we are going to explore its environment and windows.
 
+<a name="subsect7"></a>
+
 ## What is SAS Studio? 
 
 [SAS Studio](https://www.sas.com/it_it/software/studio.html) is the web browser-based programming environment. You can access existing data files, libraries and prograrms or create your own directly from the web. 
@@ -177,6 +196,8 @@ SAS Studio connects to a SAS server, to be able to elaborate SAS commands. This 
 Once code has been elaborated by the software, the formatted results are returned back to SAS studio. 
 
 Let's start exploring the interface!
+
+<a name="subsect8"></a>
 
 ## Instructions to Log in
 
@@ -193,6 +214,8 @@ Once you've done that, and verified your email, you can head to the [log in page
 When the next window opens, click on SAS Studio so we can start exploring the environment!
 
 ![open_studio](https://user-images.githubusercontent.com/80749213/111761263-01b95480-88a0-11eb-9ad9-ae192033633e.PNG)
+
+<a name="subsect9"></a>
 
 ## Exploring the SAS Studio environment
 
