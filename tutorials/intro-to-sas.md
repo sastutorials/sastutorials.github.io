@@ -165,7 +165,7 @@ As you can see from the schematic structure of the workflow above, you will:
 
 * **import** the data, whether these are external (.xls, .csv, .txt, etc.) or SAS datasets; 
 
-* use statements and commands from the **DATA STEP**, whose main purpose is to read and modify data, and to **output a dataset in "SAS" format**. In the next tutorials you will see how the **DATA STEP executes code line by line and one variable at a time**; 
+* use statements and commands from the **DATA STEP**, whose main purpose is to read and modify data, and to **output a dataset in "SAS" format**. In the next tutorials you will see how the **DATA STEP executes code line by line and for one variable at a time**; 
 
 * use statements and commands from the **PROC STEP**, whose main purpose is to analyse data and use utility functions (see this [**link**](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=proc&docsetTarget=p1d7hxx6hdao18n1lyd1h3ekss3y.htm&locale=en) to check out the list of utility procedures grouped according to task). Not only, through the **PROC STEP** you can create beautiful and informative reports of your output. 
 
