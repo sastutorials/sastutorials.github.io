@@ -169,7 +169,7 @@ DaTa
 
 ```
 
-SAS does not care about the case. 
+*SAS does not care about the case.*
 
 However, **remember** that SAS **does remember the case of the first occurrence of each variable name in the program, and will print it the same also for the following occurrences**.
 
@@ -191,7 +191,7 @@ var "id EMpLoYEEs"n;
 run;
 ```
 
-As you can see, the **data step** has the variable *id employees* written entirely in lower case. In the **proc step**, instead, it is a mix of lower and upper case - a mess. If you check the *results* window, however, you can see that SAS will print the first occurence of the variable name, thus keeping it in lower case. 
+As you can see, the **data step** has the variable *id employees* written entirely in lower case. In the **proc step**, instead, is a mix of lower and upper case - a mess. If you check the *results* window, however, you can see that SAS will print the first occurence of the variable name, thus keeping it in lower case. 
 
 ![case_insensitive_ex](https://user-images.githubusercontent.com/80749213/112662980-97cd1c00-8e58-11eb-9e3b-521f32069367.png)
 
