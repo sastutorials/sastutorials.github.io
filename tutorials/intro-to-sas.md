@@ -20,24 +20,24 @@ redirect_from:
 
 <a href="#sect1">1. Introduction: what is SAS?</a>   
 
-<a href="#subsect1"><sub>a) Origins</sub></a>
+<a href="#subsect1"><sub>Origins</sub></a>
 
-<a href="#subsect2"><sub>b)  Where does SAS belong in the hierarchy of programming language generations?</sub></a>
+<a href="#subsect2"><sub>Where does SAS belong in the hierarchy of programming language generations?</sub></a>
 
-<a href="#subsect3"><sub>c) Use and applications</sub></a>
+<a href="#subsect3"><sub>Use and applications</sub></a>
 
-<a href="#subsect4"><sub>d) Comparison with other programming languages</sub></a>
+<a href="#subsect4"><sub>omparison with other programming languages</sub></a>
 
-<a href="#subsect5"><sub>e) SAS toolkit</sub></a>
+<a href="#subsect5"><sub>SAS toolkit</sub></a>
 
    
 <a href="#sect2">2. SAS studio</a>
 
-<a href="#subsect6"><sub>a) What is SAS Studio?</sub></a>
+<a href="#subsect6"><sub>What is SAS Studio?</sub></a>
 
-<a href="#subsect7"><sub>b) Instructions to Log in</sub></a>
+<a href="#subsect7"><sub>Instructions to Log in</sub></a>
 
-<a href="#subsect7"><sub>c) Exploring the SAS Studio environment</sub></a>
+<a href="#subsect7"><sub>Exploring the SAS Studio environment</sub></a>
 
 <a href="#sect3">3. Resources</a>
 
