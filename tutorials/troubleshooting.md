@@ -28,7 +28,6 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#sect7">7. Resources</a>
 
------------------------------------------------
 
 <a name="sect1"></a>
 
@@ -36,14 +35,14 @@ subtitle: Troubleshooting and how to find help.
 
 Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to **avoid running into simple errors**. 
 
-### Names for datasets **must** start with a **character** or **underscore**. If you, instead, place a **special character or a number** you will run into error. 
+#### 1.1 Names for datasets **must** start with a **character** or **underscore** and cannot exceed 32-character in length (by default). If you place a **special character or a number** you will run into error. 
 
 At the moment, don't worry about the logic behind the code and syntax, as you will learn about them in the next tutorials. What matters now is the naming of your dataset and comparing when it works and when it does not. 
 
 Open SAS Studio and write this simple code, to get an idea of the output when your write a dataset name *correctly*.  
 
 ```
-/* name your dataset with character or underscore at the
+/* correct: name your dataset with character or underscore at the
 beginning */
 
 data _trial;
@@ -91,7 +90,8 @@ In this example, you can see that there are *4 errors* and *5 warnings* (notes a
 
 ![error_dataset_name](https://user-images.githubusercontent.com/80749213/112657426-b4feec00-8e52-11eb-9541-d670ea01c690.png)
  
-### Blank spaces automatically define two separate entities
+
+#### 1.2 Blank spaces automatically define two separate entities
 
 Let's see an example of this. Let's say you want to create two columns named *id employees* and *age*. 
 
@@ -156,7 +156,48 @@ If you run the program now, you will see that the output is **finally what we ha
 
 ![correct_dataset_name](https://user-images.githubusercontent.com/80749213/112659619-d82a9b00-8e54-11eb-9440-491664d23e07.png)
 
-#### 3. 
+#### 1.3 SAS code is CASE IN-sensitive
+
+This means that you could be writing your statements, functions, variable and value names either of these ways: 
+
+```
+DATA
+
+data 
+
+DaTa 
+
+```
+
+SAS does not care about the case. 
+
+However, **remember** that SAS **does remember the case of the first occurrence of each variable name in the program, and will print it the same also for the following occurrences**.
+
+Have a look at the results from running the following code: 
+
+```
+data trial; 
+input "id employees"n age; 
+cards; 
+1 23 
+2 23
+3 40
+4 50
+; 
+run; 
+
+proc print data=work.trial; 
+var "id EMpLoYEEs"n; 
+run;
+```
+
+As you can see, the **data step** has the variable *id employees* written entirely in lower case. In the **proc step**, instead, it is a mix of lower and upper case - a mess. If you check the *results* window, however, you can see that SAS will print the first occurence of the variable name, thus keeping it in lower case. 
+
+![case_insensitive_ex](https://user-images.githubusercontent.com/80749213/112662980-97cd1c00-8e58-11eb-9e3b-521f32069367.png)
+
+You can try and rever the order of occurrence of the two variables, to see that the output is going to change. 
+
+![case_insensitive_ex2](https://user-images.githubusercontent.com/80749213/112663328-fa261c80-8e58-11eb-8711-de03320de723.png)
 
 <a name="sect2"></a>
 
