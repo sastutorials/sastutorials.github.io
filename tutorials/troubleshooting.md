@@ -1,6 +1,5 @@
 --- 
 layout: default
-author: Anna
 title: Intro to SAS pt. II
 subtitle: Troubleshooting and how to find help.
 --- 
@@ -35,7 +34,62 @@ subtitle: Troubleshooting and how to find help.
 
 # 1. General SAS Syntax rules 
 
+Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to **avoid running into simple errors**. 
 
+1. Names for datasets **must** start with a **character** or **underscore**. If you, instead, place a **special character or a number** you will run into error. 
+
+At the moment, don't worry about the logic behind the code and syntax, as you will learn about them in the next tutorials. What matters now is the naming of your dataset and comparing when it works and when it does not. 
+
+Open SAS Studio and write this simple code, to get an idea of the output when your write a dataset name *correctly*.  
+
+```
+/* name your dataset with character or underscore at the
+beginning */
+
+data _trial;
+	input x y;
+	cards;
+1 2 
+;
+run;
+
+data trial;
+	input x y;
+	cards;
+1 2
+;
+run;
+```
+
+If you run the program, by either pressing on the *running figure* button or by clicking on **F3** key in your keyboard, you can see that it does produce an output (a *SAS dataset*) with the variables x and y, displayed in a *new tab* called *output data*. 
+
+![output_correct](https://user-images.githubusercontent.com/80749213/112655495-baf3cd80-8e50-11eb-96d9-2222615f1e3c.png)
+
+If, instead, you paste the following in your editor and *run the program*:
+
+```
+/* wrong: dataset name starts with numbers or special characters */ 
+
+data 1trial;
+	input x y;
+	cards;
+1 2
+;
+run;
+
+data %trial;
+	input x y;
+	cards;
+1 2 
+;
+run;
+```
+
+You can see that the tab *output data* **does not show this time**. Instead, an **X** appears near the *name of the program* and you are automatically directed to the **log** window.
+
+In this example, you can see that there are *4 errors* and *5 warnings* (notes are usually always there). If you click on either menu you can read the specific message(es).
+
+![error_dataset_name](https://user-images.githubusercontent.com/80749213/112657426-b4feec00-8e52-11eb-9541-d670ea01c690.png)
 
 
 
