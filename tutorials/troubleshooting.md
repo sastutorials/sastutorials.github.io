@@ -223,7 +223,7 @@ If you run this new program, you can see that the output cuts the names written 
 
 To fix it, we need to tell SAS that we want to increase the length of our values. **WE WILL TALK ABOUT THIS IN THE NEXT TUTORIAL?????**
 
-**REMEMBER** that there is a maximum character length allowed, and that is of **32,767** characters. That should be enough! 
+**REMEMBER** that there is a maximum character length allowed, and that is of **32767** characters. That should be enough! 
 
 #### 1.5 Library names cannot exceed 8 characters in length 
 
