@@ -6,7 +6,7 @@ subtitle: Get started with SAS software and SAS Studio.
 redirect_from: 
 --- 
 
-## Learning Objectives: 
+## Learning Objectives
 
 * What SAS is, its origins, and applications
 
@@ -16,7 +16,7 @@ redirect_from:
 
 * Explore SAS Studio (OnDemand for Academics)
 
-## Structure: 
+## Structure
 
 <a href="#sect1">1. Introduction: what is SAS?</a>   
 
