@@ -16,7 +16,7 @@ redirect_from:
 
 * Explore SAS Studio (OnDemand for Academics)
 
-## Structure
+## Tutorial structure
 
 <a href="#sect1">1. Introduction: what is SAS?</a>   
 
@@ -39,8 +39,9 @@ redirect_from:
 
 <a href="#subsect7"><sub>c) Exploring the SAS Studio environment</sub></a>
 
-<a href="#sect3">Resources</a>
+<a href="#sect3">3. Resources</a>
 
+---------------------------------------------
 
 <a name="sect1"></a>
 
@@ -279,7 +280,7 @@ We are going to start working with SAS Studio in the following tutorials.
 
 <a name="sect3"></a>
 
-## Resources 
+## 3. Resources 
 
 * [SAS documentation](https://support.sas.com/en/documentation.html)
 
