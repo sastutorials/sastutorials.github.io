@@ -239,7 +239,7 @@ The log window would report this error, specifically.
 
 SAS is telling you the library name **is not a valid SAS name** because **it definitely exceeds the maximum allowed of 8 characters in length**. 
 
-In this case, and contrary to value names, **you cannot change this option**. 
+In this case, and contrary to value names, **you cannot change this option**. Every new library name that you will create will have to fit within the maxmimum length allowed of 8 characters. 
 
 <a name="sect2"></a>
 
