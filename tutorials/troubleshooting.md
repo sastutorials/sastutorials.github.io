@@ -35,9 +35,42 @@ subtitle: Troubleshooting and how to find help.
 
 Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to **avoid running into simple errors**. 
 
-#### 1.1 Names for datasets **must** start with a **character** or **underscore** and cannot exceed 32-character in length (by default). If you place a **special character or a number** you will run into error. 
-
 At the moment, don't worry about the logic behind the code and syntax, as you will learn about them in the next tutorials. What matters now is the naming of your dataset and comparing when it works and when it does not. 
+
+#### 1.1 Every line of code in SAS **MUST** end with a **semi-colon** (;)
+
+If you run the following program, by either pressing on the *running figure* button or by clicking on **F3** key in your keyboard, you will see an error popping up. 
+
+```
+data trial      
+	input x y;
+	cards;
+1 2
+;
+run;
+```
+
+The error says: 
+
+![no_semi_colon_error](https://user-images.githubusercontent.com/80749213/112667209-48d5b580-8e5d-11eb-82a6-67a24c14b724.png)
+
+The table you tried to create did not succeed because of a missing semi-colon in the first line of code. 
+
+If you add it, it will now work and create a new dataset called "trial". 
+
+```
+data trial;     
+	input x y;
+	cards;
+1 2
+;
+run;
+```
+
+![output_correct](https://user-images.githubusercontent.com/80749213/112655495-baf3cd80-8e50-11eb-96d9-2222615f1e3c.png)
+
+
+#### 1.2 Names for datasets **must** start with a **character** or **underscore** and cannot exceed 32-character in length (by default). If you place a **special character or a number** you will run into error. 
 
 Open SAS Studio and write this simple code, to get an idea of the output when your write a dataset name *correctly*.  
 
@@ -60,7 +93,7 @@ data trial;
 run;
 ```
 
-If you run the program, by either pressing on the *running figure* button or by clicking on **F3** key in your keyboard, you can see that it does produce an output (a *SAS dataset*) with the variables x and y, displayed in a *new tab* called *output data*. 
+You can see that the program does produce an output (a *SAS dataset*) with the variables x and y, displayed in a *new tab* called *output data*. 
 
 ![output_correct](https://user-images.githubusercontent.com/80749213/112655495-baf3cd80-8e50-11eb-96d9-2222615f1e3c.png)
 
