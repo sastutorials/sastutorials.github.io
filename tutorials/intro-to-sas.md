@@ -293,8 +293,11 @@ On the **blue bar** at the top of the SAS Studio interface (where you can see th
 * Last button refers you to **SAS Support**, where you can access help guidelines, documentation and interact with SAS community. It also shows you keyboard shortcuts for using the application. 
 
 
-You have completed this tutorial! 
+**REMEMBER** that SAS Studio is a free platform, but with **limited free space at your disposal**. You can check out the *quota* as you go along with your practice, which you can find every time you log in, as shown below. 
 
+![quota_free_space_studio](https://user-images.githubusercontent.com/80749213/112646521-dc03f080-8e47-11eb-8b2c-db0dadd1fda5.png)
+
+You have completed this tutorial! 
 
 Hopefully now you have a clear understanding of what SAS is and how SAS Studio is structured. 
 
