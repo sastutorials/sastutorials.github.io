@@ -20,7 +20,7 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#subsect2"><sub>Log window</sub></a>
 
-<a href="#subsect3"><sub>Where to find official documentation</sub></a>
+<a href="#subsect3"><sub>Official documentation</sub></a>
 
 <a href="#sect2">2. General SAS syntax rules</a>
 
@@ -146,7 +146,7 @@ In particular, you'll find options that will allow you to save a specific log re
 
 <a name="subsect3"></a>
 
-## Where to find official documentation
+## Official documentation
 
 At this point, you know that SAS offers its own official documentation, where you can find details about each single command existing in SAS. 
 
