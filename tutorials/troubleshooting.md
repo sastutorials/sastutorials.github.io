@@ -12,7 +12,7 @@ subtitle: Troubleshooting and how to find help.
 
 * Familiarise yourself with some common programming errors you might run into
 
-## Tutorial structure
+## Structure
 
 <a href="#sect1">1. General SAS Syntax rules</a>
 
@@ -276,29 +276,29 @@ SAS is telling you the library name **is not a valid SAS name** because **it def
 
 In this case, and contrary to value names, **you cannot change this option**. Every new library name that you will create will have to fit within the maxmimum length allowed of 8 characters. 
 
-<a name="sect2"></a>
+<a name="subsect1"></a>
 
-# 2. SAS Studio syntax helper
-
-
-<a name="sect3"></a>
-
-# 3. Where to find official documentation and how to browse it
+## SAS Studio syntax helper
 
 
-<a name="sect4"></a>
+<a name="subsect2"></a>
 
-# 4. Log window
+## Where to find official documentation and how to browse it
+
+
+<a name="subsect3"></a>
+
+## Log window
 
 
 <a name="sect5"></a>
 
-# 5. Common mistakes and how to solve them 
+# 3. Common mistakes and how to solve them 
 
 
 <a name="sect6"></a>
 
-# 6. Try it yourself: fix the errors from a SAS program
+# 4. Try it yourself: fix the errors from a SAS program
 
 
 <a name="sect7"></a>
