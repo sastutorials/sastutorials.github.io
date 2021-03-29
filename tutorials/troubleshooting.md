@@ -54,7 +54,7 @@ run;
 
 The error says: 
 
-![no_semi_colon_error](https://user-images.githubusercontent.com/80749213/112667209-48d5b580-8e5d-11eb-82a6-67a24c14b724.png)
+![no_semi_colon_error](../screenshots/no_semi_colon_error.png)
 
 The table you tried to create did not succeed because of a missing semi-colon in the first line of code. 
 
@@ -80,6 +80,13 @@ Open SAS Studio and write this simple code, to get an idea of the output when yo
 /* correct: name your dataset with character or underscore at the
 beginning */
 
+data trial;
+input x y;
+cards;
+1 2
+;
+run;
+
 data _trial;
 input x y;
 cards;
@@ -87,17 +94,11 @@ cards;
 ;
 run;
 
-data trial;
-input x y;
-cards;
-1 2
-;
-run;
 ```
 
-You can see that the program does produce an output (a *SAS dataset*) with the variables x and y, displayed in a *new tab* called *output data*. 
+You can see that the program does produce two outputs (*SAS datasets*) - *trial* and *_trial* - with the variables x and y displayed on a *new tab* called *output data*. Here is what one of them looks like (the result is the same):
 
-![output_correct](https://user-images.githubusercontent.com/80749213/112655495-baf3cd80-8e50-11eb-96d9-2222615f1e3c.png)
+![output_correct1](../screenshots/output_correct1.png)
 
 If, instead, you paste the following in your editor and *run the program*:
 
@@ -123,9 +124,8 @@ You can see that the tab *output data* **does not show this time**. Instead, an 
 
 In this example, you can see that there are *4 errors* and *5 warnings* (notes are usually always there). If you click on either menu you can read the specific message(es).
 
-![error_dataset_name](https://user-images.githubusercontent.com/80749213/112657426-b4feec00-8e52-11eb-9541-d670ea01c690.png)
+![error_dataset_name](../screenshots/error_dataset_name.png)
  
-
 #### 1.3 Blank spaces automatically define two separate entities
 
 Let's see an example of this. Let's say you want to create two columns named *id employees* and *age*. 
@@ -154,7 +154,7 @@ If you run the program with the code written above, you are going to see the out
 
 What happened? The space between the words *id* and *employees* treats them as **two separate variables**, instead of one! Since underneath the variables names there is a list of values also separated by one blank space, which defines them as two separate columns, the variable **age** does not even appear and is, instead, substituted by the word **employees**, which appears first.
 
-![blank_spaces](https://user-images.githubusercontent.com/80749213/112658624-de6c4780-8e53-11eb-9330-88ffede130f1.png)
+![blank_spaces](../screenshots/blank_spaces.png)
 
 SAS indeed does **identify blank spaces as separators between different variables and values**. 
 
@@ -189,7 +189,7 @@ run;
 
 If you run the program now, you will see that the output is **finally what we had expected**. The first variable is, in fact, called *id employees* and the second one is called *age*. 
 
-![correct_dataset_name](https://user-images.githubusercontent.com/80749213/112659619-d82a9b00-8e54-11eb-9440-491664d23e07.png)
+![correct_dataset_name](../screenshots/correct_dataset_name.png)
 
 #### 1.4 SAS code is CASE IN-sensitive
 
@@ -228,11 +228,11 @@ run;
 
 As you can see, the **data step** has the variable *id employees* written entirely in lower case. In the **proc step**, instead, is a mix of lower and upper case - a mess. If you check the *results* window, however, you can see that SAS will print the case from the first occurrence of the variable name, which is lower case in this example. 
 
-![case_insensitive_ex](https://user-images.githubusercontent.com/80749213/112662980-97cd1c00-8e58-11eb-9e3b-521f32069367.png)
+![case_insensitive_ex](../screenshots/case_insensitive_ex.png)
 
 You can try and revert the order of occurrence of the two variables, to see that the output does change according to the new first occurrence. 
 
-![case_insensitive_ex2](https://user-images.githubusercontent.com/80749213/112663328-fa261c80-8e58-11eb-8711-de03320de723.png)
+![case_insensitive_ex2](../screenshots/case_insensitive_ex2.png)
 
 #### 1.5 By default, values cannot be longer than 8 characters in length
 
@@ -254,7 +254,7 @@ run;
 
 If you run this new program, you can see that the output cuts the names written in the first column, after the 8th character.
 
-![char_length_values](https://user-images.githubusercontent.com/80749213/112664390-33ab5780-8e5a-11eb-96fd-c55ac50441b1.png)
+![char_length_values](../screenshots/char_length_values.png)
 
 To fix it, we need to tell SAS that we want to increase the length of our values. We will further discuss about the **LENGTH** statement in the next tutorial.
 
@@ -270,7 +270,7 @@ libname thislibnameiswaytoolongtoexist "your/path/to/your/home/directory";
 
 The log window would report this error, specifically. 
 
-![library_name_length](https://user-images.githubusercontent.com/80749213/112665668-9a7d4080-8e5b-11eb-83bd-9e427525b422.png)
+![library_name_length](../screenshots/library_name_length.png)
 
 SAS is telling you the library name **is not a valid SAS name** because **it definitely exceeds the maximum allowed of 8 characters in length**. 
 
