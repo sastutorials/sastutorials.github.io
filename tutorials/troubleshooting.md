@@ -14,15 +14,15 @@ subtitle: Troubleshooting and how to find help.
 
 ## Structure
 
-<a href="#sect1">1. General SAS Syntax rules</a>
-
-<a href="#sect2">2. SAS Official Support</a>
+<a href="#sect1">1. SAS Official Support</a>
 
 <a href="#subsect1"><sub>SAS Studio smart features</sub></a>
 
-<a href="#subsect2"><sub>Where to find official documentation</sub></a>
+<a href="#subsect2"><sub>Log window</sub></a>
 
-<a href="#subsect3"><sub>Log window</sub></a>
+<a href="#subsect3"><sub>Where to find official documentation</sub></a>
+
+<a href="#sect2">2. General SAS Syntax rules</a>
 
 <a href="#sect3">3. Common mistakes and how to solve them</a>
 
@@ -33,7 +33,128 @@ subtitle: Troubleshooting and how to find help.
 
 <a name="sect1"></a>
 
-# 1. General SAS Syntax rules 
+# 1. SAS Official Support
+
+<a name="subsect1"></a>
+
+## SAS Studio smart features
+
+As we had mentioned in the previous tutorial "[Getting Started with SAS and SAS Studio](/tutorials/intro-to-sas.html)", SAS Studio is equipped with **smart features**, like *code completion, formatting and syntax colouring*. Make sure to *exploit these features*, which should already help you out not to make unnecessary mistakes. 
+
+In particular, the **code completion** feature allows you to visualise information on the command quickly and to browse for examples by **directing you to the official SAS documentation**. 
+
+Let's have a look at how this works in particular. 
+
+Let's say you are looking for a command, but not quite remember its exact name. You only now it starts with *se*... 
+
+![syntax_helper](../screenshots/syntax_helper.png)
+
+The **code completion** feature gives you suggestions on the existing commands within the *SAS dictionary*, starting from the letters that you typed inside the program editor. In this case, it is suggesting two possible commands starting with *se*: **select** and **set** statements and it already tells you that these two belong to the group of **DATA Step Statements**. If you hover over either, a new window appears on the right hand side, further detailing functionalities, syntax structure, and other information on that particular command. 
+
+**Scrolling down** in that same window, you are offered links that direct you to the **official documentation** and to examples of uses of that particular command. 
+
+![syntax_helper1](../screenshots/syntax_helper1.png)
+
+ The second smart feature in SAS Studio helps you correctly **format** your code. This is important to help yourself with clearly understanding your code - extremely important when you want to **go back to a program which you haven't opened in a while and want to rememeber quickly what you programmed**. 
+
+ Let's say we have coded this program:
+
+```
+data trial;
+input x y;
+cards;
+10 3.5 
+11 3.6 
+10 43.45
+34 10
+10 230.0
+11 34
+34 45.6
+;
+
+proc print data=trial;
+var x; run; 
+```
+
+It is okay as it is in that sense that, if you run this code, it will create the output correctly and without errors. 
+
+However, If you help yourself with the formatting feature, you are going to be able to read your code more clearly. 
+
+Click on the button highlighted in *yellow* in the image below. **You can see that the position of certain commands has changed.** I have highlighted the changes in *green*. 
+
+![code_formatting](../screenshots/code_formatting.jpg)
+
+SAS Studio does not provide automatic smart features for this, but another two important formatting rules that might help you with clean code writing etiquette, are: 
+
+* **write SAS commands in capital letters**, so you can distinguish them from other text; 
+* **comment about your code**, so when you go back to it you already have information on the functionality of your program before you run it. 
+
+Here is an example of a well-formatted and clean program: 
+
+```
+/* This is one way of adding comments to your SAS program*/
+
+DATA trial;    *This is another way to write a comment; 
+	INPUT x y;
+	CARDS;
+10 3.5 
+11 3.6 
+10 43.45
+34 10
+10 230.0
+11 34
+34 45.6
+;   *Here we have created a small datasets with numeric variables x and y; 
+
+PROC PRINT data=trial;
+	VAR x;
+RUN; *Here we are printing only the x variable from the dataset created above; 
+
+
+*********the program ends here*********; 
+```
+
+Last but not least, the **syntax colouring** feature helps you distinguish between **types of commands**, **variables** and **values**, **special characters** and **other symbols**. I guess you've already noticed that from pasting the previous code in your SAS Studio program. 
+
+Here I have taken a snippet of the previous program, adding a few more lines of code to show you what each colour corresponds to. The more you are going to write in SAS the more you are going to become familiar with this smart feature. 
+
+![code_colouring](../screenshots/code_colouring.png)
+
+<a name="subsect2"></a>
+
+## Log window
+
+Let's explore SAS Studio's **LOG** window, where error messages, warnings and notes are reported for every line of code run in your program. 
+
+
+
+<a name="subsect3"></a>
+
+## Where to find official documentation
+
+At this point, you know that SAS offers its own official documentation, where you can find details about each single command existing in SAS. 
+
+We have already mentioned where to look for help from SAS Studio: either by clicking on the **question mark** (?) on the top bar, or by clicking on **product documentation** from the **code completion** feature of the application. 
+
+The documentation that you have access to from SAS Studio either directs you to the [official SAS Studio Guide](https://documentation.sas.com/?activeCdc=webeditocdc&cdcId=sasstudiocdc&cdcVersion=3.7&docsetId=sasstudioov&docsetTarget=aboutthedoc.htm&locale=en) or to [SAS Product Support A to Z](https://support.sas.com/en/software/all-products-support.html). 
+
+However, these either relate to SAS Studio specifically or start from a very broad range of choices. 
+
+Here is a couple of links more to help you get started. 
+
+* [*This link*](https://go.documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=v_009&docsetId=ledsoptsref&docsetTarget=p1pczmnhbq4axpn1l15s9mk6mobp.htm&locale=en) directs you to the **full dictionary of DATA STEP options**; 
+* [*This link*](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=proc&docsetTarget=titlepage.htm&locale=en) instead directs you to the **full list of PROCEDURES (PROC STEPS)** that you can do on SAS; 
+* [*This link*](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=lefunctionsref&docsetTarget=n01f5qrjoh9h4hn1olbdpb5pr2td.htm&locale=en) directs you to a list of **functions and call routines**, grouped by category of use.
+
+Another useful way to look for help is by accessing [*SAS communities*](https://communities.sas.com/t5/SAS-Analytics-U/bd-p/sas_analytics_u) page, where you can browse for existing questions or ask your own and see what other SAS users have come with up as solution. 
+
+You should also check out [*stack overflow*](https://stackoverflow.com/tags/sas/info), another website used for interacting with other programmers and discuss on code and debugging issues. 
+
+**ANYTHING ELSE TO ADD?**
+
+<a name="sect2"></a>
+
+# 2. General SAS Syntax rules 
 
 Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to **avoid running into simple errors**. 
 
@@ -276,130 +397,16 @@ SAS is telling you the library name **is not a valid SAS name** because **it def
 
 In this case, and contrary to value names, **you cannot change this option**. Every new library name that you will create will have to fit within the maxmimum length allowed of 8 characters. 
 
-<a name="subsect1"></a>
-
-## SAS Studio smart features
-
-As we had mentioned in the previous tutorial "[Getting Started with SAS and SAS Studio](/tutorials/intro-to-sas.html)", SAS Studio is equipped with **smart features**, like *code completion, formatting and syntax colouring*. Make sure to *exploit these features*, which should already help you out not to make unnecessary mistakes. 
-
-In particular, the **code completion** feature allows you to visualise information on the command quickly and to browse for examples by **directing you to the official SAS documentation**. 
-
-Let's have a look at how this works in particular. 
-
-Let's say you are looking for a command, but not quite remember its exact name. You only now it starts with *se*... 
-
-![syntax_helper](../screenshots/syntax_helper.png)
-
-The **code completion** feature gives you suggestions on the existing commands within the *SAS dictionary*, starting from the letters that you typed inside the program editor. In this case, it is suggesting two possible commands starting with *se*: **select** and **set** statements and it already tells you that these two belong to the group of **DATA Step Statements**. If you hover over either, a new window appears on the right hand side, further detailing functionalities, syntax structure, and other information on that particular command. 
-
-**Scrolling down** in that same window, you are offered links that direct you to the **official documentation** and to examples of uses of that particular command. 
-
-![syntax_helper1](../screenshots/syntax_helper1.png)
-
- The second smart feature in SAS Studio helps you correctly **format** your code. This is important to help yourself with clearly understanding your code - extremely important when you want to **go back to a program which you haven't opened in a while and want to rememeber quickly what you programmed**. 
-
- Let's say we have coded this program:
-
-```
-data trial;
-input x y;
-cards;
-10 3.5 
-11 3.6 
-10 43.45
-34 10
-10 230.0
-11 34
-34 45.6
-;
-
-proc print data=trial;
-var x; run; 
-```
-
-It is okay as it is in that sense that, if you run this code, it will create the output correctly and without errors. 
-
-However, If you help yourself with the formatting feature, you are going to be able to read your code more clearly. 
-
-Click on the button highlighted in *yellow* in the image below. **You can see that the position of certain commands has changed.** I have highlighted the changes in *green*. 
-
-![code_formatting](../screenshots/code_formatting.jpg)
-
-SAS Studio does not provide automatic smart features for this, but another two important formatting rules that might help you with clean code writing etiquette, are: 
-
-* **write SAS commands in capital letters**, so you can distinguish them from other text; 
-* **comment about your code**, so when you go back to it you already have information on the functionality of your program before you run it. 
-
-Here is an example of a well-formatted and clean program: 
-
-```
-/* This is one way of adding comments to your SAS program*/
-
-DATA trial;    *This is another way to write a comment; 
-	INPUT x y;
-	CARDS;
-10 3.5 
-11 3.6 
-10 43.45
-34 10
-10 230.0
-11 34
-34 45.6
-;   *Here we have created a small datasets with numeric variables x and y; 
-
-PROC PRINT data=trial;
-	VAR x;
-RUN; *Here we are printing only the x variable from the dataset created above; 
-
-
-*********the program ends here*********; 
-```
-
-Last but not least, the **syntax colouring** feature helps you distinguish between **types of commands**, **variables** and **values**, **special characters** and **other symbols**. I guess you've already noticed that from pasting the previous code in your SAS Studio program. 
-
-Here I have taken a snippet of the previous program, adding a few more lines of code to show you what each colour corresponds to. The more you are going to write in SAS the more you are going to become familiar with this smart feature. 
-
-![code_colouring](../screenshots/code_colouring.png)
-
-<a name="subsect2"></a>
-
-## Where to find official documentation
-
-At this point, you know that SAS offers its own official documentation, where you can find details about each single command existing in SAS. 
-
-We have already mentioned where to look for help from SAS Studio: either by clicking on the **question mark** (?) on the top bar, or by clicking on **product documentation** from the **code completion** feature of the application. 
-
-The documentation that you have access to from SAS Studio either directs you to the [official SAS Studio Guide](https://documentation.sas.com/?activeCdc=webeditocdc&cdcId=sasstudiocdc&cdcVersion=3.7&docsetId=sasstudioov&docsetTarget=aboutthedoc.htm&locale=en) or to [SAS Product Support A to Z](https://support.sas.com/en/software/all-products-support.html). 
-
-However, these either relate to SAS Studio specifically or start from a very broad range of choices. 
-
-Here is a couple of links more to help you get started. 
-
-* [*This link*](https://go.documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=v_009&docsetId=ledsoptsref&docsetTarget=p1pczmnhbq4axpn1l15s9mk6mobp.htm&locale=en) directs you to the **full dictionary of DATA STEP options**; 
-* [*This link*](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=proc&docsetTarget=titlepage.htm&locale=en) instead directs you to the **full list of PROCEDURES (PROC STEPS)** that you can do on SAS; 
-* [*This link*](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=lefunctionsref&docsetTarget=n01f5qrjoh9h4hn1olbdpb5pr2td.htm&locale=en) directs you to a list of **functions and call routines**, grouped by category of use.
-
-Another useful way to look for help is by accessing [*SAS communities*](https://communities.sas.com/t5/SAS-Analytics-U/bd-p/sas_analytics_u) page, where you can browse for existing questions or ask your own and see what other SAS users have come with up as solution. 
-
-You should also check out [stack overflow](https://stackoverflow.com/tags/sas/info), another website used for interacting with other programmers and discuss on code and debugging issues. 
-
-**ANYTHING ELSE TO ADD?**
-
-<a name="subsect3"></a>
-
-## Log window
-
-
-<a name="sect5"></a>
+<a name="sect3"></a>
 
 # 3. Common mistakes and how to solve them 
 
 
-<a name="sect6"></a>
+<a name="sect4"></a>
 
 # 4. Try it yourself: fix the errors from a SAS program
 
 
-<a name="sect7"></a>
+<a name="sect5"></a>
 
 # 5. Resources
