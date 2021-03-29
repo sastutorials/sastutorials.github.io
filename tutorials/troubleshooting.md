@@ -20,7 +20,7 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#subsect1"><sub>SAS Studio smart features</sub></a>
 
-<a href="#subsect2"><sub>Where to find official documentation and how to browse it</sub></a>
+<a href="#subsect2"><sub>Where to find official documentation</sub></a>
 
 <a href="#subsect3"><sub>Log window</sub></a>
 
@@ -328,7 +328,7 @@ Click on the button highlighted in *yellow* in the image below. **You can see th
 SAS Studio does not provide automatic smart features for this, but another two important formatting rules that might help you with clean code writing etiquette, are: 
 
 * **write SAS commands in capital letters**, so you can distinguish them from other text; 
-* **comment your code**, so when you go back to it you already have information on the functionality of your program before you run it. 
+* **comment about your code**, so when you go back to it you already have information on the functionality of your program before you run it. 
 
 Here is an example of a well-formatted and clean program: 
 
@@ -363,8 +363,21 @@ Here I have taken a snippet of the previous program, adding a few more lines of 
 
 <a name="subsect2"></a>
 
-## Where to find official documentation and how to browse it
+## Where to find official documentation
 
+At this point, you know that SAS offers its own official documentation, where you can find details about each single command existing in SAS. 
+
+We have already mentioned where to look for help from SAS Studio: either by clicking on the **question mark** (?) on the top bar, or by clicking on **product documentation** from the **code completion** feature of the application. 
+
+The documentation that you have access to from SAS Studio either directs you to the [official SAS Studio Guide](https://documentation.sas.com/?activeCdc=webeditorcdc&cdcId=sasstudiocdc&cdcVersion=3.7&docsetId=sasstudioov&docsetTarget=aboutthedoc.htm&locale=en) or to [SAS Product Support A to Z](https://support.sas.com/en/software/all-products-support.html). 
+
+However, these either relate to SAS Studio specifically or start from a very broad range of choices. 
+
+Here is a couple of links more to help you get started. 
+
+* [This link](https://go.documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=v_009&docsetId=ledsoptsref&docsetTarget=p1pczmnhbq4axpn1l15s9mk6mobp.htm&locale=en) directs you to the **full dictionary of DATA STEP options**; 
+* [This link](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=proc&docsetTarget=titlepage.htm&locale=en) instead directs you to the **full list of PROCEDURES (PROC STEPS)** that you can do on SAS; 
+* [This link](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=lefunctionsref&docsetTarget=n01f5qrjoh9h4hn1olbdpb5pr2td.htm&locale=en) directs you to a list of **functions and call routines**, grouped by category of use.
 
 <a name="subsect3"></a>
 
