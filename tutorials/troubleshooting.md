@@ -461,6 +461,64 @@ Something odd happens when you look in the *results* window. You would expect ea
 
 ![error_run_statement](../screenshots/error_run_statement.png)
 
+**Be careful** with these types of mistakes, because they **won't show in the log window**. SAS will interpret them as correct, if you don't specify differently. 
+
+To fix this issue, we need to add a few more of the **RUN** statements. You can see the added ones in capital letters (I have also *formatted* the code so you can see it better): 
+
+```
+data data1;
+	input x y;
+	cards;
+1 2 
+2 3
+3 4
+;
+RUN;
+
+data data2;
+	input x y;
+	cards;
+1 2 
+2 3 
+2 3
+3 4 
+4 4
+;
+RUN;
+
+data data3;
+	input x y;
+	cards;
+1 2 
+2 3
+3 4 
+2 3
+4 5
+;
+RUN;
+
+title 'data 1';
+
+proc print data=data1;
+RUN;
+
+title 'data 2';
+
+proc print data=data2;
+RUN;
+
+title 'data 3';
+
+proc print data=data3;
+run;
+```
+
+The **RUN statements** underneath each of the three datasets are *not fundamental* for this particular issue, but it is good practice to **add a RUN statement after each piece of separate code you write, to make sure it executes correctly**.
+
+If we look at the *results window* now, you can see that the output is printed as we had aimed: each dataset has its corresponding title above it.
+
+![correct_run_statement](../screenshots/correct_run_statement.png)
+
 <a name="sect3"></a>
 
 # 3. Common mistakes and how to solve them 
