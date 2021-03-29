@@ -16,9 +16,11 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#sect1">1. General SAS Syntax rules</a>
 
-<a href="#sect2">2. SAS Studio syntax helper</a>
+<a href="#sect2">2. SAS Official Support</a>
 
-<a href="#sect3">3. Where to find official documentation and how to browse it</a>
+<a href="#subsect1"><sub>SAS Studio syntax helper</sub></a>
+
+<a href="#subsect3">3. Where to find official documentation and how to browse it</a>
 
 <a href="#sect4">4. Log window</a>
 
