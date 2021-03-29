@@ -1,12 +1,7 @@
 img {
-            width: 50%;
-            height: 40%;
+            width: 60%;
+            height: 50%;
 }
-.correction{
-        width: 350;
-        height: 500;
-        
-      }
 * {
   box-sizing: border-box;
 }
