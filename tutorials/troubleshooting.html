@@ -1,17 +1,14 @@
 ---
 layout: default
-author: Anna
 title: Intro to SAS pt. II
 subtitle: Troubleshooting and how to find help.
 ---
 
 <!DOCTYPE html>
-    <html lang="en-GB">
+    <html>
+
     <body class="vscode-body vscode-light">
-<hr>
-<br>
-<br>
-<br>
+        <hr>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
 <li>
@@ -25,12 +22,267 @@ subtitle: Troubleshooting and how to find help.
 </li>
 </ul>
 <h2 id="structure">Structure</h2>
-<p><a href="#sect1">1. General SAS Syntax rules</a>
-<a href="#sect1">2. SAS Studio syntax helper</a>
-<a href="#sect1">3. Where to find official documentation and how to browse it</a>
-<a href="#sect1">4. Log windows</a>
-<a href="#sect1">5. Common mistakes</a></p>
-<hr>
+<p><a href="#sect1">1. General SAS Syntax rules</a></p>
+<p><a href="#sect2">2. SAS Official Support</a></p>
+<p><a href="#subsect1"><sub>SAS Studio smart features</sub></a></p>
+<p><a href="#subsect2"><sub>Where to find official documentation</sub></a></p>
+<p><a href="#subsect3"><sub>Log window</sub></a></p>
+<p><a href="#sect3">3. Common mistakes and how to solve them</a></p>
+<p><a href="#sect4">4. Try it yourself: fix the errors from a SAS program</a></p>
+<p><a href="#sect5">5. Resources</a></p>
+<p><a name="sect1"></a></p>
+<h1 id="1-general-sas-syntax-rules">1. General SAS Syntax rules</h1>
+<p>Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to <strong>avoid running into simple errors</strong>.</p>
+<p>At the moment, don't worry about the logic behind the code and syntax, as you will learn about them in the next tutorials. What matters now is the naming of your dataset and comparing when it works and when it does not.</p>
+<h4 id="11-every-line-of-code-in-sas-must-end-with-a-semi-colon-">1.1 Every line of code in SAS <strong>MUST</strong> end with a <strong>semi-colon</strong> (;)</h4>
+<p>If you run the following program, by either pressing on the <em>running figure</em> button or by clicking on <strong>F3</strong> key in your keyboard, you will see an error popping up.</p>
+<pre><code><code><div>data trial      
+input x y;
+cards;
+1 2
+;
+run;
+</div></code></code></pre>
+<p>The error says:</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\no_semi_colon_error.png" alt="no_semi_colon_error"></p>
+<p>The table you tried to create did not succeed because of a missing semi-colon in the first line of code.</p>
+<p>If you add it, it will now work and create a new dataset called &quot;trial&quot;.</p>
+<pre><code><code><div>data trial;     
+input x y;
+cards;
+1 2
+;
+run;
+</div></code></code></pre>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\output_correct.png" alt="output_correct"></p>
+<h4 id="12-names-for-datasets-must-start-with-a-character-or-underscore-and-cannot-exceed-32-character-in-length-by-default-if-you-place-a-special-character-or-a-number-you-will-run-into-error">1.2 Names for datasets <strong>must</strong> start with a <strong>character</strong> or <strong>underscore</strong> and cannot exceed 32-character in length (by default). If you place a <strong>special character or a number</strong> you will run into error.</h4>
+<p>Open SAS Studio and write this simple code, to get an idea of the output when your write a dataset name <em>correctly</em>.</p>
+<pre><code><code><div>/* correct: name your dataset with character or underscore at the
+beginning */
+
+data trial;
+input x y;
+cards;
+1 2
+;
+run;
+
+data _trial;
+input x y;
+cards;
+1 2 
+;
+run;
+
+</div></code></code></pre>
+<p>You can see that the program does produce two outputs (<em>SAS datasets</em>) - <em>trial</em> and <em>_trial</em> - with the variables x and y displayed on a <em>new tab</em> called <em>output data</em>. Here is what one of them looks like (the result is the same):</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\output_correct1.png" alt="output_correct1"></p>
+<p>If, instead, you paste the following in your editor and <em>run the program</em>:</p>
+<pre><code><code><div>/* wrong: dataset name starts with numbers or special characters */ 
+
+data 1trial;
+input x y;
+cards;
+1 2
+;
+run;
+
+data %trial;
+input x y;
+cards;
+1 2 
+;
+run;
+</div></code></code></pre>
+<p>You can see that the tab <em>output data</em> <strong>does not show this time</strong>. Instead, an <strong>X</strong> appears near the <em>name of the program</em> and you are automatically directed to the <strong>log</strong> window.</p>
+<p>In this example, you can see that there are <em>4 errors</em> and <em>5 warnings</em> (notes are usually always there). If you click on either menu you can read the specific message(es).</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\error_dataset_name.png" alt="error_dataset_name"></p>
+<h4 id="13-blank-spaces-automatically-define-two-separate-entities">1.3 Blank spaces automatically define two separate entities</h4>
+<p>Let's see an example of this. Let's say you want to create two columns named <em>id employees</em> and <em>age</em>.</p>
+<p>Paste the following in SAS Studio:</p>
+<pre><code><code><div>/* naming two columns as
+- id employees 
+- age
+*/ 
+
+data trial; 
+input id employees age; 
+cards; 
+1 23
+2 45
+3 23
+4 48
+5 30
+; 
+run; 
+</div></code></code></pre>
+<p>If you run the program with the code written above, you are going to see the output is <em>not quite what we had in mind</em>.</p>
+<p>What happened? The space between the words <em>id</em> and <em>employees</em> treats them as <strong>two separate variables</strong>, instead of one! Since underneath the variables names there is a list of values also separated by one blank space, which defines them as two separate columns, the variable <strong>age</strong> does not even appear and is, instead, substituted by the word <strong>employees</strong>, which appears first.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\blank_spaces.png" alt="blank_spaces"></p>
+<p>SAS indeed does <strong>identify blank spaces as separators between different variables and values</strong>.</p>
+<p><em>Here is the trick</em>. If you wanted to keep <em>id employees</em> as one variable, you could either substitue the space with a special character (convenience is to use an underscore), like this:</p>
+<pre><code><code><div>data trial; 
+input id_employees age; 
+cards; 
+1 23
+2 45
+3 23
+4 48
+5 30
+; 
+run; 
+</div></code></code></pre>
+<p>Or if you wanted to <strong>preserve the blank</strong>, you should <strong>wrap</strong> the variable name within quotes and the letter <code>n</code> at the end of the string. The letter <code>n</code> is used in SAS syntax to highlight that the content inside the quotes is a whole character string.</p>
+<pre><code><code><div>data trial; 
+input &quot;id employees&quot;n age; 
+cards; 
+1 23
+2 45
+3 23
+4 48
+5 30
+; 
+run; 
+</div></code></code></pre>
+<p>If you run the program now, you will see that the output is <strong>finally what we had expected</strong>. The first variable is, in fact, called <em>id employees</em> and the second one is called <em>age</em>.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\correct_dataset_name.png" alt="correct_dataset_name"></p>
+<h4 id="14-sas-code-is-case-in-sensitive">1.4 SAS code is CASE IN-sensitive</h4>
+<p>This means that you could be writing your statements, functions, variable and value names either of these ways:</p>
+<pre><code><code><div>DATA
+
+data 
+
+DaTa 
+
+</div></code></code></pre>
+<p><em>SAS does not care about the case.</em></p>
+<p>However, <strong>remember</strong> that SAS <strong>does remember the case of the first occurrence of each variable name in the program, and will print it the same also for the following occurrences</strong>.</p>
+<p>Have a look at the results from running the following code:</p>
+<pre><code><code><div>data trial; 
+input &quot;id employees&quot;n age; 
+cards; 
+1 23 
+2 23
+3 40
+4 50
+; 
+run; 
+
+proc print data=work.trial; 
+var &quot;id EMpLoYEEs&quot;n; 
+run;
+</div></code></code></pre>
+<p>As you can see, the <strong>data step</strong> has the variable <em>id employees</em> written entirely in lower case. In the <strong>proc step</strong>, instead, is a mix of lower and upper case - a mess. If you check the <em>results</em> window, however, you can see that SAS will print the case from the first occurrence of the variable name, which is lower case in this example.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\case_insensitive_ex.png" alt="case_insensitive_ex"></p>
+<p>You can try and revert the order of occurrence of the two variables, to see that the output does change according to the new first occurrence.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\case_insensitive_ex2.png" alt="case_insensitive_ex2"></p>
+<h4 id="15-by-default-values-cannot-be-longer-than-8-characters-in-length">1.5 By default, values cannot be longer than 8 characters in length</h4>
+<p>Let's use a new example, taking into consideration character strings as values.</p>
+<pre><code><code><div>data trial; 
+input name $ age; 
+cards; 
+Anna 23
+Johnathan-Smith 40
+Rodolphus 34 
+Mattie 32
+Mary 26 
+; 
+run; 
+
+</div></code></code></pre>
+<p>If you run this new program, you can see that the output cuts the names written in the first column, after the 8th character.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\char_length_values.png" alt="char_length_values"></p>
+<p>To fix it, we need to tell SAS that we want to increase the length of our values. We will further discuss about the <strong>LENGTH</strong> statement in the next tutorial.</p>
+<p><strong>REMEMBER</strong> that there is a maximum character length allowed, and that is of <strong>32767</strong> characters. That should be enough!</p>
+<h4 id="15-library-names-cannot-exceed-8-characters-in-length">1.5 Library names cannot exceed 8 characters in length</h4>
+<p>If we tried to absurdly write a very long library name (<strong>remember to write your own path to your home directory</strong>), it would result in error.</p>
+<pre><code><code><div>libname thislibnameiswaytoolongtoexist &quot;your/path/to/your/home/directory&quot;;
+</div></code></code></pre>
+<p>The log window would report this error, specifically.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\library_name_length.png" alt="library_name_length"></p>
+<p>SAS is telling you the library name <strong>is not a valid SAS name</strong> because <strong>it definitely exceeds the maximum allowed of 8 characters in length</strong>.</p>
+<p>In this case, and contrary to value names, <strong>you cannot change this option</strong>. Every new library name that you will create will have to fit within the maxmimum length allowed of 8 characters.</p>
+<p><a name="subsect1"></a></p>
+<h2 id="sas-studio-smart-features">SAS Studio smart features</h2>
+<p>As we had mentioned in the previous tutorial &quot;<a href="/tutorials/intro-to-sas.html">Getting Started with SAS and SAS Studio</a>&quot;, SAS Studio is equipped with <strong>smart features</strong>, like <em>code completion, formatting and syntax colouring</em>. Make sure to <em>exploit these features</em>, which should already help you out not to make unnecessary mistakes.</p>
+<p>In particular, the <strong>code completion</strong> feature allows you to visualise information on the command quickly and to browse for examples by <strong>directing you to the official SAS documentation</strong>.</p>
+<p>Let's have a look at how this works in particular.</p>
+<p>Let's say you are looking for a command, but not quite remember its exact name. You only now it starts with <em>se</em>...</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\syntax_helper.png" alt="syntax_helper"></p>
+<p>The <strong>code completion</strong> feature gives you suggestions on the existing commands within the <em>SAS dictionary</em>, starting from the letters that you typed inside the program editor. In this case, it is suggesting two possible commands starting with <em>se</em>: <strong>select</strong> and <strong>set</strong> statements and it already tells you that these two belong to the group of <strong>DATA Step Statements</strong>. If you hover over either, a new window appears on the right hand side, further detailing functionalities, syntax structure, and other information on that particular command.</p>
+<p><strong>Scrolling down</strong> in that same window, you are offered links that direct you to the <strong>official documentation</strong> and to examples of uses of that particular command.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\syntax_helper1.png" alt="syntax_helper1"></p>
+<p>The second smart feature in SAS Studio helps you correctly <strong>format</strong> your code. This is important to help yourself with clearly understanding your code - extremely important when you want to <strong>go back to a program which you haven't opened in a while and want to rememeber quickly what you programmed</strong>.</p>
+<p>Let's say we have coded this program:</p>
+<pre><code><code><div>data trial;
+input x y;
+cards;
+10 3.5 
+11 3.6 
+10 43.45
+34 10
+10 230.0
+11 34
+34 45.6
+;
+
+proc print data=trial;
+var x; run; 
+</div></code></code></pre>
+<p>It is okay as it is in that sense that, if you run this code, it will create the output correctly and without errors.</p>
+<p>However, If you help yourself with the formatting feature, you are going to be able to read your code more clearly.</p>
+<p>Click on the button highlighted in <em>yellow</em> in the image below. <strong>You can see that the position of certain commands has changed.</strong> I have highlighted the changes in <em>green</em>.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\code_formatting.jpg" alt="code_formatting"></p>
+<p>SAS Studio does not provide automatic smart features for this, but another two important formatting rules that might help you with clean code writing etiquette, are:</p>
+<ul>
+<li><strong>write SAS commands in capital letters</strong>, so you can distinguish them from other text;</li>
+<li><strong>comment about your code</strong>, so when you go back to it you already have information on the functionality of your program before you run it.</li>
+</ul>
+<p>Here is an example of a well-formatted and clean program:</p>
+<pre><code><code><div>/* This is one way of adding comments to your SAS program*/
+
+DATA trial;    *This is another way to write a comment; 
+	INPUT x y;
+	CARDS;
+10 3.5 
+11 3.6 
+10 43.45
+34 10
+10 230.0
+11 34
+34 45.6
+;   *Here we have created a small datasets with numeric variables x and y; 
+
+PROC PRINT data=trial;
+	VAR x;
+RUN; *Here we are printing only the x variable from the dataset created above; 
+
+
+*********the program ends here*********; 
+</div></code></code></pre>
+<p>Last but not least, the <strong>syntax colouring</strong> feature helps you distinguish between <strong>types of commands</strong>, <strong>variables</strong> and <strong>values</strong>, <strong>special characters</strong> and <strong>other symbols</strong>. I guess you've already noticed that from pasting the previous code in your SAS Studio program.</p>
+<p>Here I have taken a snippet of the previous program, adding a few more lines of code to show you what each colour corresponds to. The more you are going to write in SAS the more you are going to become familiar with this smart feature.</p>
+<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\code_colouring.png" alt="code_colouring"></p>
+<p><a name="subsect2"></a></p>
+<h2 id="where-to-find-official-documentation">Where to find official documentation</h2>
+<p>At this point, you know that SAS offers its own official documentation, where you can find details about each single command existing in SAS.</p>
+<p>We have already mentioned where to look for help from SAS Studio: either by clicking on the <strong>question mark</strong> (?) on the top bar, or by clicking on <strong>product documentation</strong> from the <strong>code completion</strong> feature of the application.</p>
+<p>The documentation that you have access to from SAS Studio either directs you to the <a href="https://documentation.sas.com/?activeCdc=webeditorcdc&amp;cdcId=sasstudiocdc&amp;cdcVersion=3.7&amp;docsetId=sasstudioov&amp;docsetTarget=aboutthedoc.htm&amp;locale=en">official SAS Studio Guide</a> or to <a href="https://support.sas.com/en/software/all-products-support.html">SAS Product Support A to Z</a>.</p>
+<p>However, these either relate to SAS Studio specifically or start from a very broad range of choices.</p>
+<p>Here is a couple of links more to help you get started.</p>
+<ul>
+<li><a href="https://go.documentation.sas.com/?cdcId=pgmsascdc&amp;cdcVersion=v_009&amp;docsetId=ledsoptsref&amp;docsetTarget=p1pczmnhbq4axpn1l15s9mk6mobp.htm&amp;locale=en"><em>This link</em></a> directs you to the <strong>full dictionary of DATA STEP options</strong>;</li>
+<li><a href="https://documentation.sas.com/?cdcId=pgmsascdc&amp;cdcVersion=9.4_3.5&amp;docsetId=proc&amp;docsetTarget=titlepage.htm&amp;locale=en"><em>This link</em></a> instead directs you to the <strong>full list of PROCEDURES (PROC STEPS)</strong> that you can do on SAS;</li>
+<li><a href="https://documentation.sas.com/?cdcId=pgmsascdc&amp;cdcVersion=9.4_3.5&amp;docsetId=lefunctionsref&amp;docsetTarget=n01f5qrjoh9h4hn1olbdpb5pr2td.htm&amp;locale=en"><em>This link</em></a> directs you to a list of <strong>functions and call routines</strong>, grouped by category of use.</li>
+</ul>
+<p><a name="subsect3"></a></p>
+<h2 id="log-window">Log window</h2>
+<p><a name="sect5"></a></p>
+<h1 id="3-common-mistakes-and-how-to-solve-them">3. Common mistakes and how to solve them</h1>
+<p><a name="sect6"></a></p>
+<h1 id="4-try-it-yourself-fix-the-errors-from-a-sas-program">4. Try it yourself: fix the errors from a SAS program</h1>
+<p><a name="sect7"></a></p>
+<h1 id="5-resources">5. Resources</h1>
 
     </body>
     </html>
