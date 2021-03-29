@@ -252,7 +252,7 @@ On the left hand side, you'll see different tabs that you can click on.
 
 * The **Server Files and Folders** tab shows you your "home directory" where you can create new folders where to store data you imported and programs you created. These are permanent and you can move them or delete them as you please. 
 
-![tab1_studio](https://user-images.githubusercontent.com/80749213/112123145-48b98980-8bc1-11eb-8252-f0b2d0469492.PNG)
+![tab1_studio](https://user-images.githubusercontent.com/80749213/112806060-aa24a100-9076-11eb-8b53-c84d6027551e.PNG)
 
 * The **Tasks and Utilities** tab shows you all the built-in features for data analytics, visualisation, statistical testing, etc. You can also add your own and these are going to be stored in the **My Tasks** folder (the first one at the top). 
 
