@@ -529,7 +529,7 @@ If we look at the *results window* now, you can see that the output is printed a
 
 # 4. Try it yourself: fix the errors from a SAS program
 
-Download [*this SAS exercise*](/exercises/02_troubleshooting/SAS_tutorial2_exercise.sas) and upload it on your SAS Studio to do the exercise.
+Download [*this SAS program*](/exercises/02_troubleshooting/SAS_tutorial2_exercise.sas) and upload it on your SAS Studio to do the exercise.
 
 Apply the knowledge acquired from this tutorial to fix the errors resulting from this messy SAS program. 
 
