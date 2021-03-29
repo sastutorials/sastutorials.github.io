@@ -45,8 +45,8 @@ If you run the following program, by either pressing on the *running figure* but
 
 ```
 data trial      
-	input x y;
-	cards;
+input x y;
+cards;
 1 2
 ;
 run;
@@ -62,14 +62,14 @@ If you add it, it will now work and create a new dataset called "trial".
 
 ```
 data trial;     
-	input x y;
-	cards;
+input x y;
+cards;
 1 2
 ;
 run;
 ```
 
-![output_correct](https://user-images.githubusercontent.com/80749213/112655495-baf3cd80-8e50-11eb-96d9-2222615f1e3c.png)
+![output_correct](../screenshots/output_correct.png)
 
 
 #### 1.2 Names for datasets **must** start with a **character** or **underscore** and cannot exceed 32-character in length (by default). If you place a **special character or a number** you will run into error. 
@@ -81,15 +81,15 @@ Open SAS Studio and write this simple code, to get an idea of the output when yo
 beginning */
 
 data _trial;
-	input x y;
-	cards;
+input x y;
+cards;
 1 2 
 ;
 run;
 
 data trial;
-	input x y;
-	cards;
+input x y;
+cards;
 1 2
 ;
 run;
@@ -105,15 +105,15 @@ If, instead, you paste the following in your editor and *run the program*:
 /* wrong: dataset name starts with numbers or special characters */ 
 
 data 1trial;
-	input x y;
-	cards;
+input x y;
+cards;
 1 2
 ;
 run;
 
 data %trial;
-	input x y;
-	cards;
+input x y;
+cards;
 1 2 
 ;
 run;
