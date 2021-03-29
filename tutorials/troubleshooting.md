@@ -256,7 +256,7 @@ If you run this new program, you can see that the output cuts the names written 
 
 ![char_length_values](https://user-images.githubusercontent.com/80749213/112664390-33ab5780-8e5a-11eb-96fd-c55ac50441b1.png)
 
-To fix it, we need to tell SAS that we want to increase the length of our values. **WE WILL TALK ABOUT THIS IN THE NEXT TUTORIAL?????**
+To fix it, we need to tell SAS that we want to increase the length of our values. We will further discuss about the **LENGTH** statement in the next tutorial.
 
 **REMEMBER** that there is a maximum character length allowed, and that is of **32767** characters. That should be enough! 
 
