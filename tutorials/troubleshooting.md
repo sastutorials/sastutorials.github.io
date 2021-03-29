@@ -124,9 +124,7 @@ Here I have taken a snippet of the previous program, adding a few more lines of 
 
 Let's explore SAS Studio's **LOG** window, where error messages, warnings and notes are reported for every line of code run in your program. 
 
-Let's first explore the window and its components. 
-
-![error_dataset_name](../screenshots/error_dataset_name.png)
+![log_window](../screenshots/log_window.png)
 
 
 
