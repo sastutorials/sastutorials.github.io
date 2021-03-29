@@ -411,7 +411,55 @@ The log window would report this error, specifically.
 
 SAS is telling you the library name **is not a valid SAS name** because **it definitely exceeds the maximum allowed of 8 characters in length**. 
 
-In this case, and contrary to value names, **you cannot change this option**. Every new library name that you will create will have to fit within the maxmimum length allowed of 8 characters. 
+In this case, and contrary to value names, **you cannot change this option**. Every new library name that you will create will have to fit within the maxmimum length allowed of 8 characters.
+
+#### 1.6 Add RUN (global statement) at the end of your code
+
+The RUN statement is part of the group of **global statements**, meaning they can be found anywhere in the program and outside of either **DATA** or **PROC** steps. This statement is powerful because it will section your program into **parts of code to execute** and will **clearly identify the right order in which to submit code**.
+
+To understand this better, let's make an example. Paste the following into your SAS Studio program. The aim of this code is to create three different datasets (with quite similar values) and print them out with three different titles.
+
+```
+data data1; 
+input x y ; 
+cards; 
+1 2 
+2 3
+3 4
+; 
+
+data data2; 
+input x y; 
+cards; 
+1 2 
+2 3 
+2 3
+3 4 
+4 4
+; 
+
+data data3; 
+input x y; 
+cards; 
+1 2 
+2 3
+3 4 
+2 3
+4 5
+;
+
+title 'data 1';
+proc print data = data1;
+title 'data 2';
+proc print data = data2;
+title 'data 3';
+proc print data = data3;
+run;
+```
+
+Something odd happens when you look in the *results* window. You would expect each title to match the relative data. Instead, it looks like the second and third title have overwritten those for the first and second datasets... 
+
+![error_run_statement](../screenshots/error_run_statement.png)
 
 <a name="sect3"></a>
 
