@@ -515,7 +515,7 @@ run;
 
 The **RUN statements** underneath each of the three datasets are *not fundamental* for this particular issue, but it is good practice to **add a RUN statement after each piece of separate code you write, to make sure it executes correctly**.
 
-If we look at the *results window* now, you can see that the output is printed as we had aimed: each dataset has its corresponding title above it.
+If we look at the *results window* now, you can see that the output is printed as we had aimed: each dataset has its corresponding title on top of it.
 
 ![correct_run_statement](../screenshots/correct_run_statement.png)
 
@@ -524,10 +524,16 @@ If we look at the *results window* now, you can see that the output is printed a
 # 3. Common mistakes and how to solve them 
 
 
+
 <a name="sect4"></a>
 
 # 4. Try it yourself: fix the errors from a SAS program
 
+Download [*this exercise*](/exercises/02_troubleshooting/SAS_tutorial2_exercise.sas) and upload it on your SAS Studio to do the exercise.
+
+Apply the knowledge acquired from this tutorial to fix the errors resulting from this messy SAS program. 
+
+Once you've done the exercise **by yourself** you can check the solution inside this other [*SAS program*](/exercises/02_troubleshooting/SAS_tutorial2_solution.sas).
 
 <a name="sect5"></a>
 
