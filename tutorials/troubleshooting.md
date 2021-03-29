@@ -18,7 +18,7 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#sect2">2. SAS Official Support</a>
 
-<a href="#subsect1"><sub>SAS Studio syntax helper</sub></a>
+<a href="#subsect1"><sub>SAS Studio smart features</sub></a>
 
 <a href="#subsect2"><sub>Where to find official documentation and how to browse it</sub></a>
 
@@ -278,11 +278,11 @@ In this case, and contrary to value names, **you cannot change this option**. Ev
 
 <a name="subsect1"></a>
 
-## SAS Studio syntax helper
+## SAS Studio smart features
 
-As we had mentioned in the previous tutorial "[Getting Started with SAS and SAS Studio](/tutorials/intro-to-sas.html)", SAS Studio equipped with **smart features**, like code completion, formatting and syntax coloring. Make sure to *exploit these features*, which should already help you out not to make unnecessary mistakes. 
+As we had mentioned in the previous tutorial "[Getting Started with SAS and SAS Studio](/tutorials/intro-to-sas.html)", SAS Studio is equipped with **smart features**, like *code completion, formatting and syntax colouring*. Make sure to *exploit these features*, which should already help you out not to make unnecessary mistakes. 
 
-In particular, the syntax helper allows you to visualise information on the command quickly and allows you to browse for examples and formatting by **directing to the official SAS documentation** page. 
+In particular, the **code completion** feature allows you to visualise information on the command quickly and to browse for examples by **directing you to the official SAS documentation**. 
 
 Let's have a look at how this works in particular. 
 
@@ -290,13 +290,76 @@ Let's say you are looking for a command, but not quite remember its exact name. 
 
 ![syntax_helper](../screenshots/syntax_helper.png)
 
-The **syntax helper** gives you suggestions on the possible commands from the letters that you typed insed the program editor. In this case, it is suggesting two possible commands starting with *se*: select and set. It already tells you that these two belong to the class of **DATA Step Statements**. If you hover over either, a new window appears on the right hand side, further detailing functionalities, syntax structure, and other information on that particular command. 
-
-![syntax_helper1](../screenshots/syntax_helper1.png)
+The **code completion** feature gives you suggestions on the existing commands within the *SAS dictionary*, starting from the letters that you typed inside the program editor. In this case, it is suggesting two possible commands starting with *se*: **select** and **set** statements and it already tells you that these two belong to the group of **DATA Step Statements**. If you hover over either, a new window appears on the right hand side, further detailing functionalities, syntax structure, and other information on that particular command. 
 
 **Scrolling down** in that same window, you are offered links that direct you to the **official documentation** and to examples of uses of that particular command. 
 
-An extremely useful feature! 
+![syntax_helper1](../screenshots/syntax_helper1.png)
+
+ The second smart feature in SAS Studio helps you correctly **format** your code. This is important to help yourself with clearly understanding your code - extremely important when you want to **go back to a program which you haven't opened in a while and want to rememeber quickly what you programmed**. 
+
+ Let's say we have coded this program:
+
+```
+data trial;
+input x y;
+cards;
+10 3.5 
+11 3.6 
+10 43.45
+34 10
+10 230.0
+11 34
+34 45.6
+;
+
+proc print data=trial;
+var x; run; 
+```
+
+It is okay as it is in that sense that, if you run this code, it will create the output correctly and without errors. 
+
+However, If you help yourself with the formatting feature, you are going to be able to read your code more clearly. 
+
+Click on the button highlighted in *yellow* in the image below. **You can see that the position of certain commands has changed.** I have highlighted the changes in *green*. 
+
+![code_formatting](../screenshots/code_formatting.jpg)
+
+SAS Studio does not provide automatic smart features for this, but another two important formatting rules that might help you with clean code writing etiquette, are: 
+
+* **write SAS commands in capital letters**, so you can distinguish them from other text; 
+* **comment your code**, so when you go back to it you already have information on the functionality of your program before you run it. 
+
+Here is an example of a well-formatted and clean program: 
+
+```
+/* This is one way of adding comments to your SAS program*/
+
+DATA trial;    *This is another way to write a comment; 
+	INPUT x y;
+	CARDS;
+10 3.5 
+11 3.6 
+10 43.45
+34 10
+10 230.0
+11 34
+34 45.6
+;   *Here we have created a small datasets with numeric variables x and y; 
+
+PROC PRINT data=trial;
+	VAR x;
+RUN; *Here we are printing only the x variable from the dataset created above; 
+
+
+*********the program ends here*********; 
+```
+
+Last but not least, the **syntax colouring** feature helps you distinguish between **types of commands**, **variables** and **values**, **special characters** and **other symbols**. I guess you've already noticed that from pasting the previous code in your SAS Studio program. 
+
+Here I have taken a snippet of the previous program, adding a few more lines of code to show you what each colour corresponds to. The more you are going to write in SAS the more you are going to become familiar with this smart feature. 
+
+![code_colouring](../screenshots/code_colouring.png)
 
 <a name="subsect2"></a>
 
