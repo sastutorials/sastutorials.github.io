@@ -126,7 +126,21 @@ Let's explore SAS Studio's **LOG** window, where error messages, warnings and no
 
 ![log_window](../screenshots/log_window.png)
 
+The image above summarises each section of the window. 
 
+* The **top panel** describes the summary for the tree types of messages in the log: errors, warnings and notes; 
+* The **bottom panel** shows in detail where the messages refer to in the code; 
+* When an error occurs, the **red X inside the circle** appears near the program name. When a warning occurs, the **yellow exclamation mark inside the triangle** appears, instead. 
+
+**Notes** are always present, as they indicate general details on the code run, independently on whether there is an error or not. 
+
+Here is an example of a log window showing the notes *from a program that ran correctly*. Usually, **information on the dataset** created, as well as **time and memory needed** to execute the code, is displayed in the notes. 
+
+![log_notes](../screenshots/log_notes.png)
+
+On the top of the log window, there are features which you might find useful if you want to preserve the content of a specific log, perhaps if you wish to consult it in the future. 
+
+![log_top_tab](../screenshots/log_top_tab.png)
 
 <a name="subsect3"></a>
 
