@@ -20,15 +20,15 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#subsect1"><sub>SAS Studio syntax helper</sub></a>
 
-<a href="#subsect3">3. Where to find official documentation and how to browse it</a>
+<a href="#subsect2"><sub>Where to find official documentation and how to browse it</sub></a>
 
-<a href="#sect4">4. Log window</a>
+<a href="#subsect3"><sub>Log window</sub></a>
 
-<a href="#sect5">5. Common mistakes and how to solve them</a>
+<a href="#sect3">3. Common mistakes and how to solve them</a>
 
-<a href="#sect6">6. Try it yourself: fix the errors from a SAS program</a>
+<a href="#sect4">4. Try it yourself: fix the errors from a SAS program</a>
 
-<a href="#sect7">7. Resources</a>
+<a href="#sect5">5. Resources</a>
 
 
 <a name="sect1"></a>
