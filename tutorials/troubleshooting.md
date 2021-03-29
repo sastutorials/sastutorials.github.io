@@ -256,7 +256,7 @@ If you run this new program, you can see that the output cuts the names written 
 
 ![char_length_values](https://user-images.githubusercontent.com/80749213/112664390-33ab5780-8e5a-11eb-96fd-c55ac50441b1.png)
 
-To fix it, we need to tell SAS that we want to increase the length of our values. **WE WILL TALK ABOUT THIS IN THE NEXT TUTORIAL?????**
+To fix it, we need to tell SAS that we want to increase the length of our values. We will further discuss about the **LENGTH** statement in the next tutorial.
 
 **REMEMBER** that there is a maximum character length allowed, and that is of **32767** characters. That should be enough! 
 
@@ -280,6 +280,23 @@ In this case, and contrary to value names, **you cannot change this option**. Ev
 
 ## SAS Studio syntax helper
 
+As we had mentioned in the previous tutorial "[Getting Started with SAS and SAS Studio](/tutorials/intro-to-sas.html)", SAS Studio equipped with **smart features**, like code completion, formatting and syntax coloring. Make sure to *exploit these features*, which should already help you out not to make unnecessary mistakes. 
+
+In particular, the syntax helper allows you to visualise information on the command quickly and allows you to browse for examples and formatting by **directing to the official SAS documentation** page. 
+
+Let's have a look at how this works in particular. 
+
+Let's say you are looking for a command, but not quite remember its exact name. You only now it starts with *se*... 
+
+![syntax_helper](../screenshots/syntax_helper.png)
+
+The **syntax helper** gives you suggestions on the possible commands from the letters that you typed insed the program editor. In this case, it is suggesting two possible commands starting with *se*: select and set. It already tells you that these two belong to the class of **DATA Step Statements**. If you hover over either, a new window appears on the right hand side, further detailing functionalities, syntax structure, and other information on that particular command. 
+
+![syntax_helper1](../screenshots/syntax_helper1.png)
+
+**Scrolling down** in that same window, you are offered links that direct you to the **official documentation** and to examples of uses of that particular command. 
+
+An extremely useful feature! 
 
 <a name="subsect2"></a>
 
@@ -303,4 +320,4 @@ In this case, and contrary to value names, **you cannot change this option**. Ev
 
 <a name="sect7"></a>
 
-# 7. Resources
+# 5. Resources
