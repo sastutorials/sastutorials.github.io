@@ -22,7 +22,7 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#subsect3"><sub>Where to find official documentation</sub></a>
 
-<a href="#sect2">2. General SAS Syntax rules</a>
+<a href="#sect2">2. General SAS syntax rules</a>
 
 <a href="#sect3">3. Common mistakes and how to solve them</a>
 
@@ -45,7 +45,7 @@ In particular, the **code completion** feature allows you to visualise informati
 
 Let's have a look at how this works in particular. 
 
-Let's say you are looking for a command, but not quite remember its exact name. You only now it starts with *se*... 
+Let's say you are looking for a command, but not quite remember its exact name. You only know it starts with *se*... 
 
 ![syntax_helper](../screenshots/syntax_helper.png)
 
@@ -55,9 +55,9 @@ The **code completion** feature gives you suggestions on the existing commands w
 
 ![syntax_helper1](../screenshots/syntax_helper1.png)
 
- The second smart feature in SAS Studio helps you correctly **format** your code. This is important to help yourself with clearly understanding your code - extremely important when you want to **go back to a program which you haven't opened in a while and want to rememeber quickly what you programmed**. 
+ The second smart feature in SAS Studio helps you correctly **format** your code. This is extremely important to help yourself with clearly understanding your code when you want to **go back to a program which you haven't opened in a while and want to rememeber quickly what it is useful for**! 
 
- Let's say we have coded this program:
+ Let's say we wrote the following:
 
 ```
 data trial;
@@ -76,18 +76,16 @@ proc print data=trial;
 var x; run; 
 ```
 
-It is okay as it is in that sense that, if you run this code, it will create the output correctly and without errors. 
+This code is *okay* as it is in the sense that, if you run it, it will create the output correctly. However, we are going to format it properly.
 
-However, If you help yourself with the formatting feature, you are going to be able to read your code more clearly. 
-
-Click on the button highlighted in *yellow* in the image below. **You can see that the position of certain commands has changed.** I have highlighted the changes in *green*. 
+Click on the button highlighted in *yellow* in the image below: **you can see the position of certain commands has changed.** I have highlighted the changes in *green*. 
 
 ![code_formatting](../screenshots/code_formatting.jpg)
 
-SAS Studio does not provide automatic smart features for this, but another two important formatting rules that might help you with clean code writing etiquette, are: 
+SAS Studio does not provide automatic smart features for this, but another two important *formatting* *tips* that might help you with clean code writing etiquette, are: 
 
 * **write SAS commands in capital letters**, so you can distinguish them from other text; 
-* **comment about your code**, so when you go back to it you already have information on the functionality of your program before you run it. 
+* **comment about your code**, so when you go back to it you already have information on the functionality of your program before you even run it. 
 
 Here is an example of a well-formatted and clean program: 
 
@@ -126,6 +124,10 @@ Here I have taken a snippet of the previous program, adding a few more lines of 
 
 Let's explore SAS Studio's **LOG** window, where error messages, warnings and notes are reported for every line of code run in your program. 
 
+Let's first explore the window and its components. 
+
+![error_dataset_name](../screenshots/error_dataset_name.png)
+
 
 
 <a name="subsect3"></a>
@@ -154,7 +156,7 @@ You should also check out [*stack overflow*](https://stackoverflow.com/tags/sas/
 
 <a name="sect2"></a>
 
-# 2. General SAS Syntax rules 
+# 2. General SAS syntax rules 
 
 Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to **avoid running into simple errors**. 
 
@@ -243,9 +245,9 @@ run;
 
 You can see that the tab *output data* **does not show this time**. Instead, an **X** appears near the *name of the program* and you are automatically directed to the **log** window.
 
-In this example, you can see that there are *4 errors* and *5 warnings* (notes are usually always there). If you click on either menu you can read the specific message(es).
+In this example, you can see that there are *4 errors* and *5 warnings*. If you click on either menu you can read the specific message(es).
 
-![error_dataset_name](../screenshots/error_dataset_name.png)
+![error_log_syntax_rules](../screenshots/error_log_syntax_rules.png)
  
 #### 1.3 Blank spaces automatically define two separate entities
 
