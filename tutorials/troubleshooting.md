@@ -142,6 +142,8 @@ On the top of the log window, there are features which you might find useful if 
 
 ![log_top_tab](../screenshots/log_top_tab.png)
 
+In particular, you'll find options that will allow you to save a specific log result within your home directory inside SAS Studio, but also as html and pdf. 
+
 <a name="subsect3"></a>
 
 ## Where to find official documentation
