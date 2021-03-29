@@ -369,7 +369,7 @@ At this point, you know that SAS offers its own official documentation, where yo
 
 We have already mentioned where to look for help from SAS Studio: either by clicking on the **question mark** (?) on the top bar, or by clicking on **product documentation** from the **code completion** feature of the application. 
 
-The documentation that you have access to from SAS Studio either directs you to the [official SAS Studio Guide](https://documentation.sas.com/?activeCdc=webeditorcdc&cdcId=sasstudiocdc&cdcVersion=3.7&docsetId=sasstudioov&docsetTarget=aboutthedoc.htm&locale=en) or to [SAS Product Support A to Z](https://support.sas.com/en/software/all-products-support.html). 
+The documentation that you have access to from SAS Studio either directs you to the [official SAS Studio Guide](https://documentation.sas.com/?activeCdc=webeditocdc&cdcId=sasstudiocdc&cdcVersion=3.7&docsetId=sasstudioov&docsetTarget=aboutthedoc.htm&locale=en) or to [SAS Product Support A to Z](https://support.sas.com/en/software/all-products-support.html). 
 
 However, these either relate to SAS Studio specifically or start from a very broad range of choices. 
 
@@ -378,6 +378,12 @@ Here is a couple of links more to help you get started.
 * [*This link*](https://go.documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=v_009&docsetId=ledsoptsref&docsetTarget=p1pczmnhbq4axpn1l15s9mk6mobp.htm&locale=en) directs you to the **full dictionary of DATA STEP options**; 
 * [*This link*](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=proc&docsetTarget=titlepage.htm&locale=en) instead directs you to the **full list of PROCEDURES (PROC STEPS)** that you can do on SAS; 
 * [*This link*](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=lefunctionsref&docsetTarget=n01f5qrjoh9h4hn1olbdpb5pr2td.htm&locale=en) directs you to a list of **functions and call routines**, grouped by category of use.
+
+Another useful way to look for help is by accessing [*SAS communities*](https://communities.sas.com/t5/SAS-Analytics-U/bd-p/sas_analytics_u) page, where you can browse for existing questions or ask your own and see what other SAS users have come with up as solution. 
+
+You should also check out [stack overflow](https://stackoverflow.com/tags/sas/info), another website used for interacting with other programmers and discuss on code and debugging issues. 
+
+**ANYTHING ELSE TO ADD?**
 
 <a name="subsect3"></a>
 
