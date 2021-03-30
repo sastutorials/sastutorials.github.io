@@ -22,9 +22,9 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#subsect3"><sub>Official documentation</sub></a>
 
-<a href="#sect2">2. General SAS syntax rules</a>
+<a href="#sect2">2. Common mistakes and how to avoid them</a>
 
-<a href="#sect3">3. Common mistakes and how to solve them</a>
+<a href="#sect3">3. Other possible mistakes</a>
 
 <a href="#sect4">4. Try it yourself: fix the errors from a SAS program</a>
 
@@ -172,13 +172,15 @@ You should also check out [*stack overflow*](https://stackoverflow.com/tags/sas/
 
 <a name="sect2"></a>
 
-# 2. General SAS syntax rules 
+# 2. Common mistakes and how to avoid them 
 
-Before exploring how to troubleshoot and where to find help with SAS programming, I am going to quickly tell you about some general rules that you must apply in order to **avoid running into simple errors**. 
+Most common mistakes happen because **SAS programmers do not follow SAS syntax rules**. We are going to see the most important and common syntax rules in SAS, and we are also going to explore what happens when we do not follow them...
 
-At the moment, don't worry about the logic behind the code and syntax, as you will learn about them in the next tutorials. What matters now is the naming of your dataset and comparing when it works and when it does not. 
+At the moment, don't worry about the logic behind the code and syntax, as you will learn about it in the next tutorials.
 
-#### 1.1 Every line of code in SAS **MUST** end with a **semi-colon** (;)
+What matters now is that you start remembering these rules, so that you can apply them in your everyday programming to avoid unnecessary debugging. 
+
+#### 1.1 Every line of code in SAS **MUST** end with a **semi-colon (;)**
 
 If you run the following program, by either pressing on the *running figure* button or by clicking on **F3** key in your keyboard, you will see an error popping up. 
 
@@ -399,6 +401,8 @@ To fix it, we need to tell SAS that we want to increase the length of our values
 
 **REMEMBER** that there is a maximum character length allowed, and that is of **32767** characters. That should be enough! 
 
+**ALSO REMEMBER** that SAS will use the **length of the first variable occurring in the program as reference for all the others**. If you don't want any unnecessary words cut from your dataset, you should specify the length for all variables with the **LENGTH statement. This statement should also be specified before the variables themselves, as it cannot alter the length of an already existing variable.**
+
 #### 1.5 Library names cannot exceed 8 characters in length 
 
 If we tried to absurdly write a very long library name (**remember to write your own path to your home directory**), it would result in error. 
@@ -523,7 +527,15 @@ If we look at the *results window* now, you can see that the output is printed a
 
 <a name="sect3"></a>
 
-# 3. Common mistakes and how to solve them 
+# 3. Other possible mistakes
+
+The mistakes we talked about in the previous section relate to errors made when not following the basic syntax rules in SAS. There are other possible mistakes, which you might not be so clear right now but that will become useful to you as you'll start coding.
+
+#### 3.1 Values of numbers when using comparison operators
+
+In SAS, **any value other than 0 or missing is TRUE**. Let's see this in an example. 
+
+
 
 
 
@@ -539,7 +551,7 @@ Once you've done the exercise **by yourself** you can check the solution inside 
 
 <a name="subsect4"></a>
 
-## Debugging tips
+## **Debugging tips**
 
 * **Always check the log** 
 
