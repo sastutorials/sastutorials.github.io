@@ -529,9 +529,9 @@ If we look at the *results window* now, you can see that the output is printed a
 
 # 3. Other possible mistakes
 
-The mistakes we talked about in the previous section relate to errors made when not following the basic syntax rules in SAS. There are other possible mistakes, which you might not be so clear right now but that will become useful to you as you'll start coding.
+The mistakes we talked about in the previous section relate to errors made when not following the basic syntax rules in SAS. There are other possible mistakes, which might not be so clear right now but that will become useful to you as you'll start coding.
 
-#### 3.1 Values of numbers when using comparison operators
+#### 3.1 Values of numbers become logical when using comparison operators.
 
 In SAS, **any value other than 0 or missing is TRUE**. Let's see this in an example. 
 
@@ -568,7 +568,7 @@ It does not matter that you have placed an **if-then** statement in your code, y
 
 The numbers present in column A are all **positive and greater than 0, and none of the values is missing**. Therefore, they're all equivalent to the logical **TRUE** value, thus returning **YES** in the new *Results* variable. 
 
-#### 3.2 Mispellings 
+#### 3.2 Mispellings.
 
 Mispellings are legitimate and can happen all the time. Sometimes, SAS will correct the spelling mistakes if it is able to detect it, and will issue a warning to inform you about it. Let's see an example of this.
 
@@ -592,7 +592,7 @@ However, check out the log - you can see it contains a warning message telling y
 
 When SAS cannot detect the mispelling, perhaps because the word does not belong to its dictionary, **always check the log** as it will likely send you an error message in that case. 
 
-#### 3.3 Place the wrong data type next to a variable 
+#### 3.3 Specifying the wrong data type next to a variable. Or not specifying it at all.
 
 Do you remember the dataset from above we created with names of people? 
 
@@ -638,7 +638,7 @@ We will explore more about different data types and ways to format them in the n
 
 What you need to remember now is to always make sure that the data type is specified and is the correct one for the specific variable. 
 
-#### 3.4 Writing unmatched quotes and / or comments 
+#### 3.4 Writing unmatched quotes and / or comments.
 
 This might seem obvious, but make sure that your text enclosed within quotes or commented is matched properly. 
 
@@ -687,7 +687,7 @@ The dataset is created but nothing gets printed. Because of the unmatched ending
 
 ![unmatched_quotes](../screenshots/unmatched_quotes.png)
 
-#### 3.5 Mixing statements between DATA and PROC steps
+#### 3.5 Mixing statements between DATA and PROC steps.
 
 **DATA and PROC steps** perform very different functions in SAS, as we explored in [*Intro to SAS pt. I*](intro-to-sas.html), and they are **processed separately**. 
 
@@ -730,7 +730,7 @@ In the log window we can see that the error relates to the var statement being u
 
 This is wrong, because **you cannot create a new variable from within a PROC step**! This is a function that works only within a **DATA step**. 
 
-Fixing the code like so will output the new variable called sum, created in the second **DATA step**, in the new dataset called *trial1*. 
+Fixing the code like so will output the new variable called sum, created in the second **DATA step**. 
 
 ```
 /*this is a comment*/
@@ -756,6 +756,127 @@ run;
 
 ![correct_steps](../screenshots/correct_steps.png)
 
+#### 3.6 Using options with the wrong PROC step. 
+
+Many options work with most procedural steps, however some are only valid with specific ones. Thus, **also a perfectly correct statement or option may cause an error not because it is written incorrectly, but because it is being used in the wrong place**!
+
+Let's the same example with a new option in the PROC step: *class*. This option groups the dataset by the variable specified. In our case, we are trying to group by *x*.
+
+```
+/*this is a comment*/
+
+data trial; 
+input x y; 
+cards; 
+1 2 
+1 3 
+2 4
+3 4
+; 
+run; 
+
+data trial1; 
+set trial; 
+sum = x + y;
+
+title "printing observations from trial1 dataset - using class option to group values by x";
+proc print data = trial1;
+class x; 
+run; 
+```
+
+This option is correct in the sense that it exists. The issue here is that it does not work with the **PROC PRINT** step. The log window says it clearly. 
+
+![wrong_proc_opt](../screenshots/wrong_proc_opt.png)
+
+In this example, **class** would work if we used another PROC step: **MEANS**. 
+
+```
+title "printing the MEAN of the observations from trial1 dataset - grouped by x";
+
+proc MEANS data = trial1;
+class x; 
+run; 
+```
+
+You can see that an output appears in the *results* window, displaying summary values (mean, St Dev, min, max) of the variables in dataset *trial1*, grouped by *x* (showing in the first column).
+
+![proc_opt_correct](../screenshots/correct_proc_step_opt.png)
+
+**Let SAS Studio help you to spot these error.** Remember the code colouring smart feature? Maybe you've already noticed this, but when you try to insert an option in a step where it does not belong, it appears in **grey**. When it is written inside the right step, it is coloured **light blue**. 
+
+![proc_opt_comparison](../screenshots/proc_opt_comparison.png)
+
+#### 3.7 Look out for logical errors
+
+As you can image, you can't expect a program to output a result correctly if there is a problem behind the logic of the program itself...! 
+
+Let's say we want to convert kg to tonnes, and to do so we write the following program: 
+
+```
+/*converting kg to tonnes*/
+data kg;
+	input kg;
+	cards;
+10000
+20000
+30000
+40000
+;
+run;
+
+data tonnes;
+	set kg;
+	tonnes=kg * 1000;
+
+proc print data=tonnes;
+	var tonnes;
+run;
+```
+
+The program executes correctly, no errors appear in the log if not notes saying that the new dataset *tonnes* contains one variable and four observations. 
+
+![wrong_logic](../screenshots/wrong_logic.png)
+
+*Does it mean it is correct?*
+
+There is a so called "logical fault" in the programming: **we have actually converted kg to g, instead of tonnes** and we should fix that before proceeding with more programming on the same dataset. 
+
+Another type of logical fault can occur if we **try to modify a variable which has yet to be defined**. 
+
+An example of this with the same dataset we create before. This time we are creating a new variable called *tonnes_halved* following a condition on it: 
+
+```
+/*converting kg to tonnes*/
+data kg;
+	input kg;
+	cards;
+10000
+20000
+30000
+40000
+;
+run;
+
+data tonnes;
+	set kg;
+	tonnes=kg / 1000;
+	if tonnes_halved > 30; 
+	tonnes_halved = tonnes / 2;
+	
+proc print data=tonnes;
+	var tonnes_halved;
+run;
+```
+
+The program executes just fine, but if we look at the content of *tonnes* dataset, we can see it is **empty**. The notes in the log window confirm this.
+
+![wrong_logic1](../screenshots/wrong_logic1.png)
+
+We have tried to **apply a condition on a variable which has yet to exist, as we created it *after* the condition**. 
+
+**Remember that a DATA step executes code line by line.** To fix this mistake, you should swap the order in which the two statements appear. 
+
 <a name="sect4"></a>
 
 # 4. Try it yourself: fix the errors from a SAS program
@@ -768,7 +889,7 @@ Once you've done the exercise **by yourself** you can check the solution inside 
 
 <a name="subsect4"></a>
 
-## **Debugging tips**
+## Debugging tips
 
 * **Always check the log** 
 
