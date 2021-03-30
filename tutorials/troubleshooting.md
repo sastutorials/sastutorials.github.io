@@ -124,9 +124,9 @@ Here I have taken a snippet of the previous program, adding a few more lines of 
 
 Let's explore SAS Studio's **LOG** window, where error messages, warnings and notes are reported for every line of code run in your program. 
 
-![log_window](../screenshots/log_window.png)
+The image below summarises each section of the window. 
 
-The image above summarises each section of the window. 
+![log_window](../screenshots/log_window.png)
 
 * The **top panel** describes the summary for the tree types of messages in the log: errors, warnings and notes; 
 * The **bottom panel** shows in detail where the messages refer to in the code; 
@@ -534,6 +534,32 @@ Download [*this SAS program*](/exercises/02_troubleshooting/SAS_tutorial2_exerci
 Apply the knowledge acquired from this tutorial to fix the errors resulting from this messy SAS program. 
 
 Once you've done the exercise **by yourself** you can check the solution inside this other [*SAS program*](/exercises/02_troubleshooting/SAS_tutorial2_solution.sas).
+
+### Tips to do the exercise
+
+* **Start from the beginning** 
+
+**Don't be alarmed** if the program has several errors in it. Sometimes there is **a single error  at the beginning of your program** that causes the others, too. Correcting this one error might fix the rest. So **start at the beginning of your program and work down from there**.
+
+* **Debug your program one step at a time**
+
+**Remember**: SAS executes programs in **steps**... even if you have an error in a step written in the beginning of your program, SAS will try **to execute all subsequent steps, wasting time and computer resources**. 
+
+Simplify your work: **correct your program one step at a time, before proceeding to the next step**. 
+
+* **Always check the log** 
+
+It is written in technical lingo, that is true, but it is the best resource you have to truly understand how your program executed and to give you first-hand suggestions on debugging. 
+
+Make sure you **check the log even when the program seems to have run correctly** and no error messages appear!
+
+**Be careful**. In the log window usually the error in the code is *underlined*. However, sometimes the actual error **is in a different place in your program**, typically in the **preceding line**. 
+
+* **Let formatting help you**
+
+Whenever you need to check for errors, **the neater the code, the easier it is to spot them**. Whenever you are writing code, make sure to follow the standard formatting rules we talked about earlier in this tutorial, and help yourself with SAS Studio's smart feature. 
+
+If you have to check someone else's program or your own, but that you haven't opened in a while, and the code is all messy and badly formatted, **take your time to clean it first**. It might seem like a waste of time, but when you'll actually start debugging it, you'll find it to be **way easier than if you left it messy**. 
 
 <a name="sect5"></a>
 
