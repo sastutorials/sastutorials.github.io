@@ -2,3 +2,6 @@ name: SAS tutorials
 markdown: kramdown
 highlighter: rouge 
 baseurl: ""
+
+# Google Analytics
+google_analytics: G-T9XBJ5SVLN
