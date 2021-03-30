@@ -667,7 +667,7 @@ The unmatched comment in the first line of the program comments the entire code,
 Nor you'd want your code to be written like this:
 
 ```
-/*this is a title with unmatched ending */
+/*this is a title with matched ending */
 
 data trial; 
 input x y; 
