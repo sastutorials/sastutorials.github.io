@@ -28,7 +28,7 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#sect4">4. Try it yourself: fix the errors from a SAS program</a>
 
-<a href="#subsect4"><sub>Debugging tips</s></a>
+<a href="#subsect4"><sub>Debugging tips</sub></a>
 
 <a href="#sect5">5. Resources</a>
 
