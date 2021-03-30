@@ -1,360 +1,512 @@
 ---
 layout: default
-title: Intro to SAS pt. I 
+title: Intro to SAS pt. I
 subtitle: Get started with SAS software and SAS Studio.
 ---
 
 <!DOCTYPE html>
-    <html>
-    <body class="vscode-body vscode-light">
-    
-<br>
-<h2 id="learning-objectives">Learning Objectives</h2>
-<ul>
-<li>
-<p>What SAS is, its origins, and applications</p>
-</li>
-<li>
-<p>SAS popularity and performance compared to other softwares and programming languages</p>
-</li>
-<li>
-<p>Get to know the different SAS environments</p>
-</li>
-<li>
-<p>Explore SAS Studio (OnDemand for Academics)</p>
-</li>
-</ul>
-<br>
-<h2 id="structure">Structure</h2>
-<p><a href="#sect1"><h3>1. Introduction: what is SAS?</h3></a></p>
-<p><a href="#subsect1"><sub><h5>Origins</h5></sub></a></p>
-<p><a href="#subsect2"><sub><h5>Where does SAS belong in the hierarchy of programming language generations?</h5></sub></a></p>
-<p><a href="#subsect3"><sub><h5>Use and applications</h5></sub></a></p>
-<p><a href="#subsect4"><sub><h5>Comparison with other programming languages</h5></sub></a></p>
-<p><a href="#subsect5"><sub><h5>SAS toolkit</h5></sub></a></p>
-<p><a href="#sect2"><h3>2. SAS studio</h3></a></p>
-<p><a href="#subsect6"><sub><h5>What is SAS Studio?</h5></sub></a></p>
-<p><a href="#subsect7"><sub><h5>Instructions to Log in</h5></sub></a></p>
-<p><a href="#subsect7"><sub><h5>Exploring the SAS Studio environment</h5></sub></a></p>
-<p><a href="#sect3"><h3>3. Resources</h3></a></p>
-<p><a name="sect1"></a></p>
-<br>
-<p><a name="sect1"></a></p>
-<h1 id="1-introduction-what-is-sas">1. Introduction: what is SAS?</h1>
-<p><a name="subsect1"></a></p>
-<h2 id="origins-of-sas">Origins of SAS</h2>
-<p>SAS began in the late 60s and early 70s, formerly as a <em>statistical package</em> created for allowing analysis of large quantities of agricultural data. In fact, its name originally stood for for Statistical Analysis System.</p>
-<p>Its origins locate back to North Carolina State University, founded by Anthony Barr and James Goodnight, where the SAS Institute was later founded and incorporated.</p>
-<p>Over the years, SAS developers included an increasingly larger amount of products designed for a variety of applications, from statistical analysis to machine learning. Thanks to the new additions and the increased versatility of the product, SAS grew in popularity and use.</p>
-<p>SAS is considered to be part of the 4th generation of programming languages. It is, in fact, much simpler than its predecessors, like Pascal and C, as it already possesses built-in functions to make programming much easier and user-friendly.</p>
-<p><a name="subsect2"></a></p>
-<h2 id="where-does-sas-belong-in-the-hierarchy-of-programming-language-generations">Where does SAS belong in the hierarchy of programming language generations?</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Generations</th>
-<th style="text-align:center">Description</th>
-<th style="text-align:center">Language (examples)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">First</td>
-<td style="text-align:center">Machine language. Collection of binary digits or bits that the computer reads and interprets.</td>
-<td style="text-align:center">Machine code</td>
-</tr>
-<tr>
-<td style="text-align:center">Second</td>
-<td style="text-align:center">Assembly language. Low-level programming language specific to a particular computer architecture (later converted into executable machine code).</td>
-<td style="text-align:center">Assembly language (ASM), Cobol, Fortran</td>
-</tr>
-<tr>
-<td style="text-align:center">Third</td>
-<td style="text-align:center">High-level language. Several steps removed from the actual code run on a computer's processor. Easy to read syntax.</td>
-<td style="text-align:center">C, C++ , Net, Java</td>
-</tr>
-<tr>
-<td style="text-align:center">Fourth</td>
-<td style="text-align:center">Advanced upon third-generation programming languages. Higher level of abstraction of the internal computer driver details. Programmer-friendlier, versatile, powerful.</td>
-<td style="text-align:center"><strong>SAS</strong>, Python, R, SPSS</td>
-</tr>
-<tr>
-<td style="text-align:center">Fifth</td>
-<td style="text-align:center">Constraint-based and logic programming languages. Based on problem-solving using constraints given to the program.</td>
-<td style="text-align:center">OPS5, Mercury</td>
-</tr>
-</tbody>
-</table>
-<p><a name="subsect3"></a></p>
-<h2 id="use-and-applications">Use and applications</h2>
-<p>Today, SAS is an extremely powerful, general-purpose programming language.</p>
-<p>It is primarily used for carrying out <strong>advanced analytics, business intelligience, data management, and predictive analytics.</strong></p>
-<p>SAS has become the undisputed market leader in commercial analytics, offering a huge array of statistical functions for people to <strong>learn quickly</strong>, and provides great <strong>technical support</strong> for troubleshooting.</p>
-<p><a name="subsect4"></a></p>
-<h2 id="comparison-with-other-programming-languages">Comparison with other programming languages</h2>
-<p>Comparing SAS to other programming languages, in terms of quantity of jobs available, is evident that SAS <em>is not the most popular language in the market</em>. That is due to two main reasons:</p>
-<ol>
-<li>SAS is not free, and many companies will opt for open-source alternatives;</li>
-<li>The jobs that do require SAS are more dedicated to report-writing than pure datascience.</li>
-</ol><p><center><img src="/screenshots/01_intro_ptI/n_datascience_jobs_comparison.png" alt="n_datascience_jobs_comparison"></center></p>
+<html>
 
-<p>SAS continues to be a leader and important tool in data management and report writing.</p>
-<p><center><img src="/screenshots/01_intro_ptI/Gartner-2019.png" alt="Gartner-2019"></center></p>
-<p>Here we offer a summary on advantages and disantavantages of using SAS compared to other programming languages (SPSS, R and Python).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">SAS</th>
-<th style="text-align:center">SPSS</th>
-<th style="text-align:center">R</th>
-<th style="text-align:center">Python</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>Advantages</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">high adoption rate (major industries)</td>
-<td style="text-align:center">high adoption rate (universities)</td>
-<td style="text-align:center">open-source, community creating libraries and contributing</td>
-<td style="text-align:center">scalability</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">flow-based interface, drag and drop</td>
-<td style="text-align:center">good user interface, extensive documentation</td>
-<td style="text-align:center">free</td>
-<td style="text-align:center">general purpose language</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">official support</td>
-<td style="text-align:center">click &amp; play functionality</td>
-<td style="text-align:center">early adopter in explanatory and predictive modelling</td>
-<td style="text-align:center">easy to learn</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">handles large datasets</td>
-<td style="text-align:center">easy coding with &quot;paste&quot; button</td>
-<td style="text-align:center">easy to connect to data sources, incl. NoSQL and webscraping</td>
-<td style="text-align:center">good in ML</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">SQL integration (&quot;PROC SQL&quot;)</td>
-<td style="text-align:center">official support</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">big community</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">free</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>Disadvantages</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">relatively high cost</td>
-<td style="text-align:center">relatively high cost</td>
-<td style="text-align:center">can be slow with big datasets</td>
-<td style="text-align:center">not as strong in explanatory modelling</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">does not provide an interface for non-standard options (need to code)</td>
-<td style="text-align:center">requires different licenses for different functionalities</td>
-<td style="text-align:center">steep learning curve</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">slow adapting to new techniques</td>
-<td style="text-align:center">limited syntax</td>
-<td style="text-align:center">no official support</td>
-<td style="text-align:center">no official support</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">different programs for visualisation and data mining</td>
-<td style="text-align:center">slow in handling large datasets</td>
-<td style="text-align:center">no user interface</td>
-<td style="text-align:center">no user interface</td>
-</tr>
-</tbody>
-</table>
-<p><a name="subsect5"></a></p>
-<h2 id="sas-toolkit">SAS toolkit</h2>
-<p>SAS does not come as one unique interface for each of its applications and functionalities, but serves of a variety of components, each specified on a particular task.</p>
-<p>Here is an outline of the main ones (there are 200+):</p>
-<ul>
-<li>
-<p><a href="https://support.sas.com/en/software/sas-access.html#documentation" class="colori">SAS/ACCESS</a> provides data access to a wide extension of data sources and formats. It provides data integration between SAS and third-party databases, to read, write and update data from all types of native databases and platforms you use;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sasaf-support.html" class="colori">SAS/AF</a> creates portable, point-and-click applications in a development environment. With it, you have access to SAS Component Language (SCL), an object-oriented programming laguage that helps you access and display your data, control interfaces, read and write data to SAS tables and files;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sas-assist-support.html#documentation" class="colori">SAS/ASSIST</a> is a user-friendly software to the SAS System, providing options for completing tasks without having to write code, for saving programs and running them repetitively and for customising the interface to better suit your needs;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sas-connect-support.html#documentation" class="colori">SAS/CONNECT</a> is a client/server toolset that establishes connections between networked computers with different operating systems, and offers scalability through panel SAS processing;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sas-eis-support.html#documentation" class="colori">SAS/EIS</a> summarises, integrates and displays information in reports that are easy to access and understand;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sasets-support.html#documentation" class="colori">SAS/ETS</a> allows creation of models, forecasts, simulations of business processes for improving strategic and tactical business planning;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sasfsp-support.html#documentation" class="colori">SAS/FSP</a> allows you to browse and edit contents of SAS datasets, to create new datasets and reports, to edit SAS data views, and to build and customise end-user applications:</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/gis-support.html" class="colori">SAS/GIS</a> provides an interactive Geographic Information Systems interface within the SAS system. You can view and interact with the data by selecting features and performing actions based on your selections;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sasgraph-support.html#documentation" class="colori">SAS/GRAPH</a> is a data visualisation tools, allowing you to create accurate, high-impact visuals;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sasiml-support.html#documentation" class="colori">SAS/ML</a> translates mathematical formulas into programs for data analysis, optimisation and matrix computations;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sas-secure-support.html#documentation" class="colori">SAS/SECURE</a> provides access to industry-standard encryption algorithms to protect data as it passes between platforms or over networks;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sas-share-support.html#documentation" class="colori">SAS/SHARE</a> allows multiple users to gain simultaneous access to SAS files without using separate remote logins;</p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/sas-stat-support.html#documentation" class="colori">SAS/STAT</a> provides a comprehensive set of tools for statistical methods and visualisation techniques.</p>
-</li>
-</ul>
-<p>As you might have noticed, <strong>SAS is truly wide and varied</strong> in the range of applications and tools it offers. However, <strong>these are not freely available</strong>, for some you require a <em>specific license</em>, for others you need to have the tool <em>installed on your SAS Server first</em>.</p>
-<p>Now let's move on to more practical stuff! Let's open <strong>SAS Studiio</strong>, a free and open platform for you to practice with SAS.</p>
-<br>
-<p><a name="sect2"></a></p>
-<h1 id="sas-studio-ondemand-for-academics">SAS studio (OnDemand for Academics)</h1>
-<p>SAS has several programming interfaces where you can <strong>actively write and submit code</strong>.</p>
-<ul>
-<li>
-<p>SAS <strong>windowing environment</strong> is the interface that is <em>part of SAS</em>;</p>
-</li>
-<li>
-<p>SAS <strong>Enterprise Guide</strong> is a <em>client application</em> that runs on your laptop and connects to SAS on a <em>local or remote server</em>;</p>
-</li>
-<li>
-<p>SAS <strong>Studio</strong> is a <em>web-based interface</em> that connects to SAS on a server. There is no download necessary, and for that <em>you can use it</em> on <em>any computer</em>.</p>
-</li>
-<li>
-<p>It is also possible to run SAS and its tools on other applications, such as <strong>Jupyter Notebook</strong>, but this way you <strong>won't have access to some of the programming tools that SAS offers</strong>.</p>
-</li>
-</ul>
-<p>We are going to work on <strong>SAS Studio</strong>, and today we are going to explore its environment and windows.</p>
-<p><a name="subsect6"></a></p>
-<h2 id="what-is-sas-studio">What is SAS Studio?</h2>
-<p><a href="https://www.sas.com/it_it/software/studio.html" class ="colori">SAS Studio</a> is the web browser-based programming environment. You can access existing data files, libraries and prograrms or create your own directly from the web.</p>
-<p>SAS Studio connects to a SAS server, to be able to elaborate SAS commands. This server can be an internal one to the cloud environment, a server in your local environment or a copy of the SAS server in your local machine.</p>
-<p>Once code has been elaborated by the software, the formatted results are returned back to SAS studio.</p>
-<p>Let's start exploring the interface!</p>
-<p><a name="subsect7"></a></p>
-<h2 id="instructions-to-log-in">Instructions to Log in</h2>
-<p>To access SAS Studio, you first need to <a href="https://www.sas.com/profile/ui/#/create"class ="colori"><strong>register here</strong></a> to create a SAS profile.</p>
-<center><img src="/screenshots/01_intro_ptI/log_in_studio.PNG" alt="log_in_studio" class="center"></center>
-<p>Fill in the blanks with your personal information and credentials.</p>
-<p>Once you've done that, and verified your email, you can head to the <a href="https://welcome.oda.sas.com/login" class ="colori"><strong>log in</strong> page</a> and enter your email address and password.</p>
-<p><center><img src="/screenshots/01_intro_ptI/login_studio.PNG" alt="login_studio"></center></p>
-<p>When the next window opens, click on SAS Studio so we can start exploring the environment!</p>
-<p><center><img src="/screenshots/01_intro_ptI/open_studio.PNG" alt="open_studio"></center></p>
-<h2 id="exploring-the-sas-studio-environment">Exploring the SAS Studio environment</h2>
-<p>SAS Studio (like any other SAS interface) is equipped with <strong>three main environments</strong>:</p>
-<h4 id="editor"><strong>Editor</strong></h4>
-<p>The editor environment allows you to open all SAS programs in which you can write code.</p>
-<p><center><img src="/screenshots/01_intro_ptI/editor_studio.PNG" alt="editor_studio"></center></p>
-<h4 id="log"><strong>Log</strong></h4>
-<p>The log environment allows you to read messages and errors related to the code you've submitted.</p>
-<p><center><img src="/screenshots/01_intro_ptI/log_studio.PNG" alt="log_studio"></center></p>
-<h4 id="results"><strong>Results</strong></h4>
-<p>This environment allows you to view the data outputs created by your programs.</p>
-<p><center><img src="/screenshots/01_intro_ptI/results_studio.PNG" alt="results_studio"></center></p>
-<p>However, unlike the other interfaces, SAS Studio presents <strong>smart features</strong> that ease up your programming efforts, like <strong>code completion, formatting and syntax coloring</strong> features.</p>
-<p>Let's have a look at the other features present in the SAS Studio interface.</p>
-<p>On the left hand side, you'll see different tabs that you can click on.</p>
-<ul>
-<li>The <strong>Server Files and Folders</strong> tab shows you your &quot;home directory&quot; where you can create new folders where to store data you imported and programs you created. These are permanent and you can move them or delete them as you please.</li>
-</ul>
-<p><center><img src="/screenshots/01_intro_ptI/tab1_studio.PNG" alt="tab1_studio" ></center></p>
-<ul>
-<li>The <strong>Tasks and Utilities</strong> tab shows you all the built-in features for data analytics, visualisation, statistical testing, etc. You can also add your own and these are going to be stored in the <strong>My Tasks</strong> folder (the first one at the top).</li>
-</ul>
-<p><center><img src="/screenshots/01_intro_ptI/tab2_aperto_studio.PNG" alt="tab2_aperto_studio"></center></p>
-<ul>
-<li>The <strong>Snippets</strong> tab offers you pre-made snippets of code that can come in handy so that you don't have to code entirely from scratch. As you can see in the example, I have clicked on the <em>Edit a SOURCE Entry</em> from the list of <strong>Catalogs</strong> inside the <strong>Snippets</strong> folder, and a new program appears with the <em>code snippet</em> already written inside of it. You can click on multiple snippets and these will just be added in the same program page. As for the <em>Tasks and Utilities</em> tab, you can create your own code snippets which are going to be stored in the <strong>My Snippets</strong> folder.</li>
-</ul>
-<p><center><img src="/screenshots/01_intro_ptI/TAB3_STUDIO.PNG" alt="TAB3_STUDIO"></center></p>
-<ul>
-<li>The <strong>Libraries</strong> tab shows you all the built-in libraries offered by SAS. A few examples:</li>
-</ul>
-<h6 id="sashelp-library-offers-a-large-variety-of-read-only-sample-sas-datasets"><strong>SASHELP</strong> library offers a large variety of <em>read-only</em> sample SAS datasets;</h6>
-<p><center><img src="/screenshots/01_intro_ptI/tab4_sashelp.PNG" alt="tab4_sashelp"></center></p>
-<h6 id="sasuser-is-an-empty-library-initally-where-you-can-permanently-save-your-datasets"><strong>SASUSER</strong> is an empty library initally, where you can <em>permanently</em> save your datasets;</h6>
-<h6 id="work-is-another-empty-library-where-you-can-store-your-data-temporarily-it-is-the-default-library-in-which-data-is-stored-unless-differently-specified"><strong>WORK</strong> is another empty library, where you can <em>store your data temporarily</em>. It is the default library in which data is stored, <strong>unless differently specified</strong>.</h6>
-<ul>
-<li>The <strong>File Shortcuts</strong> tab offers you a quicker way to access your files. You can create a new file shortcut by <strong>clicking on the curved arrow</strong> symbol, inserting a shortcut name and the path that leads you to the original file. You can also delete the shortcuts, see their properties and / or refresh the shortcut list when you need to update it.</li>
-</ul>
-<p><center><img src="/screenshots/01_intro_ptI/tab4_studio.PNG" alt="tab4_studio"></center></p>
-<p>On the <strong>blue bar</strong> at the top of the SAS Studio interface (where you can see the application's name), you also have other options to speed up your programming and set your interface according to your preferences.</p>
-<p><center><img src="/screenshots/01_intro_ptI/top_tab_studio.PNG" alt="top_tab_studio"></center></p>
-<ul>
-<li>
-<p>Starting from the left, you have a search button where you can <strong>browse for files and folders within each of these tabs more quickly</strong>. This will come handy once your libraries and folders will become populated with more and more datasets and outputs.</p>
-</li>
-<li>
-<p>Next to it you can see the <em>opened folder</em> symbol, <strong>useful for opening existing folders and programs, by searching through your directory</strong>.</p>
-</li>
-<li>
-<p>You can also click on the <em>new options</em> symbol, and if you click on it you can see that you can choose between <strong>opening a new SAS program, importing new data, writing a new query or XML program, closing all tabs and maximising the view of your environment</strong>.</p>
-</li>
-<li>
-<p>You can switch between <strong>SAS Programmer and Visual programmer</strong> <em>perspectives</em>, by clicking on the scroll-down menu and selecting either. Default is set to <em>SAS Programmer</em>, which contains <strong>features most commonly needed for developing a SAS program</strong>. On the other hand, <em>Visual programmer</em> perspective contains tools needed for managing various processes - you can define your dataset, task and variabes using <strong>easy-to-understand drag-and-drop methods</strong>.</p>
-</li>
-<li>
-<p>The <em>more application options</em> button allows you to edit the <strong>autoexec file</strong> (code that starts automatically whenever you start the applicaton), to change which tabs on the left-hand side are displayed (default is all of them),  change preferences and restart the session.</p>
-</li>
-<li>
-<p>Last button refers you to <strong>SAS Support</strong>, where you can access help guidelines, documentation and interact with SAS community. It also shows you keyboard shortcuts for using the application.</p>
-</li>
-</ul>
-<p>You have completed this tutorial!</p>
-<p>Hopefully now you have a clear understanding of what SAS is and how SAS Studio is structured.</p>
-<p>We are going to start working with SAS Studio in the following tutorials.</p>
-<p><a name="sect3"></a></p>
-<br>
-<h2 id="resources">3. Resources</h2>
-<ul>
-<li>
-<p><a href="https://support.sas.com/en/documentation.html" class ="colori">SAS documentation</a></p>
-</li>
-<li>
-<p><a href="https://support.sas.com/en/software/studio-support.html" class ="colori">SAS Support: SAS Studio</a></p>
-</li>
-<li>
-<p><a href="https://www.pharmasug.org/proceedings/2016/QT/PharmaSUG-2016-QT17.pdf" class ="colori">Becoming a more efficient programmer with SAS Studio</a></p>
-</li>
-</ul>
-<br>
-    </body>
-    </html>
+<body class="vscode-body vscode-light">
+
+    <br>
+    <h2 id="learning-objectives">Learning Objectives</h2>
+    <ul>
+        <li>
+            <p>What SAS is, its origins, and applications</p>
+        </li>
+        <li>
+            <p>SAS popularity and performance compared to other softwares and programming languages</p>
+        </li>
+        <li>
+            <p>Get to know the different SAS environments</p>
+        </li>
+        <li>
+            <p>Explore SAS Studio (OnDemand for Academics)</p>
+        </li>
+    </ul>
+    <br>
+    <h2 id="structure">Structure</h2>
+    <p><a href="#sect1">
+            <h3>1. Introduction: what is SAS?</h3>
+        </a></p>
+    <p><a href="#subsect1"><sub>
+                <h5>Origins</h5>
+            </sub></a></p>
+    <p><a href="#subsect2"><sub>
+                <h5>Where does SAS belong in the hierarchy of programming language generations?</h5>
+            </sub></a></p>
+    <p><a href="#subsect3"><sub>
+                <h5>Use and applications</h5>
+            </sub></a></p>
+    <p><a href="#subsect4"><sub>
+                <h5>Comparison with other programming languages</h5>
+            </sub></a></p>
+    <p><a href="#subsect5"><sub>
+                <h5>SAS toolkit</h5>
+            </sub></a></p>
+    <p><a href="#sect2">
+            <h3>2. SAS studio</h3>
+        </a></p>
+    <p><a href="#subsect6"><sub>
+                <h5>What is SAS Studio?</h5>
+            </sub></a></p>
+    <p><a href="#subsect7"><sub>
+                <h5>Instructions to Log in</h5>
+            </sub></a></p>
+    <p><a href="#subsect7"><sub>
+                <h5>Exploring the SAS Studio environment</h5>
+            </sub></a></p>
+    <p><a href="#sect3">
+            <h3>3. Resources</h3>
+        </a></p>
+    <p><a name="sect1"></a></p>
+    <br>
+    <p><a name="sect1"></a></p>
+    <h1 id="1-introduction-what-is-sas">1. Introduction: what is SAS?</h1>
+    <p><a name="subsect1"></a></p>
+    <h2 id="origins-of-sas">Origins of SAS</h2>
+    <p>SAS began in the late 60s and early 70s, formerly as a <em>statistical package</em> created for allowing analysis
+        of large quantities of agricultural data. In fact, its name originally stood for for Statistical Analysis
+        System.</p>
+    <p>Its origins locate back to North Carolina State University, founded by Anthony Barr and James Goodnight, where
+        the SAS Institute was later founded and incorporated.</p>
+    <p>Over the years, SAS developers included an increasingly larger amount of products designed for a variety of
+        applications, from statistical analysis to machine learning. Thanks to the new additions and the increased
+        versatility of the product, SAS grew in popularity and use.</p>
+    <p>SAS is considered to be part of the 4th generation of programming languages. It is, in fact, much simpler than
+        its predecessors, like Pascal and C, as it already possesses built-in functions to make programming much easier
+        and user-friendly.</p>
+    <p><a name="subsect2"></a></p>
+    <h2 id="where-does-sas-belong-in-the-hierarchy-of-programming-language-generations">Where does SAS belong in the
+        hierarchy of programming language generations?</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align:center">Generations</th>
+                <th style="text-align:center">Description</th>
+                <th style="text-align:center">Language (examples)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align:center">First</td>
+                <td style="text-align:center">Machine language. Collection of binary digits or bits that the computer
+                    reads and interprets.</td>
+                <td style="text-align:center">Machine code</td>
+            </tr>
+            <tr>
+                <td style="text-align:center">Second</td>
+                <td style="text-align:center">Assembly language. Low-level programming language specific to a particular
+                    computer architecture (later converted into executable machine code).</td>
+                <td style="text-align:center">Assembly language (ASM), Cobol, Fortran</td>
+            </tr>
+            <tr>
+                <td style="text-align:center">Third</td>
+                <td style="text-align:center">High-level language. Several steps removed from the actual code run on a
+                    computer's processor. Easy to read syntax.</td>
+                <td style="text-align:center">C, C++ , Net, Java</td>
+            </tr>
+            <tr>
+                <td style="text-align:center">Fourth</td>
+                <td style="text-align:center">Advanced upon third-generation programming languages. Higher level of
+                    abstraction of the internal computer driver details. Programmer-friendlier, versatile, powerful.
+                </td>
+                <td style="text-align:center"><strong>SAS</strong>, Python, R, SPSS</td>
+            </tr>
+            <tr>
+                <td style="text-align:center">Fifth</td>
+                <td style="text-align:center">Constraint-based and logic programming languages. Based on problem-solving
+                    using constraints given to the program.</td>
+                <td style="text-align:center">OPS5, Mercury</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a name="subsect3"></a></p>
+    <h2 id="use-and-applications">Use and applications</h2>
+    <p>Today, SAS is an extremely powerful, general-purpose programming language.</p>
+    <p>It is primarily used for carrying out <strong>advanced analytics, business intelligience, data management, and
+            predictive analytics.</strong></p>
+    <p>SAS has become the undisputed market leader in commercial analytics, offering a huge array of statistical
+        functions for people to <strong>learn quickly</strong>, and provides great <strong>technical support</strong>
+        for troubleshooting.</p>
+    <p><a name="subsect4"></a></p>
+    <h2 id="comparison-with-other-programming-languages">Comparison with other programming languages</h2>
+    <p>Comparing SAS to other programming languages, in terms of quantity of jobs available, is evident that SAS <em>is
+            not the most popular language in the market</em>. That is due to two main reasons:</p>
+    <ol>
+        <li>SAS is not free, and many companies will opt for open-source alternatives;</li>
+        <li>The jobs that do require SAS are more dedicated to report-writing than pure datascience.</li>
+    </ol>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/n_datascience_jobs_comparison.png"
+                alt="n_datascience_jobs_comparison"></center>
+    </p>
+
+    <p>SAS continues to be a leader and important tool in data management and report writing.</p>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/Gartner-2019.png" alt="Gartner-2019"></center>
+    </p>
+    <p>Here we offer a summary on advantages and disantavantages of using SAS compared to other programming languages
+        (SPSS, R and Python).</p>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align:center"></th>
+                <th style="text-align:center">SAS</th>
+                <th style="text-align:center">SPSS</th>
+                <th style="text-align:center">R</th>
+                <th style="text-align:center">Python</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align:center"><strong>Advantages</strong></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">high adoption rate (major industries)</td>
+                <td style="text-align:center">high adoption rate (universities)</td>
+                <td style="text-align:center">open-source, community creating libraries and contributing</td>
+                <td style="text-align:center">scalability</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">flow-based interface, drag and drop</td>
+                <td style="text-align:center">good user interface, extensive documentation</td>
+                <td style="text-align:center">free</td>
+                <td style="text-align:center">general purpose language</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">official support</td>
+                <td style="text-align:center">click &amp; play functionality</td>
+                <td style="text-align:center">early adopter in explanatory and predictive modelling</td>
+                <td style="text-align:center">easy to learn</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">handles large datasets</td>
+                <td style="text-align:center">easy coding with &quot;paste&quot; button</td>
+                <td style="text-align:center">easy to connect to data sources, incl. NoSQL and webscraping</td>
+                <td style="text-align:center">good in ML</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">SQL integration (&quot;PROC SQL&quot;)</td>
+                <td style="text-align:center">official support</td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">big community</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">free</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><strong>Disadvantages</strong></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+                <td style="text-align:center"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">relatively high cost</td>
+                <td style="text-align:center">relatively high cost</td>
+                <td style="text-align:center">can be slow with big datasets</td>
+                <td style="text-align:center">not as strong in explanatory modelling</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">does not provide an interface for non-standard options (need to code)</td>
+                <td style="text-align:center">requires different licenses for different functionalities</td>
+                <td style="text-align:center">steep learning curve</td>
+                <td style="text-align:center"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">slow adapting to new techniques</td>
+                <td style="text-align:center">limited syntax</td>
+                <td style="text-align:center">no official support</td>
+                <td style="text-align:center">no official support</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"></td>
+                <td style="text-align:center">different programs for visualisation and data mining</td>
+                <td style="text-align:center">slow in handling large datasets</td>
+                <td style="text-align:center">no user interface</td>
+                <td style="text-align:center">no user interface</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a name="subsect5"></a></p>
+    <h2 id="sas-toolkit">SAS toolkit</h2>
+    <p>SAS does not come as one unique interface for each of its applications and functionalities, but serves of a
+        variety of components, each specified on a particular task.</p>
+    <p>Here is an outline of the main ones (there are 200+):</p>
+    <ul>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sas-access.html#documentation" class="colori">SAS/ACCESS</a>
+                provides data access to a wide extension of data sources and formats. It provides data integration
+                between SAS and third-party databases, to read, write and update data from all types of native databases
+                and platforms you use;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sasaf-support.html" class="colori">SAS/AF</a> creates
+                portable, point-and-click applications in a development environment. With it, you have access to SAS
+                Component Language (SCL), an object-oriented programming laguage that helps you access and display your
+                data, control interfaces, read and write data to SAS tables and files;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sas-assist-support.html#documentation"
+                    class="colori">SAS/ASSIST</a> is a user-friendly software to the SAS System, providing options for
+                completing tasks without having to write code, for saving programs and running them repetitively and for
+                customising the interface to better suit your needs;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sas-connect-support.html#documentation"
+                    class="colori">SAS/CONNECT</a> is a client/server toolset that establishes connections between
+                networked computers with different operating systems, and offers scalability through panel SAS
+                processing;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sas-eis-support.html#documentation"
+                    class="colori">SAS/EIS</a> summarises, integrates and displays information in reports that are easy
+                to access and understand;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sasets-support.html#documentation"
+                    class="colori">SAS/ETS</a> allows creation of models, forecasts, simulations of business processes
+                for improving strategic and tactical business planning;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sasfsp-support.html#documentation"
+                    class="colori">SAS/FSP</a> allows you to browse and edit contents of SAS datasets, to create new
+                datasets and reports, to edit SAS data views, and to build and customise end-user applications:</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/gis-support.html" class="colori">SAS/GIS</a> provides an
+                interactive Geographic Information Systems interface within the SAS system. You can view and interact
+                with the data by selecting features and performing actions based on your selections;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sasgraph-support.html#documentation"
+                    class="colori">SAS/GRAPH</a> is a data visualisation tools, allowing you to create accurate,
+                high-impact visuals;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sasiml-support.html#documentation" class="colori">SAS/ML</a>
+                translates mathematical formulas into programs for data analysis, optimisation and matrix computations;
+            </p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sas-secure-support.html#documentation"
+                    class="colori">SAS/SECURE</a> provides access to industry-standard encryption algorithms to protect
+                data as it passes between platforms or over networks;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sas-share-support.html#documentation"
+                    class="colori">SAS/SHARE</a> allows multiple users to gain simultaneous access to SAS files without
+                using separate remote logins;</p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/sas-stat-support.html#documentation"
+                    class="colori">SAS/STAT</a> provides a comprehensive set of tools for statistical methods and
+                visualisation techniques.</p>
+        </li>
+    </ul>
+    <p>As you might have noticed, <strong>SAS is truly wide and varied</strong> in the range of applications and tools
+        it offers. However, <strong>these are not freely available</strong>, for some you require a <em>specific
+            license</em>, for others you need to have the tool <em>installed on your SAS Server first</em>.</p>
+    <p>Now let's move on to more practical stuff! Let's open <strong>SAS Studiio</strong>, a free and open platform for
+        you to practice with SAS.</p>
+    <br>
+    <p><a name="sect2"></a></p>
+    <h1 id="sas-studio-ondemand-for-academics">SAS studio (OnDemand for Academics)</h1>
+    <p>SAS has several programming interfaces where you can <strong>actively write and submit code</strong>.</p>
+    <ul>
+        <li>
+            <p>SAS <strong>windowing environment</strong> is the interface that is <em>part of SAS</em>;</p>
+        </li>
+        <li>
+            <p>SAS <strong>Enterprise Guide</strong> is a <em>client application</em> that runs on your laptop and
+                connects to SAS on a <em>local or remote server</em>;</p>
+        </li>
+        <li>
+            <p>SAS <strong>Studio</strong> is a <em>web-based interface</em> that connects to SAS on a server. There is
+                no download necessary, and for that <em>you can use it</em> on <em>any computer</em>.</p>
+        </li>
+        <li>
+            <p>It is also possible to run SAS and its tools on other applications, such as <strong>Jupyter
+                    Notebook</strong>, but this way you <strong>won't have access to some of the programming tools that
+                    SAS offers</strong>.</p>
+        </li>
+    </ul>
+    <p>We are going to work on <strong>SAS Studio</strong>, and today we are going to explore its environment and
+        windows.</p>
+    <p><a name="subsect6"></a></p>
+    <h2 id="what-is-sas-studio">What is SAS Studio?</h2>
+    <p><a href="https://www.sas.com/it_it/software/studio.html" class="colori">SAS Studio</a> is the web browser-based
+        programming environment. You can access existing data files, libraries and prograrms or create your own directly
+        from the web.</p>
+    <p>SAS Studio connects to a SAS server, to be able to elaborate SAS commands. This server can be an internal one to
+        the cloud environment, a server in your local environment or a copy of the SAS server in your local machine.</p>
+    <p>Once code has been elaborated by the software, the formatted results are returned back to SAS studio.</p>
+    <p>Let's start exploring the interface!</p>
+    <p><a name="subsect7"></a></p>
+    <h2 id="instructions-to-log-in">Instructions to Log in</h2>
+    <p>To access SAS Studio, you first need to <a href="https://www.sas.com/profile/ui/#/create"
+            class="colori"><strong>register here</strong></a> to create a SAS profile.</p>
+    <center><img src="/screenshots/01_intro_ptI/log_in_studio.PNG" alt="log_in_studio" class="center"></center>
+    <p>Fill in the blanks with your personal information and credentials.</p>
+    <p>Once you've done that, and verified your email, you can head to the <a href="https://welcome.oda.sas.com/login"
+            class="colori"><strong>log in</strong> page</a> and enter your email address and password.</p>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/login_studio.PNG" alt="login_studio"></center>
+    </p>
+    <p>When the next window opens, click on SAS Studio so we can start exploring the environment!</p>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/open_studio.PNG" alt="open_studio"></center>
+    </p>
+    <h2 id="exploring-the-sas-studio-environment">Exploring the SAS Studio environment</h2>
+    <p>SAS Studio (like any other SAS interface) is equipped with <strong>three main environments</strong>:</p>
+    <h4 id="editor"><strong>Editor</strong></h4>
+    <p>The editor environment allows you to open all SAS programs in which you can write code.</p>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/editor_studio.PNG" alt="editor_studio"></center>
+    </p>
+    <h4 id="log"><strong>Log</strong></h4>
+    <p>The log environment allows you to read messages and errors related to the code you've submitted.</p>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/log_studio.PNG" alt="log_studio"></center>
+    </p>
+    <h4 id="results"><strong>Results</strong></h4>
+    <p>This environment allows you to view the data outputs created by your programs.</p>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/results_studio.PNG" alt="results_studio"></center>
+    </p>
+    <p>However, unlike the other interfaces, SAS Studio presents <strong>smart features</strong> that ease up your
+        programming efforts, like <strong>code completion, formatting and syntax coloring</strong> features.</p>
+    <p>Let's have a look at the other features present in the SAS Studio interface.</p>
+    <p>On the left hand side, you'll see different tabs that you can click on.</p>
+    <ul>
+        <li>The <strong>Server Files and Folders</strong> tab shows you your &quot;home directory&quot; where you can
+            create new folders where to store data you imported and programs you created. These are permanent and you
+            can move them or delete them as you please.</li>
+    </ul>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/tab1_studio.PNG" alt="tab1_studio"></center>
+    </p>
+    <ul>
+        <li>The <strong>Tasks and Utilities</strong> tab shows you all the built-in features for data analytics,
+            visualisation, statistical testing, etc. You can also add your own and these are going to be stored in the
+            <strong>My Tasks</strong> folder (the first one at the top).</li>
+    </ul>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/tab2_aperto_studio.PNG" alt="tab2_aperto_studio"></center>
+    </p>
+    <ul>
+        <li>The <strong>Snippets</strong> tab offers you pre-made snippets of code that can come in handy so that you
+            don't have to code entirely from scratch. As you can see in the example, I have clicked on the <em>Edit a
+                SOURCE Entry</em> from the list of <strong>Catalogs</strong> inside the <strong>Snippets</strong>
+            folder, and a new program appears with the <em>code snippet</em> already written inside of it. You can click
+            on multiple snippets and these will just be added in the same program page. As for the <em>Tasks and
+                Utilities</em> tab, you can create your own code snippets which are going to be stored in the <strong>My
+                Snippets</strong> folder.</li>
+    </ul>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/TAB3_STUDIO.PNG" alt="TAB3_STUDIO"></center>
+    </p>
+    <ul>
+        <li>The <strong>Libraries</strong> tab shows you all the built-in libraries offered by SAS. A few examples:</li>
+    </ul>
+    <h6 id="sashelp-library-offers-a-large-variety-of-read-only-sample-sas-datasets"><strong>SASHELP</strong> library
+        offers a large variety of <em>read-only</em> sample SAS datasets;</h6>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/tab4_sashelp.PNG" alt="tab4_sashelp"></center>
+    </p>
+    <h6 id="sasuser-is-an-empty-library-initally-where-you-can-permanently-save-your-datasets"><strong>SASUSER</strong>
+        is an empty library initally, where you can <em>permanently</em> save your datasets;</h6>
+    <h6
+        id="work-is-another-empty-library-where-you-can-store-your-data-temporarily-it-is-the-default-library-in-which-data-is-stored-unless-differently-specified">
+        <strong>WORK</strong> is another empty library, where you can <em>store your data temporarily</em>. It is the
+        default library in which data is stored, <strong>unless differently specified</strong>.</h6>
+    <ul>
+        <li>The <strong>File Shortcuts</strong> tab offers you a quicker way to access your files. You can create a new
+            file shortcut by <strong>clicking on the curved arrow</strong> symbol, inserting a shortcut name and the
+            path that leads you to the original file. You can also delete the shortcuts, see their properties and / or
+            refresh the shortcut list when you need to update it.</li>
+    </ul>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/tab4_studio.PNG" alt="tab4_studio"></center>
+    </p>
+    <p>On the <strong>blue bar</strong> at the top of the SAS Studio interface (where you can see the application's
+        name), you also have other options to speed up your programming and set your interface according to your
+        preferences.</p>
+    <p>
+        <center><img src="/screenshots/01_intro_ptI/top_tab_studio.PNG" alt="top_tab_studio"></center>
+    </p>
+    <ul>
+        <li>
+            <p>Starting from the left, you have a search button where you can <strong>browse for files and folders
+                    within each of these tabs more quickly</strong>. This will come handy once your libraries and
+                folders will become populated with more and more datasets and outputs.</p>
+        </li>
+        <li>
+            <p>Next to it you can see the <em>opened folder</em> symbol, <strong>useful for opening existing folders and
+                    programs, by searching through your directory</strong>.</p>
+        </li>
+        <li>
+            <p>You can also click on the <em>new options</em> symbol, and if you click on it you can see that you can
+                choose between <strong>opening a new SAS program, importing new data, writing a new query or XML
+                    program, closing all tabs and maximising the view of your environment</strong>.</p>
+        </li>
+        <li>
+            <p>You can switch between <strong>SAS Programmer and Visual programmer</strong> <em>perspectives</em>, by
+                clicking on the scroll-down menu and selecting either. Default is set to <em>SAS Programmer</em>, which
+                contains <strong>features most commonly needed for developing a SAS program</strong>. On the other hand,
+                <em>Visual programmer</em> perspective contains tools needed for managing various processes - you can
+                define your dataset, task and variabes using <strong>easy-to-understand drag-and-drop methods</strong>.
+            </p>
+        </li>
+        <li>
+            <p>The <em>more application options</em> button allows you to edit the <strong>autoexec file</strong> (code
+                that starts automatically whenever you start the applicaton), to change which tabs on the left-hand side
+                are displayed (default is all of them), change preferences and restart the session.</p>
+        </li>
+        <li>
+            <p>Last button refers you to <strong>SAS Support</strong>, where you can access help guidelines,
+                documentation and interact with SAS community. It also shows you keyboard shortcuts for using the
+                application.</p>
+        </li>
+    </ul>
+    <p>You have completed this tutorial!</p>
+    <p>Hopefully now you have a clear understanding of what SAS is and how SAS Studio is structured.</p>
+    <p>We are going to start working with SAS Studio in the following tutorials.</p>
+    <p><a name="sect3"></a></p>
+    <br>
+    <h2 id="resources">3. Resources</h2>
+    <ul>
+        <li>
+            <p><a href="https://support.sas.com/en/documentation.html" class="colori">SAS documentation</a></p>
+        </li>
+        <li>
+            <p><a href="https://support.sas.com/en/software/studio-support.html" class="colori">SAS Support: SAS
+                    Studio</a></p>
+        </li>
+        <li>
+            <p><a href="https://www.pharmasug.org/proceedings/2016/QT/PharmaSUG-2016-QT17.pdf" class="colori">Becoming a
+                    more efficient programmer with SAS Studio</a></p>
+        </li>
+    </ul>
+    <br>
+</body>
+
+</html>
