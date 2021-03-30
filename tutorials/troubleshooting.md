@@ -28,6 +28,8 @@ subtitle: Troubleshooting and how to find help.
 
 <a href="#sect4">4. Try it yourself: fix the errors from a SAS program</a>
 
+<a href="#subsect4"><sub>Debugging tips</s></a>
+
 <a href="#sect5">5. Resources</a>
 
 
@@ -535,7 +537,9 @@ Apply the knowledge acquired from this tutorial to fix the errors resulting from
 
 Once you've done the exercise **by yourself** you can check the solution inside this other [*SAS program*](/exercises/02_troubleshooting/SAS_tutorial2_solution.sas).
 
-### Tips to do the exercise
+<a name="subsect4"></a>
+
+### Debugging tips
 
 * **Start from the beginning** 
 
@@ -545,7 +549,7 @@ Once you've done the exercise **by yourself** you can check the solution inside 
 
 **Remember**: SAS executes programs in **steps**... even if you have an error in a step written in the beginning of your program, SAS will try **to execute all subsequent steps, wasting time and computer resources**. 
 
-Simplify your work: **correct your program one step at a time, before proceeding to the next step**. 
+Simplify your work: **correct your program one step at a time, before proceeding to the next step**. Just highlight the portion of the program which you'd like to debug and click run - SAS will only execute the selected part of the program and this might help you locate errors more quickly.
 
 * **Always check the log** 
 
