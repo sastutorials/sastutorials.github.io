@@ -921,3 +921,21 @@ Simplify your work: **correct your program one step at a time, before proceeding
 <a name="sect5"></a>
 
 # 5. Resources
+
+* [Common error messages in SAS](https://stats.idre.ucla.edu/sas/modules/common-error-messages-in-sas/)
+
+* [SAS errors](https://webpages.uidaho.edu/cals-statprog/sas/errors.htm)
+
+* [5 mistakes to avoid in SAS](https://webpages.uidaho.edu/cals-statprog/sas/errors.htm)
+
+* [SAS basic syntax](https://www.tutorialspoint.com/sas/sas_basic_syntax.htm)
+
+* [SAS Studio Guide](https://documentation.sas.com/?activeCdc=webeditocdc&cdcId=sasstudiocdc&cdcVersion=3.7&docsetId=sasstudioov&docsetTarget=aboutthedoc.htm&locale=en) 
+  
+* [SAS Product Support A to Z](https://support.sas.com/en/software/all-products-support.html)
+
+* [Full dictionary of DATA step options](https://go.documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=v_009&docsetId=ledsoptsref&docsetTarget=p1pczmnhbq4axpn1l15s9mk6mobp.htm&locale=en) 
+
+* [Full list of PROCEDURES (PROC steps)](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=proc&docsetTarget=titlepage.htm&locale=en) 
+  
+* [List of functions and call routines](https://documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=9.4_3.5&docsetId=lefunctionsref&docsetTarget=n01f5qrjoh9h4hn1olbdpb5pr2td.htm&locale=en)
