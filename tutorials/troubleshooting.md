@@ -564,16 +564,197 @@ Number 4 does print *"Yes"* in the *Results* column, but so do 7 and 8, which in
 
 ![other_comparison](../screenshots/other_errors_comparison.png)
 
-It does not matter that you have placed and **if-then** statement in your code, you are not working along SAS rules. 
+It does not matter that you have placed an **if-then** statement in your code, you are not working along SAS rules. 
 
-The numbers present in column A are all **positive and greater than 0, and none of the values is missing**. Therefore, they're all equivalent to the logical **TRUE** value, thus return **YES** in the new *Results* variable. 
+The numbers present in column A are all **positive and greater than 0, and none of the values is missing**. Therefore, they're all equivalent to the logical **TRUE** value, thus returning **YES** in the new *Results* variable. 
 
+#### 3.2 Mispellings 
 
-#### 3.2 Stacking datasets with the shorter one first
+Mispellings are legitimate and can happen all the time. Sometimes, SAS will correct the spelling mistakes if it is able to detect it, and will issue a warning to inform you about it. Let's see an example of this.
 
-When you are stacking two datasets one on top of the other, **SAS will use the number of observation of the first one to return the output**. Let's see this with an example. 
+Let's say you have this code written but the data step is mispelled as *DATE*. 
 
+```
+DATE trial; 
+input x; 
+cards; 
+1 
+2 
+3 
+; 
+```
 
+In this instance, SAS does detect that you tried to write *DATA* to initialise a data step - in fact, the program runs and outputs a dataset which you can see in the *output data* window. 
+
+However, check out the log - you can see it contains a warning message telling you that you've mispelled the statement. 
+
+![mispelling](../screenshots/mispelling.png)
+
+When SAS cannot detect the mispelling, perhaps because the word does not belong to its dictionary, **always check the log** as it will likely send you an error message in that case. 
+
+#### 3.3 Place the wrong data type next to a variable 
+
+Do you remember the dataset from above we created with names of people? 
+
+Run the program below and see what happens. 
+
+```
+data trial; 
+input name age; 
+cards; 
+Anna 23
+Johnathan-Smith 40
+Rodolphus 34 
+Mattie 32
+Mary 26 
+; 
+run; 
+```
+
+If you don't specify that the *name* variable contains character values, **SAS will treat it automatically as a numeric data type, and will return missing values because it cannot read actual numbers from that column**. 
+
+![wrong_data_type](../screenshots/wrong_data_type.png)
+
+To change that you need to specify the correct data type next to the variable name. In this case, we're telling SAS it's a character string by using the **$** sign. 
+
+```
+data trial; 
+input name $ age; 
+cards; 
+Anna 23
+Johnathan-Smith 40
+Rodolphus 34 
+Mattie 32
+Mary 26 
+; 
+run; 
+```
+
+Now SAS understands that the *name* column contains characters and not numbers, and it will output the values correctly. 
+
+![correct_data_type](../screenshots/correct_data_type.png)
+
+We will explore more about different data types and ways to format them in the next tutorials. 
+
+What you need to remember now is to always make sure that the data type is specified and is the correct one for the specific variable. 
+
+#### 3.4 Writing unmatched quotes and / or comments 
+
+This might seem obvious, but make sure that your text enclosed within quotes or commented is matched properly. 
+
+You don't want your code to be written like this:
+
+```
+/*this is a title with unmatched ending /
+
+data trial; 
+input x y; 
+cards; 
+1 2 
+2 3 
+3 4
+; 
+run; 
+
+proc print data = trial;
+run; 
+```
+
+The unmatched comment in the first line of the program comments the entire code, thus producing **no output**. 
+
+![unmatched_comment](../screenshots/unmatched_comment.png)
+
+Nor you'd want your code to be written like this:
+
+```
+/*this is a title with unmatched ending */
+
+data trial; 
+input x y; 
+cards; 
+1 2 
+2 3 
+3 4
+; 
+run; 
+
+title "printing observations from this trial dataset';
+proc print data = trial;
+run; 
+```
+
+The dataset is created but nothing gets printed. Because of the unmatched ending quote all the code after it gets wrapped inside the text as if it was commented.
+
+![unmatched_quotes](../screenshots/unmatched_quotes.png)
+
+#### 3.5 Mixing statements between DATA and PROC steps
+
+**DATA and PROC steps** perform very different functions in SAS, as we explored in [*Intro to SAS pt. I*](intro-to-sas.html), and they are **processed separately**. 
+
+A step ends in one of these three ways: 
+
+1. SAS encounters a keyword beginning a new step, that can be either DATA or PROC; 
+2. SAS encounters the RUN statement, which, as we've seen, instructs the program to run the previous step; 
+3. SAS encounters the end of the program. 
+
+Let's paste the following program (it is the same as the previous example we used, with a few additions): 
+
+```
+/*this is a comment*/
+
+data trial; 
+input x y; 
+cards; 
+1 2 
+2 3 
+3 4
+; 
+run; 
+
+data trial1; 
+set trial; 
+
+title "printing observations from trial1 dataset";
+proc print data = trial1;
+var sum = x + y;
+run; 
+```
+
+Both data steps work and are executed correctly to create datasets *trial* and *trial1*. Each step was executed as it reached its ending - this time signalled by the beginning of another step. 
+
+However, an error occurs and it relates to the PROC step. 
+
+![mixing_steps](../screenshots/mixing_steps.png)
+
+In the log window we can see that the error relates to the var statement being used to create a new variable called *sum*, which equates to the sum of the two columns from the *trial* dataset. 
+
+This is wrong, because **you cannot create a new variable from within a PROC step**! This is a function that works only within a **DATA step**. 
+
+Fixing the code like so will output the new variable called sum, created in the second **DATA step**, in the new dataset called *trial1*. 
+
+```
+/*this is a comment*/
+
+data trial; 
+input x y; 
+cards; 
+1 2 
+2 3 
+3 4
+; 
+run; 
+
+data trial1; 
+set trial; 
+sum = x + y;
+
+title "printing observations from trial1 dataset";
+proc print data = trial1;
+var sum;
+run; 
+```
+
+![correct_steps](../screenshots/correct_steps.png)
 
 <a name="sect4"></a>
 
