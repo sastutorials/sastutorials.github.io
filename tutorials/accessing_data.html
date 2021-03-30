@@ -61,26 +61,90 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>But, what are these commands specifically for?</p>
     <ul>
         <li>
-            <p><strong>DATA  test1;</strong> <br>This command is used to create a DataSet. Where "test1" is the name of the DataSet we are going to create</p>
+            <p><strong>DATA test1;</strong> <br>This command is used to create a DataSet. Where "test1" is the name of
+                the DataSet we are going to create</p>
         </li>
         <li>
-            <p><strong>INPUT birth$ birthplace$ firstname$ lastname$;</strong> <br>Used for the declaration of the fields of our dataset. The $ next to the fields is optional but is used to indicate that any type of data may be present within that field and that it will be translated into an alphanumeric string</p>
+            <p><strong>INPUT birth$ birthplace$ firstname$ lastname$;</strong> <br>Used for the declaration of the
+                fields of our dataset. The $ next to the fields is optional but is used to indicate that any type of
+                data may be present within that field and that it will be translated into an alphanumeric string</p>
         </li>
         <li>
-            <p><strong>CARDS;</strong><br>Used to indicate the beginning of the real data that will go into the dataset. Only a space is needed to separate them and each time you go down a line, a new record of the dataset is created. After the last record, the ";" to indicate that the data has ended</p>
+            <p><strong>CARDS;</strong><br>Used to indicate the beginning of the real data that will go into the dataset.
+                Only a space is needed to separate them and each time you go down a line, a new record of the dataset is
+                created. After the last record, the ";" to indicate that the data has ended</p>
         </li>
         <li>
             <p><strong>PROC PRINT DATA= test1;</strong><br>Used to print the Dataset</p>
         </li>
         <li>
-            <p><strong>RUN;</strong><br>Used to run the program. Each PROC command that we insert later must be followed by a "RUN;"</p>
+            <p><strong>RUN;</strong><br>Used to run the program. Each PROC command that we insert later must be followed
+                by a "RUN;"</p>
         </li>
     </ul>
     </p>
     <h2>but, where does this file go?</h2>
-        <center><img src="/screenshots/03_access/ESECU PROG1.PNG" alt="ESECU_PROG1.PNG" class="correction"></center>
-        <center><img src="/screenshots/03_access/WORK.TEST DIMO.PNG" alt="WORK.TEST_DIMO.PNG" class="correction"></center>
+    <center><img src="/screenshots/03_access/ESECU PROG1.PNG" alt="ESECU_PROG1.PNG" class="correction"></center>
+    <center><img src="/screenshots/03_access/WORK.TEST DIMO.PNG" alt="WORK.TEST_DIMO.PNG" class="correction"></center>
 
-    <p><a name="subsect2"></a></p>
-    <h2 id="where-does-sas-belong-in-the-hierarchy-of-programming-language-generations">Where does SAS belong in the
-        hierarchy of programming language generations?</h2>
+    <p><a name="sect2"></a></p>
+    <h1>2. The various methods to create a DataSet</h1>
+    <p><a href="#subsect2.1">
+            <ul>
+                <li>
+                    <p><strong>Column list</strong></p>
+                </li>
+            </ul>
+        </a>
+    </p>
+    <p><a href="#subsect2.2">
+        <ul>
+            <li>
+                <p><strong>Column list</strong></p>
+            </li>
+        </ul>        </a>
+    </p>
+    <p><a href="#subsect2.3">
+        <ul>
+            <li>
+                <p><strong>Column list</strong></p>
+            </li>
+        </ul>        </a>
+    </p>
+
+
+
+
+
+
+
+
+
+    <p>
+        <center><img src="/screenshots/03_access/PROG1.PNG" alt="PROG1.PNG"></center>
+    </p>
+    <p>But, what are these commands specifically for?</p>
+    <ul>
+        <li>
+            <p><strong>DATA test1;</strong> <br>This command is used to create a DataSet. Where "test1" is the name of
+                the DataSet we are going to create</p>
+        </li>
+        <li>
+            <p><strong>INPUT birth$ birthplace$ firstname$ lastname$;</strong> <br>Used for the declaration of the
+                fields of our dataset. The $ next to the fields is optional but is used to indicate that any type of
+                data may be present within that field and that it will be translated into an alphanumeric string</p>
+        </li>
+        <li>
+            <p><strong>CARDS;</strong><br>Used to indicate the beginning of the real data that will go into the dataset.
+                Only a space is needed to separate them and each time you go down a line, a new record of the dataset is
+                created. After the last record, the ";" to indicate that the data has ended</p>
+        </li>
+        <li>
+            <p><strong>PROC PRINT DATA= test1;</strong><br>Used to print the Dataset</p>
+        </li>
+        <li>
+            <p><strong>RUN;</strong><br>Used to run the program. Each PROC command that we insert later must be followed
+                by a "RUN;"</p>
+        </li>
+    </ul>
+    </p>
