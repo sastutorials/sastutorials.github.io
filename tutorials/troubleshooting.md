@@ -535,7 +535,43 @@ The mistakes we talked about in the previous section relate to errors made when 
 
 In SAS, **any value other than 0 or missing is TRUE**. Let's see this in an example. 
 
+Here we are making a comparison between numeric values, and specifying that if values are equal to either 4 or 5, then the new *Results* variable will print *"Yes"*, otherwise it will print *"No"*.
 
+```
+data example;
+
+input A;
+  if A = 4 or 5 then Results = "Yes";
+else Results = "No";
+datalines;
+
+4
+
+7
+
+8
+
+;
+
+proc print data=example noobs;
+
+run;
+```
+
+We can see that **the output does not print what we had aimed for, at all**. 
+
+Number 4 does print *"Yes"* in the *Results* column, but so do 7 and 8, which instead should have returned a *"No"*. 
+
+![other_comparison](../screenshots/other_errors_comparison.png)
+
+It does not matter that you have placed and **if-then** statement in your code, you are not working along SAS rules. 
+
+The numbers present in column A are all **positive and greater than 0, and none of the values is missing**. Therefore, they're all equivalent to the logical **TRUE** value, thus return **YES** in the new *Results* variable. 
+
+
+#### 3.2 Stacking datasets with the shorter one first
+
+When you are stacking two datasets one on top of the other, **SAS will use the number of observation of the first one to return the output**. Let's see this with an example. 
 
 
 
