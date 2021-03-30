@@ -104,7 +104,7 @@ DATA trial;    *This is another way to write a comment;
 10 230.0
 11 34
 34 45.6
-;   *Here we have created a small datasets with numeric variables x and y; 
+;   *Here we have created a small dataset with numeric variables x and y; 
 
 PROC PRINT data=trial;
 	VAR x;
@@ -218,7 +218,7 @@ run;
 Open SAS Studio and write this simple code, to get an idea of the output when your write a dataset name *correctly*.  
 
 ```
-/* correct: name your dataset with character or underscore at the
+/* correct name your dataset with character or underscore at the
 beginning */
 
 data trial;
@@ -299,7 +299,7 @@ What happened? The space between the words *id* and *employees* treats them as *
 
 SAS indeed does **identify blank spaces as separators between different variables and values**. 
 
-*Here is the trick*. If you wanted to keep *id employees* as one variable, you could either substitue the space with a special character (convenience is to use an underscore), like this: 
+*Here is the trick*. If you wanted to keep *id employees* as one variable, you could either substitute the space with a special character (convenience is to use an underscore), like this: 
 
 ```
 data trial; 
@@ -347,7 +347,7 @@ DaTa
 
 *SAS does not care about the case.*
 
-However, **remember** that SAS **does remember the case of the first occurrence of each variable name in the program, and will print it the same also for the following occurrences**.
+However, **remember** that SAS **does remember the case of the first occurrence of each variable name in the program and will print it the same also for the following occurrences**.
 
 Have a look at the results from running the following code: 
 
@@ -401,7 +401,7 @@ To fix it, we need to tell SAS that we want to increase the length of our values
 
 **REMEMBER** that there is a maximum character length allowed, and that is of **32767** characters. That should be enough! 
 
-**ALSO REMEMBER** that SAS will use the **length of the first variable occurring in the program as reference for all the others**. If you don't want any unnecessary words cut from your dataset, you should specify the length for all variables with the **LENGTH statement. This statement should also be specified before the variables themselves, as it cannot alter the length of an already existing variable.**
+**ALSO REMEMBER** that SAS will use the **length of the first variable occurring in the program as reference for all the others**. If you don't want any unnecessary words to be cut from your dataset, you should specify the length for all variables with the **LENGTH statement. This statement should also be specified before the variables themselves, as it cannot alter the length of an already existing variable.**
 
 #### 1.5 Library names cannot exceed 8 characters in length 
 
@@ -535,7 +535,7 @@ The mistakes we talked about in the previous section relate to errors made when 
 
 In SAS, **any value other than 0 or missing is TRUE**. Let's see this in an example. 
 
-Here we are making a comparison between numeric values, and specifying that if values are equal to either 4 or 5, then the new *Results* variable will print *"Yes"*, otherwise it will print *"No"*.
+Here we are making a comparison between numeric values and specifying that if values are equal to either 4 or 5, then the new *Results* variable will print *"Yes"*, otherwise it will print *"No"*.
 
 ```
 data example;
@@ -570,9 +570,9 @@ The numbers present in column A are all **positive and greater than 0, and none 
 
 #### 3.2 Mispellings.
 
-Mispellings are legitimate and can happen all the time. Sometimes, SAS will correct the spelling mistakes if it is able to detect it, and will issue a warning to inform you about it. Let's see an example of this.
+Mispellings are legitimate and can happen all the time. Sometimes, SAS will correct the spelling mistakes if it is able to detect it and will issue a warning to inform you about it. Let's see an example of this.
 
-Let's say you have this code written but the data step is mispelled as *DATE*. 
+Let's say you have this code written but the data step is misspelled as *DATE*. 
 
 ```
 DATE trial; 
@@ -586,11 +586,11 @@ cards;
 
 In this instance, SAS does detect that you tried to write *DATA* to initialise a data step - in fact, the program runs and outputs a dataset which you can see in the *output data* window. 
 
-However, check out the log - you can see it contains a warning message telling you that you've mispelled the statement. 
+However, check out the log - you can see it contains a warning message telling you that you've misspelled the statement. 
 
-![mispelling](../screenshots/mispelling.png)
+![misspelling](../screenshots/mispelling.png)
 
-When SAS cannot detect the mispelling, perhaps because the word does not belong to its dictionary, **always check the log** as it will likely send you an error message in that case. 
+When SAS cannot detect the misspelling, perhaps because the word does not belong to its dictionary, **always check the log** as it will likely send you an error message in that case. 
 
 #### 3.3 Specifying the wrong data type next to a variable. Or not specifying it at all.
 
@@ -611,7 +611,7 @@ Mary 26
 run; 
 ```
 
-If you don't specify that the *name* variable contains character values, **SAS will treat it automatically as a numeric data type, and will return missing values because it cannot read actual numbers from that column**. 
+If you don't specify that the *name* variable contains character values, **SAS will treat it automatically as a numeric data type and will return missing values because it cannot read actual numbers from that column**. 
 
 ![wrong_data_type](../screenshots/wrong_data_type.png)
 
@@ -722,7 +722,7 @@ run;
 
 Both data steps work and are executed correctly to create datasets *trial* and *trial1*. Each step was executed as it reached its ending - this time signalled by the beginning of another step. 
 
-However, an error occurs and it relates to the PROC step. 
+However, an error occurs, and it relates to the PROC step. 
 
 ![mixing_steps](../screenshots/mixing_steps.png)
 
@@ -803,7 +803,7 @@ You can see that an output appears in the *results* window, displaying summary v
 
 ![proc_opt_correct](../screenshots/correct_proc_step_opt.png)
 
-**Let SAS Studio help you to spot these error.** Remember the code colouring smart feature? Maybe you've already noticed this, but when you try to insert an option in a step where it does not belong, it appears in **grey**. When it is written inside the right step, it is coloured **light blue**. 
+**Let SAS Studio help you to spot these errors.** Remember the code colouring smart feature? Maybe you've already noticed this, but when you try to insert an option in a step where it does not belong, it appears in **grey**. When it is written inside the right step, it is coloured **light blue**. 
 
 ![proc_opt_comparison](../screenshots/proc_opt_comparison.png)
 
