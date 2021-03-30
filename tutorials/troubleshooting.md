@@ -539,17 +539,7 @@ Once you've done the exercise **by yourself** you can check the solution inside 
 
 <a name="subsect4"></a>
 
-### Debugging tips
-
-* **Start from the beginning** 
-
-**Don't be alarmed** if the program has several errors in it. Sometimes there is **a single error  at the beginning of your program** that causes the others, too. Correcting this one error might fix the rest. So **start at the beginning of your program and work down from there**.
-
-* **Debug your program one step at a time**
-
-**Remember**: SAS executes programs in **steps**... even if you have an error in a step written in the beginning of your program, SAS will try **to execute all subsequent steps, wasting time and computer resources**. 
-
-Simplify your work: **correct your program one step at a time, before proceeding to the next step**. Just highlight the portion of the program which you'd like to debug and click run - SAS will only execute the selected part of the program and this might help you locate errors more quickly.
+## Debugging tips
 
 * **Always check the log** 
 
@@ -559,11 +549,24 @@ Make sure you **check the log even when the program seems to have run correctly*
 
 **Be careful**. In the log window usually the error in the code is *underlined*. However, sometimes the actual error **is in a different place in your program**, typically in the **preceding line**. 
 
+
 * **Let formatting help you**
 
 Whenever you need to check for errors, **the neater the code, the easier it is to spot them**. Whenever you are writing code, make sure to follow the standard formatting rules we talked about earlier in this tutorial, and help yourself with SAS Studio's smart feature. 
 
 If you have to check someone else's program or your own, but that you haven't opened in a while, and the code is all messy and badly formatted, **take your time to clean it first**. It might seem like a waste of time, but when you'll actually start debugging it, you'll find it to be **way easier than if you left it messy**. 
+
+
+* **Start from the beginning** 
+
+**Don't be alarmed** if the program has several errors in it. Sometimes there is **a single error  at the beginning of your program** that causes the others, too. Correcting this one error might fix the rest. So **start at the beginning of your program and work down from there**.
+
+
+* **Debug your program one step at a time**
+
+**Remember**: SAS executes programs in **steps**... even if you have an error in a step written in the beginning of your program, SAS will try **to execute all subsequent steps, wasting time and computer resources**. 
+
+Simplify your work: **correct your program one step at a time, before proceeding to the next step**. Just highlight the portion of the program which you'd like to debug and click run - SAS will only execute the selected part of the program and this might help you locate errors more quickly.
 
 <a name="sect5"></a>
 
