@@ -51,13 +51,13 @@ Let's say you are looking for a command, but not quite remember its exact name. 
 
 ![syntax_helper](../screenshots/syntax_helper.png)
 
-The **code completion** feature gives you suggestions on the existing commands within the *SAS dictionary*, starting from the letters that you typed inside the program editor. In this case, it is suggesting two possible commands starting with *se*: **select** and **set** statements and it already tells you that these two belong to the group of **DATA Step Statements**. If you hover over either, a new window appears on the right hand side, further detailing functionalities, syntax structure, and other information on that particular command. 
+The **code completion** feature gives you suggestions on the existing commands within the *SAS dictionary*, starting from the letters that you typed inside the program editor. In this case, it is suggesting two possible commands starting with *se*: **select** and **set** statements and it already tells you that these two belong to the group of **DATA Step Statements**. If you hover over either, a new window appears on the right-hand side, further detailing functionalities, syntax structure, and other information on that particular command. 
 
 **Scrolling down** in that same window, you are offered links that direct you to the **official documentation** and to examples of uses of that particular command. 
 
 ![syntax_helper1](../screenshots/syntax_helper1.png)
 
- The second smart feature in SAS Studio helps you correctly **format** your code. This is extremely important to help yourself with clearly understanding your code when you want to **go back to a program which you haven't opened in a while and want to rememeber quickly what it is useful for**! 
+ The second smart feature in SAS Studio helps you correctly **format** your code. This is extremely important to help yourself with clearly understanding your code when you want to **go back to a program which you haven't opened in a while and want to remember quickly what it is useful for**! 
 
  Let's say we wrote the following:
 
