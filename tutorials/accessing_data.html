@@ -55,9 +55,25 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p><a name="sect1"></a></p>
     <h1>1. Create a DataSet from scratch</h1>
     <p>Let's start by creating a dataset with the LIST INPUT procedure</p>
-    <p><center><img src="/screenshots/PROG1.PNG" alt="PROG1.PNG"></center></p>
+    <p>
+        <center><img src="/screenshots/PROG1.PNG" alt="PROG1.PNG"></center>
+    </p>
     <p>But, what are these commands specifically for?</p>
-    <p></p>
+    <ul>
+        <li>
+            <p><storng>DATA  test1;</storng> This command is used to create a DataSet. Where "test1" is the name of the DataSet we are going to create</p>
+        </li>
+        <li>
+            <p><storng>INPUT birth$ birthplace$ firstname$ lastname$;</storng> <br>Used for the declaration of the fields of our dataset. The $ next to the fields is optional but is used to indicate that any type of data may be present within that field and that it will be translated into an alphanumeric string</p>
+        </li>
+        <li>
+            <p>What is the CasUtil procedure and how to use it</p>
+        </li>
+        <li>
+            <p>Creating a CasLib and how to open a sas session</p>
+        </li>
+    </ul>
+    </p>
     <p>SAS is considered to be part of the 4th generation of programming languages. It is, in fact, much simpler than
         its predecessors, like Pascal and C, as it already possesses built-in functions to make programming much easier
         and user-friendly.</p>
