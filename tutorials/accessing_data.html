@@ -117,13 +117,21 @@ subtitle: Learn about the different methods for importing or creating data from 
 
     <h5>Column input</h5>
     <p><a name="subsect2.1"></a></p>
-    <p>Column input allows you to read variable values that occupy the same columns within each record. 
-       To use column input, list the variable names in the INPUT statement, immediately following each variable name with its corresponding 
-       column positions in each of the data lines. (Of course, you'll need to follow each character variable with a dollar sign ($) first.)
-       Column input reads data values until it reaches the last specified column for the field.
-       The important points to note about column input are:
+    <p>This type of input have 3 main characteristics:
         <ul>
-           
+            <li>
+                <p>When we use the column input <strong>the format for data entry is:</strong><br>
+                   INPUT (name field) $ (start-column - end-column) ...</p>
+            </li>
+            <li>
+                <p>the specified range will be valid for all records and sas will only 
+                   read from the start value to the end value for each field
+                </p>
+            </li>
+            <li>
+                <p>Column input allows fields to be skipped altogether or to be read in any order.</p>
+            </li>
+        </ul>
     </p>
 
     <br>
