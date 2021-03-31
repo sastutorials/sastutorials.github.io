@@ -24,5 +24,10 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#subsect2"><sub>String formatting</sub></a>
 
-<a href="#subsect2"><sub>Datetime formatting</sub></a>
+<a href="#subsect3"><sub>Datetime formatting</sub></a>
 
+<a href="#sect2">2. First analyses</a>
+
+<a href="#subsect4"><sub>Familiarising with the dataset</sub></a>
+
+<a href="#subsect5"><sub>
