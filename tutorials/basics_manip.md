@@ -16,3 +16,13 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 ## Structure 
 
+<a href="#sect1">1. Format the data</a>
+
+<a href="#subsect1"><sub>Formats and informats</sub></a>
+
+<a href="#subsect1"><sub>Numeric formatting</sub></a>
+
+<a href="#subsect2"><sub>String formatting</sub></a>
+
+<a href="#subsect2"><sub>Datetime formatting</sub></a>
+
