@@ -23,13 +23,9 @@ subtitle: Troubleshooting and how to find help.
 </ul>
 <br>
 
-<p><a name="sect1"></a></p>
 
 <h2 id="structure">Structure</h2>
 <p><a href="#sect1"><h3>1. SAS Official Support</h3></a></p>
-
-<p><a name="subsect1"></a></p>
-
 <p><a href="#subsect1"><sub><h5>SAS Studio smart features</h5></sub></a></p>
 <p><a href="#subsect2"><sub><h5>Log window</h5></sub></a></p>
 <p><a href="#subsect3"><sub><h5>Official documentation</h5></sub></a></p>
@@ -37,7 +33,13 @@ subtitle: Troubleshooting and how to find help.
 <p><a href="#sect3"><h3>3. Other possible mistakes</h3></a></p>
 <p><a href="#sect4"><h3>4. Try it yourself: fix the errors from a SAS program</h3></a></p>
 <p><a href="#subsect4"><sub><h5>Debugging tips</h5></sub></a></p>
+
+<p><a name="sect1"></a></p>
+
 <p><a href="#sect5"><h3>5. Resources</h3></a></p>
+
+<p><a name="subsect1"></a></p>
+
 <br>
 <h1 id="1-sas-official-support">1. SAS Official Support</h1>
 
@@ -71,13 +73,13 @@ var x; run;
 <p>Click on the button highlighted in <em>yellow</em> in the image below: <strong>you can see the position of certain commands has changed.</strong> I have highlighted the changes in <em>green</em>.</p>
 <p><img src="/screenshots/02_intro_ptII/code_formatting.jpg" alt="code_formatting"></p>
 <p>SAS Studio does not provide automatic smart features for this, but another two important <em>formatting</em> <em>tips</em> that might help you with clean code writing etiquette, are:</p>
+
+<p><a name="subsect2"></a></p>
+
 <ul>
 <li><strong>write SAS commands in capital letters</strong>, so you can distinguish them from other text;</li>
 <li><strong>comment about your code</strong>, so when you go back to it you already have information on the functionality of your program before you even run it.</li>
 </ul>
-
-<p><a name="subsect2"></a></p>
-
 <p>Here is an example of a well-formatted and clean program:</p>
 <pre><code><code><div>/* This is one way of adding comments to your SAS program*/
 
@@ -108,9 +110,6 @@ RUN; *Here we are printing only the x variable from the dataset created above;
 <p>Let's explore SAS Studio's <strong>LOG</strong> window, where error messages, warnings and notes are reported for every line of code run in your program.</p>
 <p>The image below summarises each section of the window.</p>
 <p><img src="/screenshots/02_intro_ptII/log_window.png" alt="log_window"></p>
-
-<p><a name="subsect3"></a></p>
-
 <ul>
 <li>The <strong>top panel</strong> describes the summary for the tree types of messages in the log: errors, warnings and notes;</li>
 <li>The <strong>bottom panel</strong> shows in detail where the messages refer to in the code;</li>
@@ -122,7 +121,7 @@ RUN; *Here we are printing only the x variable from the dataset created above;
 <p>On the top of the log window, there are features which you might find useful if you want to preserve the content of a specific log, perhaps if you wish to consult it in the future.</p>
 <p><img src="/screenshots/02_intro_ptII/log_top_tab.png" alt="log_top_tab"></p>
 <p>In particular, you'll find options that will allow you to save a specific log result within your home directory inside SAS Studio, but also to save it as html or print it directly.</p>
-
+<p><a name="subsect3"></a></p>
 <h2 id="official-documentation">Official documentation</h2>
 <p>At this point, you know that SAS offers its own official documentation, where you can find details about each single command existing in SAS.</p>
 <p>We have already mentioned where to look for help from SAS Studio: either by clicking on the <strong>question mark</strong> (?) on the top bar, or by clicking on <strong>product documentation</strong> from the <strong>code completion</strong> feature of the application.</p>
