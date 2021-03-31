@@ -38,6 +38,8 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#subsect8"><sub>Feature engineering</sub></a>
 
+<a href="#subsect9"><sub>Save your new dataset!</sub></a>
+
 <a href="#sect4">4. Resources</a>
 
 
@@ -84,6 +86,10 @@ subtitle: Learn about different SAS functions to implement in the data step.
 <a name="subsect8"></a>
 
 ## Feature engineering 
+
+<a name="subsect9"></a>
+
+## Save your new dataset!
 
 <a name="sect4"></a>
 
