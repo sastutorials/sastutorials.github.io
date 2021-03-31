@@ -10,6 +10,8 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 * Explore the DATA step and its group of statements in detail, in particular how to modify variables, have control over their execution and create calculated fields
 
+* Compare the use of DATA step statements in CAS
+
 * Learn about different options to control the output for the entire dataset, for only certain observations and / or variables
 
 ## Structure 
