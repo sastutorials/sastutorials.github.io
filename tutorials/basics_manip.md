@@ -40,11 +40,17 @@ If you've headed straight to this tutorial, you first need to download the data 
 
 # 1. First analyses (observational)
 
-Every data scientist has a specific workflow to handle datasets: importing, cleaning, analysing and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
+Every data scientist has a specific workflow to a project: importing, cleaning, analysing a dataset and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
 
 <a name="subsect1"></a>
 
 ## Familiarise with the dataset
+
+
+
+<a name ="subsect2"></a>
+
+## Format the data
 
 Before manipulating the datasets at your disposal, the first thing to do is to see what type of data you are dealing with, so that you understand how you can manipulate it and you can start thinking about the potential analyses. We refer to **data types** as **the type of format of the data values** in your dataset. 
 
@@ -56,11 +62,7 @@ There are **three mains data types**:
 
 SAS reads the numeric data type by default. However, it is necessary to add specifications to make SAS read particular types of numerical data and other data types. 
 
-Our sample dataset 
-
-<a name ="subsect2"></a>
-
-## Format the data
+Our sample dataset ... 
 
 ### Formats and informats 
 
