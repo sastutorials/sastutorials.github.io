@@ -34,7 +34,7 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#sect3">4. Resources</a>
 
-If you've headed straight to this tutorial, you first need to download the data on [renewable energy generation (GWh)](/terna_data/TERNA_renewables_daily_avg.csv) provided by Terna. The file is in *.csv* and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html) to learn how to **import the data on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
+If you've headed straight to this tutorial, you first need to download the data on [renewable energy generation (GWh)](/terna_data/TERNA_renewables_daily_avg.csv) provided by Terna. The file is in *.csv* and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import data on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
 
 <a name="sect1"></a>
 
@@ -42,11 +42,11 @@ If you've headed straight to this tutorial, you first need to download the data 
 
 Every data scientist has a specific workflow to a project: importing, cleaning, analysing a dataset and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
 
+![datascience_workflow](../screenshots/04_basic_manip/datascience_workflow.png)
+
 <a name="subsect1"></a>
 
 ## Familiarise with the dataset
-
-
 
 <a name ="subsect2"></a>
 
