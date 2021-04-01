@@ -47,6 +47,8 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 # 1. Format the data
 
+
+
 <a name="subsect1"></a>
 
 ## Formats and informats 
