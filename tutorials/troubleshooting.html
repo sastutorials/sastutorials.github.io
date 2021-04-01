@@ -142,7 +142,7 @@ RUN; *Here we are printing only the x variable from the dataset created above;
 <p>Most common mistakes happen because <strong>SAS programmers do not follow SAS syntax rules</strong>. We are going to see the most important and common syntax rules in SAS, and we are also going to explore what happens when we do not follow them...</p>
 <p>At the moment, don't worry about the logic behind the code and syntax, as you will learn about it in the next tutorials.</p>
 <p>What matters now is that you start remembering these rules, so that you can apply them in your everyday programming to avoid unnecessary debugging.</p>
-<h4 id="11-every-line-of-code-in-sas-must-end-with-a-semi-colon-">1.1 Every line of code in SAS <strong>MUST</strong> end with a <strong>semi-colon (;)</strong></h4>
+<h4 id="11-every-line-of-code-in-sas-must-end-with-a-semi-colon-">2.1 Every line of code in SAS <strong>MUST</strong> end with a <strong>semi-colon (;)</strong></h4>
 <p>If you run the following program, by either pressing on the <em>running figure</em> button or by clicking on <strong>F3</strong> key in your keyboard, you will see an error popping up.</p>
 <pre><code><code><div>data trial      
 input x y;
@@ -163,7 +163,7 @@ cards;
 run;
 </div></code></code></pre>
 <p><center><img src="/screenshots/02_intro_ptII/output_correct.png" alt="output_correct"></center></p>
-<h4 id="12-names-for-datasets-must-start-with-a-character-or-underscore-and-cannot-exceed-32-character-in-length-by-default-if-you-place-a-special-character-or-a-number-you-will-run-into-error">1.2 Names for datasets <strong>must</strong> start with a <strong>character</strong> or <strong>underscore</strong> and cannot exceed 32-character in length (by default). If you place a <strong>special character or a number</strong> you will run into error.</h4>
+<h4 id="12-names-for-datasets-must-start-with-a-character-or-underscore-and-cannot-exceed-32-character-in-length-by-default-if-you-place-a-special-character-or-a-number-you-will-run-into-error">2.2 Names for datasets <strong>must</strong> start with a <strong>character</strong> or <strong>underscore</strong> and cannot exceed 32-character in length (by default). If you place a <strong>special character or a number</strong> you will run into error.</h4>
 <p>Open SAS Studio and write this simple code, to get an idea of the output when your write a dataset name <em>correctly</em>.</p>
 <pre><code><code><div>/* correct name your dataset with character or underscore at the
 beginning */
@@ -205,7 +205,7 @@ run;
 <p>You can see that the tab <em>output data</em> <strong>does not show this time</strong>. Instead, an <strong>X</strong> appears near the <em>name of the program</em> and you are automatically directed to the <strong>log</strong> window.</p>
 <p>In this example, you can see that there are <em>4 errors</em> and <em>5 warnings</em>. If you click on either menu you can read the specific message(es).</p>
 <p><center><img src="/screenshots/02_intro_ptII/error_log_syntax_rules.png" alt="error_log_syntax_rules"></center></p>
-<h4 id="13-blank-spaces-automatically-define-two-separate-entities">1.3 Blank spaces automatically define two separate entities</h4>
+<h4 id="13-blank-spaces-automatically-define-two-separate-entities">2.3 Blank spaces automatically define two separate entities</h4>
 <p>Let's see an example of this. Let's say you want to create two columns named <em>id employees</em> and <em>age</em>.</p>
 <p>Paste the following in SAS Studio:</p>
 <pre><code><code><div>/* naming two columns as
@@ -254,7 +254,7 @@ run;
 </div></code></code></pre>
 <p>If you run the program now, you will see that the output is <strong>finally what we had expected</strong>. The first variable is, in fact, called <em>id employees</em> and the second one is called <em>age</em>.</p>
 <p><center><img src="/screenshots/02_intro_ptII/correct_dataset_name.png" alt="correct_dataset_name"></center></p>
-<h4 id="14-sas-code-is-case-in-sensitive">1.4 SAS code is CASE IN-sensitive</h4>
+<h4 id="14-sas-code-is-case-in-sensitive">2.4 SAS code is CASE IN-sensitive</h4>
 <p>This means that you could be writing your statements, functions, variable and value names either of these ways:</p>
 <pre><code><code><div>DATA
 
@@ -284,7 +284,7 @@ run;
 <p><center><img src="/screenshots/02_intro_ptII/case_insensitive_ex.png" alt="case_insensitive_ex"></center></p>
 <p>You can try and revert the order of occurrence of the two variables, to see that the output does change according to the new first occurrence.</p>
 <p><center><img src="/screenshots/02_intro_ptII/case_insensitive_ex2.png" alt="case_insensitive_ex2"></center></p>
-<h4 id="15-by-default-values-cannot-be-longer-than-8-characters-in-length">1.5 By default, values cannot be longer than 8 characters in length</h4>
+<h4 id="15-by-default-values-cannot-be-longer-than-8-characters-in-length">2.5 By default, values cannot be longer than 8 characters in length</h4>
 <p>Let's use a new example, taking into consideration character strings as values.</p>
 <pre><code><code><div>data trial; 
 input name $ age; 
@@ -303,7 +303,7 @@ run;
 <p>To fix it, we need to tell SAS that we want to increase the length of our values. We will further discuss about the <strong>LENGTH</strong> statement in the next tutorial.</p>
 <p><strong>REMEMBER</strong> that there is a maximum character length allowed, and that is of <strong>32767</strong> characters. That should be enough!</p>
 <p><strong>ALSO REMEMBER</strong> that SAS will use the <strong>length of the first variable occurring in the program as reference for all the others</strong>. If you don't want any unnecessary words to be cut from your dataset, you should specify the length for all variables with the <strong>LENGTH statement. This statement should also be specified before the variables themselves, as it cannot alter the length of an already existing variable.</strong></p>
-<h4 id="15-library-names-cannot-exceed-8-characters-in-length">1.5 Library names cannot exceed 8 characters in length</h4>
+<h4 id="15-library-names-cannot-exceed-8-characters-in-length">2.5 Library names cannot exceed 8 characters in length</h4>
 <p>If we tried to absurdly write a very long library name (<strong>remember to write your own path to your home directory</strong>), it would result in error.</p>
 <pre><code><code><div>libname thislibnameiswaytoolongtoexist &quot;your/path/to/your/home/directory&quot;;
 </div></code></code></pre>
@@ -311,7 +311,7 @@ run;
 <p><center><img src="/screenshots/02_intro_ptII/library_name_length.png" alt="library_name_length"></center></p>
 <p>SAS is telling you the library name <strong>is not a valid SAS name</strong> because <strong>it definitely exceeds the maximum allowed of 8 characters in length</strong>.</p>
 <p>In this case, and contrary to value names, <strong>you cannot change this option</strong>. Every new library name that you will create will have to fit within the maxmimum length allowed of 8 characters.</p>
-<h4 id="16-add-run-global-statement-at-the-end-of-your-code">1.6 Add RUN (global statement) at the end of your code</h4>
+<h4 id="16-add-run-global-statement-at-the-end-of-your-code">2.6 Add RUN (global statement) at the end of your code</h4>
 <p>The RUN statement is part of the group of <strong>global statements</strong>, meaning they can be found anywhere in the program and outside of either <strong>DATA</strong> or <strong>PROC</strong> steps. This statement is powerful because it will section your program into <strong>parts of code to execute</strong> and will <strong>clearly identify the right order in which to submit code</strong>.</p>
 <p>To understand this better, let's make an example. Paste the following into your SAS Studio program. The aim of this code is to create three different datasets (with quite similar values) and print them out with three different titles.</p>
 <pre><code><code><div>data data1; 
