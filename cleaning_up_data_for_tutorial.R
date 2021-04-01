@@ -5,6 +5,8 @@
 
 library(tidyverse)
 library(lubridate)
+install.packages("xlsx")
+library(xlsx)
 
 ### apertura dati ###
 
@@ -24,7 +26,7 @@ terna_all <- rbind(terna16,terna17,terna18,terna19,terna20,terna21) %>%
          Date = dmy_hm(Date), 
          Month = format(Date, format="%m"), 
          Day = format(Date, format="%d"),
-         Year = format(Date, format="%Y"))
+         Year = as.numeric(format(Date, format="%Y")))
 
 daily_avg <- terna_all %>%
   group_by(Day, Month, Year, source) %>% 
@@ -32,7 +34,23 @@ daily_avg <- terna_all %>%
   spread(source,generation_avg_daily) %>% 
   mutate(date = dmy(paste(Day, Month, Year, sep="/"))) %>% 
   ungroup() %>%
-  select(-Day,-Month,-Year) %>% 
+  select(-Day,-Month) %>% 
   arrange(date)
 
-write.csv(daily_avg, "terna_data/TERNA_renewables_daily_avg.csv")
+str(daily_avg)
+
+terna16 <-filter(daily_avg, Year == 2016)
+terna17 <-filter(daily_avg, Year==2017)
+terna18<-filter(daily_avg,Year==2018)
+terna19 <-filter(daily_avg, Year==2019)
+terna20<-filter(daily_avg,Year==2020)
+terna21 <- filter(daily_avg, Year==2021)
+
+
+### scrittura in .csv ### 
+
+
+
+
+
+
