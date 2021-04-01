@@ -9,10 +9,10 @@ subtitle: Troubleshooting and how to find help.
     <body class="vscode-body vscode-light">
 
 <br>
-<h2 id="learning-objectives">Learning Objectives</h2>
+<h2 id="learning-objectives">Learning Objectives</h2><br>
 <ul>
 <li>
-<p>Take advantage of SAS Official</p>
+<p>Take advantage of SAS Official Support</p>
 </li>
 <li>
 <p>Learn how to read and interpret the Log window</p>
@@ -22,14 +22,8 @@ subtitle: Troubleshooting and how to find help.
 </li>
 </ul>
 <br>
-
-<p><a name="sect1"></a></p>
-
-<h2 id="structure">Structure</h2>
+<h2 id="structure">Structure</h2><br>
 <p><a href="#sect1"><h3>1. SAS Official Support</h3></a></p>
-
-<p><a name="subsect1"></a></p>
-
 <p><a href="#subsect1"><sub><h5>SAS Studio smart features</h5></sub></a></p>
 <p><a href="#subsect2"><sub><h5>Log window</h5></sub></a></p>
 <p><a href="#subsect3"><sub><h5>Official documentation</h5></sub></a></p>
@@ -38,12 +32,15 @@ subtitle: Troubleshooting and how to find help.
 <p><a href="#sect4"><h3>4. Try it yourself: fix the errors from a SAS program</h3></a></p>
 <p><a href="#subsect4"><sub><h5>Debugging tips</h5></sub></a></p>
 <p><a href="#sect5"><h3>5. Resources</h3></a></p>
+<p><a name="sect1"></a></p>
+<p><a name="subsect1"></a></p>
+<br>
+<br>
 <br>
 <h1 id="1-sas-official-support">1. SAS Official Support</h1>
-
 <h2 id="sas-studio-smart-features">SAS Studio smart features</h2>
 <p>As we had mentioned in the previous tutorial &quot;<a href="/tutorials/intro-to-sas.html" class="colori">Getting Started with SAS and SAS Studio</a>&quot;, SAS Studio is equipped with <strong>smart features</strong>, like <em>code completion, formatting and syntax colouring</em>. Make sure to <em>exploit these features</em>, which should already help you out not to make unnecessary mistakes.</p>
-<p>In particular, the <strong>code completion</strong> feature allows you to visualise information on the command quickly and to browse for examples by <strong>directing you to the official SAS documentation</strong>.</p>
+<p>The <strong>code completion</strong> feature allows you to visualise information on the command quickly and to browse for examples by <strong>directing you to the official SAS documentation</strong>.</p>
 <p>Let's have a look at how this works in particular.</p>
 <p>Let's say you are looking for a command, but not quite remember its exact name. You only know it starts with <em>se</em>...</p>
 <p><img src="/screenshots/02_intro_ptII/syntax_helper.png" alt="syntax_helper"></p>
@@ -75,9 +72,6 @@ var x; run;
 <li><strong>write SAS commands in capital letters</strong>, so you can distinguish them from other text;</li>
 <li><strong>comment about your code</strong>, so when you go back to it you already have information on the functionality of your program before you even run it.</li>
 </ul>
-
-<p><a name="subsect2"></a></p>
-
 <p>Here is an example of a well-formatted and clean program:</p>
 <pre><code><code><div>/* This is one way of adding comments to your SAS program*/
 
@@ -103,14 +97,14 @@ RUN; *Here we are printing only the x variable from the dataset created above;
 <p>Last but not least, the <strong>syntax colouring</strong> feature helps you distinguish between <strong>types of commands</strong>, <strong>variables</strong> and <strong>values</strong>, <strong>special characters</strong> and <strong>other symbols</strong>. I guess you've already noticed that from pasting the previous code in your SAS Studio program.</p>
 <p>Here I have taken a snippet of the previous program, adding a few more lines of code to show you what each colour corresponds to. The more you are going to write in SAS the more you are going to become familiar with this smart feature.</p>
 <p><img src="/screenshots/02_intro_ptII/code_colouring.png" alt="code_colouring"></p>
-
+<p><a name="subsect2"></a></p>
+<br>
+<br>
+<br>
 <h2 id="log-window">Log window</h2>
 <p>Let's explore SAS Studio's <strong>LOG</strong> window, where error messages, warnings and notes are reported for every line of code run in your program.</p>
 <p>The image below summarises each section of the window.</p>
 <p><img src="/screenshots/02_intro_ptII/log_window.png" alt="log_window"></p>
-
-<p><a name="subsect3"></a></p>
-
 <ul>
 <li>The <strong>top panel</strong> describes the summary for the tree types of messages in the log: errors, warnings and notes;</li>
 <li>The <strong>bottom panel</strong> shows in detail where the messages refer to in the code;</li>
@@ -122,25 +116,27 @@ RUN; *Here we are printing only the x variable from the dataset created above;
 <p>On the top of the log window, there are features which you might find useful if you want to preserve the content of a specific log, perhaps if you wish to consult it in the future.</p>
 <p><img src="/screenshots/02_intro_ptII/log_top_tab.png" alt="log_top_tab"></p>
 <p>In particular, you'll find options that will allow you to save a specific log result within your home directory inside SAS Studio, but also to save it as html or print it directly.</p>
-
+<p><a name="subsect3"></a></p>
+<br>
+<br>
+<br>
 <h2 id="official-documentation">Official documentation</h2>
 <p>At this point, you know that SAS offers its own official documentation, where you can find details about each single command existing in SAS.</p>
 <p>We have already mentioned where to look for help from SAS Studio: either by clicking on the <strong>question mark</strong> (?) on the top bar, or by clicking on <strong>product documentation</strong> from the <strong>code completion</strong> feature of the application.</p>
 <p>The documentation that you have access to from SAS Studio either directs you to the <a href="https://documentation.sas.com/?activeCdc=webeditocdc&amp;cdcId=sasstudiocdc&amp;cdcVersion=3.7&amp;docsetId=sasstudioov&amp;docsetTarget=aboutthedoc.htm&amp;locale=en" class="colori">official SAS Studio Guide</a> or to <a href="https://support.sas.com/en/software/all-products-support.html" class="colori">SAS Product Support A to Z</a>.</p>
 <p>However, these either relate to SAS Studio specifically or start from a very broad range of choices.</p>
 <p>Here is a couple of links more to help you get started.</p>
-
-<p><a name="sect2"></a></p>
-
 <ul>
 <li><a href="https://go.documentation.sas.com/?cdcId=pgmsascdc&cdcVersion=v_009&docsetId=lestmtsref&docsetTarget=p0gct6ariiecuhn15jkq8pzfzgef.htm&locale=en" class="colori"><em>This link</em></a> directs you to the <strong>full dictionary of DATA STEP statements</strong>;</li>
 <li><a href="https://documentation.sas.com/?cdcId=pgmsascdc&amp;cdcVersion=9.4_3.5&amp;docsetId=proc&amp;docsetTarget=titlepage.htm&amp;locale=en" class="colori"><em>This link</em></a> instead directs you to the <strong>full list of PROCEDURES (PROC STEPS)</strong> that you can do on SAS;</li>
 <li><a href="https://documentation.sas.com/?cdcId=pgmsascdc&amp;cdcVersion=9.4_3.5&amp;docsetId=lefunctionsref&amp;docsetTarget=n01f5qrjoh9h4hn1olbdpb5pr2td.htm&amp;locale=en" class="colori"><em>This link</em></a> directs you to a list of <strong>functions and call routines</strong>, grouped by category of use.</li>
+<li><a href="https://www.youtube.com/c/sasusers/featured" class="colori"><em>This link</em></a> directs you to a series of <strong>video tutorials led by SAS</strong> for you to explore further.</li>
 </ul>
 <p>Another useful way to look for help is by accessing <a href="https://communities.sas.com/t5/SAS-Analytics-U/bd-p/sas_analytics_u" class="colori"><em>SAS communities</em></a> page, where you can browse for existing questions or ask your own and see what other SAS users have come with up as solution.</p>
 <p>You should also check out <a href="https://stackoverflow.com/tags/sas/info" class="colori"><em>stack overflow</em></a>, another website used for interacting with other programmers and discuss on code and debugging issues.</p>
-<p><strong>ANYTHING ELSE TO ADD?</strong></p>
-
+<p><a name="sect2"></a></p>
+<br>
+<br>
 <br>
 <h1 id="2-common-mistakes-and-how-to-avoid-them">2. Common mistakes and how to avoid them</h1>
 <p>Most common mistakes happen because <strong>SAS programmers do not follow SAS syntax rules</strong>. We are going to see the most important and common syntax rules in SAS, and we are also going to explore what happens when we do not follow them...</p>
@@ -409,6 +405,8 @@ run;
 <p><img src="/screenshots/02_intro_ptII/correct_run_statement.png" alt="correct_run_statement"></p>
 <p><a name="sect3"></a></p>
 <br>
+<br>
+<br>
 <h1 id="3-other-possible-mistakes">3. Other possible mistakes</h1>
 <p>The mistakes we talked about in the previous section relate to errors made when not following the basic syntax rules in SAS. There are other possible mistakes, which might not be so clear right now but that will become useful to you as you'll start coding.</p>
 <h4 id="31-values-of-numbers-become-logical-when-using-comparison-operators">3.1 Values of numbers become logical when using comparison operators.</h4>
@@ -642,9 +640,6 @@ run;
 <p>There is a so called &quot;logical fault&quot; in the programming: <strong>we have actually converted kg to g, instead of tonnes</strong> and we should fix that before proceeding with more programming on the same dataset.</p>
 <p>Another type of logical fault can occur if we <strong>try to modify a variable which has yet to be defined</strong>.</p>
 <p>An example of this with the same dataset we create before. This time we are creating a new variable called <em>tonnes_halved</em> following a condition on it:</p>
-
-<p><a name="sect4"></a></p>
-
 <pre><code><code><div>/*converting kg to tonnes*/
 data kg;
 	input kg;
@@ -667,20 +662,22 @@ proc print data=tonnes;
 run;
 </div></code></code></pre>
 <p>The program executes just fine, but if we look at the content of <em>tonnes</em> dataset, we can see it is <strong>empty</strong>. The notes in the log window confirm this.</p>
-
-<p><a name="subsect4"></a></p>
-
 <p><img src="/screenshots/02_intro_ptII/wrong_logic1.png" alt="wrong_logic1"></p>
 <p>We have tried to <strong>apply a condition on a variable which has yet to exist, as we created it <em>after</em> the condition</strong>.</p>
 <p><strong>Remember that a DATA step executes code line by line.</strong> To fix this mistake, you should swap the order in which the two statements appear.</p>
-
+<p><a name="sect4"></a></p>
+<br>
+<br>
 <br>
 <h1 id="4-try-it-yourself-fix-the-errors-from-a-sas-program">4. Try it yourself: fix the errors from a SAS program</h1>
 <p>Download <a href="/exercises/02_troubleshooting/SAS_tutorial2_exercise.sas" class="colori"><em>this SAS program</em></a> and upload it on your SAS Studio to do the exercise.</p>
 <p>Apply the knowledge acquired from this tutorial to fix the errors resulting from this messy SAS program.</p>
 <p>Once you've done the exercise <strong>by yourself</strong> you can check the solution inside this other <a href="/exercises/02_troubleshooting/SAS_tutorial2_solution.sas" class="colori"><em>SAS program</em></a>.</p>
-
-<h2 id="debugging-tips">Debugging tips</h2>
+<p><a name="subsect4"></a></p>
+<br>
+<br>
+<br>
+<h2 id="debugging-tips">Debugging tips</h2><br>
 <ul>
 <li><strong>Always check the log</strong></li>
 </ul>
@@ -692,9 +689,6 @@ run;
 </ul>
 <p>Whenever you need to check for errors, <strong>the neater the code, the easier it is to spot them</strong>. Whenever you are writing code, make sure to follow the standard formatting rules we talked about earlier in this tutorial, and help yourself with SAS Studio's smart feature.</p>
 <p>If you have to check someone else's program or your own, but that you haven't opened in a while, and the code is all messy and badly formatted, <strong>take your time to clean it first</strong>. It might seem like a waste of time, but when you'll actually start debugging it, you'll find it to be <strong>way easier than if you left it messy</strong>.</p>
-
-<p><a name="sect5"></a></p>
-
 <ul>
 <li><strong>Start from the beginning</strong></li>
 </ul>
@@ -704,7 +698,9 @@ run;
 </ul>
 <p><strong>Remember</strong>: SAS executes programs in <strong>steps</strong>... even if you have an error in a step written in the beginning of your program, SAS will try <strong>to execute all subsequent steps, wasting time and computer resources</strong>.</p>
 <p>Simplify your work: <strong>correct your program one step at a time, before proceeding to the next step</strong>. Just highlight the portion of the program which you'd like to debug and click run - SAS will only execute the selected part of the program and this might help you locate errors more quickly.</p>
-
+<p><a name="sect5"></a></p>
+<br>
+<br>
 <br>
 <h1 id="5-resources">5. Resources</h1>
 <ul>
