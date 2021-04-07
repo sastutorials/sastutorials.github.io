@@ -1,4 +1,4 @@
-button.download{
+input[type=button]{
   border:darkslategrey;
   border-width: 4px;
   border-radius: 20px 70px;
