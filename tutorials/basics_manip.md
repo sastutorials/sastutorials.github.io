@@ -50,7 +50,7 @@ That is why in this tutorial we are going to learn how to carry out some basic d
 
 Once you have your data imported on your programming interface, the first thing you need to do is to familiarise with the dataset or series of datasets you are working with. 
 
-You should have your datasets uploaded and imported on SAS Studio. If you haven't got them yet, you can download them from <a href="terna_data/terna_data.zip">HERE TRIAL</a>. You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import them on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
+You should have your datasets uploaded and imported on SAS Studio. If you haven't got them yet, you can download them from [HERE](../terna_data/terna_data.zip). You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import them on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
 
 ![imported_data](../screenshots/04_basic_manip/screen_imported_data.png)
 
