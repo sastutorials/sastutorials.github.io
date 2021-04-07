@@ -384,3 +384,17 @@ subtitle: Learn about the different methods for importing or creating data from 
     <center><img src="/screenshots/03_access/lib_save.jpg" class="correction"></center>
     <br>
     <center><img src="/screenshots/03_access/results_lib.jpg"></center>
+    <br>
+    <p>Now we can put something inside. The operation is simple, as an example we will take the first DataSet</p>
+    <pre><code><code><div>
+    DATA <strong>TUTORIAL.</strong>test1;
+    INPUT birth$ birthplace$ firstname$ lastname$;
+    CARDS;
+    10/10/01 Edinburgh John Smith
+    25/04/99 London Oliver Taylor
+    15/05/10 Cardiff Harry Jones
+    ;
+    PROC PRINT DATA= test1;
+    RUN;
+    </div></code></code></pre>
+
