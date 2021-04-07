@@ -143,7 +143,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>Now let's try to use the previous data with the column format and see the results</p>
     <center><img src="/screenshots/03_access/PROVA_COLUMN1.PNG" alt="PROVA_COLUMN1"></center>
     <p>
-        <pre><code><code><div>
+    <pre><code><code><div>
         DATA test2;
         INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
         CARDS;
@@ -154,7 +154,7 @@ subtitle: Learn about the different methods for importing or creating data from 
         PROC PRINT DATA= test2;
         RUN;
         </div></code></code></pre>
-        </p>
+    </p>
     <p>What do you think is the result?<strong>let's see it!</strong></p>
     <center><img src="/screenshots/03_access/COLUMN1_RESULT.PNG" alt="COLUMN1_RESULT"></center>
     <center><img src="/screenshots/03_access/DIMO_RESULTREAL1.PNG" alt="DIMO_RESULTREAL1"></center>
@@ -163,7 +163,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>As we can see the format is not correct, <strong>let's see a correct one!</strong></p>
     <center><img src="/screenshots/03_access/PROVA_COLUMN2.PNG" alt="PROVA_COLUMN2"></center>
     <p>
-        <pre><code><code><div>
+    <pre><code><code><div>
         DATA test2;
         INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
         CARDS;
@@ -174,7 +174,7 @@ subtitle: Learn about the different methods for importing or creating data from 
         PROC PRINT DATA= test2;
         RUN;
         </div></code></code></pre>
-        </p>
+    </p>
     <p><strong>Let's go to the result</strong></p>
     <center><img src="/screenshots/03_access/COLUMN2_RESULT.PNG" alt="COLUMN2_RESULT"></center>
     <p><a name="subsect2.2"></a></p>
@@ -187,7 +187,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>Let's go and see some examples right away. Soon after we will see the explanations of the tags used</p>
     <center><img src="/screenshots/03_access/NAMED_prog1.PNG" alt="NAMED_prog1"></center>
     <p>
-        <pre><code><code><div>
+    <pre><code><code><div>
         DATA test3;
         INPUT birth= birthplace=$ firstname=$ lastname=$ age=;
         INFORMAT birth ddmmyy8.;
@@ -200,7 +200,7 @@ subtitle: Learn about the different methods for importing or creating data from 
         PROC PRINT DATA= test3;
         RUN;
         </div></code></code></pre>
-        </p>
+    </p>
     <p>As we can see in lines 3 and 4 we find 2 new terms:
     <ul>
         <li>
@@ -218,19 +218,20 @@ subtitle: Learn about the different methods for importing or creating data from 
     <ul>
         <li>
             <p>In INPUT Statement: the format for inserting the fields, as we see in the figure,
-               is made up of 3 main parts for each field <strong>"field name" = "field type"</strong>
+                is made up of 3 main parts for each field <strong>"field name" = "field type"</strong>
             </p>
         </li>
         <li>
             <p>IN CARDS Statement: the format we must use for each field and each record is made up of:
-              <strong>"field name" = "field value"</strong></p>
+                <strong>"field name" = "field value"</strong>
+            </p>
         </li>
     </ul>
     </p>
     <p>Another way to use Named Input is:</p>
     <center><img src="/screenshots/03_access/NAMED_prog2.PNG"></center>
     <p>
-        <pre><code><code><div>
+    <pre><code><code><div>
         DATA test4;
         birth="10/10/01";
         birthplace="Edinburgh";
@@ -250,28 +251,33 @@ subtitle: Learn about the different methods for importing or creating data from 
         PROC PRINT DATA= test4;
         RUN;
         </div></code></code></pre>
-        </p>
+    </p>
     <p>with this method we have to be careful about some things:
-        <ul>
-            <li>
-                <p><strong>The format</strong>, the Input Statement is no longer used, but the fields are lined up as follows:
-                   <strong>"field name" = "field value"</strong> for each field. <br>The values ​​of fields containing strings must
-                   be enclosed in quotation marks and, on the other hand, quotes are not required for fields containing numeric values.<br>
-                   <strong>The records are separated with the Output Statement and the last record must still have the output statement at the end</strong></p>
-            </li>
-            <li>
-                <p><strong>The position of the statements and the format of the date</strong></p>
-            </li>
-        </ul>
-        <p></p>
-        <center><img src="/screenshots/03_access/result_NAMED_prog1.PNG" alt="result_NAMED_prog1"></center>
+    <ul>
+        <li>
+            <p><strong>The format</strong>, the Input Statement is no longer used, but the fields are lined up as
+                follows:
+                <strong>"field name" = "field value"</strong> for each field. <br>The values ​​of fields containing
+                strings must
+                be enclosed in quotation marks and, on the other hand, quotes are not required for fields containing
+                numeric values.<br>
+                <strong>The records are separated with the Output Statement and the last record must still have the
+                    output statement at the end</strong>
+            </p>
+        </li>
+        <li>
+            <p><strong>The position of the statements and the format of the date</strong></p>
+        </li>
+    </ul>
+    <p></p>
+    <center><img src="/screenshots/03_access/result_NAMED_prog1.PNG" alt="result_NAMED_prog1"></center>
     <strong>Now let's go see some other examples of typical errors: </strong>
     </p>
     <br>
-    <h5><strong>Example 1:</strong></h5> 
-    <center><img src="/screenshots/03_access/NAMED_prog4.PNG" alt="NAMED_prog4"></center>   
+    <h5><strong>Example 1:</strong></h5>
+    <center><img src="/screenshots/03_access/NAMED_prog4.PNG" alt="NAMED_prog4"></center>
     <p>
-        <pre><code><code><div>
+    <pre><code><code><div>
             DATA test4;
             INFORMAT birth ddmmyy8.;
             FORMAT birth ddmmyy8.;
@@ -291,24 +297,25 @@ subtitle: Learn about the different methods for importing or creating data from 
             PROC PRINT DATA= test4;
             RUN;
         </div></code></code></pre>
-        </p>
-    <p>In this case there are 2 errors: 
-        <ul>
-            <li>
-                <p>The first error is the position of the two statements format and informat</p>
-            </li>
-            <li>
-                <p>The second error is on the formatting of the date</p>
-            </li>
-        </ul>
-     Let's see the results of this program:
+    </p>
+    <p>In this case there are 2 errors:
+    <ul>
+        <li>
+            <p>The first error is the position of the two statements format and informat</p>
+        </li>
+        <li>
+            <p>The second error is on the formatting of the date</p>
+        </li>
+    </ul>
+    Let's see the results of this program:
     </p>
     <center><img src="/screenshots/03_access/result_NAMED_prog4.PNG" alt="result_NAMED_prog4"></center>
     <p>How can we detect errors and how can we check if the formatting is correct?<br>
-       The answer is <strong>"PROC CONTENTS"</strong>, let's see it:</p>
-    <center><img src="/screenshots/03_access/AGGIUNTA PROC CONTETS IN NAMED_prog4.PNG"alt="AGGIUNTA PROC CONTETS IN NAMED_prog4"></center>
+        The answer is <strong>"PROC CONTENTS"</strong>, let's see it:</p>
+    <center><img src="/screenshots/03_access/AGGIUNTA PROC CONTETS IN NAMED_prog4.PNG"
+            alt="AGGIUNTA PROC CONTETS IN NAMED_prog4"></center>
     <p>
-        <pre><code><code><div>
+    <pre><code><code><div>
             DATA test4;
             INFORMAT birth ddmmyy8.;
             FORMAT birth ddmmyy8.;
@@ -331,7 +338,7 @@ subtitle: Learn about the different methods for importing or creating data from 
             PROC CONTENTS DATA= test4;
             RUN;
         </div></code></code></pre>
-        </p>
+    </p>
     <p>The result of this command is composed of 3 tables, let's go and see them!</p>
     <center><img src="/screenshots/03_access/RES_CONTENTS_prog4.PNG" alt="RES_CONTENTS_prog4"></center><br>
     <center><img src="/screenshots/03_access/RESULT_CONTENTS_PROG4_2.PNG" alt="RESULT_CONTENTS_PROG4_2"></center><br>
@@ -341,28 +348,28 @@ subtitle: Learn about the different methods for importing or creating data from 
         The proc contents is used to show all the information of the table at the master data level.
         How are the trainings distributed?
 
-        <ul>
-            <li>
-                The first table shows the data relating to the creation of the table, therefore:
-                the number of observations, the length, the creation date and the memory location
-            </li>
-            <li>
-                The second table indicates the host information, ie the owner and the memory size 
-                occupied by the DataSet.
-            </li>
-            <li>
-                The third table allows us to control the formatting of the fields, therefore the name,
-                 length, format and type
-            </li>
-        </ul>
-        <p><a name="sect3"></a></p>
-        In this case we were looking if the format of the fields was correct so we go to the third table 
-        and as we can see the date format is correct, "ddmmyy8." that is a date consisting of day-month-year 
-        and can occupy 8 columns. <strong> Now as an exercise, check out why the first example was wrong by checking 
+    <ul>
+        <li>
+            The first table shows the data relating to the creation of the table, therefore:
+            the number of observations, the length, the creation date and the memory location
+        </li>
+        <li>
+            The second table indicates the host information, ie the owner and the memory size
+            occupied by the DataSet.
+        </li>
+        <li>
+            The third table allows us to control the formatting of the fields, therefore the name,
+            length, format and type
+        </li>
+    </ul>
+    <p><a name="sect3"></a></p>
+    In this case we were looking if the format of the fields was correct so we go to the third table
+    and as we can see the date format is correct, "ddmmyy8." that is a date consisting of day-month-year
+    and can occupy 8 columns. <strong> Now as an exercise, check out why the first example was wrong by checking
         the date formatting. </strong>
     </p>
     <br>
-    
+
     <h1>3. Insert a DataSet into a library</h1>
     <p><strong>The procedure is simple but we will see it step by step</strong></p>
     <p><strong>First step: create a folder</strong>, all libraries are connected to one folder</p>
@@ -374,7 +381,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     <center><img src="/screenshots/03_access/folder_created.jpg"></center>
     <br>
     <p><strong>Second step: Create a librarie</strong> let's go to the libraries section and right click,
-         then click on the new library button</p>
+        then click on the new library button</p>
     <center><img src="/screenshots/03_access/create_lib.jpg"></center>
     <br>
     <center><img src="/screenshots/03_access/lib_name.jpg" class="correction"></center>
@@ -398,10 +405,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     RUN;
     </div></code></code></pre>
     <p>As we can see from the code, it will be enough to add the library name first in the following format:<br>
-       "library name"."DataSet name"<br>
-       Let's see if after running the program we will find it in that LIB?
+        "library name"."DataSet name"<br>
+        Let's see if after running the program we will find it in that LIB?
     </p>
     <center><img src="/screenshots/03_access/prog_in_lib.jpg"></center>
-
-
-
