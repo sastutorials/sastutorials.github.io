@@ -16,7 +16,7 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 ## Structure 
 
-<a href="#sect1">1. First analyses (observational)</a>
+<a href="#sect1">1. Observational analyses</a>
 
 <a href="#subsect1"><sub>Familiarise with the dataset</sub></a>
 
@@ -34,23 +34,23 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#sect3">4. Resources</a>
 
-If you've headed straight to this tutorial, you first need to download the data on [renewable energy generation (GWh)](/terna_data/TERNA_renewables_daily_avg.csv) provided by Terna. The file is in *.csv* and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import data on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
-
 <a name="sect1"></a>
 
-# 1. First analyses (observational)
+# 1. Observational analyses
 
 Every data scientist has a specific workflow to carry out a project: importing, cleaning, analysing dataset(s) and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
 
 ![datascience_workflow](../screenshots/04_basic_manip/datascience_workflow.png)
 
+That is why in this tutorial we are going to learn how to carry out some basic data manipulation with SAS.
+
 <a name="subsect1"></a>
 
 ## Familiarise with the dataset
 
-Once you have your data imported on your programming interface (in our case, SAS Studio), the first thing you need to do is to familiarise with the dataset or series of datasets you uploaded. 
+Once you have your data imported on your programming interface, the first thing you need to do is to familiarise with the dataset or series of datasets you are working with. 
 
-You should have your datasets uploaded and imported on SAS Studio. I commented the code as it is not relevant for this tutorial. 
+You should have your datasets uploaded and imported on SAS Studio. If you haven't got them yet, you can download them from [here](/terna_data/). You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import them on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
 
 ![imported_data](../screenshots/04_basic_manip/screen_imported_data.png)
 
