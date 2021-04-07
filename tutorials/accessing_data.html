@@ -58,13 +58,19 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>
         <center><img src="/screenshots/03_access/PROG1.PNG" alt="PROG1.PNG"></center>
     </p>
-    <pre><code><code><div>DATA
-
-        data 
-        
-        DaTa 
-        
+    <p>
+    <pre><code><code><div>
+        DATA test1;
+        INPUT birth$ birthplace$ firstname$ lastname$;
+        CARDS;
+        10/10/01 Edinburgh John Smith
+        25/04/99 London Oliver Taylor
+        15/05/10 Cardiff Harry Jones
+        ;
+        proc print data= test1;
+        run;
         </div></code></code></pre>
+    </p>
     <p>But, what are these commands specifically for?</p>
     <ul>
         <li>
