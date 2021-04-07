@@ -18,7 +18,7 @@ img.correction{
 img {
   width: 65%;
   height: 55%;
-  border-width: 20;
+  border-width: 20px;
   border-color: crimson;
 }
 * {
