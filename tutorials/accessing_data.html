@@ -67,8 +67,8 @@ subtitle: Learn about the different methods for importing or creating data from 
     25/04/99 London Oliver Taylor
     15/05/10 Cardiff Harry Jones
     ;
-    proc print data= test1;
-    run;
+    PROC PRINT DATA= test1;
+    RUN;
     </div></code></code></pre>
     </p>
     <p>But, what are these commands specifically for?</p>
@@ -142,6 +142,19 @@ subtitle: Learn about the different methods for importing or creating data from 
     <h5><strong>Example:</strong></h5>
     <p>Now let's try to use the previous data with the column format and see the results</p>
     <center><img src="/screenshots/03_access/PROVA_COLUMN1.PNG" alt="PROVA_COLUMN1"></center>
+    <p>
+        <pre><code><code><div>
+        DATA test2;
+        INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
+        CARDS;
+        10/10/01 Edinburgh John Smith
+        25/04/99 London Oliver Taylor
+        15/05/10 Cardiff Harry Jones
+        ;
+        PROC PRINT DATA= test2;
+        RUN;
+        </div></code></code></pre>
+        </p>
     <p>What do you think is the result?<strong>let's see it!</strong></p>
     <center><img src="/screenshots/03_access/COLUMN1_RESULT.PNG" alt="COLUMN1_RESULT"></center>
     <center><img src="/screenshots/03_access/DIMO_RESULTREAL1.PNG" alt="DIMO_RESULTREAL1"></center>
@@ -149,6 +162,19 @@ subtitle: Learn about the different methods for importing or creating data from 
         values ​​do not correspond to the lengths of the fields</p>
     <p>As we can see the format is not correct, <strong>let's see a correct one!</strong></p>
     <center><img src="/screenshots/03_access/PROVA_COLUMN2.PNG" alt="PROVA_COLUMN2"></center>
+    <p>
+        <pre><code><code><div>
+        DATA test2;
+        INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
+        CARDS;
+        10/10/01 Edinburgh    John        Smith
+        25/04/99 London       Oliver      Taylor
+        15/05/10 Cardiff      Harry       Jones
+        ;
+        PROC PRINT DATA= test2;
+        RUN;
+        </div></code></code></pre>
+        </p>
     <p><strong>Let's go to the result</strong></p>
     <center><img src="/screenshots/03_access/COLUMN2_RESULT.PNG" alt="COLUMN2_RESULT"></center>
     <p><a name="subsect2.2"></a></p>
@@ -160,6 +186,21 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p><a name="subsect2.2"></a></p>
     <p>Let's go and see some examples right away. Soon after we will see the explanations of the tags used</p>
     <center><img src="/screenshots/03_access/NAMED_prog1.PNG" alt="NAMED_prog1"></center>
+    <p>
+        <pre><code><code><div>
+        DATA test3;
+        INPUT birth= birthplace=$ firstname=$ lastname=$ age=;
+        INFORMAT birth ddmmyy8.;
+        FORMAT birth ddmmyy8.;
+        CARDS;
+        birth=10/10/01 birthplace=Edinburgh firstname=John lastname=Smith age=18
+        birth=25/04/99 birthplace=London firstname=Oliver lastname=Taylor age=15
+        birth=15/05/10 birthplace=Cardiff firstname=Harry lastname=Jones age=59
+        ;
+        PROC PRINT DATA= test3;
+        RUN;
+        </div></code></code></pre>
+        </p>
     <p>As we can see in lines 3 and 4 we find 2 new terms:
     <ul>
         <li>
