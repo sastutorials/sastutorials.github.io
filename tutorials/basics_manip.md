@@ -16,7 +16,7 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 ## Structure 
 
-<a href="#sect1">1. First analyses (observational)</a>
+<a href="#sect1">1. Observational analyses</a>
 
 <a href="#subsect1"><sub>Familiarise with the dataset</sub></a>
 
@@ -36,11 +36,13 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a name="sect1"></a>
 
-# 1. First analyses (observational)
+# 1. Observational analyses
 
 Every data scientist has a specific workflow to carry out a project: importing, cleaning, analysing dataset(s) and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
 
 ![datascience_workflow](../screenshots/04_basic_manip/datascience_workflow.png)
+
+That is why in this tutorial we are going to learn how to carry out some basic data manipulation with SAS.
 
 <a name="subsect1"></a>
 
