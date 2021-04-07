@@ -229,6 +229,28 @@ subtitle: Learn about the different methods for importing or creating data from 
     </p>
     <p>Another way to use Named Input is:</p>
     <center><img src="/screenshots/03_access/NAMED_prog2.PNG"></center>
+    <p>
+        <pre><code><code><div>
+        DATA test4;
+        birth="10/10/01";
+        birthplace="Edinburgh";
+        firstname="John";
+        lastname="Smith";
+        age=18;
+        OUTPUT;
+        birth="25/04/99";
+        birthplace="London";
+        firstname="Oliver";
+        lastname="Taylor";
+        age=15;
+        OUTPUT;
+        INFORMAT birth ddmmyy8.;
+        FORMAT birth ddmmyy8.;
+        RUN;
+        PROC PRINT DATA= test4;
+        RUN;
+        </div></code></code></pre>
+        </p>
     <p>with this method we have to be careful about some things:
         <ul>
             <li>
@@ -248,6 +270,28 @@ subtitle: Learn about the different methods for importing or creating data from 
     <br>
     <h5><strong>Example 1:</strong></h5> 
     <center><img src="/screenshots/03_access/NAMED_prog4.PNG" alt="NAMED_prog4"></center>   
+    <p>
+        <pre><code><code><div>
+            DATA test4;
+            INFORMAT birth ddmmyy8.;
+            FORMAT birth ddmmyy8.;
+            birth=10/10/01;
+            birthplace="Edinburgh";
+            firstname="John";
+            lastname="Smith";
+            age=18;
+            OUTPUT;
+            birth=25/04/99;
+            birthplace="London";
+            firstname="Oliver";
+            lastname="Taylor";
+            age=15;
+            OUTPUT;
+            RUN;
+            PROC PRINT DATA= test4;
+            RUN;
+        </div></code></code></pre>
+        </p>
     <p>In this case there are 2 errors: 
         <ul>
             <li>
@@ -263,6 +307,31 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>How can we detect errors and how can we check if the formatting is correct?<br>
        The answer is <strong>"PROC CONTENTS"</strong>, let's see it:</p>
     <center><img src="/screenshots/03_access/AGGIUNTA PROC CONTETS IN NAMED_prog4.PNG"alt="AGGIUNTA PROC CONTETS IN NAMED_prog4"></center>
+    <p>
+        <pre><code><code><div>
+            DATA test4;
+            INFORMAT birth ddmmyy8.;
+            FORMAT birth ddmmyy8.;
+            birth=10/10/01;
+            birthplace="Edinburgh";
+            firstname="John";
+            lastname="Smith";
+            age=18;
+            OUTPUT;
+            birth=25/04/99;
+            birthplace="London";
+            firstname="Oliver";
+            lastname="Taylor";
+            age=15;
+            OUTPUT;
+            RUN;
+            PROC PRINT DATA= test4;
+            RUN;
+
+            PROC CONTENTS DATA= test4;
+            RUN;
+        </div></code></code></pre>
+        </p>
     <p>The result of this command is composed of 3 tables, let's go and see them!</p>
     <center><img src="/screenshots/03_access/RES_CONTENTS_prog4.PNG" alt="RES_CONTENTS_prog4"></center><br>
     <center><img src="/screenshots/03_access/RESULT_CONTENTS_PROG4_2.PNG" alt="RESULT_CONTENTS_PROG4_2"></center><br>
