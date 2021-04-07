@@ -40,13 +40,22 @@ If you've headed straight to this tutorial, you first need to download the data 
 
 # 1. First analyses (observational)
 
-Every data scientist has a specific workflow to a project: importing, cleaning, analysing a dataset and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
+Every data scientist has a specific workflow to carry out a project: importing, cleaning, analysing dataset(s) and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
 
 ![datascience_workflow](../screenshots/04_basic_manip/datascience_workflow.png)
 
 <a name="subsect1"></a>
 
 ## Familiarise with the dataset
+
+Once you have your data imported on your programming interface (in our case, SAS Studio), the first thing you need to do is to familiarise with the dataset or series of datasets you uploaded. 
+
+You should have your datasets uploaded and imported on SAS Studio. I commented the code as it is not relevant for this tutorial. 
+
+![imported_data](../screenshots/04_basic_manip/screen_imported_data.png)
+
+
+
 
 <a name ="subsect2"></a>
 
