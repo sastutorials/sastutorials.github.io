@@ -171,6 +171,10 @@ proc print data = work.last10;
 run;
 ```
 
+**E' FORSE TROPPO DIFFICILE FARE PRINT BOTTOM 10 PER QUESTO TUTORIAL???**
+
+![top_bottom_10](../screenshots/04_basic_manip/top_bottom_10.png)
+
 
 
 ### Formats and informats 
