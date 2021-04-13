@@ -433,11 +433,11 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>Let's see how to use it:</p>
     <pre><code><code><div>
     PROC IMPORT OUT= TUTORIAL.terna_test21
-        DATAFILE= "/home/u58274931/test_folder/terna21.csv" 
-	    DBMS=DLM
-		REPLACE;
-		DELIMITER=';';
-    	GETNAMES=YES;
+    DATAFILE= "/home/u58274931/test_folder/terna21.csv" 
+	DBMS=DLM
+	REPLACE;
+	DELIMITER=';';
+    GETNAMES=YES;
     RUN;
 
     proc print data=TUTORIAL.terna_test21;
