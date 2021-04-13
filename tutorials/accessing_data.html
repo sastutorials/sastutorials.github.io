@@ -426,10 +426,10 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p><i>If you have not already done so, it is recommended that you create, as we did before, a folder within
           the server</i><br>
           Now let's see 2 types of imports:<br>
-          1) Data Step <br>
-          2) Proc Import
+          1) Proc Import <br>
+          2) Data Step
     </p>
-    <h5>1) Data Step:</h5>
+    <h5>1) Proc Import:</h5>
     <p>Let's see how to use it:</p>
     <pre><code><code><div>
     PROC IMPORT OUT= TUTORIAL.terna_test21
@@ -440,7 +440,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     GETNAMES=YES;
     RUN;
 
-    proc print data=TUTORIAL.terna_test21;
+    PROC PRINT DATA=TUTORIAL.terna_test21;
     run;
     </div></code></code></pre>
     
