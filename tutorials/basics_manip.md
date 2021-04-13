@@ -92,7 +92,84 @@ Each variable is accompanied by a symbol which already **gives you information o
 
 We can also quickly explore the datasets by executing two procedures: **proc contents** and **proc print**. 
 
+#### PROC CONTENTS 
+
 Copy the following in a new SAS program (call the program *tutorial_basic_manip.sas*, if you wish to keep it in the future). 
+
+```
+/*Executing proc contents on the datasets*/
+
+proc contents data=work.terna16;
+proc contents data=work.terna17;
+proc contents data=work.terna18;
+proc contents data=work.terna19;
+proc contents data=work.terna20;
+proc contents data=work.terna21;
+run;
+```
+
+With this code we are repeating the same thing: we want to know **information on the contents of each data set**. In this case, **it is sufficient to run the procedures once**.
+
+Let's use again terna16 as an example - we have repeated the same procedure on all datasets so showing you one of the results is enough. 
+
+![proc_contents_terna16](../screenshots/04_basic_manip/proc_cont_terna16.png)
+
+The proc contents statement gives us a nice overview about the dataset. We are provided with three tables, which you've already explore in the [data access](accessing_data.html) tutorial. 
+ 
+* **dataset description**, including: dataset name and the library it is contained within, n of observations, of variables and the maximum length allowed for a data value; 
+* **Engine/host dependent information**: information about how SAS Studio stores and outputs the dataset; 
+* **Alphabetic List of Variables and Attributes**: as the title explains, it gives a more in depth overview of the variables contained inside the dataset. 
+
+**SPIEGARE DI PIU' SUL PROC CONTENTS:** 
+* LABEL 
+* ALTRE OPTIONS NEL PROC CONTENTS PER RENDERE IL TUTTO PIU' INFORMATIVO
+
+#### PROC PRINT 
+
+Another useful thing to do when getting to know the dataset is to print out its raw data. 
+
+```
+/* proc print */ 
+
+proc print data=work.terna16; 
+run; 
+proc print data=work.terna17; 
+run; 
+proc print data=work.terna18; 
+run; 
+proc print data=work.terna19; 
+run; 
+proc print data=work.terna20; 
+run; 
+proc print data=work.terna21; 
+run; 
+```
+
+Again, the code repeats equally for all datasets. However, if you ran it, you would get the **entire dataset printed in the results tab**. 
+
+We could scroll down to see every single row for each dataset, or we could just tell SAS to **print the top 10 and bottom 10 observations**.
+
+To do so, copy the following code: 
+
+```
+/* First 10 obs */
+
+proc print data = work.terna16 (obs = 10);
+run;
+
+/* Last 10 obs */
+
+data last10;
+  do p=max(1,nobs-9) to nobs;
+    set work.terna16 nobs=nobs point=p;
+    output;
+  end;
+  stop;
+run;
+
+proc print data = work.last10;
+run;
+```
 
 
 
