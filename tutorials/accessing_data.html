@@ -443,4 +443,43 @@ subtitle: Learn about the different methods for importing or creating data from 
     PROC PRINT DATA=TUTORIAL.terna_test21;
     run;
     </div></code></code></pre>
+    <p>
+        <ul>
+            <li>
+                PROC IMPORT is the statement for importing files
+            </li>
+            <li>
+                DATAFILE is used to find the file that we want to import into a LIB
+            </li>
+            <li>
+                DBMS is used to select the type of symbol that is between one field and another including space.<br>
+                We can set it in:
+                <table>
+                    <tr><td>Type</td><td>Extension</td></tr>
+                    <tr><td><strong>ACCESS</strong></td><td>.MDB</td></tr>
+                    <tr><td><strong>DBF</strong></td><td>.DBF</td></tr>
+                    <tr><td><strong>WK1</strong></td><td>.WK1</td></tr>
+                    <tr><td><strong>WK3</strong></td><td>.WK3</td></tr>
+                    <tr><td><strong>WK4</strong></td><td>.WK4</td></tr>
+                    <tr><td><strong>EXCEL</strong></td><td>.XLS</td></tr>
+                    <tr><td><strong>EXCEL4</strong></td><td>.XLS</td></tr>
+                    <tr><td><strong>EXCEL5</strong></td><td>.XLS</td></tr>
+                    <tr><td><strong>EXCEL97</strong></td><td>.XLS</td></tr>
+                    <tr><td><strong>DLM</strong></td><td>.*</td></tr>
+                    <tr><td><strong>CDV</strong></td><td>.CSV</td></tr>
+                    <tr><td><strong>TAB</strong></td><td>.TXT</td></tr>
+                </table>
+                <i>The part in bold is the one that must be inserted in the DBMS field.</i><br>
+                When we use <strong>DLM we must use the tag DELIMITER</strong> in this way:<br>
+                DBMS=DLM<br>
+                DELIMITE='symbol'
+            </li>
+            <li>
+                REPLACE is for indicate to SAS that if there is a file with same name it have to replace it
+            </li>
+            <li>
+                GETNAMES when set to on fetches the field names from the first record of the file we are importing
+            </li>
+        </ul>
+    </p>
     
