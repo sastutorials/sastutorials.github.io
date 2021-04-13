@@ -425,13 +425,22 @@ subtitle: Learn about the different methods for importing or creating data from 
     <br>
     <p><i>If you have not already done so, it is recommended that you create, as we did before, a folder within
           the server</i><br>
-          Now let's see 2 types of imports:
-          1) Data Step 
+          Now let's see 2 types of imports:<br>
+          1) Data Step <br>
           2) Proc Import
     </p>
     <h5>1) Data Step:</h5>
     <p>Let's see how to use it:</p>
     <pre><code><code><div>
-        
-    </div></code></code></pre>
+    PROC IMPORT OUT= TUTORIAL.terna_test21
+        DATAFILE= "/home/u58274931/test_folder/terna21.csv" 
+	    DBMS=DLM
+		REPLACE;
+		DELIMITER=';';
+    	GETNAMES=YES;
+    RUN;
+
+    proc print data=TUTORIAL.terna_test21;
+    run;
+</div></code></code></pre>
     
