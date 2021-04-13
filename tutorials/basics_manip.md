@@ -42,7 +42,6 @@ Every data scientist has a specific workflow to carry out a project: importing, 
 
 ![datascience_workflow](../screenshots/04_basic_manip/datascience_workflow.png)
 
-
 **In this tutorial we are going to learn how to carry out some basic data manipulation with SAS.**
 
 <a name="subsect1"></a>
@@ -63,25 +62,39 @@ by clicking on the button below.
 
 You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import them on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
 
-![imported_data](../screenshots/04_basic_manip/screen_imported_data.png)
-
-
-
 <a name ="subsect2"></a>
 
 ## Format the data
 
-Before manipulating the datasets at your disposal, the first thing to do is to see what type of data you are dealing with, so that you understand how you can manipulate it and you can start thinking about the potential analyses. We refer to **data types** as **the type of format of the data values** in your dataset. 
+Before getting to the actual manipulation of the datasets, you always need to **observe the characteristics of the variables and observations inside each dataset**. 
 
-There are **three mains data types**: 
+This way, you can start getting a general **overview** of them, and see if any **formatting changes** need to be made. 
+
+We know that variables can be formatted as either of these three ways:  
 
 1. Numeric 
 2. Character string 
 3. Datetime
 
-SAS reads the numeric data type by default. However, it is necessary to add specifications to make SAS read particular types of numerical data and other data types. 
+SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
 
-Our sample dataset ... 
+I am going to assume you have the 6 datasets uploaded and imported as SAS files on your SAS Studio. 
+
+![imported_data](../screenshots/04_basic_manip/screen_imported_data.png)
+
+You can make sure that all datasets have been temporarily stored inside the *work* library, with the name you've given. I have called the datasets *ternaN* where N stands for the years 2016 until 2021 (the most recent observation). 
+
+Once you've headed to the library, you can also check the content of each dataset. For instance, open the dropdown menu from Terna16. 
+
+![dropdown](../screenshots/04_basic_manip/dropdown_work.png)
+
+Each variable is accompanied by a symbol which already **gives you information on the format of the variable**. You can see most variables are numeric except *date*, which is datetime format. 
+
+We can also quickly explore the datasets by executing two procedures: **proc contents** and **proc print**. 
+
+Copy the following in a new SAS program (call the program *tutorial_basic_manip.sas*, if you wish to keep it in the future). 
+
+
 
 ### Formats and informats 
 
