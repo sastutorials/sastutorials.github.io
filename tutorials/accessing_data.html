@@ -486,4 +486,20 @@ subtitle: Learn about the different methods for importing or creating data from 
             </li>
         </ul>
     </p>
+    <h5>2) Data step:</h5>
+    <p>Let's see this other method too:</p>
+    <pre><code><code><div>
+        DATA TUTORIAL.terna_test20;
+INFILE "/home/u58274931/test_folder/terna20.csv"
+DLM=";"
+MISSOVER 
+FIRSTOBS=1;
+INPUT Year Biomass Geothermal Hydro Photovoltaic Wind Date;
+RUN;</div></code></code></pre>
+<p>This type is more inconvenient because we have to enter the names of the fields from the keyboard</p>
+<br>
+<p>We have already seen 2 types of import but with the same type of file, now let's use <i>the most convenient 
+    method which is the <strong>Proc Import</strong></i> and let's see how to import also files with <strong>txt and excel extensions</strong>. 
+    Here we go!</p><br>
+<h6>txt extension with Proc Import</h6>
     
