@@ -430,16 +430,16 @@ subtitle: Learn about the different methods for importing or creating data from 
     <h5>1) Proc Import:</h5>
     <p>Let's see how to use it:</p>
     <pre><code><code><div>
-    PROC IMPORT OUT= TUTORIAL.terna_test21
-    DATAFILE= "/home/u58274931/test_folder/terna21.csv" 
-	DBMS=DLM
-	REPLACE;
-	DELIMITER=';';
-    GETNAMES=YES;
-    RUN;
+PROC IMPORT OUT= TUTORIAL.terna_test21
+DATAFILE= "/home/u58274931/test_folder/terna21.csv" 
+DBMS=DLM
+REPLACE;
+DELIMITER=';';
+GETNAMES=YES;
+RUN;
 
-    PROC PRINT DATA=TUTORIAL.terna_test21;
-    run;
+PROC PRINT DATA=TUTORIAL.terna_test21;
+RUN;
     </div></code></code></pre>
     <p>
         <ul>
@@ -489,7 +489,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     <h5>2) Data step:</h5>
     <p>Let's see this other method too:</p>
     <pre><code><code><div>
-        DATA TUTORIAL.terna_test20;
+DATA TUTORIAL.terna_test20;
 INFILE "/home/u58274931/test_folder/terna20.csv"
 DLM=";"
 MISSOVER 
@@ -515,11 +515,32 @@ RUN;</div></code></code></pre>
 <p>This type is more inconvenient because we have to enter the names of the fields from the keyboard</p>
 <br>
 <p>We have already seen 2 types of import but with the same type of file, now let's use <i>the most convenient 
-    method which is the <strong>Proc Import</strong></i> and let's see how to import also files with <strong>txt and excel extensions</strong>. 
+    method which is the <strong>Proc Import</strong></i> and let's see how to import also files with <strong>txt and xls extensions</strong>. 
     Here we go!</p><br>
 <h6>Txt extension with Proc Import</h6>
 <pre><code><code><div>
+PROC IMPORT OUT= TUTORIAL.terna_test19
+DATAFILE= "/home/u58274931/test_folder/terna19.txt" 
+DBMS=TAB
+REPLACE;
+GETNAMES=YES;
+RUN;
 
-
+PROC PRINT DATA=TUTORIAL.terna_test19;
+RUN;
 </div></code></code></pre>
+<br>
+<h6>Xls extension with Proc Import</h6>
+<pre><code><code><div>
+PROC IMPORT OUT= TUTORIAL.terna_test19
+DATAFILE= "/home/u58274931/test_folder/terna19.txt" 
+DBMS=TAB
+REPLACE;
+GETNAMES=YES;
+RUN;
     
+PROC PRINT DATA=TUTORIAL.terna_test19;
+RUN;
+</div></code></code></pre>
+<p><strong>We have already seen the 3 main extensions, now test yourself with the remaining files,
+     then terna16 and terna17</strong></p>
