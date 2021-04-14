@@ -409,7 +409,7 @@ subtitle: Learn about the different methods for importing or creating data from 
         Let's see if after running the program we will find it in that LIB?
     </p>
     <center><img src="/screenshots/03_access/prog_in_lib.jpg"></center>
-    <p><a name="sect3"></a></p>
+    <p><a name="sect4"></a></p>
     <br>
     <p>In this way, every time we open SAS Studio we will find that library and the related files inserted inside.</p>
     <h1>4. How to import a file to the server</h1>
@@ -496,10 +496,30 @@ MISSOVER
 FIRSTOBS=1;
 INPUT Year Biomass Geothermal Hydro Photovoltaic Wind Date;
 RUN;</div></code></code></pre>
+<p>
+    <ul>
+        <li>
+            INFILE is used to indicate the path of the file in the server Sas
+        </li>
+        <li>
+            DLM is used to indicate the symbol that separate data
+        </li>
+        <li>
+            MISSOVER Sets all empty vars to missing when reading a short line.
+        </li>
+        <li>
+            FIRSTOBS sets the record from which it should begin reading
+        </li>
+    </ul>
+</p>
 <p>This type is more inconvenient because we have to enter the names of the fields from the keyboard</p>
 <br>
 <p>We have already seen 2 types of import but with the same type of file, now let's use <i>the most convenient 
     method which is the <strong>Proc Import</strong></i> and let's see how to import also files with <strong>txt and excel extensions</strong>. 
     Here we go!</p><br>
-<h6>txt extension with Proc Import</h6>
+<h6>Txt extension with Proc Import</h6>
+<pre><code><code><div>
+
+
+</div></code></code></pre>
     
