@@ -63,8 +63,7 @@ cards;
 
 
 proc print data=trial;
-var x; run; 
-</div></code></code></pre>
+var x; run; </div></code></code></pre>
 <p>This code is <em>okay</em> as it is in the sense that, if you run it, it will create the output correctly. However, we are going to format it properly.</p>
 <p>Click on the button highlighted in <em>yellow</em> in the image below: <strong>you can see the position of certain commands has changed.</strong> I have highlighted the changes in <em>green</em>.</p>
 <p><center><img src="/screenshots/02_intro_ptII/code_formatting.jpg" alt="code_formatting"></center></p>
@@ -93,8 +92,7 @@ PROC PRINT data=trial;
 RUN; *Here we are printing only the x variable from the dataset created above; 
 
 
-*********the program ends here*********; 
-</div></code></code></pre>
+*********the program ends here*********; </div></code></code></pre>
 <p>Last but not least, the <strong>syntax colouring</strong> feature helps you distinguish between <strong>types of commands</strong>, <strong>variables</strong> and <strong>values</strong>, <strong>special characters</strong> and <strong>other symbols</strong>. I guess you've already noticed that from pasting the previous code in your SAS Studio program.</p>
 <p>Here I have taken a snippet of the previous program, adding a few more lines of code to show you what each colour corresponds to. The more you are going to write in SAS the more you are going to become familiar with this smart feature.</p>
 <p><center><img src="/screenshots/02_intro_ptII/code_colouring.png" alt="code_colouring"></center></p>
@@ -150,8 +148,7 @@ input x y;
 cards;
 1 2
 ;
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>The error says:</p>
 <p><center><img src="/screenshots/02_intro_ptII/no_semi_colon_error.png" alt="no_semi_colon_error"></center></p>
 <p>The table you tried to create did not succeed because of a missing semi-colon in the first line of code.</p>
@@ -181,9 +178,7 @@ input x y;
 cards;
 1 2 
 ;
-run;
-
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>You can see that the program does produce two outputs (<em>SAS datasets</em>) - <em>trial</em> and <em>_trial</em> - with the variables x and y displayed on a <em>new tab</em> called <em>output data</em>. Here is what one of them looks like (the result is the same):</p>
 <p><center><img src="/screenshots/02_intro_ptII/output_correct1.png" alt="output_correct1"></center></p>
 <p>If, instead, you paste the following in your editor and <em>run the program</em>:</p>
@@ -201,8 +196,7 @@ input x y;
 cards;
 1 2 
 ;
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>You can see that the tab <em>output data</em> <strong>does not show this time</strong>. Instead, an <strong>X</strong> appears near the <em>name of the program</em> and you are automatically directed to the <strong>log</strong> window.</p>
 <p>In this example, you can see that there are <em>4 errors</em> and <em>5 warnings</em>. If you click on either menu you can read the specific message(es).</p>
 <p><center><img src="/screenshots/02_intro_ptII/error_log_syntax_rules.png" alt="error_log_syntax_rules"></center></p>
@@ -223,8 +217,7 @@ cards;
 4 48
 5 30
 ; 
-run; 
-</div></code></code></pre>
+run; </div></code></code></pre>
 <p>If you run the program with the code written above, you are going to see the output is <em>not quite what we had in mind</em>.</p>
 <p>What happened? The space between the words <em>id</em> and <em>employees</em> treats them as <strong>two separate variables</strong>, instead of one! Since underneath the variables names there is a list of values also separated by one blank space, which defines them as two separate columns, the variable <strong>age</strong> does not even appear and is, instead, substituted by the word <strong>employees</strong>, which appears first.</p>
 <p><center><img src="/screenshots/02_intro_ptII/blank_spaces.png" alt="blank_spaces"></center></p>
@@ -239,8 +232,7 @@ cards;
 4 48
 5 30
 ; 
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>Or if you wanted to <strong>preserve the blank</strong>, you should <strong>wrap</strong> the variable name within quotes and the letter <code>n</code> at the end of the string. The letter <code>n</code> is used in SAS syntax to highlight that the content inside the quotes is a whole character string.</p>
 <pre><code><code><div>data trial; 
 input &quot;id employees&quot;n age; 
@@ -251,8 +243,7 @@ cards;
 4 48
 5 30
 ; 
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>If you run the program now, you will see that the output is <strong>finally what we had expected</strong>. The first variable is, in fact, called <em>id employees</em> and the second one is called <em>age</em>.</p>
 <p><center><img src="/screenshots/02_intro_ptII/correct_dataset_name.png" alt="correct_dataset_name"></center></p>
 <h4 id="14-sas-code-is-case-in-sensitive">2.4 SAS code is CASE IN-sensitive</h4>
@@ -261,9 +252,7 @@ run;
 
 data 
 
-DaTa 
-
-</div></code></code></pre>
+DaTa</div></code></code></pre>
 <p><em>SAS does not care about the case.</em></p>
 <p>However, <strong>remember</strong> that SAS <strong>does remember the case of the first occurrence of each variable name in the program and will print it the same also for the following occurrences</strong>.</p>
 <p>Have a look at the results from running the following code:</p>
@@ -279,8 +268,7 @@ run;
 
 proc print data=work.trial; 
 var &quot;id EMpLoYEEs&quot;n; 
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>As you can see, the <strong>data step</strong> has the variable <em>id employees</em> written entirely in lower case. In the <strong>proc step</strong>, instead, is a mix of lower and upper case - a mess. If you check the <em>results</em> window, however, you can see that SAS will print the case from the first occurrence of the variable name, which is lower case in this example.</p>
 <p><center><img src="/screenshots/02_intro_ptII/case_insensitive_ex.png" alt="case_insensitive_ex"></center></p>
 <p>You can try and revert the order of occurrence of the two variables, to see that the output does change according to the new first occurrence.</p>
@@ -296,9 +284,7 @@ Rodolphus 34
 Mattie 32
 Mary 26 
 ; 
-run; 
-
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>If you run this new program, you can see that the output cuts the names written in the first column, after the 8th character.</p>
 <p><center><img src="/screenshots/02_intro_ptII/char_length_values.png" alt="char_length_values"></center></p>
 <p>To fix it, we need to tell SAS that we want to increase the length of our values. We will further discuss about the <strong>LENGTH</strong> statement in the next tutorial.</p>
@@ -306,8 +292,7 @@ run;
 <p><strong>ALSO REMEMBER</strong> that SAS will use the <strong>length of the first variable occurring in the program as reference for all the others</strong>. If you don't want any unnecessary words to be cut from your dataset, you should specify the length for all variables with the <strong>LENGTH statement. This statement should also be specified before the variables themselves, as it cannot alter the length of an already existing variable.</strong></p>
 <h4 id="15-library-names-cannot-exceed-8-characters-in-length">2.5 Library names cannot exceed 8 characters in length</h4>
 <p>If we tried to absurdly write a very long library name (<strong>remember to write your own path to your home directory</strong>), it would result in error.</p>
-<pre><code><code><div>libname thislibnameiswaytoolongtoexist &quot;your/path/to/your/home/directory&quot;;
-</div></code></code></pre>
+<pre><code><code><div>libname thislibnameiswaytoolongtoexist &quot;your/path/to/your/home/directory&quot;;</div></code></code></pre>
 <p>The log window would report this error, specifically.</p>
 <p><center><img src="/screenshots/02_intro_ptII/library_name_length.png" alt="library_name_length"></center></p>
 <p>SAS is telling you the library name <strong>is not a valid SAS name</strong> because <strong>it definitely exceeds the maximum allowed of 8 characters in length</strong>.</p>
@@ -349,8 +334,7 @@ title 'data 2';
 proc print data = data2;
 title 'data 3';
 proc print data = data3;
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>Something odd happens when you look in the <em>results</em> window. You would expect each title to match the relative data. Instead, it looks like the second and third title have overwritten those for the first and second datasets...</p>
 <p><center><img src="/screenshots/02_intro_ptII/error_run_statement.png" alt="error_run_statement"></center></p>
 <p><strong>Be careful</strong> with these types of mistakes, because they <strong>won't show in the log window</strong>. SAS will interpret them as correct, if you don't specify differently.</p>
@@ -399,8 +383,7 @@ RUN;
 title 'data 3';
 
 proc print data=data3;
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>The <strong>RUN statements</strong> underneath each of the three datasets are <em>not fundamental</em> for this particular issue, but it is good practice to <strong>add a RUN statement after each piece of separate code you write, to make sure it executes correctly</strong>.</p>
 <p>If we look at the <em>results window</em> now, you can see that the output is printed as we had aimed: each dataset has its corresponding title on top of it.</p>
 <p><center><img src="/screenshots/02_intro_ptII/correct_run_statement.png" alt="correct_run_statement"></center></p>
@@ -430,8 +413,7 @@ datalines;
 
 proc print data=example noobs;
 
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>We can see that <strong>the output does not print what we had aimed for, at all</strong>.</p>
 <p>Number 4 does print <em>&quot;Yes&quot;</em> in the <em>Results</em> column, but so do 7 and 8, which instead should have returned a <em>&quot;No&quot;</em>.</p>
 <p><center><img src="/screenshots/02_intro_ptII/other_errors_comparison.png" alt="other_comparison"></center></p>
@@ -446,8 +428,7 @@ cards;
 1 
 2 
 3 
-; 
-</div></code></code></pre>
+;</div></code></code></pre>
 <p>In this instance, SAS does detect that you tried to write <em>DATA</em> to initialise a data step - in fact, the program runs and outputs a dataset which you can see in the <em>output data</em> window.</p>
 <p>However, check out the log - you can see it contains a warning message telling you that you've misspelled the statement.</p>
 <p><center><img src="/screenshots/02_intro_ptII/mispelling.png" alt="misspelling"></center></p>
@@ -464,8 +445,7 @@ Rodolphus 34
 Mattie 32
 Mary 26 
 ; 
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>If you don't specify that the <em>name</em> variable contains character values, <strong>SAS will treat it automatically as a numeric data type and will return missing values because it cannot read actual numbers from that column</strong>.</p>
 <p><center><img src="/screenshots/02_intro_ptII/wrong_data_type.png" alt="wrong_data_type"></center></p>
 <p>To change that you need to specify the correct data type next to the variable name. In this case, we're telling SAS it's a character string by using the <strong>$</strong> sign.</p>
@@ -478,8 +458,7 @@ Rodolphus 34
 Mattie 32
 Mary 26 
 ; 
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>Now SAS understands that the <em>name</em> column contains characters and not numbers, and it will output the values correctly.</p>
 <p><center><img src="/screenshots/02_intro_ptII/correct_data_type.png" alt="correct_data_type"></center></p>
 <p>We will explore more about different data types and ways to format them in the next tutorials.</p>
@@ -499,8 +478,7 @@ cards;
 run; 
 
 proc print data = trial;
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>The unmatched comment in the first line of the program comments the entire code, thus producing <strong>no output</strong>.</p>
 <p><center><img src="/screenshots/02_intro_ptII/unmatched_comment.png" alt="unmatched_comment"></center></p>
 <p>Nor you'd want your code to be written like this:</p>
@@ -517,8 +495,7 @@ run;
 
 title &quot;printing observations from this trial dataset';
 proc print data = trial;
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>The dataset is created but nothing gets printed. Because of the unmatched ending quote all the code after it gets wrapped inside the text as if it was commented.</p>
 <p><center><img src="/screenshots/02_intro_ptII/unmatched_quotes.png" alt="unmatched_quotes"></center></p>
 <h4 id="35-mixing-statements-between-data-and-proc-steps">3.5 Mixing statements between DATA and PROC steps.</h4>
@@ -547,8 +524,7 @@ set trial;
 title &quot;printing observations from trial1 dataset&quot;;
 proc print data = trial1;
 var sum = x + y;
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>Both data steps work and are executed correctly to create datasets <em>trial</em> and <em>trial1</em>. Each step was executed as it reached its ending - this time signalled by the beginning of another step.</p>
 <p>However, an error occurs, and it relates to the PROC step.</p>
 <p><center><img src="/screenshots/02_intro_ptII/mixing_steps.png" alt="mixing_steps"></center></p>
@@ -573,8 +549,7 @@ sum = x + y;
 title &quot;printing observations from trial1 dataset&quot;;
 proc print data = trial1;
 var sum;
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p><center><img src="/screenshots/02_intro_ptII/correct_steps.png" alt="correct_steps"></center></p>
 <h4 id="36-using-options-with-the-wrong-proc-step">3.6 Using options with the wrong PROC step.</h4>
 <p>Many options work with most procedural steps, however some are only valid with specific ones. Thus, <strong>also a perfectly correct statement or option may cause an error not because it is written incorrectly, but because it is being used in the wrong place</strong>!</p>
@@ -598,8 +573,7 @@ sum = x + y;
 title &quot;printing observations from trial1 dataset - using class option to group values by x&quot;;
 proc print data = trial1;
 class x; 
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>This option is correct in the sense that it exists. The issue here is that it does not work with the <strong>PROC PRINT</strong> step. The log window says it clearly.</p>
 <p><center><img src="/screenshots/02_intro_ptII/wrong_proc_opt.png" alt="wrong_proc_opt"></center></p>
 <p>In this example, <strong>class</strong> would work if we used another PROC step: <strong>MEANS</strong>.</p>
@@ -607,8 +581,7 @@ run;
 
 proc MEANS data = trial1;
 class x; 
-run; 
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>You can see that an output appears in the <em>results</em> window, displaying summary values (mean, St Dev, min, max) of the variables in dataset <em>trial1</em>, grouped by <em>x</em> (showing in the first column).</p>
 <p><center><img src="/screenshots/02_intro_ptII/correct_proc_step_opt.png" alt="proc_opt_correct"></center></p>
 <p><strong>Let SAS Studio help you to spot these errors.</strong> Remember the code colouring smart feature? Maybe you've already noticed this, but when you try to insert an option in a step where it does not belong, it appears in <strong>grey</strong>. When it is written inside the right step, it is coloured <strong>light blue</strong>.</p>
@@ -633,8 +606,7 @@ data tonnes;
 
 proc print data=tonnes;
 	var tonnes;
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>The program executes correctly, no errors appear in the log if not notes saying that the new dataset <em>tonnes</em> contains one variable and four observations.</p>
 <p><center><img src="/screenshots/02_intro_ptII/wrong_logic.png" alt="wrong_logic"></center></p>
 <p><em>Does it mean it is correct?</em></p>
@@ -660,8 +632,7 @@ data tonnes;
 	
 proc print data=tonnes;
 	var tonnes_halved;
-run;
-</div></code></code></pre>
+run;</div></code></code></pre>
 <p>The program executes just fine, but if we look at the content of <em>tonnes</em> dataset, we can see it is <strong>empty</strong>. The notes in the log window confirm this.</p>
 <p><center><img src="/screenshots/02_intro_ptII/wrong_logic1.png" alt="wrong_logic1"></center></p>
 <p>We have tried to <strong>apply a condition on a variable which has yet to exist, as we created it <em>after</em> the condition</strong>.</p>
