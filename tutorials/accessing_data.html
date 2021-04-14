@@ -59,17 +59,15 @@ subtitle: Learn about the different methods for importing or creating data from 
         <center><img src="/screenshots/03_access/PROG1.PNG" alt="PROG1.PNG"></center>
     </p>
     <p>
-    <pre><code><code><div>
-    DATA test1;
-    INPUT birth$ birthplace$ firstname$ lastname$;
-    CARDS;
-    10/10/01 Edinburgh John Smith
-    25/04/99 London Oliver Taylor
-    15/05/10 Cardiff Harry Jones
-    ;
-    PROC PRINT DATA= test1;
-    RUN;
-    </div></code></code></pre>
+    <pre><code><code><div>DATA test1;
+INPUT birth$ birthplace$ firstname$ lastname$;
+CARDS;
+10/10/01 Edinburgh John Smith
+25/04/99 London Oliver Taylor
+15/05/10 Cardiff Harry Jones
+;
+PROC PRINT DATA= test1;
+RUN;</div></code></code></pre>
     </p>
     <p>But, what are these commands specifically for?</p>
     <ul>
@@ -143,17 +141,15 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>Now let's try to use the previous data with the column format and see the results</p>
     <center><img src="/screenshots/03_access/PROVA_COLUMN1.PNG" alt="PROVA_COLUMN1"></center>
     <p>
-    <pre><code><code><div>
-        DATA test2;
-        INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
-        CARDS;
-        10/10/01 Edinburgh John Smith
-        25/04/99 London Oliver Taylor
-        15/05/10 Cardiff Harry Jones
-        ;
-        PROC PRINT DATA= test2;
-        RUN;
-        </div></code></code></pre>
+    <pre><code><code><div>DATA test2;
+INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
+CARDS;
+10/10/01 Edinburgh John Smith
+25/04/99 London Oliver Taylor
+15/05/10 Cardiff Harry Jones
+;
+PROC PRINT DATA= test2;
+RUN;</div></code></code></pre>
     </p>
     <p>What do you think is the result?<strong>let's see it!</strong></p>
     <center><img src="/screenshots/03_access/COLUMN1_RESULT.PNG" alt="COLUMN1_RESULT"></center>
@@ -163,17 +159,15 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>As we can see the format is not correct, <strong>let's see a correct one!</strong></p>
     <center><img src="/screenshots/03_access/PROVA_COLUMN2.PNG" alt="PROVA_COLUMN2"></center>
     <p>
-    <pre><code><code><div>
-        DATA test2;
-        INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
-        CARDS;
-        10/10/01 Edinburgh    John        Smith
-        25/04/99 London       Oliver      Taylor
-        15/05/10 Cardiff      Harry       Jones
-        ;
-        PROC PRINT DATA= test2;
-        RUN;
-        </div></code></code></pre>
+    <pre><code><code><div>DATA test2;
+INPUT birth $1-9 birthplace $10-22 firstname $23-34 lastname $35-46;
+CARDS;
+10/10/01 Edinburgh    John        Smith
+25/04/99 London       Oliver      Taylor
+15/05/10 Cardiff      Harry       Jones
+;
+PROC PRINT DATA= test2;
+RUN;</div></code></code></pre>
     </p>
     <p><strong>Let's go to the result</strong></p>
     <center><img src="/screenshots/03_access/COLUMN2_RESULT.PNG" alt="COLUMN2_RESULT"></center>
@@ -187,19 +181,17 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>Let's go and see some examples right away. Soon after we will see the explanations of the tags used</p>
     <center><img src="/screenshots/03_access/NAMED_prog1.PNG" alt="NAMED_prog1"></center>
     <p>
-    <pre><code><code><div>
-        DATA test3;
-        INPUT birth= birthplace=$ firstname=$ lastname=$ age=;
-        INFORMAT birth ddmmyy8.;
-        FORMAT birth ddmmyy8.;
-        CARDS;
-        birth=10/10/01 birthplace=Edinburgh firstname=John lastname=Smith age=18
-        birth=25/04/99 birthplace=London firstname=Oliver lastname=Taylor age=15
-        birth=15/05/10 birthplace=Cardiff firstname=Harry lastname=Jones age=59
-        ;
-        PROC PRINT DATA= test3;
-        RUN;
-        </div></code></code></pre>
+    <pre><code><code><div>DATA test3;
+INPUT birth= birthplace=$ firstname=$ lastname=$ age=;
+INFORMAT birth ddmmyy8.;
+FORMAT birth ddmmyy8.;
+CARDS;
+birth=10/10/01 birthplace=Edinburgh firstname=John lastname=Smith age=18
+birth=25/04/99 birthplace=London firstname=Oliver lastname=Taylor age=15
+birth=15/05/10 birthplace=Cardiff firstname=Harry lastname=Jones age=59
+;
+PROC PRINT DATA= test3;
+RUN;</div></code></code></pre>
     </p>
     <p>As we can see in lines 3 and 4 we find 2 new terms:
     <ul>
@@ -231,26 +223,24 @@ subtitle: Learn about the different methods for importing or creating data from 
     <p>Another way to use Named Input is:</p>
     <center><img src="/screenshots/03_access/NAMED_prog2.PNG"></center>
     <p>
-    <pre><code><code><div>
-        DATA test4;
-        birth="10/10/01";
-        birthplace="Edinburgh";
-        firstname="John";
-        lastname="Smith";
-        age=18;
-        OUTPUT;
-        birth="25/04/99";
-        birthplace="London";
-        firstname="Oliver";
-        lastname="Taylor";
-        age=15;
-        OUTPUT;
-        INFORMAT birth ddmmyy8.;
-        FORMAT birth ddmmyy8.;
-        RUN;
-        PROC PRINT DATA= test4;
-        RUN;
-        </div></code></code></pre>
+    <pre><code><code><div>DATA test4;
+birth="10/10/01";
+birthplace="Edinburgh";
+firstname="John";
+lastname="Smith";
+age=18;
+OUTPUT;
+birth="25/04/99";
+birthplace="London";
+firstname="Oliver";
+lastname="Taylor";
+age=15;
+OUTPUT;
+INFORMAT birth ddmmyy8.;
+FORMAT birth ddmmyy8.;
+RUN;
+PROC PRINT DATA= test4;
+RUN;</div></code></code></pre>
     </p>
     <p>with this method we have to be careful about some things:
     <ul>
@@ -277,26 +267,24 @@ subtitle: Learn about the different methods for importing or creating data from 
     <h5><strong>Example 1:</strong></h5>
     <center><img src="/screenshots/03_access/NAMED_prog4.PNG" alt="NAMED_prog4"></center>
     <p>
-    <pre><code><code><div>
-            DATA test4;
-            INFORMAT birth ddmmyy8.;
-            FORMAT birth ddmmyy8.;
-            birth=10/10/01;
-            birthplace="Edinburgh";
-            firstname="John";
-            lastname="Smith";
-            age=18;
-            OUTPUT;
-            birth=25/04/99;
-            birthplace="London";
-            firstname="Oliver";
-            lastname="Taylor";
-            age=15;
-            OUTPUT;
-            RUN;
-            PROC PRINT DATA= test4;
-            RUN;
-        </div></code></code></pre>
+    <pre><code><code><div>DATA test4;
+INFORMAT birth ddmmyy8.;
+FORMAT birth ddmmyy8.;
+birth=10/10/01;
+birthplace="Edinburgh";
+firstname="John";
+lastname="Smith";
+age=18;
+OUTPUT;
+birth=25/04/99;
+ birthplace="London";
+firstname="Oliver";
+lastname="Taylor";
+age=15;
+OUTPUT;
+RUN;
+PROC PRINT DATA= test4;
+RUN;</div></code></code></pre>
     </p>
     <p>In this case there are 2 errors:
     <ul>
@@ -315,29 +303,27 @@ subtitle: Learn about the different methods for importing or creating data from 
     <center><img src="/screenshots/03_access/AGGIUNTA PROC CONTETS IN NAMED_prog4.PNG"
             alt="AGGIUNTA PROC CONTETS IN NAMED_prog4"></center>
     <p>
-    <pre><code><code><div>
-            DATA test4;
-            INFORMAT birth ddmmyy8.;
-            FORMAT birth ddmmyy8.;
-            birth=10/10/01;
-            birthplace="Edinburgh";
-            firstname="John";
-            lastname="Smith";
-            age=18;
-            OUTPUT;
-            birth=25/04/99;
-            birthplace="London";
-            firstname="Oliver";
-            lastname="Taylor";
-            age=15;
-            OUTPUT;
-            RUN;
-            PROC PRINT DATA= test4;
-            RUN;
+    <pre><code><code><div>DATA test4;
+INFORMAT birth ddmmyy8.;
+FORMAT birth ddmmyy8.;
+birth=10/10/01;
+birthplace="Edinburgh";
+firstname="John";
+lastname="Smith";
+age=18;
+OUTPUT;
+birth=25/04/99;
+birthplace="London";
+firstname="Oliver";
+lastname="Taylor";
+age=15;
+OUTPUT;
+RUN;
+PROC PRINT DATA= test4;
+RUN;
 
-            PROC CONTENTS DATA= test4;
-            RUN;
-        </div></code></code></pre>
+PROC CONTENTS DATA= test4;
+RUN;</div></code></code></pre>
     </p>
     <p>The result of this command is composed of 3 tables, let's go and see them!</p>
     <center><img src="/screenshots/03_access/RES_CONTENTS_prog4.PNG" alt="RES_CONTENTS_prog4"></center><br>
@@ -393,17 +379,15 @@ subtitle: Learn about the different methods for importing or creating data from 
     <center><img src="/screenshots/03_access/results_lib.jpg"></center>
     <br>
     <p>Now we can put something inside. The operation is simple, as an example we will take the first DataSet</p>
-    <pre><code><code><div>
-    DATA <strong>TUTORIAL.</strong>test1;
-    INPUT birth$ birthplace$ firstname$ lastname$;
-    CARDS;
-    10/10/01 Edinburgh John Smith
-    25/04/99 London Oliver Taylor
-    15/05/10 Cardiff Harry Jones
-    ;
-    PROC PRINT DATA= <strong>TUTORIAL.</strong>test1;
-    RUN;
-    </div></code></code></pre>
+    <pre><code><code><div>DATA <strong>TUTORIAL.</strong>test1;
+INPUT birth$ birthplace$ firstname$ lastname$;
+CARDS;
+10/10/01 Edinburgh John Smith
+25/04/99 London Oliver Taylor
+15/05/10 Cardiff Harry Jones
+;
+PROC PRINT DATA= <strong>TUTORIAL.</strong>test1;
+RUN;</div></code></code></pre>
     <p>As we can see from the code, it will be enough to add the library name first in the following format:<br>
         DATA "library name"."DataSet name";<br>
         Let's see if after running the program we will find it in that LIB?
@@ -429,8 +413,7 @@ subtitle: Learn about the different methods for importing or creating data from 
     </p>
     <h5>1) Proc Import:</h5>
     <p>Let's see how to use it:</p>
-    <pre><code><code><div>
-PROC IMPORT OUT= TUTORIAL.terna_test21
+    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test21
 DATAFILE= "/home/u58274931/test_folder/terna21.csv" 
 DBMS=DLM
 REPLACE;
@@ -439,8 +422,7 @@ GETNAMES=YES;
 RUN;
 
 PROC PRINT DATA=TUTORIAL.terna_test21;
-RUN;
-    </div></code></code></pre>
+RUN;</div></code></code></pre>
     <p>
         <ul>
             <li>
@@ -488,8 +470,7 @@ RUN;
     </p>
     <h5>2) Data step:</h5>
     <p>Let's see this other method too:</p>
-    <pre><code><code><div>
-DATA TUTORIAL.terna_test20;
+    <pre><code><code><div>DATA TUTORIAL.terna_test20;
 INFILE "/home/u58274931/test_folder/terna20.csv"
 DLM=";"
 MISSOVER 
@@ -518,8 +499,7 @@ RUN;</div></code></code></pre>
     method which is the <strong>Proc Import</strong></i> and let's see how to import also files with <strong>txt and xls extensions</strong>. 
     Here we go!</p><br>
 <h6>Txt extension with Proc Import</h6>
-<pre><code><code><div>
-PROC IMPORT OUT= TUTORIAL.terna_test19
+<pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
 DATAFILE= "/home/u58274931/test_folder/terna19.txt" 
 DBMS=TAB
 REPLACE;
@@ -527,8 +507,7 @@ GETNAMES=YES;
 RUN;
 
 PROC PRINT DATA=TUTORIAL.terna_test19;
-RUN;
-</div></code></code></pre>
+RUN;</div></code></code></pre>
 <br>
 <h6>Xls extension with Proc Import</h6>
 <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
@@ -539,7 +518,6 @@ GETNAMES=YES;
 RUN;
     
 PROC PRINT DATA=TUTORIAL.terna_test19;
-RUN;
-</div></code></code></pre>
+RUN;</div></code></code></pre>
 <p><strong>We have already seen the 3 main extensions, now test yourself with the remaining files,
      then terna16 and terna17</strong></p>
