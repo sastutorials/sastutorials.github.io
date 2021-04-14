@@ -60,25 +60,9 @@ by clicking on the button below.
     </form>
 </center>
 
-You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import them on SAS Studio**. Once you've done that, you can come back here to start this tutorial!
+You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import them on SAS Studio**.
 
-<a name ="subsect2"></a>
-
-## Format the data
-
-Before getting to the actual manipulation of the datasets, you always need to **observe the characteristics of the variables and observations inside each dataset**. 
-
-This way, you can start getting a general **overview** of them, and see if any **formatting changes** need to be made. 
-
-We know that variables can be formatted as either of these three ways:  
-
-1. Numeric 
-2. Character string 
-3. Datetime
-
-SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
-
-I am going to assume you have the 6 datasets uploaded and imported as SAS files on your SAS Studio. 
+I am going to assume you have the 6 datasets ready to work with.
 
 ![imported_data](../screenshots/04_basic_manip/screen_imported_data.png)
 
@@ -149,7 +133,7 @@ Again, the code repeats equally for all datasets. However, if you ran it, you wo
 
 We could scroll down to see every single row for each dataset, or we could just tell SAS to **print the top 10 and bottom 10 observations**.
 
-To do so, copy the following code: 
+To do so, **copy** the following code: 
 
 ```
 /* First 10 obs */
@@ -171,11 +155,23 @@ proc print data = work.last10;
 run;
 ```
 
-**E' FORSE TROPPO DIFFICILE FARE PRINT BOTTOM 10 PER QUESTO TUTORIAL???**
-
 ![top_bottom_10](../screenshots/04_basic_manip/top_bottom_10.png)
 
+<a name ="subsect2"></a>
 
+## Format the data
+
+Before getting to the actual manipulation of the datasets, you always need to **observe the characteristics of the variables and observations inside each dataset**. 
+
+This way, you can start getting a general **overview** of them, and see if any **formatting changes** need to be made. 
+
+We know that variables can be formatted as either of these three ways:  
+
+1. Numeric 
+2. Character string 
+3. Datetime
+
+SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
 
 ### Formats and informats 
 
