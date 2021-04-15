@@ -539,17 +539,19 @@ RUN;</div></code></code></pre>
     </p>
     <h5>But what is the CasUtil procedure and what is Cas?</h5>
     <p>
+        <strong>PROC CASUTIL "optional argument"</strong><br>
+        Optional argument:
         <ul>
-            <li>INCASLIB=caslib
+            <li><strong>INCASLIB=caslib</strong>
                 specifies the input caslib for the procedure. This option does not change the active caslib for your session. 
                 If you do not specify this option here or in a statement, such as LOAD, then the active caslib is used.
             </li>
             <li>
-                OUTCASLIB=caslib
+            <strong>OUTCASLIB=caslib</strong>
                 specifies the output caslib for the procedure. This option does not change the active caslib for your session. If you do not specify this option here or in a statement, such as LOAD, then the active caslib is used.
             </li>    
             <li>
-                SESSREF=session-name
+            <strong>SESSREF=session-name</strong>
                 specifies the session to use with the procedure. If you omit SESSREF=, then procedure uses the session that specified in the &_SESSREF_ macro variable.</li>
             </li>
         </ul>
