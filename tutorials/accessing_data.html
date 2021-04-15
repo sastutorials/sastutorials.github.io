@@ -537,3 +537,20 @@ RUN;</div></code></code></pre>
         </li>
     </ul>
     </p>
+    <h5>But what is the CasUtil procedure and what is Cas?</h5>
+    <p>
+        <ul>
+            <li>INCASLIB=caslib
+                specifies the input caslib for the procedure. This option does not change the active caslib for your session. 
+                If you do not specify this option here or in a statement, such as LOAD, then the active caslib is used.
+            </li>
+            <li>
+                OUTCASLIB=caslib
+                specifies the output caslib for the procedure. This option does not change the active caslib for your session. If you do not specify this option here or in a statement, such as LOAD, then the active caslib is used.
+            </li>    
+            <li>
+                SESSREF=session-name
+                specifies the session to use with the procedure. If you omit SESSREF=, then procedure uses the session that specified in the &_SESSREF_ macro variable.</li>
+            </li>
+        </ul>
+    </p>
