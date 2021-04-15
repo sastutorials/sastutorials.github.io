@@ -408,8 +408,8 @@ RUN;</div></code></code></pre>
     </center>
     <br>
     <p><i>If you have not already done so, it is recommended that you create, as we did before, a folder within
-          the server</i><br>
-          Now let's see 2 types of imports:<br>
+            the server</i><br>
+        Now let's see 2 types of imports:<br>
     </p>
     <h5>1) Proc Import:</h5>
     <p>Let's see how to use it:</p>
@@ -424,49 +424,90 @@ RUN;
 PROC PRINT DATA=TUTORIAL.terna_test21;
 RUN;</div></code></code></pre>
     <p>
-        <ul>
-            <li>
-                <strong>PROC IMPORT</strong> is the statement for importing files
-            </li>
-            <br>
-            <li>
-                <strong>DATAFILE</strong> is used to find the file that we want to import into a LIB
-            </li>
-            <br>
-            <li>
-                <strong>DBMS</strong> is used to select the type of symbol that is between one field and another including space.<br>
-                We can set it in:
-                <table>
-                    <tr><td>Type</td><td>Extension</td></tr>
-                    <tr><td><strong>ACCESS</strong></td><td>.MDB</td></tr>
-                    <tr><td><strong>DBF</strong></td><td>.DBF</td></tr>
-                    <tr><td><strong>WK1</strong></td><td>.WK1</td></tr>
-                    <tr><td><strong>WK3</strong></td><td>.WK3</td></tr>
-                    <tr><td><strong>WK4</strong></td><td>.WK4</td></tr>
-                    <tr><td><strong>EXCEL</strong></td><td>.XLS</td></tr>
-                    <tr><td><strong>EXCEL4</strong></td><td>.XLS</td></tr>
-                    <tr><td><strong>EXCEL5</strong></td><td>.XLS</td></tr>
-                    <tr><td><strong>EXCEL97</strong></td><td>.XLS</td></tr>
-                    <tr><td><strong>DLM</strong></td><td>.*</td></tr>
-                    <tr><td><strong>CSV</strong></td><td>.CSV</td></tr>
-                    <tr><td><strong>TAB</strong></td><td>.TXT</td></tr>
-                </table>
-                <i>The part in <strong>bold</strong> is the one that must be inserted in the DBMS field.</i><br><br>
-            </li>
-            <li>
-                When we use <strong>DLM we must use the tag DELIMITER</strong> in this way:<br>
-                DBMS=DLM<br>
-                DELIMITER='symbol'
-            </li>
-            <br>
-            <li>
-                <strong>REPLACE</strong> is for indicate to SAS that if there is a file with same name it have to replace it
-            </li>
-            <br>
-            <li>
-            <strong>GETNAMES</strong> when set to on fetches the field names from the first record of the file we are importing
-            </li>
-        </ul>
+    <ul>
+        <li>
+            <strong>PROC IMPORT</strong> is the statement for importing files
+        </li>
+        <br>
+        <li>
+            <strong>DATAFILE</strong> is used to find the file that we want to import into a LIB
+        </li>
+        <br>
+        <li>
+            <strong>DBMS</strong> is used to select the type of symbol that is between one field and another including
+            space.<br>
+            We can set it in:
+            <table>
+                <tr>
+                    <td>Type</td>
+                    <td>Extension</td>
+                </tr>
+                <tr>
+                    <td><strong>ACCESS</strong></td>
+                    <td>.MDB</td>
+                </tr>
+                <tr>
+                    <td><strong>DBF</strong></td>
+                    <td>.DBF</td>
+                </tr>
+                <tr>
+                    <td><strong>WK1</strong></td>
+                    <td>.WK1</td>
+                </tr>
+                <tr>
+                    <td><strong>WK3</strong></td>
+                    <td>.WK3</td>
+                </tr>
+                <tr>
+                    <td><strong>WK4</strong></td>
+                    <td>.WK4</td>
+                </tr>
+                <tr>
+                    <td><strong>EXCEL</strong></td>
+                    <td>.XLS</td>
+                </tr>
+                <tr>
+                    <td><strong>EXCEL4</strong></td>
+                    <td>.XLS</td>
+                </tr>
+                <tr>
+                    <td><strong>EXCEL5</strong></td>
+                    <td>.XLS</td>
+                </tr>
+                <tr>
+                    <td><strong>EXCEL97</strong></td>
+                    <td>.XLS</td>
+                </tr>
+                <tr>
+                    <td><strong>DLM</strong></td>
+                    <td>.*</td>
+                </tr>
+                <tr>
+                    <td><strong>CSV</strong></td>
+                    <td>.CSV</td>
+                </tr>
+                <tr>
+                    <td><strong>TAB</strong></td>
+                    <td>.TXT</td>
+                </tr>
+            </table>
+            <i>The part in <strong>bold</strong> is the one that must be inserted in the DBMS field.</i><br><br>
+        </li>
+        <li>
+            When we use <strong>DLM we must use the tag DELIMITER</strong> in this way:<br>
+            DBMS=DLM<br>
+            DELIMITER='symbol'
+        </li>
+        <br>
+        <li>
+            <strong>REPLACE</strong> is for indicate to SAS that if there is a file with same name it have to replace it
+        </li>
+        <br>
+        <li>
+            <strong>GETNAMES</strong> when set to on fetches the field names from the first record of the file we are
+            importing
+        </li>
+    </ul>
     </p>
     <h5>2) Data step:</h5>
     <p>Let's see this other method too:</p>
@@ -477,7 +518,7 @@ MISSOVER
 FIRSTOBS=1;
 INPUT Year Biomass Geothermal Hydro Photovoltaic Wind Date;
 RUN;</div></code></code></pre>
-<p>
+    <p>
     <ul>
         <li>
             INFILE is used to indicate the path of the file in the server Sas
@@ -492,14 +533,15 @@ RUN;</div></code></code></pre>
             FIRSTOBS sets the record from which it should begin reading
         </li>
     </ul>
-</p>
-<p>This type is more inconvenient because we have to enter the names of the fields from the keyboard</p>
-<br>
-<p>We have already seen 2 types of import but with the same type of file, now let's use <i>the most convenient 
-    method which is the <strong>Proc Import</strong></i> and let's see how to import also files with <strong>txt and xls extensions</strong>. 
-    Here we go!</p><br>
-<h6>Txt extension with Proc Import</h6>
-<pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
+    </p>
+    <p>This type is more inconvenient because we have to enter the names of the fields from the keyboard</p>
+    <br>
+    <p>We have already seen 2 types of import but with the same type of file, now let's use <i>the most convenient
+            method which is the <strong>Proc Import</strong></i> and let's see how to import also files with <strong>txt
+            and xls extensions</strong>.
+        Here we go!</p><br>
+    <h6>Txt extension with Proc Import</h6>
+    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
 DATAFILE= "/home/u58274931/test_folder/terna19.txt" 
 DBMS=TAB
 REPLACE;
@@ -508,9 +550,9 @@ RUN;
 
 PROC PRINT DATA=TUTORIAL.terna_test19;
 RUN;</div></code></code></pre>
-<br>
-<h6>Xls extension with Proc Import</h6>
-<pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
+    <br>
+    <h6>Xls extension with Proc Import</h6>
+    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
 DATAFILE= "/home/u58274931/test_folder/terna19.txt" 
 DBMS=TAB
 REPLACE;
@@ -519,12 +561,26 @@ RUN;
     
 PROC PRINT DATA=TUTORIAL.terna_test19;
 RUN;</div></code></code></pre>
-<p><a name="sect5"></a></p>
-<p><strong>We have already seen the 3 main extensions, now test yourself with the remaining files,
-     then terna16 and terna17</strong></p>
-<br>
-<h1>5. Introduction to Sas Viya and Cas</h1>
-<p>The CASUTIL procedure works with tables in SAS Cloud Analytic Services, SAS data sets in SAS libraries, and external files. The procedure has three functional areas:
+    <p><a name="sect5"></a></p>
+    <p><strong>We have already seen the 3 main extensions, now test yourself with the remaining files,
+            then terna16 and terna17</strong></p>
+    <br>
+    <h1>5. Introduction to Sas Viya and Cas</h1>
+    <p><strong>Sas Viya</strong> or Sas Visual Analytics allows you to:
+        <ul>
+            <li>
+                Apply the power of SAS analytics to massive amounts of data;
+            </li>
+            <li>
+                Visually explore the data at an astonishing speed;
+            </li>
+            <li>
+                Share analytics with others, anywhere, via the web or iPad.
+            </li>
+        </ul>
+    </p>
+    <p>The CASUTIL procedure works with tables in SAS Cloud Analytic Services, SAS data sets in SAS libraries, and
+        external files. The procedure has three functional areas:
     <ul>
         <li>
             data transfer
@@ -541,18 +597,23 @@ RUN;</div></code></code></pre>
     <p>
         <strong>PROC CASUTIL "optional argument"</strong><br>
         Optional argument:
-        <ul>
-            <li><strong>INCASLIB=caslib</strong>
-                specifies the input caslib for the procedure. This option does not change the active caslib for your session. 
-                If you do not specify this option here or in a statement, such as LOAD, then the active caslib is used.
-            </li>
-            <li>
+    <ul>
+        <li><strong>INCASLIB=caslib</strong>
+            specifies the input caslib for the procedure. This option does not change the active caslib for your
+            session.
+            If you do not specify this option here or in a statement, such as LOAD, then the active caslib is used.
+        </li>
+        <li>
             <strong>OUTCASLIB=caslib</strong>
-                specifies the output caslib for the procedure. This option does not change the active caslib for your session. If you do not specify this option here or in a statement, such as LOAD, then the active caslib is used.
-            </li>    
-            <li>
+            specifies the output caslib for the procedure. This option does not change the active caslib for your
+            session. If you do not specify this option here or in a statement, such as LOAD, then the active caslib is
+            used.
+        </li>
+        <li>
             <strong>SESSREF=session-name</strong>
-                specifies the session to use with the procedure. If you omit SESSREF=, then procedure uses the session that specified in the &_SESSREF_ macro variable.</li>
-            </li>
-        </ul>
+            specifies the session to use with the procedure. If you omit SESSREF=, then procedure uses the session that
+            specified in the &_SESSREF_ macro variable.
+        </li>
+        </li>
+    </ul>
     </p>
