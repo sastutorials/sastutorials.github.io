@@ -175,6 +175,22 @@ SAS reads *numeric data* by default. However, it is necessary to **add specifica
 
 ### Formats and informats 
 
+Do you recall the concept of format and informat statements from [accessing data](tutorials/../accessing_data.html)?
+
+Generally, the **informat** statement enables SAS to read a non-standard variable. The **format** statement allows SAS to display the same variable when printed to the output window or viewed in a viewtable window.
+
+This implies that **before the format statement there always needs to be the informat**. In fact, printing an output without having *informatted the data* first will not display anything because SAS has not been able to read and interpret the data. 
+
+Informats and formats present the same formatting specifications. You can see below an example of the most common (in)formatting specifications: 
+
+| Data type | Informat | Format | Definition | Width range | Default width |
+|:---:|:---:|:---:|:---:|:---:|
+| *Numeric*| | | | |
+| | COMMA*w.d* | COMMA*w.d* | Removes embedded comma and/or $ , converts *left parenthesis* to a *minus sign* |1-32 | 1 | 
+| | PERCENT*w.* | PERCENT*w.* | Converts *percentage* to a *proportion* | 1-32 | 6 |
+| | DOLLAR*w.d* | DOLLAR*w.d* | Turns the number into currency, by inserting the *$* in front of the value | 2-32 | 6 | 
+| | WORDS*w.d* | Converts the numeric value to written (string) format | 5–32767 | 10 |
+
 ### Numeric formatting 
 
 ### String formatting 
