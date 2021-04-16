@@ -189,7 +189,7 @@ Informats and formats present the same formatting specifications. You can see be
 | | COMMA*w.d* | COMMA*w.d* | Removes embedded comma and/or $ , converts *left parenthesis* to a *minus sign* |1-32 | 1 | 
 | | PERCENT*w.* | PERCENT*w.* | Converts *percentage* to a *proportion* | 1-32 | 6 |
 | | DOLLAR*w.d* | DOLLAR*w.d* | Turns the number into currency, by inserting the *$* in front of the value | 2-32 | 6 | 
-| | WORDS*w.d* | Converts the numeric value to written (string) format | 5–32767 | 10 |
+| | WORDS*w.d* | WORDS*w.d* | Converts the numeric value to written (string) format | 5–32767 | 10 |
 
 ### Numeric formatting 
 
