@@ -186,20 +186,20 @@ Informats and formats present the same formatting specifications. You can see be
 | Data type | Informat | Format | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|:---:|
 | *Numeric*| | | | |
-| *w.d* | Reads standard numeric data | 1-32 | None |
+| | *w.d* | *w.d* | Reads standard numeric data | 1-32 | None |
 | | COMMA*w.d* | COMMA*w.d* | Removes embedded comma and/or $ , converts *left parenthesis* to a *minus sign* |1-32 | 1 | 
 | | PERCENT*w.* | PERCENT*w.* | Converts *percentage* to a *proportion* | 1-32 | 6 |
 | | DOLLAR*w.d* | DOLLAR*w.d* | Turns the number into currency, by inserting the *$* in front of the value | 2-32 | 6 | 
 | | WORDS*w.d* | WORDS*w.d* | Converts the numeric value to written (string) format | 5–32767 | 10 |
 | *String* | | | | |
-| $*w.* | Reads character data and trims leading blanks | 1–32,767 | None |
-| $CHAR*w.* | Reads character data but **does not trim** leading or trailing blanks | 1–32,767 | 8 or length of var | 
-| $UPCASE*w.* | Converts character data to upcase | 1–32,767 | 8 | 
-| $QUOTE*w.* | $QUOTE*w.* | Removes matching quotation marks from character data | INPUT | INPUT |
-| $REVERS*w.* | $REVERS*w.* | Reads character data of varying length | INPUT | INPUT | 
-| $VARYING*w.* | $VARYING*w.* | Reads character data of varying length | INPUT | INPUT | 
+| | $*w.* | $*w.* | Reads character data and trims leading blanks | 1–32,767 | None |
+| | $CHAR*w.* | $CHAR*w.* | Reads character data but **does not trim** leading or trailing blanks | 1–32,767 | 8 or length of var | 
+| | $UPCASE*w.* | $UPCASE*w.* | Converts character data to upcase | 1–32,767 | 8 | 
+| | $QUOTE*w.* | $QUOTE*w.* | Removes matching quotation marks from character data | INPUT | INPUT |
+| | $REVERS*w.* | $REVERS*w.* | Reads character data of varying length | INPUT | INPUT | 
+| | $VARYING*w.* | $VARYING*w.* | Reads character data of varying length | INPUT | INPUT | 
 | *Date and time* | | | | |
-| DATE*w.* | | | | | |
+| | DATE*w.* | DATE*w.* | | | 
 
 ### Numeric formatting 
 
