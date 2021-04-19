@@ -279,11 +279,11 @@ run;
 
 Let's break the code down.
 * The **set statement** takes the information from an already existing dataset - in this case we are simply *overwriting* the previously created dataset called *terna16_formatted*.
-* **informat date ddmmyyyy10.**:
+* **informat date ddmmyyyy10.**
   * *informat* initiates the informat statement;
   * *date* is the variable name which needs to be informatted;
   * *ddmmyyyy10.* is the informat used, to **match the original formatting** - in this way SAS is able to read the initial way in which the values are formatted;
-* **format date monyy7.**:
+* **format date monyy7.**
   * *format* initiates the format statement; 
   * *date* is the variable name which needs to be formatted after the informat; 
   * *monyy7.* is the final formatting which is going to be displayed. 
