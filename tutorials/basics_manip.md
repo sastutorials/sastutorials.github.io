@@ -177,40 +177,41 @@ SAS reads *numeric data* by default. However, it is necessary to **add specifica
 
 Do you recall the concept of format and informat statements from [accessing data](tutorials/../accessing_data.html)?
 
-Informats and formats present the same formatting specifications. However, **they are used for very different purposes**. Generally, the **informat** statement enables SAS to read a non-standard variable. The **format** statement allows SAS to display the same variable when printed to the output window or viewed in a viewtable window. This implies that **before the format statement there always needs to be an informat**. In fact, printing an output without having *_in_formatted the data* first will not display anything because SAS has not been able to read and interpret it. 
+Informats and formats present the same formatting specifications. However, **they are used for very different purposes**. The **informat** statement enables SAS to read a non-standard variable, while the **format** statement allows SAS to display the same variable when printed to the output window or viewed in a viewtable window. This implies that **before the format statement there always needs to be an informat**. In fact, printing an output without having *_in_formatted the data* first will not display anything because SAS has not been able to read and interpret it. 
 
-### Numeric formatting 
+**INSERTING PIC OF INFORMAT-FORMAT WORKFLOW**
 
-| Data type | Informat | Format | Definition | Width range | Default width |
-|:---:|:---:|:---:|:---:|:---:|
-| *Numeric*| | | | |
-| | *w.d* | *w.d* | Reads standard numeric data | 1-32 | None |
-| | COMMA*w.d* | COMMA*w.d* | Removes embedded comma and/or $ , converts *left parenthesis* to a *minus sign* |1-32 | 1 | 
-| | PERCENT*w.* | PERCENT*w.* | Converts *percentage* to a *proportion* | 1-32 | 6 |
-| | DOLLAR*w.d* | DOLLAR*w.d* | Turns the number into currency, by inserting the *$* in front of the value | 2-32 | 6 | 
-| | WORDS*w.d* | WORDS*w.d* | Converts the numeric value to written (string) format | 5–32767 | 10 |
+### Numeric (in)formatting 
 
-### String formatting 
+| Data type | Syntax | Definition | Width range | Default width |
+|:---:|:---:|:---:|:---:|
+| | *w.d* | Reads standard numeric data | 1-32 | None |
+| | COMMA*w.d* | Removes embedded comma and/or $ , converts *left parenthesis* to a *minus sign* |1-32 | 1 | 
+| | PERCENT*w.* | Converts *percentage* to a *proportion* | 1-32 | 6 |
+| | DOLLAR*w.d* | Turns the number into currency, by inserting the *$* in front of the value | 2-32 | 6 | 
+| | WORDS*w.d* | Converts the numeric value to written (string) format | 5–32767 | 10 |
 
-| Data type | Informat | Format | Definition | Width range | Default width |
-|:---:|:---:|:---:|:---:|:---:|
-| *String* | | | | |
-| | $*w.* | $*w.* | Reads character data and trims leading blanks | 1–32,767 | None |
-| | $CHAR*w.* | $CHAR*w.* | Reads character data but **does not trim** leading or trailing blanks | 1–32,767 | 8 or length of var | 
-| | $UPCASE*w.* | $UPCASE*w.* | Converts character data to upcase | 1–32,767 | 8 | 
-| | $QUOTE*w.* | $QUOTE*w.* | Removes matching quotation marks from character data | INPUT | INPUT |
-| | $REVERS*w.* | $REVERS*w.* | Reads character data of varying length | 1 if width of output field not specified | 1–32767 | 
-| | $VARYING*w.* | $VARYING*w.* | Reads character data of varying length | Default length of variable; 8 if variable is undefined | 1–32767 | 
+### String (in)formatting 
 
-### Datetime formatting 
+| Data type | Syntax | Definition | Width range | Default width |
+|:---:|:---:|:---:|:---:|
+| | $*w.* | Reads character data and trims leading blanks | 1–32,767 | None |
+| | $CHAR*w.* | Reads character data but **does not trim** leading or trailing blanks | 1–32,767 | 8 or length of var | 
+| | $UPCASE*w.* | Converts character data to upcase | 1–32,767 | 8 | 
+| | $QUOTE*w.* | Removes matching quotation marks from character data | 2 if var length undefined, otherwise length of var + 2 | 2–32767 |
+| | $REVERS*w.* | Reads character data of varying length | 1 if width of output field not specified | 1–32767 | 
+| | $VARYING*w.* | Reads character data of varying length | Default length of variable; 8 if variable is undefined | 1–32767 | 
 
-| Data type | Informat | Format | Definition | Width range | Default width |
-|:---:|:---:|:---:|:---:|:---:|
-| *Date and time* | | | | |
-| | DATE*w.* | DATE*w.* | Reads dates in forms *ddmmyyyy* and *ddmmyy* | 7-32 | 7 | 
-| | DATETIME*w.* | DATETIME*w.* | Reads datetime values in the form: *ddmmyy hh:mm:ss:ss* | 13-40 | 18 |
-| | TIME*w.d* | TIME*w.d* | Reads time in form: *hh:mm:ss:ss* (or *hh:mm*) using a 24-h clock | 5-32 | 8 |
-| | 
+### Datetime (in)formatting 
+
+| Data type | Syntax | Definition | Width range | Default width |
+|:---:|:---:|:---:|:---:|
+| | DATE*w.* | Reads dates in forms *ddmmyyyy* and *ddmmyy* | 7-32 | 7 | 
+| | DATETIME*w.* | Reads datetime values in the form: *ddmmyy hh:mm:ss:ss* | 13-40 | 18 |
+| | TIME*w.d* | Reads time in form: *hh:mm:ss:ss* (or *hh:mm*) using a 24-h clock | 5-32 | 8 |
+| | DDMMYY*w.* | Reads date values in the form *ddmmyy* or *ddmmyyyy* | 2-10 | 8 |
+| | MONYY*w.* | Reads month and yer date values in the form *mmmyy* or *mmmyyyy* | 5-7 | 5 |
+| | YYQ*w.* | Reads quarters of the year | 4-32 | 6 |
 
 <a name="subsect3"></a>
 
