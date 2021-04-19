@@ -618,8 +618,22 @@ RUN;</div></code></code></pre>
             These can be added at any point to perform ad-hoc analysis within CAS.
         </li>
     </ul>
+
     <h5>Caslib Scope</h5>
-    s
+    <p>For these three types of caslib, each can have their own scope. They are defined as either:<br>
+    <ul>
+        <li>
+            <strong>Session caslibs</strong><br>
+            These are available only to those within the session where the caslib was created.  
+            The name of these caslibs must be unique within the session.
+        </li>
+        <li>
+            <strong>Global caslibs</strong><br>
+            These are available to anyone who has access to the CAS Server (dependent on access controls).
+            The name of these caslibs must be unique across all CAS sessions on the server.
+        </li>
+    </ul>
+    </p>
     <p><a name="sect8"></a></p>
     <br>
     <h1>8. What is CasUtil</h1>
