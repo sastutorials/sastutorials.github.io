@@ -195,36 +195,36 @@ Let's explore examples of typical formats divided by **category**. We will then 
 
 ### Numeric (in)formatting 
 
-| Data type | Syntax | Definition | Width range | Default width |
+| Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
-| | *w.d* | Reads standard numeric data | 1-32 | None |
-| | BZ*w.d* | Converts blanks to 0s | 1-32 | 1 | 
-| | COMMA*w.d* | Removes embedded comma and/or $ , converts *left parenthesis* to a *minus sign* |1-32 | 1 | 
-| | PERCENT*w.* | Converts *percentage* to a *proportion* | 1-32 | 6 |
-| | DOLLAR*w.d* | Turns the number into *currency*, by inserting the *$* in front of the value | 2-32 | 6 | 
-| | WORDS*w.d* | Converts the numeric value to *written* (string) *format* | 5–32767 | 10 |
+| *w.d* | Reads standard numeric data | 1-32 | None |
+| BZ*w.d* | Converts blanks to 0s | 1-32 | 1 | 
+| COMMA*w.d* | Removes embedded comma and/or $ , converts *left parenthesis* to a *minus sign* |1-32 | 1 | 
+| PERCENT*w.* | Converts *percentage* to a *proportion* | 1-32 | 6 |
+| DOLLAR*w.d* | Turns the number into *currency*, by inserting the *$* in front of the value | 2-32 | 6 | 
+| WORDS*w.d* | Converts the numeric value to *written* (string) *format* | 5–32767 | 10 |
 
 ### String (in)formatting 
 
-| Data type | Syntax | Definition | Width range | Default width |
+| Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
-| | $*w.* | Reads character data and *trims leading blanks* | 1–32,767 | None |
-| | $CHAR*w.* | Reads character data but *does not trim* leading or trailing blanks | 1–32,767 | 8 or length of var | 
-| | $UPCASE*w.* | Converts character data to *upcase* | 1–32,767 | 8 | 
-| | $QUOTE*w.* | Removes *matching quotation marks* from character data | 2 if var length undefined, otherwise length of var + 2 | 2–32767 |
-| | $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
-| | $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
+| $*w.* | Reads character data and *trims leading blanks* | 1–32,767 | None |
+| $CHAR*w.* | Reads character data but *does not trim* leading or trailing blanks | 1–32,767 | 8 or length of var | 
+| $UPCASE*w.* | Converts character data to *upcase* | 1–32,767 | 8 | 
+| $QUOTE*w.* | Removes *matching quotation marks* from character data | 2 if var length undefined, otherwise length of var + 2 | 2–32767 |
+| $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
+| $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
 
 ### Datetime (in)formatting 
 
-| Data type | Syntax | Definition | Width range | Default width |
+| Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
-| | DATE*w.* | Reads dates in forms *ddmmyyyy* and *ddmmyy* | 7-32 | 7 | 
-| | DATETIME*w.* | Reads datetime values in the form: *ddmmyy hh:mm:ss:ss* | 13-40 | 18 |
-| | TIME*w.d* | Reads time in form: *hh:mm:ss:ss* (or *hh:mm*) using a 24-h clock | 5-32 | 8 |
-| | DDMMYY*w.* | Reads date values in the form *ddmmyy* or *ddmmyyyy* | 2-10 | 8 |
-| | MONYY*w.* | Reads month and yer date values in the form *mmmyy* or *mmmyyyy* | 5-7 | 5 |
-| | YYQ*w.* | Reads *quarters* of the year | 4-32 | 6 |
+| DATE*w.* | Reads dates in forms *ddmmyyyy* and *ddmmyy* | 7-32 | 7 | 
+| DATETIME*w.* | Reads datetime values in the form: *ddmmyy hh:mm:ss:ss* | 13-40 | 18 |
+| TIME*w.d* | Reads time in form: *hh:mm:ss:ss* (or *hh:mm*) using a 24-h clock | 5-32 | 8 |
+| DDMMYY*w.* | Reads date values in the form *ddmmyy* or *ddmmyyyy* | 2-10 | 8 |
+| MONYY*w.* | Reads month and yer date values in the form *mmmyy* or *mmmyyyy* | 5-7 | 5 |
+| YYQ*w.* | Reads *quarters* of the year | 4-32 | 6 |
 
 <a name="subsect3"></a>
 
