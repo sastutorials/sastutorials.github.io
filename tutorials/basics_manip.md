@@ -195,7 +195,7 @@ Let's explore examples of typical formats by **category**. We will then use some
 
 ### Numeric (in)formatting 
 
-
+This table summarises a few of the most common formats and informats used for numeric values.
 
 | Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
@@ -206,16 +206,25 @@ Let's explore examples of typical formats by **category**. We will then use some
 | DOLLAR*w.d* | Turns the number into *currency*, by inserting the *$* in front of the value | 2-32 | 6 | 
 | WORDS*w.d* | Converts the numeric value to *written* (string) *format* | 5–32767 | 10 |
 
-### String (in)formatting 
+As you can see from running our last piece of code, the values in the datasets are mostly numeric, but present way too many decimals to be read easily. Some formatting is required. 
 
-| Syntax | Definition | Width range | Default width |
-|:---:|:---:|:---:|:---:|
-| $*w.* | Reads character data and *trims leading blanks* | 1–32,767 | None |
-| $CHAR*w.* | Reads character data but *does not trim* leading or trailing blanks | 1–32,767 | 8 or length of var | 
-| $UPCASE*w.* | Converts character data to *upcase* | 1–32,767 | 8 | 
-| $QUOTE*w.* | Removes *matching quotation marks* from character data | 2 if var length undefined, otherwise length of var + 2 | 2–32767 |
-| $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
-| $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
+```
+/* Numeric data formatting: setting number of decimal places */
+
+data terna16_formatted; 
+set work.terna16;
+informat  Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2; 
+format Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2;
+run;
+```
+
+
+
+You can see the difference between the formatted numeric values and the original format. 
+
+![numeric_formatting](04/../../screenshots/04_basic_manip/numeric_formatting.png)
+
+
 
 ### Datetime (in)formatting 
 
@@ -227,6 +236,17 @@ Let's explore examples of typical formats by **category**. We will then use some
 | DDMMYY*w.* | Reads date values in the form *ddmmyy* or *ddmmyyyy* | 2-10 | 8 |
 | MONYY*w.* | Reads month and yer date values in the form *mmmyy* or *mmmyyyy* | 5-7 | 5 |
 | YYQ*w.* | Reads *quarters* of the year | 4-32 | 6 |
+
+### String (in)formatting 
+
+| Syntax | Definition | Width range | Default width |
+|:---:|:---:|:---:|:---:|
+| $*w.* | Reads character data and *trims leading blanks* | 1–32,767 | None |
+| $CHAR*w.* | Reads character data but *does not trim* leading or trailing blanks | 1–32,767 | 8 or length of var | 
+| $UPCASE*w.* | Converts character data to *upcase* | 1–32,767 | 8 | 
+| $QUOTE*w.* | Removes *matching quotation marks* from character data | 2 if var length undefined, otherwise length of var + 2 | 2–32767 |
+| $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
+| $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
 
 <a name="subsect3"></a>
 
