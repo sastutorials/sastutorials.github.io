@@ -241,9 +241,11 @@ run;
 
 ![wrong_informat-numeric](04/../../screenshots/04_basic_manip/wrong_informat-numeric.png)
 
-What has changed? *Nothing*! That is because **the informat does not work, as it does not find any value to transform in order to make it compatible with SAS**. 
+What has changed? *Nothing*! **The informat does not work as it does not find any value to transform in order to make it compatible with SAS**. 
 
 ### Datetime (in)formatting 
+
+This table shows a few common examples of (in)formatting types used for date-time values.
 
 | Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
@@ -253,6 +255,38 @@ What has changed? *Nothing*! That is because **the informat does not work, as it
 | DDMMYY*w.* | Reads date values in the form *ddmmyy* or *ddmmyyyy* | 2-10 | 8 |
 | MONYY*w.* | Reads month and yer date values in the form *mmmyy* or *mmmyyyy* | 5-7 | 5 |
 | YYQ*w.* | Reads *quarters* of the year | 4-32 | 6 |
+
+In our datasets, two are date-time variables: *year* and *date*. If you go back to the results from the PROC CONTENTS, you can see that the variable **date** is correctly seen as a date, formatted as *MMDDYY10.*, while **year** is considered a numeric variable just like the other ones. 
+
+![original_datetime_format](04/../../screenshots/04_basic_manip/date-year-format-original.png)
+
+We can play around with the two variables to see how they change as we change their format. 
+
+Let's have a look at the *date* variable - we want to try and change the month to a three-character long written format (as string character). Paste the following code in your program.
+
+```
+/* Date formatting */
+
+data terna16_formatted; 
+set work.terna16_formatted; 
+informat date ddmmyyyy10.; 
+format date monyy7.;
+run; 
+
+proc print data=work.terna16_formatted (obs=10); 
+run; 
+```
+
+Let's break the code down.
+* The **set statement** takes the information from an already existing dataset - in this case we are simply *overwriting* the previously created dataset called *terna16_formatted*.
+* **informat date ddmmyyyy10.**:
+  * *informat* initiates the informat statement;
+  * *date* is the variable name which needs to be informatted;
+  * *ddmmyyyy10.* is the informat used, to **match the original formatting** - in this way SAS is able to read the initial way in which the values are formatted;
+* **format date monyy7.**:
+  * *format* initiates the format statement; 
+  * *date* is the variable name which needs to be formatted after the informat; 
+  * *monyy7.* is the final formatting which is going to be displayed. 
 
 ### String (in)formatting 
 
