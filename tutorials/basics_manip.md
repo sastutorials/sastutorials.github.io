@@ -241,7 +241,7 @@ run;
 
 ![wrong_informat-numeric](04/../../screenshots/04_basic_manip/wrong_informat-numeric.png)
 
-
+What has changed? *Nothing*! That is because **the informat does not work, as it does not find any value to transform in order to make it compatible with SAS**. 
 
 ### Datetime (in)formatting 
 
