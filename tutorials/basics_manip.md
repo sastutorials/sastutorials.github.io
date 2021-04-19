@@ -197,7 +197,7 @@ Informats and formats present the same formatting specifications. You can see be
 | | $UPCASE*w.* | $UPCASE*w.* | Converts character data to upcase | 1–32,767 | 8 | 
 | | $QUOTE*w.* | $QUOTE*w.* | Removes matching quotation marks from character data | INPUT | INPUT |
 | | $REVERS*w.* | $REVERS*w.* | Reads character data of varying length | INPUT | INPUT | 
-| | $VARYING*w.* | $VARYING*w.* | Reads character data of varying length | INPUT | INPUT | 
+| | $VARYING*w.* | $VARYING*w.* | Reads character data of varying length | Default length of variable; 8 if variable is undefined | 1–32767 | 
 | *Date and time* | | | | |
 | | DATE*w.* | DATE*w.* | | | 
 
