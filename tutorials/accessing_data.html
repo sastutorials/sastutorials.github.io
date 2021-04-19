@@ -597,7 +597,29 @@ RUN;</div></code></code></pre>
     <p>Each CAS session is given its own unique identifier (UUID) that you can use to reconnect to the session.</p>
     <br>
     <h1>7. How to create a CasLib</h1>
-    <p>DA FINIRE</p>
+    <p>A caslib is an in-memory container for SAS tables. In addition to data, the caslib also holds information 
+        about the data source, including access control information for users. Within a CAS session, it is only 
+        possible to have one active caslib at any one time. On this basis, if a new caslib is assigned, any 
+        previously active caslibs will be deactivated.</p>
+    <br>
+    <h5>Types of Caslib:</h5>
+    <ul>
+        <li>
+            <strong>Personal caslibs</strong><br>
+            By default, all users are given access to their own caslib, named casuser, within a CAS session.  
+            This is a personal caslib and is only accessible to the user who owns the CAS session.
+        </li>
+        <li>
+            <strong>Pre-defined caslibs</strong><br>
+            These are defined by an administrator and are available to all CAS sessions (dependent on access controls).
+        </li>
+        <li>
+            <strong>Manually added caslibs</strong><br>
+            These can be added at any point to perform ad-hoc analysis within CAS.
+        </li>
+    </ul>
+    <h5>Caslib Scope</h5>
+    s
     <p><a name="sect8"></a></p>
     <br>
     <h1>8. What is CasUtil</h1>
