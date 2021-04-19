@@ -228,7 +228,20 @@ You can see the difference between the formatted numeric values and the original
 
 ![numeric_formatting](04/../../screenshots/04_basic_manip/numeric_formatting.png)
 
-Also check what happens 
+Also check what happens if we only wrote an *informat statement*, instead of the format. 
+
+```
+/* Numeric data formatting: setting number of decimal places */
+
+data terna16_formatted; 
+set work.terna16;
+informat Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2;
+run;
+```
+
+![wrong_informat-numeric](04/../../screenshots/04_basic_manip/wrong_informat-numeric.png)
+
+
 
 ### Datetime (in)formatting 
 
