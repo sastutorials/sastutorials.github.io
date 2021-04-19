@@ -191,9 +191,11 @@ where
 * *w.* refers to the **character** length to be specified, if not the default specific to that (in)format applies;
 * *d* refers to the **number of decimal points to be included**. This is specific to the numeric format, and to some of the *date* formats and informats (in that case relating to *fraction of seconds*).
 
-Let's explore examples of typical formats divided by **category**. We will then use some of them to better format our datasets. 
+Let's explore examples of typical formats by **category**. We will then use some of them to better format our datasets. 
 
 ### Numeric (in)formatting 
+
+
 
 | Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
