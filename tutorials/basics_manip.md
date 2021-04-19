@@ -288,6 +288,12 @@ Let's break the code down.
   * *date* is the variable name which needs to be formatted after the informat; 
   * *monyy7.* is the final formatting which is going to be displayed. 
 
+This is what your result should look like, compared to the original dataset without the *date* variable formatted to MON-YY: 
+
+![date_formatting](../screenshots/04_basic_manip/date_formatting.png)
+
+
+
 ### String (in)formatting 
 
 | Syntax | Definition | Width range | Default width |
