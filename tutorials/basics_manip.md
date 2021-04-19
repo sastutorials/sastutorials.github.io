@@ -179,7 +179,7 @@ Do you recall the concept of format and informat statements from [accessing data
 
 Informats and formats present the same formatting specifications. However, **they are used for very different purposes**. The **informat** statement enables SAS to read a non-standard variable, while the **format** statement allows SAS to display the same variable when printed to the output window or viewed in a viewtable window. This implies that **before the format statement there always needs to be an informat**. In fact, printing an output without having *_in_formatted the data* first will not display anything because SAS has not been able to read and interpret it. 
 
-**INSERTING PIC OF INFORMAT-FORMAT WORKFLOW**
+![in-format workflow](04/../../screenshots/04_basic_manip/in-format-workflw.png)
 
 The syntax does not vary between formats and informats, and it is generally presented as
 
