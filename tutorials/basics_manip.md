@@ -190,6 +190,7 @@ where
 * *(IN)FORMAT* represents the name of the format or informat; 
 * *w.* refers to the **character** length to be specified, if not the default specific to that (in)format applies;
 * *d* refers to the **number of decimal points to be included**. This is specific to the numeric format, and to some of the *date* formats and informats (in that case relating to *fraction of seconds*).
+* **REMEMBER** that *informats* are not always necessary, they need to be used only in certain cases (when SAS cannot understand the original formatting type).
 
 Let's explore examples of typical formats by **category**. We will then use some of them to better format our datasets. 
 
@@ -213,18 +214,34 @@ As you can see from running our last piece of code, the values in the datasets a
 
 data terna16_formatted; 
 set work.terna16;
-informat  Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2; 
 format Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2;
 run;
 ```
 
+Let's have a look at the code written. 
 
+* There is a new statement: **set**, allowing you to create a new dataset from the copy of an already existing one. In our case, we have copied the dataset *terna16* to create a new one *terna16_formatted*, with the changes made on the format of the numeric variables.
+* As we said earlier, in this case **we don't need to specify the informat** - SAS does recognise the numeric format, and the **format** statement is enough to change the number of decimal places. 
+* To format the variables we have specified the *w.d* options mentioned before. The *w.* relates to the **total character length set for the value** which we set to 5, while the *d* refers to the number of decimal places allowed, or 2 in our case.
 
-You can see the difference between the formatted numeric values and the original format. 
+You can see the difference between the formatted numeric values and the original format below. 
 
 ![numeric_formatting](04/../../screenshots/04_basic_manip/numeric_formatting.png)
 
+Also check what happens if we only wrote an *informat statement*, instead of the format. 
 
+```
+/* Numeric data formatting: setting number of decimal places */
+
+data terna16_formatted; 
+set work.terna16;
+informat Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2;
+run;
+```
+
+![wrong_informat-numeric](04/../../screenshots/04_basic_manip/wrong_informat-numeric.png)
+
+What has changed? *Nothing*! That is because **the informat does not work, as it does not find any value to transform in order to make it compatible with SAS**. 
 
 ### Datetime (in)formatting 
 
