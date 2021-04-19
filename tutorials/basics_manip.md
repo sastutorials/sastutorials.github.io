@@ -181,6 +181,18 @@ Informats and formats present the same formatting specifications. However, **the
 
 **INSERTING PIC OF INFORMAT-FORMAT WORKFLOW**
 
+The syntax does not vary between formats and informats, and it is generally presented as
+
+**FORMAT*w.d***
+
+where:
+
+* *FORMAT* represents the name of the format or informat; 
+* *w.* refers to the **character** length to be specified, if not the relative default applies;
+* *d* refers to the **number of decimal points to be included**. This is specific to the numeric format, and to some of the *date* formats and informats (in that case relating to fraction of seconds).
+
+Let's explore examples of typical formats divided by category. We will then apply some of them to our datasets.
+
 ### Numeric (in)formatting 
 
 | Data type | Syntax | Definition | Width range | Default width |
