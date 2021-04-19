@@ -585,8 +585,8 @@ RUN;</div></code></code></pre>
     <p>Data in the cloud makes it easily accessible, and can help businesses run more smoothly.
         SAS Viya runs its calculations on <strong>Cloud Analytics Service (CAS)</strong>.</p>
     <p>CAS is a server that processes data in memory and enables you to quickly produce
-        accurate and consistent results no matter how complex your analytical workload is. 
-        </p>
+        accurate and consistent results no matter how complex your analytical workload is.
+    </p>
     <br>
     <p><a name="sect6"></a></p>
     <h1>6. How to open a Cas session</h1>
@@ -597,38 +597,41 @@ RUN;</div></code></code></pre>
     <p>Each CAS session is given its own unique identifier (UUID) that you can use to reconnect to the session.</p>
     <br>
     <h1>7. How to create a CasLib</h1>
-    <p>A caslib is an in-memory container for SAS tables. In addition to data, the caslib also holds information 
-        about the data source, including access control information for users. Within a CAS session, it is only 
-        possible to have one active caslib at any one time. On this basis, if a new caslib is assigned, any 
+    <p>A caslib is an in-memory container for SAS tables. In addition to data, the caslib also holds information
+        about the data source, including access control information for users. Within a CAS session, it is only
+        possible to have one active caslib at any one time. On this basis, if a new caslib is assigned, any
         previously active caslibs will be deactivated.</p>
+
     <h5>Types of Caslib:</h5>
+    <p>Three types of caslibs are available within SAS Viya:
     <ul>
         <li>
-            <strong>Personal caslibs</strong><br>
-            By default, all users are given access to their own caslib, named casuser, within a CAS session.  
+            <strong>Personal caslibs</strong>, by default, all users are given access to their own caslib, named
+            casuser, within a CAS session.
             This is a personal caslib and is only accessible to the user who owns the CAS session.
         </li>
         <li>
-            <strong>Pre-defined caslibs</strong><br>
-            These are defined by an administrator and are available to all CAS sessions (dependent on access controls).
+            <strong>Pre-defined caslibs</strong>, these are defined by an administrator and are available to all CAS
+            sessions (dependent on access controls).
         </li>
         <li>
-            <strong>Manually added caslibs</strong><br>
-            These can be added at any point to perform ad-hoc analysis within CAS.
+            <strong>Manually added caslibs</strong>, these can be added at any point to perform ad-hoc analysis within
+            CAS.
         </li>
     </ul>
+    </p>
 
     <h5>Caslib Scope</h5>
     <p>For these three types of caslib, each can have their own scope. They are defined as either:<br>
     <ul>
         <li>
-            <strong>Session caslibs</strong><br>
-            These are available only to those within the session where the caslib was created.  
+            <strong>Session caslibs</strong>, these are available only to those within the session where the caslib was
+            created.
             The name of these caslibs must be unique within the session.
         </li>
         <li>
-            <strong>Global caslibs</strong><br>
-            These are available to anyone who has access to the CAS Server (dependent on access controls).
+            <strong>Global caslibs</strong>, these are available to anyone who has access to the CAS Server (dependent
+            on access controls).
             The name of these caslibs must be unique across all CAS sessions on the server.
         </li>
     </ul>
