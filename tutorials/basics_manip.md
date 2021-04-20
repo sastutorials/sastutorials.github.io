@@ -355,6 +355,8 @@ proc contents data=work.terna16 (obs=10);
 proc contents data=work.terna16_year (obs=10);
 run; 
 
+![comparing_contents](04/../../screenshots/04_basic_manip/comparing_formats-date.png)
+
 ### String (in)formatting 
 
 | Syntax | Definition | Width range | Default width |
