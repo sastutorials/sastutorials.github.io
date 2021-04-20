@@ -267,13 +267,13 @@ Let's have a look at the *date* variable - we want to try and change the month t
 ```
 /* Date formatting */
 
-data terna16_formatted; 
+data terna16_formatted1; 
 set work.terna16_formatted; 
 informat date ddmmyyyy10.; 
 format date monyy7.;
 run; 
 
-proc print data=work.terna16_formatted (obs=10); 
+proc print data=work.terna16_formatted1 (obs=10); 
 run; 
 ```
 
@@ -292,7 +292,68 @@ This is what your result should look like, compared to the original dataset with
 
 ![date_formatting](../screenshots/04_basic_manip/date_formatting.png)
 
+We could have also chosen to display the date with the year showing only two digits - like so: 
 
+```
+/* Date formatting -- 2-digit year */
+
+data terna16_formatted2; 
+set work.terna16_formatted; 
+informat date ddmmyyyy10.; 
+format date monyy5.;
+run; 
+
+proc print data=work.terna16_formatted2 (obs=10); 
+run; 
+```
+
+![year_2-digit](04/../../screenshots/04_basic_manip/date_formatting_2digit.png)
+
+Now, if we wanted to change the format of the *year* variable, we could use the following code. Paste it in your SAS program. 
+
+```
+/* Formatting the year variable */
+
+data terna16_year; 
+set work.terna16_formatted1; 
+format year yyyy4.; 
+run; 
+proc print data=work.terna16_year (obs = 10);
+run; 
+```
+
+With this code we are: 
+* taking the variables from *terna16_formatted1* dataset, which, remember, contains the *date* variable formatted as mon-yyyy; 
+* using **yyyy4.** to specify that the *year* variable is a date variable, specifically the year value which must be maximum *4 characters long*; 
+* printing the first 10 observations of the new dataset *terna16_year*.
+
+The result should look like this. 
+
+![formatting year](../screenshots/04_basic_manip/formatting%20the%20year%20variable.png)
+
+From the output you don't see any difference, which is normal because we haven't told SAS to change the length of the variable, **we have only specified that it is a year (date-time) type of value**. You can actually see the difference when running the PROC CONTENTS on the data set. 
+
+```
+proc contents data=work.terna16_year; 
+run; 
+```
+
+You can find the change in the last table of the CONTENTS procedure output. 
+
+![contents_formatted](../screenshots/04_basic_manip/proc_contents-formatted.png)
+
+In that same table you can actually see all the formatting modifications we have applied to the dataset: 
+* The numeric variables present the maxmimum character length of 5 and the 2 decimal places; 
+* The *date* variable has the informat equal to *DDMMYY10.* and the format (displayed) as *MON-YY7.*; 
+* The *year* variable has the format as *YYYY4.*. 
+
+We can compare the two tables from the contents procedure **before** and **after** formatting, to see the difference. 
+
+/* comparison before and after formatting - proc contents */
+
+proc contents data=work.terna16 (obs=10); 
+proc contents data=work.terna16_year (obs=10);
+run; 
 
 ### String (in)formatting 
 
