@@ -183,7 +183,7 @@ SAS reads *numeric data* by default. However, it is necessary to **add specifica
 
 <a href="#subsect3"></a>
 
-## Format and Informat statements
+## FORMAT and INFORMAT in the DATA STEP
 
 Do you recall the concept of format and informat statements from [accessing data](tutorials/../accessing_data.html)?
 
