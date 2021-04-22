@@ -338,7 +338,7 @@ proc contents data=work.terna16_year;
 run; 
 ```
 
-You can find the change in the last table of the CONTENTS procedure output. 
+This is the output. 
 
 ![contents_formatted](../screenshots/04_basic_manip/proc_contents-formatted.png)
 
