@@ -24,7 +24,7 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#sect2">2. Data formatting</a>
 
-<a href="#subsect3"><sub>Format and Informat statements</sub></a>
+<a href="#subsect3"><sub>FORMAT and INFORMAT in the DATA STEP</sub></a>
 
 <a href="#subsect4"><sub>PROC FORMAT</sub></a>
 
