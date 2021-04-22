@@ -400,7 +400,7 @@ This table shows a few common examples of (in)formatting types used for string t
 
 <a href="#sect6"></a>
 
-6. Exercises and extras
+# 6. Exercises and extras
 
 <a href="#sect7"></a>
 
