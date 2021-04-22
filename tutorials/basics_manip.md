@@ -355,9 +355,13 @@ proc contents data=work.terna16 (obs=10);
 proc contents data=work.terna16_year (obs=10);
 run; 
 
+Check out the results below. 
+
 ![comparing_contents](04/../../screenshots/04_basic_manip/comparing_formats-date.png)
 
 ### String (in)formatting 
+
+This table shows a few common examples of (in)formatting types used for string type values.
 
 | Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
@@ -367,6 +371,8 @@ run;
 | $QUOTE*w.* | Removes *matching quotation marks* from character data | 2 if var length undefined, otherwise length of var + 2 | 2–32767 |
 | $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
 | $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
+
+
 
 <a name="subsect3"></a>
 
