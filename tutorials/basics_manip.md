@@ -181,7 +181,7 @@ We know that variables can be formatted as either of these three ways:
 SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
 
 
-<a href="#subsect3"></a>
+<a href="subsect3"></a>
 
 ## FORMAT and INFORMAT in the DATA STEP
 
@@ -382,27 +382,27 @@ This table shows a few common examples of (in)formatting types used for string t
 | $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
 | $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
 
-<a href="#subsect4"></a>
+<a href="subsect4"></a>
 
 ## PROC FORMAT
 
-<a href="#sect3"></a>
+<a href="sect3"></a>
 
 # 3. Data cleaning and sorting
 
-<a href="#sect4"></a>
+<a href="sect4"></a>
 
 # 4. Feature engineering
 
-<a href="#sect5"></a>
+<a href="sect5"></a>
 
 # 5. Save your new dataset!
 
-<a href="#sect6"></a>
+<a href="sect6"></a>
 
 # 6. Exercises and extras
 
-<a href="#sect7"></a>
+<a href="sect7"></a>
 
 # 7. Resources
 
