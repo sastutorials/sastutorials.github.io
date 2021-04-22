@@ -16,37 +16,43 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 ## Structure 
 
-<a href="#sect1">1. Observational analyses</a>
+<a href="#sect1">1. Familiarise with the dataset</a>
 
-<a href="#subsect1"><sub>Familiarise with the dataset</sub></a>
+<a href="#subsect1"><sub>PROC CONTENTS</sub></a>
 
-<a href="#subsect2"><sub>Format the data</sub></a>
+<a href="#subsect2"><sub>PROC PRINT</sub></a>
 
-<a href="#subsect3"><sub>Quick summary statistics</sub></a>
+<a href="#sect2">2. Data formatting</a>
 
-<a href="#sect2">3. Data manipulation </a>
+<a href="#subsect3"><sub>Format and Informat statements</sub></a>
 
-<a href="#subsect4"><sub>Cleaning and sorting</sub></a>
+<a href="#subsect4"><sub>Numeric</sub></a>
 
-<a href="#subsect5"><sub>Feature engineering</sub></a>
+<a href="#subsect5"><sub>Datetime</sub></a>
 
-<a href="#subsect6"><sub>Save your new dataset!</sub></a>
+<a href="#subsect6"><sub>String</sub></a>
 
-<a href="#sect3">4. Resources</a>
+<a href="#sect3">3. Data cleaning and sorting</a>
+
+<a href="#sect4">4. Feature engineering</a>
+
+<a href="#sect5">5. Save your new dataset!</a>
+
+<a href="#sect6">6. Exercises and extras</a>
+
+<a href="#sect7">7. Resources</a>
+
+
 
 <a name="sect1"></a>
 
-# 1. Observational analyses
+# 1. Familiarise with the dataset
 
 Every data scientist has a specific workflow to carry out a project: importing, cleaning, analysing dataset(s) and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
 
 ![datascience_workflow](../screenshots/04_basic_manip/datascience_workflow.png)
 
 **In this tutorial we are going to learn how to carry out some basic data manipulation with SAS.**
-
-<a name="subsect1"></a>
-
-## Familiarise with the dataset
 
 Once you have your data imported on your programming interface, the first thing you need to do is to familiarise with the dataset or series of datasets you are working with. 
 
@@ -76,7 +82,9 @@ Each variable is accompanied by a symbol which already **gives you information o
 
 We can also quickly explore the datasets by executing two procedures: **proc contents** and **proc print**. 
 
-#### PROC CONTENTS 
+<a name="subsect1"></a>
+
+## PROC CONTENTS 
 
 Copy the following in a new SAS program (call the program *tutorial_basic_manip.sas*, if you wish to keep it in the future). 
 
@@ -108,7 +116,9 @@ The proc contents statement gives us a nice overview about the dataset. We are p
 * LABEL 
 * ALTRE OPTIONS NEL PROC CONTENTS PER RENDERE IL TUTTO PIU' INFORMATIVO
 
-#### PROC PRINT 
+<a name="subsect2"></a>
+
+## PROC PRINT 
 
 Another useful thing to do when getting to know the dataset is to print out its raw data. 
 
@@ -157,9 +167,10 @@ run;
 
 ![top_bottom_10](../screenshots/04_basic_manip/top_bottom_10.png)
 
-<a name ="subsect2"></a>
 
-## Format the data
+<a name="sect2"></a>
+
+# Data formatting 
 
 Before getting to the actual manipulation of the datasets, you always need to **observe the characteristics of the variables and observations inside each dataset**. 
 
@@ -173,7 +184,10 @@ We know that variables can be formatted as either of these three ways:
 
 SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
 
-### Formats and informats 
+
+<a href="#subsect3"></a>
+
+## Format and Informat statements
 
 Do you recall the concept of format and informat statements from [accessing data](tutorials/../accessing_data.html)?
 
@@ -193,6 +207,8 @@ where
 * **REMEMBER** that *informats* are not always necessary, they need to be used only in certain cases (when SAS cannot understand the original formatting type).
 
 Let's explore examples of typical formats by **category**. We will then use some of them to better format our datasets. 
+
+<a href="#subsect4"></a>
 
 ### Numeric (in)formatting 
 
@@ -242,6 +258,8 @@ run;
 ![wrong_informat-numeric](04/../../screenshots/04_basic_manip/wrong_informat-numeric.png)
 
 What has changed? *Nothing*! **The informat does not work as it does not find any value to transform in order to make it compatible with SAS**. 
+
+<a href="#subsect5"></a>
 
 ### Datetime (in)formatting 
 
@@ -359,6 +377,8 @@ Check out the results below.
 
 ![comparing_contents](04/../../screenshots/04_basic_manip/comparing_formats-date.png)
 
+<a href="#subsect6"></a>
+
 ### String (in)formatting 
 
 This table shows a few common examples of (in)formatting types used for string type values.
@@ -372,31 +392,25 @@ This table shows a few common examples of (in)formatting types used for string t
 | $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
 | $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
 
+<a href="#sect3"></a>
 
+# 3. Data cleaning and sorting
 
-<a name="subsect3"></a>
+<a href="#sect4"></a>
 
-## Quick summary statistics
+# 4. Feature engineering
 
-<a name="sect2"></a>
+<a href="#sect5"></a>
 
-# 3. Data manipulation 
+# 5. Save your new dataset!
 
-<a name="subsect4"></a>
+<a href="#sect6"></a>
 
-## Cleaning and sorting 
+6. Exercises and extras
 
-<a name="subsect5"></a>
+<a href="#sect7"></a>
 
-## Feature engineering 
-
-<a name="subsect6"></a>
-
-## Save your new dataset!
-
-<a name="sect3"></a>
-
-# 4. Resources 
+# 7. Resources
 
 * [Informats and formats by category](http://v8doc.sas.com/sashtml/lrcon/z0920449.htm);
 * 
