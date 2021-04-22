@@ -26,11 +26,7 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#subsect3"><sub>Format and Informat statements</sub></a>
 
-<a href="#subsect4"><sub>Numeric</sub></a>
-
-<a href="#subsect5"><sub>Datetime</sub></a>
-
-<a href="#subsect6"><sub>String</sub></a>
+<a href="#subsect4"><sub>PROC FORMAT</sub></a>
 
 <a href="#sect3">3. Data cleaning and sorting</a>
 
@@ -208,8 +204,6 @@ where
 
 Let's explore examples of typical formats by **category**. We will then use some of them to better format our datasets. 
 
-<a href="#subsect4"></a>
-
 ### Numeric (in)formatting 
 
 This table summarises a few of the most common formats and informats used for numeric values.
@@ -258,8 +252,6 @@ run;
 ![wrong_informat-numeric](04/../../screenshots/04_basic_manip/wrong_informat-numeric.png)
 
 What has changed? *Nothing*! **The informat does not work as it does not find any value to transform in order to make it compatible with SAS**. 
-
-<a href="#subsect5"></a>
 
 ### Datetime (in)formatting 
 
@@ -377,8 +369,6 @@ Check out the results below.
 
 ![comparing_contents](04/../../screenshots/04_basic_manip/comparing_formats-date.png)
 
-<a href="#subsect6"></a>
-
 ### String (in)formatting 
 
 This table shows a few common examples of (in)formatting types used for string type values.
@@ -391,6 +381,10 @@ This table shows a few common examples of (in)formatting types used for string t
 | $QUOTE*w.* | Removes *matching quotation marks* from character data | 2 if var length undefined, otherwise length of var + 2 | 2–32767 |
 | $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
 | $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
+
+<a href="#subsect4"></a>
+
+## PROC FORMAT
 
 <a href="#sect3"></a>
 
