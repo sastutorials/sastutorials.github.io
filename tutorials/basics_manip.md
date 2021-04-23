@@ -451,6 +451,29 @@ If we set the character length to be *7*, for example, we would start to see par
 
 ![char_var_length7](04/../../screenshots/04_basic_manip/char_var_length7.png)
 
+For this reason, remember to format **a reasonable character length** according to the type of string value you want to display.
+
+Let's do another formatting example. Say we want to set all values for the string variable to be upcase. This is very simple to do with the *$UPCASE.* formatting specification. 
+
+Paste this code in your program. 
+
+```
+/* Format string data type to be UPCASE*/
+
+data terna16_newvar_upcase; 
+set work.terna16_newvar;
+informat dataset_name $UPCASE10.;
+format dataset_name $UPCASE10.; 
+run; 
+
+proc print data=work.terna16_newvar_upcase (obs=10);
+run;
+```
+
+The characters of the string have effectively been converted to upcase. 
+
+![char_var_upcase](04/../../screenshots/04_basic_manip/char_var_UPCASE.png)
+
 
 
 <a href="subsect4"></a>
