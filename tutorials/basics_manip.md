@@ -382,6 +382,24 @@ This table shows a few common examples of (in)formatting types used for string t
 | $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
 | $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
 
+Let's see an example with our dataset, to work with string formatting.
+
+As it is, the dataset doesn't present any string-like variables. We can create a new variable so that we can practice with this type of format. 
+
+```
+/* Creating a new variable containing the name of the dataset */ 
+
+data terna16_newvar; 
+set work.terna16_year;
+dataset_name = "Terna 2016";
+run;
+
+proc print data=work.terna16_newvar (obs=10);
+run;
+```
+
+
+
 <a href="subsect4"></a>
 
 ## PROC FORMAT
