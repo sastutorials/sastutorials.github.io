@@ -419,9 +419,33 @@ format dataset_name $CHAR10.;
 run; 
 ```
 
-In this case we can only see the difference when running a PROC CONTENTS. We haven't changed the length of the variable while setting formats and informats.
+We haven't changed the length of the variable while setting formats and informats and that is why we don't see any difference in the resulting dataset.
+
+![char_var_formatted](04/../../screenshots/04_basic_manip/char_var_formatted.png)
+
+In this case we can only see the difference when running a PROC CONTENTS. 
 
 ![char var cont](04/../../screenshots/04_basic_manip/char_var_contents.png)
+
+You can see the difference between proc contents a) and b).
+* A) The PROC CONTENTS shows the dataset before formatting and we can see that SAS recognises the variable *dataset_name* is character variable of length 10; 
+* B) The PROC CONTENTS shows the dataset after formatting and we can see the formatting and informatting specified as $CHAR10. variable.
+
+Let's see what happens if we tried to change the character length of the variable.
+
+```
+/* Formatting with smaller character length */
+
+data terna16_newvar_formatted5; 
+set work.terna16_newvar;
+informat dataset_name $CHAR5.;
+format dataset_name $CHAR5.; 
+run; 
+```
+
+We have reduced the maximum character length allowed for the variable from 10 to 5. In this way, the string we have input earlier is cut showing only the word *"Terna"* of the entire string.
+
+![char_var_length](04/../../screenshots/04_basic_manip/char_var_length.png)
 
 
 
