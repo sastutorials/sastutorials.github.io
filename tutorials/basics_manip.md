@@ -398,6 +398,31 @@ proc print data=work.terna16_newvar (obs=10);
 run;
 ```
 
+Let's understand the code: 
+* Remember that **set** *copies* the information or part of it from an already existing dataset to a new one. 
+* When copying a dataset with the set statement, you also have the possibility to *add new variables* - whether they are calculated fields, string values, date values, etc. In our case we are creating a new variable called *dataset_name*, which is going to print a constant string value: *Terna 2016*.
+
+You can see the dataset now presents this addition by printing it (proc print) and having a look at the results tab. 
+
+![char var](04/../../screenshots/04_basic_manip/character_var.png)
+
+Okay, now we can start formatting the data. First we can set the informats and formats to be of a specified character data type.
+
+```
+/* proc contents data=work.terna16_newvar;
+run; */
+
+data terna16_newvar_formatted; 
+set work.terna16_newvar;
+informat dataset_name $CHAR10.;
+format dataset_name $CHAR10.; 
+run; 
+```
+
+In this case we can only see the difference when running a PROC CONTENTS. We haven't changed the length of the variable while setting formats and informats.
+
+![char var cont](04/../../screenshots/04_basic_manip/char_var_contents.png)
+
 
 
 <a href="subsect4"></a>
