@@ -443,9 +443,13 @@ format dataset_name $CHAR5.;
 run; 
 ```
 
-We have reduced the maximum character length allowed for the variable from 10 to 5. In this way, the string we have input earlier is cut showing only the word *"Terna"* of the entire string.
+We have reduced the maximum character length allowed for the variable from 10 to 5. In this way, the string we have input earlier is cut only showing the word *"Terna"* out of the entire string.
 
 ![char_var_length](04/../../screenshots/04_basic_manip/char_var_length.png)
+
+If we set the character length to be *7*, for example, we would start to see part of the next "word" (in our case the year 2016). 
+
+![char_var_length7](04/../../screenshots/04_basic_manip/char_var_length7.png)
 
 
 
