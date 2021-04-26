@@ -512,7 +512,7 @@ INVALUE Format_Name
 RUN; 
 ```
 
-The main difference between the two is that to define a format a **VALUE** statement needs to be specified, while to define an informat an **INVALUE** statement.
+The main difference between the two is that to define a format a **VALUE** statement needs to be specified, while to define an informat an **INVALUE** statement is appropriate.
 
 Let's break down the syntax: 
 * *PROC FORMAT* calls the procedure step;
@@ -520,13 +520,46 @@ Let's break down the syntax:
 * *Format_Name* is the name of the format or informat that is being defined:
   * For character values, first character must be a *$* sign, and a *letter* or *underscore* as the second character;
   * For numeric values, the name must have a *letter* or *underscore* as the first character;
-  * The format name *cannot end with a number*;
+  * The name *cannot end with a number*;
   * It *cannot have the same name as an exisitng SAS format*;
   * It *should not end with a period in the VALUE statement*;
 * *Range1,Range2,...* is the value(s) to which a label is assigned. This can be a **single value, ranges of values or lists of values** for a single label;
 * *'Labeln'* is the label that reflects a specific value or range of values:
   * Labels do not require enclosing in single or double quotes;
-  * Can be up to 32,767 characters in length.
+  * Can be up to 32,767 characters in length;
+* *RUN* ends and runs the above procedure, although it is not fundamental but *always good practice* to write it at the end of a step.
+
+
+
+
+
+
+
+
+
+
+
+
+
+First of all, we can check quickly if our system already stores formats. Formats and informats are generally stored in **SAS catalogs**, within a library (typically *WORK*).
+
+Paste the following code in your SAS program: 
+
+```
+proc options group=envfiles; 
+run; 
+
+proc contents data=WORK._all_
+directory
+memtype=catalog;
+run;
+```
+
+The above code checks if there are any catalogs within the library assigned to store formats. 
+
+* The **PROC OPTIONS group = envfiles** lists all the options and current settings. **You need to locate the FMTSEARCH option from that list**.
+
+
 
 <a href="sect3"></a>
 
