@@ -482,6 +482,52 @@ And we can verify the change in format with the PROC CONTENTS.
 
 ## PROC FORMAT
 
+There is another method to define formats and informats, and that is with the **PROC FORMAT**. PROC FORMAT is a procedure creating a mapping of data values into **data labels**, thus formats and informats that can later be **explicitly assigned** to a dataset. 
+
+Therefore, with the PROC FORMAT we can create customised formats and informats that we can store in a library to use whenever it is needed. A very useful tool with a vast range of applications of which we are going to explore a few. 
+
+Generally, this is the syntax of a PROC FORMAT for creating a *format*:  
+
+```
+PROC FORMAT; 
+VALUE Format_Name 
+                  Range1 = 'Label1'
+                  Range2 = 'Label2'
+                  Range3 = 'Label3'
+                  ...
+                  ...;
+RUN; 
+```
+
+While this is the syntax for creating an *informat* with the PROC FORMAT: 
+
+```
+PROC FORMAT; 
+INVALUE Format_Name  
+                  Range1 = 'Label1'
+                  Range2 = 'Label2'
+                  Range3 = 'Label3'
+                  ...
+                  ...; 
+RUN; 
+```
+
+The main difference between the two is that to define a format a **VALUE** statement needs to be specified, while to define an informat an **INVALUE** statement.
+
+Let's break down the syntax: 
+* *PROC FORMAT* calls the procedure step;
+* *VALUE* or *INVALUE* determines whether it is a format or informat that is defined; 
+* *Format_Name* is the name of the format or informat that is being defined:
+  * For character values, first character must be a *$* sign, and a *letter* or *underscore* as the second character;
+  * For numeric values, the name must have a *letter* or *underscore* as the first character;
+  * The format name *cannot end with a number*;
+  * It *cannot have the same name as an exisitng SAS format*;
+  * It *should not end with a period in the VALUE statement*;
+* *Range1,Range2,...* is the value(s) to which a label is assigned. This can be a **single value, ranges of values or lists of values** for a single label;
+* *'Labeln'* is the label that reflects a specific value or range of values:
+  * Labels do not require enclosing in single or double quotes;
+  * Can be up to 32,767 characters in length.
+
 <a href="sect3"></a>
 
 # 3. Data cleaning and sorting
