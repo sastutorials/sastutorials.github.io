@@ -474,7 +474,9 @@ The characters of the string have effectively been converted to upcase.
 
 ![char_var_upcase](04/../../screenshots/04_basic_manip/char_var_UPCASE.png)
 
+And we can verify the change in format with the PROC CONTENTS. 
 
+![char_var_cont](04/../../screenshots/04_basic_manip/char_var_upcase_contents.png)
 
 <a href="subsect4"></a>
 
