@@ -531,23 +531,25 @@ Let's break down the syntax:
 
 Let's put this into practice. We can first create a format to group the amount of energy produced by each renewable energy source. 
 
-Paste the following code in your SAS program. We are defining a proc format that subdivides various *ranges of energy generated* into groups labelled as written below.
+Paste the following code in your SAS program. We are defining a proc format that subdivides various *ranges of energy generated*.
 
 ```
-/* creating format for grouping amount of energy generated */ 
+/* Creating format for grouping amount of energy generated */ 
 
 proc format;
 value generation 
-				0.0 -< 0.5 = "Up to 0.5 GWh"
-				0.5 -< 1.0 = "Between 0.5 and 1.0 GWh"
-				1.0 -< 2.0 = "Between 1.0 and 2.0 GWh"
-				2.0 -< 4.0 = "Between 2.0 and 4.0 GWh"
-				4.0 -< 6.0 = "Between 4.0 and 6.0 GWh"
-				6.0 - high = "Greater than 6.0 GWh";
+  0.0 -< 0.5 = "Up to 0.5 GWh"
+  0.5 -< 1.0 = "Between 0.5 and 1.0 GWh"
+  1.0 -< 2.0 = "Between 1.0 and 2.0 GWh"
+  2.0 -< 4.0 = "Between 2.0 and 4.0 GWh"
+  4.0 -< 6.0 = "Between 4.0 and 6.0 GWh"
+  6.0 - high = "Greater than 6.0 GWh";
 run; 
 ```
 
-To apply the format we need to use the format statement, specify the variables to format and write next to them the name of the new format with the *period sign* at the end of it. Paste the following:
+Note that to specify the maximum value of the range you need to write *high* on the right-hand side of the range, while if you wanted to write the minimum value of the range you would need to write *low* at the left-hand side of the range.
+
+To apply the format we need to use the format statement, specify the variables to format and write next to them the name of the new format with the *period sign* at the end of it. Like so:
 
 ```
 data terna16_proc_formatted;
