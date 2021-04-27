@@ -516,7 +516,7 @@ The main difference between the two is that to define a format a **VALUE** state
 
 Let's break down the syntax: 
 * *PROC FORMAT* calls the procedure step;
-* *VALUE* or *INVALUE* determines whether it is a format or informat that is defined; 
+* *VALUE* or *INVALUE* determines whether it is a format or informat that is being defined; 
 * *Format_Name* is the name of the format or informat that is being defined:
   * For character values, first character must be a *$* sign, and a *letter* or *underscore* as the second character;
   * For numeric values, the name must have a *letter* or *underscore* as the first character;
@@ -529,35 +529,39 @@ Let's break down the syntax:
   * Can be up to 32,767 characters in length;
 * *RUN* ends and runs the above procedure, although it is not fundamental but *always good practice* to write it at the end of a step.
 
+Let's put this into practice. We can first create a format to group the amount of energy produced by each renewable energy source. 
 
-
-
-
-
-
-
-
-
-
-
-
-First of all, we can check quickly if our system already stores formats. Formats and informats are generally stored in **SAS catalogs**, within a library (typically *WORK*).
-
-Paste the following code in your SAS program: 
+Paste the following code in your SAS program. We are defining a proc format that subdivides various *ranges of energy generated* into groups labelled as written below.
 
 ```
-proc options group=envfiles; 
+/* creating format for grouping amount of energy generated */ 
+
+proc format;
+value generation 
+				0.0 -< 0.5 = "Up to 0.5 GWh"
+				0.5 -< 1.0 = "Between 0.5 and 1.0 GWh"
+				1.0 -< 2.0 = "Between 1.0 and 2.0 GWh"
+				2.0 -< 4.0 = "Between 2.0 and 4.0 GWh"
+				4.0 -< 6.0 = "Between 4.0 and 6.0 GWh"
+				6.0 - high = "Greater than 6.0 GWh";
+run; 
+```
+
+To apply the format we need to use the format statement, specify the variables to format and write next to them the name of the new format with the *period sign* at the end of it. Paste the following:
+
+```
+data terna16_proc_formatted;
+set work.terna16_newvar_upcase;
+format  Biomass Geothermal Hydro Photovoltaic Wind generation.; 
 run; 
 
-proc contents data=WORK._all_
-directory
-memtype=catalog;
+proc print data=work.terna16_proc_formatted;
 run;
 ```
 
-The above code checks if there are any catalogs within the library assigned to store formats. 
+Once you've run this code, you can see that the variables describing energy generated for each renewable source have changed according to the labels specified in the proc format. 
 
-* The **PROC OPTIONS group = envfiles** lists all the options and current settings. **You need to locate the FMTSEARCH option from that list**.
+![proc format energy](04/../../screenshots/04_basic_manip/proc_format_energy.png)
 
 
 
