@@ -499,7 +499,7 @@ VALUE Format_Name
 RUN; 
 ```
 
-While this is the syntax for creating an *informat* with the PROC FORMAT: 
+While this is the syntax for creating an *informat*: 
 
 ```
 PROC FORMAT; 
@@ -564,6 +564,24 @@ run;
 Once you've run this code, you can see that the variables describing energy generated for each renewable source have changed according to the labels specified in the proc format. 
 
 ![proc format energy](04/../../screenshots/04_basic_manip/proc_format_energy.png)
+
+Make sure you have written *value* as the statement to define a *format*. You can check that it won't work as an *informat* like this: 
+
+```
+data terna16_proc_formatted;
+set work.terna16_newvar_upcase;
+INFORMAT  Biomass Geothermal Hydro Photovoltaic Wind generation.; 
+run; 
+
+proc print data=work.terna16_proc_formatted;
+run;
+```
+
+If you now run the code you will see that nothing has changed in the output - the informat *generation.* has not worked because it does not exist.
+
+![proc format no change - informat](04/../../screenshots/04_basic_manip/proc_format_nochange.png)
+
+Let's say we want to change the month part of the *monyyyy* date format back to a numeric value. 
 
 
 
