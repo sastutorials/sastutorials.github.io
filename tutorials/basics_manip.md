@@ -272,16 +272,43 @@ In our datasets, two are date-time variables: *year* and *date*. If you go back 
 
 We can play around with the two variables to see how they change as we change their format. 
 
-Let's have a look at the *date* variable - we want to try and change the month to a three-character long written format (as string character). Paste the following code in your program.
+Let's have a look at the *date* variable -- if you remember the proc contents, it identifies the data type as numeric but outputs a string-like variable like a date value. 
+
+Let's try and print out the format with month written in words, not in numbers. 
 
 ```
-/* Date formatting */
+/* Date formatting -- DATE9. */
 
 data terna16_formatted1; 
 set work.terna16_formatted; 
-informat date ddmmyyyy10.; 
-format date monyy7.;
+informat date mmddyyyy10.;
+format date date9.;
 run; 
+
+proc print data=work.terna16_formatted1 (obs=10); 
+run; 
+
+proc contents data=work.terna16_formatted1;run;
+```
+
+You can see that compared to earlier, we have **switched the order of day and month values** and we have also **turned the month to a worded format**.
+
+![date9 format](04/../../screenshots/04_basic_manip/date_format_date9.png)
+
+You can see the contents have changed too, but not the data type, which is still *numeric*. Remember that this happens because **SAS does not present a built-in recognition for dates**, but only for numeric and character-like data.
+
+![data type num for dates](../screenshots/04_basic_manip/format_numeric_for_dates.png)
+
+Let's try and take this dataset and **remove the day part of the date**. We can do this with the *MONYY* format.
+
+```
+/* Date formatting -- MONYY */
+
+data terna16_formatted2; 
+set work.terna16_formatted1; 
+informat date ddmmyyyy10.; 
+format date monyy7.; 
+run;  
 
 proc print data=work.terna16_formatted1 (obs=10); 
 run; 
@@ -307,8 +334,9 @@ We could have also chosen to display the date with the year showing only two dig
 ```
 /* Date formatting -- 2-digit year */
 
+
 data terna16_formatted2; 
-set work.terna16_formatted; 
+set work.terna16_formatted1; 
 informat date ddmmyyyy10.; 
 format date monyy5.;
 run; 
@@ -581,9 +609,34 @@ If you now run the code you will see that nothing has changed in the output - th
 
 ![proc format no change - informat](04/../../screenshots/04_basic_manip/proc_format_nochange.png)
 
-Let's say we want to change the month part of the *monyyyy* date format back to a numeric value. 
+For our last example, we are going to categorise our date variable into the four seasons, following the days of solstice and equinox as our ranges for the four labels. Paste the following code into your SAS program: 
 
+```
+/* Date values into seasons */ 
 
+proc format; 
+value seasons
+		'01JAN2016'd-'21MAR2016'd = "Winter"
+		'22MAR2016'd-'21JUN2016'd = "Spring"
+		'22JUN2016'd-'21SEP2016'd = "Summer" 
+		'22SEP2016'd-'21NOV2016'd = "Autumn"
+		'22NOV2016'd-'31DEC2016'd = "Winter";
+		
+data terna16_seasons; 
+set work.terna16_proc_formatted; 
+format seasons seasons.; 
+seasons = date;
+run;
+
+proc print data=work.terna16_seasons;
+run;
+```
+
+We have created a new variable called *seasons* to carry out the formatting on the dataset. This way we don't have to overwrite the date variable and we can look at them side by side.
+
+This is the resulting dataset:
+
+![proc format seasons](04/../../screenshots/04_basic_manip/proc_format_seasons.png)
 
 <a href="sect3"></a>
 
