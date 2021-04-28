@@ -616,11 +616,11 @@ For our last example, we are going to categorise our date variable into the four
 
 proc format; 
 value seasons
-		'01JAN2016'd-'21MAR2016'd = "Winter"
-		'22MAR2016'd-'21JUN2016'd = "Spring"
-		'22JUN2016'd-'21SEP2016'd = "Summer" 
-		'22SEP2016'd-'21NOV2016'd = "Autumn"
-		'22NOV2016'd-'31DEC2016'd = "Winter";
+	'01JAN2016'd-'21MAR2016'd = "Winter"
+	'22MAR2016'd-'21JUN2016'd = "Spring"
+	'22JUN2016'd-'21SEP2016'd = "Summer" 
+	'22SEP2016'd-'21NOV2016'd = "Autumn"
+	'22NOV2016'd-'31DEC2016'd = "Winter";
 		
 data terna16_seasons; 
 set work.terna16_proc_formatted; 
