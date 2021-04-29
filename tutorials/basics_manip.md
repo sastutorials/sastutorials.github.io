@@ -636,7 +636,7 @@ We have created a new variable called *seasons* to carry out the formatting on t
 
 This is the resulting dataset (I am only showing snippets of it, to demonstrate the four groups corresponding to the seasons):
 
-![proc formatting seasons](04/../../screenshots/04_basic_manip/proc_format_seasons1.png)
+![proc formatting seasons](04/../../screenshots/04_basic_manip/proc_format_seasons.png)
 
 <a href="sect3"></a>
 
