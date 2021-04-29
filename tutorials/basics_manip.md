@@ -636,7 +636,9 @@ We have created a new variable called *seasons* to carry out the formatting on t
 
 This is the resulting dataset:
 
-![proc format seasons](04/../../screenshots/04_basic_manip/proc_format_seasons.png)
+![proc formatting seasons1](04/../../screenshots/04_basic_manip/proc_format_seasons1.png)
+
+![proc formatting seasons2](04/../../screenshots/04_basic_manip/proc_format_seasons2.png)
 
 <a href="sect3"></a>
 
