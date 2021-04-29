@@ -634,11 +634,9 @@ run;
 
 We have created a new variable called *seasons* to carry out the formatting on the dataset. This way we don't have to overwrite the date variable and we can look at them side by side.
 
-This is the resulting dataset:
+This is the resulting dataset (I am only showing snippets of it, to demonstrate the four groups corresponding to the seasons):
 
-![proc formatting seasons1](04/../../screenshots/04_basic_manip/proc_format_seasons1.png)
-
-![proc formatting seasons2](04/../../screenshots/04_basic_manip/proc_format_seasons2.png)
+![proc formatting seasons](04/../../screenshots/04_basic_manip/proc_format_seasons1.png)
 
 <a href="sect3"></a>
 
