@@ -726,6 +726,18 @@ Just like so:
 
 ![mean-high](04/../../screenshots/04_basic_manip/mean_high_cleaning.png)
 
+#### dif_Wind = dif(Wind);
+#### dif_Geothermal = dif(Geothermal);
+#### dif_Hydro = dif(Hydro);
+#### dif_Photovoltaic = dif(Photovoltaic);
+#### dif_Biomass = dif(Biomass);
+
+INSERT TEXT + IMGS HERE
+
+
+#### 
+
+
 <a href="sect4"></a>
 
 # 4. Save your new dataset!
