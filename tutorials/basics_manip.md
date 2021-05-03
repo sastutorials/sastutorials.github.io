@@ -673,6 +673,15 @@ There is a lot going on here. We have done some **feature engineering**, which m
 
 ![final modif](04/../../screenshots/04_basic_manip/FINAL_modif.png)
 
+Let's go through the code step by step. 
+
+#### data terna16_cleaning (drop = year); 
+#### set work.terna16_seasons;
+
+Aside from creating a new dataset, we are telling SAS not to copy one variable from the other dataset (*work.terna16_seasons*), and that variable is *year*. 
+
+
+
 <a href="sect4"></a>
 
 # 4. Save your new dataset!
