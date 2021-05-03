@@ -680,6 +680,22 @@ Let's go through the code step by step.
 
 Aside from creating a new dataset, we are telling SAS not to copy one variable from the other dataset (*work.terna16_seasons*), and that variable is *year*. 
 
+This is what the output looks like having dropped the variable: 
+
+![no_year_cleaning](../screenshots/04_basic_manip/no_year_cleaning.png)
+
+#### informat date_upd datetime22.;
+#### format dataset_name $LOWCASE10. date_upd datetime22. ;
+
+First thing we need to do before the new features is to set any new formats or informats so that SAS can read and display them correctly. In this case, we need to create and informat and format for the new feature *date_upd*; we are also setting the existing variable *dataset_name* to **lower case**, so that we could do some data manipulation on the variable which we couldn't formatted as **upper case** as we left it. 
+
+#### short_name = propcase(compress(dataset_name, " 20"));
+
+Here we are creating a new variable called *short_name*, where we are using two new character functions: **compress** and **propcase**. 
+
+* **compress** removes any delimiter or character string specified, from a character variable. With compress we are removing the *blank between the name "terna" and the date, and we are also removing the **20** from the year part of the character string*;
+* **propcase** returns the new character variable with the first letter converted to *uppercase*.
+
 
 
 <a href="sect4"></a>
