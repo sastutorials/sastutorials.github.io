@@ -28,15 +28,13 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#subsect4"><sub>PROC FORMAT</sub></a>
 
-<a href="#sect3">3. Data cleaning and sorting</a>
+<a href="#sect3"> 3. Features and manipulations
 
-<a href="#sect4">4. Feature engineering</a>
+<a href="#sect4">4. Save your new dataset!</a>
 
-<a href="#sect5">5. Save your new dataset!</a>
+<a href="#sect5">5. Exercises and extras</a>
 
-<a href="#sect6">6. Exercises and extras</a>
-
-<a href="#sect7">7. Resources</a>
+<a href="#sect6">6. Resources</a>
 
 
 
@@ -419,7 +417,7 @@ As it is, the dataset doesn't present any string-like variables. We can create a
 
 data terna16_newvar; 
 set work.terna16_year;
-dataset_name = "Terna 2016";
+dataset_name = "terna 2016";
 run;
 
 proc print data=work.terna16_newvar (obs=10);
@@ -640,23 +638,52 @@ This is the resulting dataset (I am only showing snippets of it, to demonstrate 
 
 <a href="sect3"></a>
 
-# 3. Data cleaning and sorting
+# 3. Features and manipulations
+
+We have formatted our data and displayed them as we liked. 
+Now, we can explore some data manipulation techniques further using **DATA step functions**.
+
+Let's take the latest dataset with the seasons and make some changes on it. Paste the following code in your SAS program: 
+
+```
+/* Adding new features to our dataset*/
+
+data terna16_cleaning (drop= year); 
+set work.terna16_seasons;
+informat date_upd datetime22.;
+format dataset_name $LOWCASE10. date_upd datetime22. ;
+short_name = propcase(compress(dataset_name, " 20"));
+sum_energy_day = round(sum(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+mean_energy_day_low = floor(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+mean_energy_day_high = ceil(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+dif_Wind = dif(Wind);
+dif_Geothermal = dif(Geothermal);
+dif_Hydro = dif(Hydro);
+dif_Photovoltaic = dif(Photovoltaic);
+dif_Biomass = dif(Biomass);
+day_month = substr(put(date, DATE9.), 1, 5) || " dd-mmm";
+date_upd = datetime();
+run; 
+
+proc print data=work.terna16_cleaning (obs=10);
+run;
+```
+
+There is a lot going on here. We have done some **feature engineering**, which means creating new variables as a result of calculations or conditions from the existing variables. By creating new features, we are also exploring a variety of **DATA step functions** for character, numeric and date variables. This is the output (the first 10 rows of the dataset):
+
+![final modif](04/../../screenshots/04_basic_manip/FINAL_modif.png)
 
 <a href="sect4"></a>
 
-# 4. Feature engineering
+# 4. Save your new dataset!
 
 <a href="sect5"></a>
 
-# 5. Save your new dataset!
+# 5. Exercises and extras
 
 <a href="sect6"></a>
 
-# 6. Exercises and extras
-
-<a href="sect7"></a>
-
-# 7. Resources
+# 6. Resources
 
 * [Informats and formats by category](http://v8doc.sas.com/sashtml/lrcon/z0920449.htm);
 * 
