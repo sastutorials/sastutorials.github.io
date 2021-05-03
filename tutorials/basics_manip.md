@@ -696,6 +696,17 @@ Here we are creating a new variable called *short_name*, where we are using two 
 * **compress** removes any delimiter or character string specified, from a character variable. With compress we are removing the *blank between the name "terna" and the date, and we are also removing the **20** from the year part of the character string*;
 * **propcase** returns the new character variable with the first letter converted to *uppercase*.
 
+This is what the result looks like (together with the format statement): 
+
+![short-name](04/../../screenshots/04_basic_manip/short_name_cleaning.png)
+
+#### sum_energy_day = round(sum(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+
+This new variable, *sum_energy_day* is calculating the total energy generated (GWh) by the 5 renewable energy resources each day. The **sum()** function calculates by row and over different columns that need to be specified - in our case, the renewables. 
+
+#### mean_energy_day_low = floor(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+
+
 
 
 <a href="sect4"></a>
