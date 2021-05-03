@@ -704,6 +704,10 @@ This is what the result looks like (together with the format statement):
 
 This new variable, *sum_energy_day* is calculating the total energy generated (GWh) by the 5 renewable energy resources each day. The **sum()** function calculates by row and over different columns that need to be specified - in our case, the renewables. 
 
+Not only we are summing row by row, but we have also wrapped the sum around another numeric function **round()**, which rounds up the value to the nearest integer value (could be *either lower or higher*). Our result is the total energy generated but rounded up to be an integer, like so: 
+
+![sum](04/../../screenshots/04_basic_manip/sum_cleaning.png)
+
 #### mean_energy_day_low = floor(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
 
 
