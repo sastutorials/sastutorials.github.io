@@ -25,26 +25,172 @@ subtitle: Learn about the PROC step beyond printing, for sorting and summarising
     <br>
     <h2 id="structure">Structure</h2>
     <p><a href="#sect1">
-            <h5>1. Introduction to summarising data</h5>
+            <h5>1. Proc Means</h5>
         </a></p>
     <p><a href="#sect2">
-            <h5>2. What is Proc Means and how to use it</h5>
+            <h5>2. Proc Compare</h5>
         </a></p>
     <p><a href="#sect3">
-            <h5>3. Proc Means in detail and usage options</h5>
+            <h5>3. Proc Freq</h5>
         </a></p>
     <p><a href="#sect4">
-            <h5>4. Sorting and example</h5>
+            <h5>4. Proc Tabulate</h5>
         </a></p>
     <p><a href="#sect5">
-            <h5>5. Combinated sorting</h5>
+            <h5>5. Proc Sql & convention</h5>
         </a></p>
     <p><a href="#sect6">
-            <h5>6. Example of Proc Means and exercises</h5>
+            <h5>6. Exercises</h5>
         </a></p>
     <p><a href="#sect7">
             <h5>7.Resources</h5>
         </a></p>
     <br>
+    <p><a name="sect1"></a></p>
+    <h1>1. Proc Means</h1>
+    <p>is one of the most common SAS procedure used for analyzing data. It is mainly
+        used to calculate descriptive statistics such as mean, median, count, sum etc. Syntax:<br>
+        <strong><i>PROC MEANS <options>
+                    <statistic-keyword(s)>;</i></strong><br>
+        Statistic-keywords:
+        specifies which statistics to compute and the order to display them in the output.
+        The available keywords in the PROC statement are:
+    </p>
+    <table>
+        <tr>
+            <td>All fields are key</td>
+        </tr>
+        <tr>
+            <td>CLM</td>
+            <td>NMISS</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>RANGE</td>
+        </tr>
+        <tr>
+            <td>CV</td>
+            <td>SKEWNESS | SKEW</td>
+        </tr>
+        <tr>
+            <td>KURTOSIS | KURT</td>
+            <td>STDDEV | STD</td>
+        </tr>
+        <tr>
+            <td>LCLM</td>
+            <td>STDERR</td>
+        </tr>
+        <tr>
+            <td>MAX</td>
+            <td>SUM</td>
+        </tr>
+        <tr>
+            <td>MEAN</td>
+            <td>SUMWGT</td>
+        </tr>
+        <tr>
+            <td>MIN</td>
+            <td>UCLM</td>
+        </tr>
+        <tr>
+            <td>MODE</td>
+            <td>USS</td>
+        </tr>
+        <tr>
+            <td>N</td>
+            <td>VAR</td>
+        </tr>
+        <tr>
+            <td>MEDIAN | P50</td>
+            <td>Q3 | P75</td>
+        </tr>
+    </table>
+    <br>
+    <h5><strong>Proc Means default output:</strong></h5>
+    <p>By default the proc means gives N, MEAN, STD, MIN, and MAX as the output.
+    </p>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18;
+RUN;</div></code></code></pre>
 
+    <p>
+        <center><img src="/screenshots/05_proc/Default uscite Proc Means.jpg" alt="Default uscite Proc Means.jpg">
+        </center>
+    </p>
+    <h5><strong>Sum:</strong></h5>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 SUM;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/Somma tutti.jpg" alt="Somma tutti.jpg"></center>
+    </p>
+    <p>If we want a specific variable to sum, we have to do this</p>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 SUM;
+VAR Biomass;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/Somma specifica.jpg" alt="Somma specifica.jpg"></center>
+    </p>
+    <h5><strong>Average:</strong></h5>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MEAN;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/sastutorials.github.io/screenshots/05_proc/Media_tutti ProcMeans.jpg" alt=""></center>
+    </p>
+    <p>If we want a specific variable statistics, we have to do this</p>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MEAN;
+VAR Biomass;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/" alt=""></center>
+    </p>
+    <h5><strong>Median:</strong></h5>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MEDIAN;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/" alt=""></center>
+    </p>
+    <p>If we want a specific variable statistics, we have to do this</p>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MEDIAN;
+VAR Biomass;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/" alt=""></center>
+    </p>
+    <h5><strong>Mode:</strong></h5>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MODE;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/" alt=""></center>
+    </p>
+    <p>If we want a specific variable statistics, we have to do this</p>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MODE;
+VAR Hydro;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/" alt=""></center>
+    </p>
+    <p><i>Other parameters will be explained in <a href="">...........</a></i></p>
+<br>
+<h1>2. Proc Compare</h1>
+    <p>...
+    </p>
+    <br>
+<h1>3. Proc Freq</h1>
+    <p>...
+    </p>
+    <br>
+<h1>4. Proc Tabulate</h1>
+    <p>...
+    </p>
+    <br>
+<h1>5. Proc Sql & convention</h1>
+    <p>...
+    </p>
+    <br>
+    <h1>6. Exercises</h1>
+        <p>...
+        </p>
+    <br>
+    <h1>7. Resources</h1>
+        <p>...
+        </p>
 </html>
