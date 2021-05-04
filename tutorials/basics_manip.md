@@ -16,37 +16,37 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 ## Structure 
 
-<a href="#sect1">1. Observational analyses</a>
+<a href="#sect1">1. Familiarise with the dataset</a>
 
-<a href="#subsect1"><sub>Familiarise with the dataset</sub></a>
+<a href="#subsect1"><sub>PROC CONTENTS</sub></a>
 
-<a href="#subsect2"><sub>Format the data</sub></a>
+<a href="#subsect2"><sub>PROC PRINT</sub></a>
 
-<a href="#subsect3"><sub>Quick summary statistics</sub></a>
+<a href="#sect2">2. Data formatting</a>
 
-<a href="#sect2">3. Data manipulation </a>
+<a href="#subsect3"><sub>FORMAT and INFORMAT in the DATA STEP</sub></a>
 
-<a href="#subsect4"><sub>Cleaning and sorting</sub></a>
+<a href="#subsect4"><sub>PROC FORMAT</sub></a>
 
-<a href="#subsect5"><sub>Feature engineering</sub></a>
+<a href="#sect3"> 3. Features and manipulations
 
-<a href="#subsect6"><sub>Save your new dataset!</sub></a>
+<a href="#sect4">4. Save your new dataset!</a>
 
-<a href="#sect3">4. Resources</a>
+<a href="#sect5">5. Exercises and extras</a>
+
+<a href="#sect6">6. Resources</a>
+
+
 
 <a name="sect1"></a>
 
-# 1. Observational analyses
+# 1. Familiarise with the dataset
 
 Every data scientist has a specific workflow to carry out a project: importing, cleaning, analysing dataset(s) and presenting an output, usually through a visual medium. **80% of our work consists of cleaning and preparing the datasets for analysis and modelling**. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting. 
 
 ![datascience_workflow](../screenshots/04_basic_manip/datascience_workflow.png)
 
 **In this tutorial we are going to learn how to carry out some basic data manipulation with SAS.**
-
-<a name="subsect1"></a>
-
-## Familiarise with the dataset
 
 Once you have your data imported on your programming interface, the first thing you need to do is to familiarise with the dataset or series of datasets you are working with. 
 
@@ -76,7 +76,9 @@ Each variable is accompanied by a symbol which already **gives you information o
 
 We can also quickly explore the datasets by executing two procedures: **proc contents** and **proc print**. 
 
-#### PROC CONTENTS 
+<a name="subsect1"></a>
+
+## PROC CONTENTS 
 
 Copy the following in a new SAS program (call the program *tutorial_basic_manip.sas*, if you wish to keep it in the future). 
 
@@ -108,7 +110,9 @@ The proc contents statement gives us a nice overview about the dataset. We are p
 * LABEL 
 * ALTRE OPTIONS NEL PROC CONTENTS PER RENDERE IL TUTTO PIU' INFORMATIVO
 
-#### PROC PRINT 
+<a name="subsect2"></a>
+
+## PROC PRINT 
 
 Another useful thing to do when getting to know the dataset is to print out its raw data. 
 
@@ -157,9 +161,10 @@ run;
 
 ![top_bottom_10](../screenshots/04_basic_manip/top_bottom_10.png)
 
-<a name ="subsect2"></a>
 
-## Format the data
+<a name="sect2"></a>
+
+# Data formatting 
 
 Before getting to the actual manipulation of the datasets, you always need to **observe the characteristics of the variables and observations inside each dataset**. 
 
@@ -173,7 +178,10 @@ We know that variables can be formatted as either of these three ways:
 
 SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
 
-### Formats and informats 
+
+<a href="subsect3"></a>
+
+## FORMAT and INFORMAT in the DATA STEP
 
 Do you recall the concept of format and informat statements from [accessing data](tutorials/../accessing_data.html)?
 
@@ -262,28 +270,55 @@ In our datasets, two are date-time variables: *year* and *date*. If you go back 
 
 We can play around with the two variables to see how they change as we change their format. 
 
-Let's have a look at the *date* variable - we want to try and change the month to a three-character long written format (as string character). Paste the following code in your program.
+Let's have a look at the *date* variable -- if you remember the proc contents, it identifies the data type as numeric but outputs a string-like variable like a date value. 
+
+Let's try and print out the format with month written in words, not in numbers. 
 
 ```
-/* Date formatting */
+/* Date formatting -- DATE9. */
 
-data terna16_formatted; 
+data terna16_formatted1; 
 set work.terna16_formatted; 
-informat date ddmmyyyy10.; 
-format date monyy7.;
+informat date mmddyyyy10.;
+format date date9.;
 run; 
 
-proc print data=work.terna16_formatted (obs=10); 
+proc print data=work.terna16_formatted1 (obs=10); 
+run; 
+
+proc contents data=work.terna16_formatted1;run;
+```
+
+You can see that compared to earlier, we have **switched the order of day and month values** and we have also **turned the month to a worded format**.
+
+![date9 format](04/../../screenshots/04_basic_manip/date_format_date9.png)
+
+You can see the contents have changed too, but not the data type, which is still *numeric*. Remember that this happens because **SAS does not present a built-in recognition for dates**, but only for numeric and character-like data.
+
+![data type num for dates](../screenshots/04_basic_manip/format_numeric_for_dates.png)
+
+Let's try and take this dataset and **remove the day part of the date**. We can do this with the *MONYY* format.
+
+```
+/* Date formatting -- MONYY */
+
+data terna16_formatted2; 
+set work.terna16_formatted1; 
+informat date ddmmyyyy10.; 
+format date monyy7.; 
+run;  
+
+proc print data=work.terna16_formatted1 (obs=10); 
 run; 
 ```
 
 Let's break the code down.
 * The **set statement** takes the information from an already existing dataset - in this case we are simply *overwriting* the previously created dataset called *terna16_formatted*.
-* **informat date ddmmyyyy10.**:
+* **informat date ddmmyyyy10.**
   * *informat* initiates the informat statement;
   * *date* is the variable name which needs to be informatted;
   * *ddmmyyyy10.* is the informat used, to **match the original formatting** - in this way SAS is able to read the initial way in which the values are formatted;
-* **format date monyy7.**:
+* **format date monyy7.**
   * *format* initiates the format statement; 
   * *date* is the variable name which needs to be formatted after the informat; 
   * *monyy7.* is the final formatting which is going to be displayed. 
@@ -292,9 +327,77 @@ This is what your result should look like, compared to the original dataset with
 
 ![date_formatting](../screenshots/04_basic_manip/date_formatting.png)
 
+We could have also chosen to display the date with the year showing only two digits - like so: 
 
+```
+/* Date formatting -- 2-digit year */
+
+
+data terna16_formatted2; 
+set work.terna16_formatted1; 
+informat date ddmmyyyy10.; 
+format date monyy5.;
+run; 
+
+proc print data=work.terna16_formatted2 (obs=10); 
+run; 
+```
+
+![year_2-digit](04/../../screenshots/04_basic_manip/date_formatting_2digit.png)
+
+Now, if we wanted to change the format of the *year* variable, we could use the following code. Paste it in your SAS program. 
+
+```
+/* Formatting the year variable */
+
+data terna16_year; 
+set work.terna16_formatted1; 
+format year yyyy4.; 
+run; 
+proc print data=work.terna16_year (obs = 10);
+run; 
+```
+
+With this code we are: 
+* taking the variables from *terna16_formatted1* dataset, which, remember, contains the *date* variable formatted as mon-yyyy; 
+* using **yyyy4.** to specify that the *year* variable is a date variable, specifically the year value which must be maximum *4 characters long*; 
+* printing the first 10 observations of the new dataset *terna16_year*.
+
+The result should look like this. 
+
+![formatting year](../screenshots/04_basic_manip/formatting%20the%20year%20variable.png)
+
+From the output you don't see any difference, which is normal because we haven't told SAS to change the length of the variable, **we have only specified that it is a year (date-time) type of value**. You can actually see the difference when running the PROC CONTENTS on the data set. 
+
+```
+proc contents data=work.terna16_year; 
+run; 
+```
+
+This is the output. 
+
+![contents_formatted](../screenshots/04_basic_manip/proc_contents-formatted.png)
+
+In that same table you can actually see all the formatting modifications we have applied to the dataset: 
+* The numeric variables present the maxmimum character length of 5 and the 2 decimal places; 
+* The *date* variable has the informat equal to *DDMMYY10.* and the format (displayed) as *MON-YY7.*; 
+* The *year* variable has the format as *YYYY4.*. 
+
+We can compare the two tables from the contents procedure **before** and **after** formatting, to see the difference. 
+
+/* comparison before and after formatting - proc contents */
+
+proc contents data=work.terna16 (obs=10); 
+proc contents data=work.terna16_year (obs=10);
+run; 
+
+Check out the results below. 
+
+![comparing_contents](04/../../screenshots/04_basic_manip/comparing_formats-date.png)
 
 ### String (in)formatting 
+
+This table shows a few common examples of (in)formatting types used for string type values.
 
 | Syntax | Definition | Width range | Default width |
 |:---:|:---:|:---:|:---:|
@@ -305,29 +408,335 @@ This is what your result should look like, compared to the original dataset with
 | $REVERS*w.* | Reads character data *from right to left and left aligns*, removes *blanks* | 1 if width of output field not specified | 1–32767 | 
 | $VARYING*w.* | Reads character data of *varying length* | Default length of variable; 8 if variable is undefined | 1–32767 | 
 
-<a name="subsect3"></a>
+Let's see an example with our dataset, to work with string formatting.
 
-## Quick summary statistics
+As it is, the dataset doesn't present any string-like variables. We can create a new variable so that we can practice with this type of format. 
 
-<a name="sect2"></a>
+```
+/* Creating a new variable containing the name of the dataset */ 
 
-# 3. Data manipulation 
+data terna16_newvar; 
+set work.terna16_year;
+dataset_name = "terna 2016";
+run;
 
-<a name="subsect4"></a>
+proc print data=work.terna16_newvar (obs=10);
+run;
+```
 
-## Cleaning and sorting 
+Let's understand the code: 
+* Remember that **set** *copies* the information or part of it from an already existing dataset to a new one. 
+* When copying a dataset with the set statement, you also have the possibility to *add new variables* - whether they are calculated fields, string values, date values, etc. In our case we are creating a new variable called *dataset_name*, which is going to print a constant string value: *Terna 2016*.
 
-<a name="subsect5"></a>
+You can see the dataset now presents this addition by printing it (proc print) and having a look at the results tab. 
 
-## Feature engineering 
+![char var](04/../../screenshots/04_basic_manip/character_var.png)
 
-<a name="subsect6"></a>
+Okay, now we can start formatting the data. First we can set the informats and formats to be of a specified character data type.
 
-## Save your new dataset!
+```
+/* proc contents data=work.terna16_newvar;
+run; */
 
-<a name="sect3"></a>
+data terna16_newvar_formatted; 
+set work.terna16_newvar;
+informat dataset_name $CHAR10.;
+format dataset_name $CHAR10.; 
+run; 
+```
 
-# 4. Resources 
+We haven't changed the length of the variable while setting formats and informats and that is why we don't see any difference in the resulting dataset.
+
+![char_var_formatted](04/../../screenshots/04_basic_manip/char_var_formatted.png)
+
+In this case we can only see the difference when running a PROC CONTENTS. 
+
+![char var cont](04/../../screenshots/04_basic_manip/char_var_contents.png)
+
+You can see the difference between proc contents a) and b).
+* A) The PROC CONTENTS shows the dataset before formatting and we can see that SAS recognises the variable *dataset_name* is character variable of length 10; 
+* B) The PROC CONTENTS shows the dataset after formatting and we can see the formatting and informatting specified as $CHAR10. variable.
+
+Let's see what happens if we tried to change the character length of the variable.
+
+```
+/* Formatting with smaller character length */
+
+data terna16_newvar_formatted5; 
+set work.terna16_newvar;
+informat dataset_name $CHAR5.;
+format dataset_name $CHAR5.; 
+run; 
+```
+
+We have reduced the maximum character length allowed for the variable from 10 to 5. In this way, the string we have input earlier is cut only showing the word *"Terna"* out of the entire string.
+
+![char_var_length](04/../../screenshots/04_basic_manip/char_var_length.png)
+
+If we set the character length to be *7*, for example, we would start to see part of the next "word" (in our case the year 2016). 
+
+![char_var_length7](04/../../screenshots/04_basic_manip/char_var_length7.png)
+
+For this reason, remember to format **a reasonable character length** according to the type of string value you want to display.
+
+Let's do another formatting example. Say we want to set all values for the string variable to be upcase. This is very simple to do with the *$UPCASE.* formatting specification. 
+
+Paste this code in your program. 
+
+```
+/* Format string data type to be UPCASE*/
+
+data terna16_newvar_upcase; 
+set work.terna16_newvar;
+informat dataset_name $UPCASE10.;
+format dataset_name $UPCASE10.; 
+run; 
+
+proc print data=work.terna16_newvar_upcase (obs=10);
+run;
+```
+
+The characters of the string have effectively been converted to upcase. 
+
+![char_var_upcase](04/../../screenshots/04_basic_manip/char_var_UPCASE.png)
+
+And we can verify the change in format with the PROC CONTENTS. 
+
+![char_var_cont](04/../../screenshots/04_basic_manip/char_var_upcase_contents.png)
+
+<a href="subsect4"></a>
+
+## PROC FORMAT
+
+There is another method to define formats and informats, and that is with the **PROC FORMAT**. PROC FORMAT is a procedure creating a mapping of data values into **data labels**, thus formats and informats that can later be **explicitly assigned** to a dataset. 
+
+Therefore, with the PROC FORMAT we can create customised formats and informats that we can store in a library to use whenever it is needed. A very useful tool with a vast range of applications of which we are going to explore a few. 
+
+Generally, this is the syntax of a PROC FORMAT for creating a *format*:  
+
+```
+PROC FORMAT; 
+VALUE Format_Name 
+                  Range1 = 'Label1'
+                  Range2 = 'Label2'
+                  Range3 = 'Label3'
+                  ...
+                  ...;
+RUN; 
+```
+
+While this is the syntax for creating an *informat*: 
+
+```
+PROC FORMAT; 
+INVALUE Format_Name  
+                  Range1 = 'Label1'
+                  Range2 = 'Label2'
+                  Range3 = 'Label3'
+                  ...
+                  ...; 
+RUN; 
+```
+
+The main difference between the two is that to define a format a **VALUE** statement needs to be specified, while to define an informat an **INVALUE** statement is appropriate.
+
+Let's break down the syntax: 
+* *PROC FORMAT* calls the procedure step;
+* *VALUE* or *INVALUE* determines whether it is a format or informat that is being defined; 
+* *Format_Name* is the name of the format or informat that is being defined:
+  * For character values, first character must be a *$* sign, and a *letter* or *underscore* as the second character;
+  * For numeric values, the name must have a *letter* or *underscore* as the first character;
+  * The name *cannot end with a number*;
+  * It *cannot have the same name as an exisitng SAS format*;
+  * It *should not end with a period in the VALUE statement*;
+* *Range1,Range2,...* is the value(s) to which a label is assigned. This can be a **single value, ranges of values or lists of values** for a single label;
+* *'Labeln'* is the label that reflects a specific value or range of values:
+  * Labels do not require enclosing in single or double quotes;
+  * Can be up to 32,767 characters in length;
+* *RUN* ends and runs the above procedure, although it is not fundamental but *always good practice* to write it at the end of a step.
+
+Let's put this into practice. We can first create a format to group the amount of energy produced by each renewable energy source. 
+
+Paste the following code in your SAS program. We are defining a proc format that subdivides various *ranges of energy generated*.
+
+```
+/* Creating format for grouping amount of energy generated */ 
+
+proc format;
+value generation 
+  0.0 -< 0.5 = "Up to 0.5 GWh"
+  0.5 -< 1.0 = "Between 0.5 and 1.0 GWh"
+  1.0 -< 2.0 = "Between 1.0 and 2.0 GWh"
+  2.0 -< 4.0 = "Between 2.0 and 4.0 GWh"
+  4.0 -< 6.0 = "Between 4.0 and 6.0 GWh"
+  6.0 - high = "Greater than 6.0 GWh";
+run; 
+```
+
+Note that to specify the maximum value of the range you need to write *high* on the right-hand side of the range, while if you wanted to write the minimum value of the range you would need to write *low* at the left-hand side of the range.
+
+To apply the format we need to use the format statement, specify the variables to format and write next to them the name of the new format with the *period sign* at the end of it. Like so:
+
+```
+data terna16_proc_formatted;
+set work.terna16_newvar_upcase;
+format  Biomass Geothermal Hydro Photovoltaic Wind generation.; 
+run; 
+
+proc print data=work.terna16_proc_formatted;
+run;
+```
+
+Once you've run this code, you can see that the variables describing energy generated for each renewable source have changed according to the labels specified in the proc format. 
+
+![proc format energy](04/../../screenshots/04_basic_manip/proc_format_energy.png)
+
+Make sure you have written *value* as the statement to define a *format*. You can check that it won't work as an *informat* like this: 
+
+```
+data terna16_proc_formatted;
+set work.terna16_newvar_upcase;
+INFORMAT  Biomass Geothermal Hydro Photovoltaic Wind generation.; 
+run; 
+
+proc print data=work.terna16_proc_formatted;
+run;
+```
+
+If you now run the code you will see that nothing has changed in the output - the informat *generation.* has not worked because it does not exist.
+
+![proc format no change - informat](04/../../screenshots/04_basic_manip/proc_format_nochange.png)
+
+For our last example, we are going to categorise our date variable into the four seasons, following the days of solstice and equinox as our ranges for the four labels. Paste the following code into your SAS program: 
+
+```
+/* Date values into seasons */ 
+
+proc format; 
+value seasons
+	'01JAN2016'd-'21MAR2016'd = "Winter"
+	'22MAR2016'd-'21JUN2016'd = "Spring"
+	'22JUN2016'd-'21SEP2016'd = "Summer" 
+	'22SEP2016'd-'21NOV2016'd = "Autumn"
+	'22NOV2016'd-'31DEC2016'd = "Winter";
+		
+data terna16_seasons; 
+set work.terna16_proc_formatted; 
+format seasons seasons.; 
+seasons = date;
+run;
+
+proc print data=work.terna16_seasons;
+run;
+```
+
+We have created a new variable called *seasons* to carry out the formatting on the dataset. This way we don't have to overwrite the date variable and we can look at them side by side.
+
+This is the resulting dataset (I am only showing snippets of it, to demonstrate the four groups corresponding to the seasons):
+
+![proc formatting seasons](04/../../screenshots/04_basic_manip/proc_format_seasons.png)
+
+<a href="sect3"></a>
+
+# 3. Features and manipulations
+
+We have formatted our data and displayed them as we liked. 
+Now, we can explore some data manipulation techniques further using **DATA step functions**.
+
+Let's take the latest dataset with the seasons and make some changes on it. Paste the following code in your SAS program: 
+
+```
+/* Adding new features to our dataset*/
+
+data terna16_cleaning (drop= year); 
+set work.terna16_seasons;
+informat date_upd datetime22.;
+format dataset_name $LOWCASE10. date_upd datetime22. ;
+short_name = propcase(compress(dataset_name, " 20"));
+sum_energy_day = round(sum(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+mean_energy_day_low = floor(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+mean_energy_day_high = ceil(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+dif_Wind = dif(Wind);
+dif_Geothermal = dif(Geothermal);
+dif_Hydro = dif(Hydro);
+dif_Photovoltaic = dif(Photovoltaic);
+dif_Biomass = dif(Biomass);
+day_month = substr(put(date, DATE9.), 1, 5) || " dd-mmm";
+date_upd = datetime();
+run; 
+
+proc print data=work.terna16_cleaning (obs=10);
+run;
+```
+
+There is a lot going on here. We have done some **feature engineering**, which means creating new variables as a result of calculations or conditions from the existing variables. By creating new features, we are also exploring a variety of **DATA step functions** for character, numeric and date variables. This is the output (the first 10 rows of the dataset):
+
+![final modif](04/../../screenshots/04_basic_manip/FINAL_modif.png)
+
+Let's go through the code step by step. 
+
+#### data terna16_cleaning (drop = year); 
+#### set work.terna16_seasons;
+
+Aside from creating a new dataset, we are telling SAS not to copy one variable from the other dataset (*work.terna16_seasons*), and that variable is *year*. 
+
+This is what the output looks like having dropped the variable: 
+
+![no_year_cleaning](../screenshots/04_basic_manip/no_year_cleaning.png)
+
+#### informat date_upd datetime22.;
+#### format dataset_name $LOWCASE10. date_upd datetime22. ;
+
+First thing we need to do before the new features is to set any new formats or informats so that SAS can read and display them correctly. In this case, we need to create and informat and format for the new feature *date_upd*; we are also setting the existing variable *dataset_name* to **lower case**, so that we could do some data manipulation on the variable which we couldn't formatted as **upper case** as we left it. 
+
+#### short_name = propcase(compress(dataset_name, " 20"));
+
+Here we are creating a new variable called *short_name*, where we are using two new character functions: **compress** and **propcase**. 
+
+* **compress** removes any delimiter or character string specified, from a character variable. With compress we are removing the *blank between the name "terna" and the date, and we are also removing the **20** from the year part of the character string*;
+* **propcase** returns the new character variable with the first letter converted to *uppercase*.
+
+This is what the result looks like (together with the format statement): 
+
+![short-name](04/../../screenshots/04_basic_manip/short_name_cleaning.png)
+
+#### sum_energy_day = round(sum(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+
+This new variable, *sum_energy_day* is calculating the total energy generated (GWh) by the 5 renewable energy resources each day. The **sum()** function calculates by row and over different columns that need to be specified - in our case, the renewables. 
+
+Not only we are summing row by row, but we have also wrapped the sum around another numeric function **round()**, which rounds up the value to the nearest integer value (could be *either lower or higher*). Our result is the total energy generated but rounded up to be an integer, like so: 
+
+![sum](04/../../screenshots/04_basic_manip/sum_cleaning.png)
+
+#### mean_energy_day_low = floor(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+
+For the new variable *mean_energy_day_low* we are instead calculating the daily average of energy generated (GWh) across the 5 renewables. The **mean()** functions works just like sum(): it calculates across variables, by row. 
+
+This time, we are rounding the resulting values to the lowest decimal, thanks to the **floor()** numeric function. 
+
+The output with this new feature now looks like this:
+
+![mean low](04/../../screenshots/04_basic_manip/mean_low_cleaning.png)
+
+#### mean_energy_day_high = ceil(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+
+For the variable *mean_energy_day_high* we are doing exactly the same thing as above, calculating the mean energy generated by day. The difference lies in the **integer rounding function**: in fact, **ceil()** does the opposite of *floor()*, because it **rounds up the value to the highest integer**, instead of the lowest. 
+
+Just like so: 
+
+![mean-high](04/../../screenshots/04_basic_manip/mean_high_cleaning.png)
+
+<a href="sect4"></a>
+
+# 4. Save your new dataset!
+
+<a href="sect5"></a>
+
+# 5. Exercises and extras
+
+<a href="sect6"></a>
+
+# 6. Resources
 
 * [Informats and formats by category](http://v8doc.sas.com/sashtml/lrcon/z0920449.htm);
 * 
