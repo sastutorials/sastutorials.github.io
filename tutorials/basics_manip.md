@@ -742,7 +742,7 @@ In the new variable *day_month* we have nested two functions:
 * **put()**, a charater function which converts numeric values to character values. In this case, **we are modifying the date value to character value, still specifying a date format for the conversion, for SAS to be able to read the data properly**;
 * **substr()**, another character function which extracts a segment or segments from a character string, specified by the character position. We are extracting a string starting from the first character and for the length of 5 characters. We are thus selecting the day and month parts of the date. 
 
-Not only, with **substr()** it is also possible to concatenate other string character values, through the *||* symbol, followed by the new string. 
+Not only, with **substr()** it is also possible to concatenate other string character values, through the **`||`** symbol, followed by the new string. 
 
 The new variable looks like this: 
 
