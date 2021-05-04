@@ -25,26 +25,95 @@ subtitle: Learn about the PROC step beyond printing, for sorting and summarising
     <br>
     <h2 id="structure">Structure</h2>
     <p><a href="#sect1">
-            <h5>1. Introduction to summarising data</h5>
+            <h5>1. Proc Means</h5>
         </a></p>
     <p><a href="#sect2">
-            <h5>2. What is Proc Means and how to use it</h5>
+            <h5>2. Compare</h5>
         </a></p>
     <p><a href="#sect3">
-            <h5>3. Proc Means in detail and usage options</h5>
+            <h5>3. Proc Freq</h5>
         </a></p>
     <p><a href="#sect4">
-            <h5>4. Sorting and example</h5>
+            <h5>4. Proc Tabulate</h5>
         </a></p>
     <p><a href="#sect5">
-            <h5>5. Combinated sorting</h5>
+            <h5>5. Proc Sql & convention</h5>
         </a></p>
     <p><a href="#sect6">
-            <h5>6. Example of Proc Means and exercises</h5>
+            <h5>6. Exercises</h5>
         </a></p>
     <p><a href="#sect7">
             <h5>7.Resources</h5>
         </a></p>
     <br>
+    <p><a name="sect1"></a></p>
+    <h1>1. Proc Means</h1>
+    <p>is one of the most common SAS procedure used for analyzing data. It is mainly 
+        used to calculate descriptive statistics such as mean, median, count, sum etc. Syntax:<br>
+        <strong><i>PROC MEANS <options> <statistic-keyword(s)>;</i></strong><br>
+        Statistic-keywords:
+        specifies which statistics to compute and the order to display them in the output. 
+        The available keywords in the PROC statement are:
+        </p>
+        <table>
+            <tr>
+                <td>All fields are key</td>
+            </tr>
+            <tr>
+                <td><strong>CLM</strong></td>
+                <td>NMISS</td>
+            </tr>
+            <tr>
+                <td><strong>CSS</strong></td>
+                <td>RANGE</td>
+            </tr>
+            <tr>
+                <td><strong>CV</strong></td>
+                <td>SKEWNESS | SKEW</td>
+            </tr>
+            <tr>
+                <td><strong>KURTOSIS | KURT</strong></td>
+                <td>STDDEV | STD</td>
+            </tr>
+            <tr>
+                <td><strong>LCLM</strong></td>
+                <td>STDERR</td>
+            </tr>
+            <tr>
+                <td><strong>MAX</strong></td>
+                <td>SUM</td>
+            </tr>
+            <tr>
+                <td><strong>MEAN</strong></td>
+                <td>SUMWGT</td>
+            </tr>
+            <tr>
+                <td><strong>MIN</strong></td>
+                <td>UCLM</td>
+            </tr>
+            <tr>
+                <td><strong>MODE</strong></td>
+                <td>USS</td>
+            </tr>
+            <tr>
+                <td><strong>N</strong></td>
+                <td>VAR</td>
+            </tr>
+            <tr>
+                <td><strong>MEDIAN | P50</strong></td>
+                <td>Q3 | P75</td>
+            </tr>
+        </table>
+        <br>
+        <p><strong>Proc Means default output:</strong>
+            By default the proc means gives N, MEAN, STD, MIN, and MAX as the output.
+        </p>
+        <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18;
+RUN;</div></code></code></pre>
+
+    <p>
+        <center><img src="/screenshots/03_access/PROG1.PNG" alt="PROG1.PNG"></center>
+    </p>
+    <p>
 
 </html>
