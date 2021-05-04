@@ -673,7 +673,7 @@ There is a lot going on here. We have done some **feature engineering**, which m
 
 ![final modif](04/../../screenshots/04_basic_manip/FINAL_modif.png)
 
-Let's go through the code step by step. 
+Don't panic! **Let's go through the code line by line.**
 
 #### data terna16_cleaning (drop = year); 
 #### set work.terna16_seasons;
@@ -755,6 +755,8 @@ The last variable we created is *date_upd*. This simply takes the current date a
 Now that we've progressively added each new line of code, we can have a look at the final dataset, with the last addition *date_upd*.
 
 ![date upd](04/../../screenshots/04_basic_manip/date_upd_cleaning.png)
+
+
 
 <a href="sect4"></a>
 
