@@ -114,6 +114,19 @@ RUN;</div></code></code></pre>
     <p>
         <center><img src="/screenshots/05_proc/Default uscite Proc Means.jpg" alt="Default uscite Proc Means.jpg"></center>
     </p>
+    <br>
+    <h5><strong>Sum:</strong></h5>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 SUM;
+RUN;</div></code></code></pre>
     <p>
+        <center><img src="/screenshots/05_proc/Somma tutti.jpg" alt="Somma tutti.jpg"></center>
+    </p>
+    <p>If we want a specific variable to sum, we have to do this</p>
+    <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 SUM;
+VAR Biomass;
+RUN;</div></code></code></pre>
+<p>
+    <center><img src="/screenshots/05_proc/" alt=""></center>
+</p>
 
 </html>
