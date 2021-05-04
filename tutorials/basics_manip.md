@@ -30,6 +30,10 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <a href="#sect3"> 3. Features and manipulations
 
+<a href="#subsect5"><sub>Feature engineering</sub></a>
+
+<a href="#subsect6"><sub>Join datasets</sub></a>
+
 <a href="#sect4">4. Save your new dataset!</a>
 
 <a href="#sect5">5. Exercises and extras</a>
@@ -179,7 +183,7 @@ We know that variables can be formatted as either of these three ways:
 SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
 
 
-<a href="subsect3"></a>
+<a name="subsect3"></a>
 
 ## FORMAT and INFORMAT in the DATA STEP
 
@@ -504,7 +508,7 @@ And we can verify the change in format with the PROC CONTENTS.
 
 ![char_var_cont](04/../../screenshots/04_basic_manip/char_var_upcase_contents.png)
 
-<a href="subsect4"></a>
+<a name="subsect4"></a>
 
 ## PROC FORMAT
 
@@ -636,12 +640,16 @@ This is the resulting dataset (I am only showing snippets of it, to demonstrate 
 
 ![proc formatting seasons](04/../../screenshots/04_basic_manip/proc_format_seasons.png)
 
-<a href="sect3"></a>
+<a name="sect3"></a>
 
 # 3. Features and manipulations
 
 We have formatted our data and displayed them as we liked. 
 Now, we can explore some data manipulation techniques further using **DATA step functions**.
+
+<a name = "subsect5"></a>
+
+## Feature engineering 
 
 Let's take the latest dataset with the seasons and make some changes on it. Paste the following code in your SAS program: 
 
@@ -756,17 +764,24 @@ Now that we've progressively added each new line of code, we can have a look at 
 
 ![date upd](04/../../screenshots/04_basic_manip/date_upd_cleaning.png)
 
+<a name="subsect6"></a>
 
+## Join datasets
 
-<a href="sect4"></a>
+-- CAPIRE SE METTER SET E POI COS'ALTRO -- LE PROC?? PROC MERGE PER ESEMPIO-- da finire
+
+<a name="sect4"></a>
 
 # 4. Save your new dataset!
 
-<a href="sect5"></a>
+<a  name="sect5"></a>
 
 # 5. Exercises and extras
 
-<a href="sect6"></a>
+-- INSERIRE IL BOTTONE CON IL PROGRAMMA SAS per far pratica --
+
+
+<a name="sect6"></a>
 
 # 6. Resources
 
