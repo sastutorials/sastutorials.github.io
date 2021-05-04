@@ -732,11 +732,21 @@ Just like so:
 #### dif_Photovoltaic = dif(Photovoltaic);
 #### dif_Biomass = dif(Biomass);
 
-INSERT TEXT + IMGS HERE
+These 5 new variables are called *dif_Wind*, *dif_Geothermal*, *dif_Hydro*, *dif_Photovoltaic* and *dif_Biomass*, and reflect the **difference in energy generated from one day to the next** for each renewable energy source. This calculation is possible and quick thanks to the numeric function **dif()**.
 
+![dif energy](04/../../screenshots/04_basic_manip/dif_energy_cleaning.png)
 
-#### 
+#### day_month = substr(put(date, DATE9.), 1, 5) || " dd-mmm";
 
+In the new variable *day_month* we have nested two functions:
+* **put()**, a charater function which converts numeric values to character values. In this case, **we are modifying the date value to character value, still specifying a date format for the conversion, for SAS to be able to read the data properly**;
+* **substr()**, another character function which extracts a segment or segments from a character string, specified by the character position. We are extracting a string starting from the first character and for the length of 5 characters. We are thus selecting the day and month parts of the date. 
+
+Not only, with **substr()** it is also possible to concatenate other string character values, through the *||* symbol, followed by the new string. 
+
+The new variable looks like this: 
+
+![ddmmm](04/../../screenshots/04_basic_manip/ddmmm_cleaning.png)
 
 <a href="sect4"></a>
 
