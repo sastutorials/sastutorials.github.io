@@ -748,6 +748,14 @@ The new variable looks like this:
 
 ![ddmmm](04/../../screenshots/04_basic_manip/ddmmm_cleaning.png)
 
+#### date_upd = datetime();
+
+The last variable we created is *date_upd*. This simply takes the current date and time values, thanks to the date function **datetime()**. This could be useful if you want to keep track of the date and time of your latest updates. Remember to create this variable we had to specify informats and formats for SAS to read and display it correctly.
+
+Now that we've progressively added each new line of code, we can have a look at the final dataset, with the last addition *date_upd*.
+
+![date upd](04/../../screenshots/04_basic_manip/date_upd_cleaning.png)
+
 <a href="sect4"></a>
 
 # 4. Save your new dataset!
