@@ -758,7 +758,7 @@ The new variable looks like this:
 
 ### date_upd = datetime();
 
-The last variable we created is *date_upd*. This simply takes the current date and time values, thanks to the date function **datetime()**. This could be useful if you want to keep track of the date and time of your latest updates, as, whenever you run the code, this variable is going to be updated with the current date and time. Remember to create this variable we had to specify informats and formats for SAS to read and display it correctly.
+The last variable we created is *date_upd*. This simply takes the current date and time values, thanks to the date function **datetime()**. This could be useful if you want to keep track of the date and time of your latest updates, as, whenever you run the code, this variable is going to be updated with the date and time when you did the execution. Remember to create this variable we had to specify informats and formats for SAS to read and display it correctly.
 
 Now that we've progressively added each new line of code, we can have a look at the final dataset, with the last addition *date_upd*.
 
