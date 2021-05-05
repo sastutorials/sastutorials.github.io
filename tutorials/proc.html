@@ -170,7 +170,45 @@ RUN;</div></code></code></pre>
     <p><i>Other parameters will be explained in <a href="">...........</a></i></p>
 <br>
 <h1>2. Proc Compare</h1>
-    <p>...
+    <p>PROC COMPARE compares two data sets: the <strong>base</strong> data set and the <strong>comparison</strong> data set. The procedure determines 
+        matching variables and matching observations. Matching variables are variables with the same name or variables 
+        that you pair by using the VAR and WITH statements. Matching variables must be of the same type. Matching observations 
+        are observations that have the same values for all ID variables that you specify or, if you do not use the ID statement, 
+        that occur in the same position in the data sets. If you match observations by ID variables, then both data sets must 
+        be sorted by all ID variables.
+    </p>
+    <pre><code><code><div>PROC COMPARE BASE=TUTORIAL.terna_test18
+COMPARE=TUTORIAL.terna_test19 
+NOVALUES; 
+RUN;</div></code></code></pre>
+    <p>First, you will see the dataset summary which compares the structure or “metadata” of a dataset including the names, created dates, 
+        modified dates, number of variables, number of observations and any labels:<br>
+        <center><img src="/screenshots/05_proc/ProcCompareRes1.jpg" alt="ProcCompareRes1.jpg"></center>
+    </p>
+    <p>The next section is the Variable Summary, which summarizes how many variables are found in both datasets 
+        (i.e. the variables in common) and how many variables are in one dataset but not the other.
+        <center><img src="/screenshots/05_proc/ProcCompareRes2.jpg" alt="ProcCompareRes2.jpg"></center>
+    </p>
+    <p>The third section is the Observation Summary, which summarizes how many observations are in each dataset 
+        and how many have equal or unequal values in some of the variables:
+        <center><img src="/screenshots/05_proc/ProcCompareRes3.jpg" alt="ProcCompareRes3.jpg"></center>
+    </p>
+    <p>The fourth section is the Values Comparison summary, which lets you know how many different variables
+        were found that had either all values exactly equal or had or some non-matching values:
+        <center><img src="/screenshots/05_proc/ProcCompareRes4.jpg" alt="ProcCompareRes4.jpg"></center>
+    </p>
+    <p>With large datasets, the  Value Comparison Results (the final summary) can become quite lengthy 
+        when you are comparing many variables. Fortunately, you can limit the comparison to a list of variables 
+        that you specify.<br>
+        For example, if you would only like the details of the age variable, you can use the VAR option to specify 
+        the variable ‘BioMass’ as follows:
+    </p>
+    <pre><code><code><div>PROC COMPARE BASE = TUTORIAL. terna_test18
+COMPARE = TUTORIAL.terna_test19 novalues;
+VAR Biomass;
+RUN;</div></code></code></pre>
+    <p>
+        <center><img src="/screenshots/05_proc/ProcCompareListVarRes.jpg" alt="ProcCompareListVarRes.jpg"></center>
     </p>
     <br>
 <h1>3. Proc Freq</h1>
