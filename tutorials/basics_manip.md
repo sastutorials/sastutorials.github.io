@@ -811,6 +811,7 @@ run;
 
 You can see that in the **set statement** the two datasets are written side by side. If you look at the output, you are going to see that where column names match the two datasets are merged one on top of the other.
 
+![terna16_17](04/../../screenshots/04_basic_manip/terna16_17.png)
 
 <a name="sect4"></a>
 
