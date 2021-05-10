@@ -855,7 +855,14 @@ This is what the code is doing
 
 # 5. Exercises and extras
 
--- INSERIRE IL BOTTONE CON IL PROGRAMMA SAS per far pratica --
+<center>
+    <form action="AD">
+        <a href="/terna_data/terna_data.zip"><input type="button" value="DOWNLOAD THE FILE"></a>
+    </form>
+</center>
+
+--- cambiare link del bottone ---
+
 
 <a name="sect6"></a>
 
