@@ -772,7 +772,7 @@ As our last manipulation we are going to combine two datasets - the one we've be
 
 There are a variety of methods to combine datasets, but we're going to look at two:
 * Concatenation;
-* One-to-one merging.
+* Match-merging.
 
 Before starting paste the following code which formats and creates new variables for the second dataset too. This is what we've been doing throughout the tutorial, so don't focus too much on the code and let's move on to the methods of combining datasets.
 
@@ -796,7 +796,7 @@ run;
 
 ### Concatenation
 
-We can concatenate two or more datasets using the **set statement**, and there are different methods to do it with this same statement. 
+We can concatenate two or more datasets using the **set statement**.
 
 Paste the following code on your SAS program.
 
@@ -809,7 +809,23 @@ proc print data=work.terna16_17;
 run;
 ```
 
-You can see that in the **set statement** the two datasets are written side by side. If you look at the output, you are going to see that where column names match the two datasets are merged one on top of the other.
+### Match-merging
+
+Another method to concatenate multiple datasets into one is to use the **merge** statement in a DATA step. 
+
+```
+data terna_matched;
+merge  work.terna16_cleaning1 work.terna17_formatted work.terna18;
+by date;
+run; 
+
+proc print data=work.terna_matched;
+run;
+```
+
+Whether you decide to use **concatenation** or **match-merging**, the resulting dataset is the same. 
+
+If you look at the output, you are going to see that where column names match the two datasets are merged one on top of the other. Instead, where columns are missing in either dataset SAS automatically fills them as *missing* values.
 
 ![terna16_17](04/../../screenshots/04_basic_manip/terna16_17.png)
 
