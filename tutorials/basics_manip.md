@@ -87,20 +87,13 @@ We can also quickly explore the datasets by executing two procedures: **proc con
 Copy the following in a new SAS program (call the program *tutorial_basic_manip.sas*, if you wish to keep it in the future). 
 
 ```
-/*Executing proc contents on the datasets*/
+/*Executing proc contents on terna16*/
 
 proc contents data=work.terna16;
-proc contents data=work.terna17;
-proc contents data=work.terna18;
-proc contents data=work.terna19;
-proc contents data=work.terna20;
-proc contents data=work.terna21;
 run;
 ```
 
-With this code we are repeating the same thing: we want to know **information on the contents of each data set**. In this case, **it is sufficient to run the procedures once**.
-
-Let's use again terna16 as an example - we have repeated the same procedure on all datasets so showing you one of the results is enough. 
+We want to know **information on the contents** of the dataset called *terna16*, which we are going to work with throughout this tutorial.
 
 ![proc_contents_terna16](../screenshots/04_basic_manip/proc_cont_terna16.png)
 
@@ -110,9 +103,26 @@ The proc contents statement gives us a nice overview about the dataset. We are p
 * **Engine/host dependent information**: information about how SAS Studio stores and outputs the dataset; 
 * **Alphabetic List of Variables and Attributes**: as the title explains, it gives a more in depth overview of the variables contained inside the dataset. 
 
-**SPIEGARE DI PIU' SUL PROC CONTENTS:** 
-* LABEL 
-* ALTRE OPTIONS NEL PROC CONTENTS PER RENDERE IL TUTTO PIU' INFORMATIVO
+#### Customise the output
+
+There are a variety of options available for you to customise the output of the procedure. 
+
+Here is the list of available options: 
+
+| Option | Description |
+|:---: | :---: |
+| CENTILES | Prints centiles information for indexed variables |
+| DATA = | Specifies the input dataset |
+| DETAILS / NODETAILS | Sets whether to include information in the output about the number of observations, number of variables and dataset *labels* |
+| DIRECTORY | Prints a list of SAS files in the SAS data library |
+| FMTLEN | Prints the length of the variable's informat or format |
+| MEMTYPE = | Restricts processing to one or more types of a SAS file |
+| NODS | Suppresses the printing of individual files |
+| NOPRINT | Suppresses the printing of the output | 
+| OUT = | Specifies the output dataset |
+| OUT2 = | Specifies an output dataset that contains information about constraints |
+| SHORT | Prints an abbreviated output |
+| VARNUM | Prints a list of the variables by their logical position in the dataset |
 
 <a name="subsect2"></a>
 
@@ -855,14 +865,9 @@ You should now see the new dataset on the left-hand side of the interface, which
 
 # 5. Exercises and extras
 
-<center>
-    <form action="AD">
-        <a href="/terna_data/terna_data.zip"><input type="button" value="DOWNLOAD THE FILE"></a>
-    </form>
-</center>
+**Try data manipulation on your own!**
 
---- cambiare link del bottone ---
-
+You have other 4 datasets at your disposal that you can play with. Clean them, modify them, create new variables, and in the end, merge them all together!
 
 <a name="sect6"></a>
 
