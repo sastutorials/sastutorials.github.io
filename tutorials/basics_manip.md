@@ -829,6 +829,10 @@ If you look at the output, you are going to see that where column names match th
 
 ![terna16_17](04/../../screenshots/04_basic_manip/terna16_17.png)
 
+You should now see the new dataset on the left-hand side of the interface, which you can then download and save in your local machine.
+
+![saved dataset](04/../../screenshots/04_basic_manip/saved_dataset.png)
+
 <a name="sect4"></a>
 
 # 4. Save your new dataset!
@@ -852,7 +856,6 @@ This is what the code is doing
 # 5. Exercises and extras
 
 -- INSERIRE IL BOTTONE CON IL PROGRAMMA SAS per far pratica --
-
 
 <a name="sect6"></a>
 
