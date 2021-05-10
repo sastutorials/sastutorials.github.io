@@ -222,27 +222,57 @@ RUN;</div></code></code></pre>
 RUN;</div></code></code></pre>
     <br>
     <h1>4. Proc Sql & convention</h1>
-    <p><i>If you already know SQL language, this paragraph is made for you and you will see how to use SQL in SAS. 
-    If you don't know it, go to this <a href="https://www.w3schools.com/sql/" class="colori">link</a> and start learning it.</i></p>
+    <p><i>If you already know SQL language, this paragraph is made for you and you will see how to use SQL in SAS.
+            If you don't know it, go to this <a href="https://www.w3schools.com/sql/" class="colori">link</a> and start
+            learning it.</i></p>
     <p>The SAS SQL procedure enables you to:<br>
-        •	retrieve and manipulate data that is stored in tables or views;<br>
-        •	create tables, views, and indexes on columns in tables;<br>
-        •	create SAS macro variables that contain values from rows in a query’s result.<br>
-        •	add or modify the data values in a table’s columns or insert and delete rows. You
-            can also modify the table itself by adding, modifying, or dropping columns;<br>
-        •	send DBMS-specific SQL statements to a database management system (DBMS).
+        • retrieve and manipulate data that is stored in tables or views;<br>
+        • create tables, views, and indexes on columns in tables;<br>
+        • create SAS macro variables that contain values from rows in a query’s result.<br>
+        • add or modify the data values in a table’s columns or insert and delete rows. You
+        can also modify the table itself by adding, modifying, or dropping columns;<br>
+        • send DBMS-specific SQL statements to a database management system (DBMS).
         and retrieve DBMS<br>
     </p>
     <h5>The syntax of the Proc Sql is:</h5>
     <p><strong>PROC SQL</strong> options;<br>
-    <strong>SELECT</strong> column(s)<br>
-    <strong>FROM</strong> table-name | view-name<br>
-    <strong>WHERE</strong> expression<br>
-    <strong>GROUP BY</strong> column(s)<br>
-    <strong>HAVING</strong> expression<br>
-    <strong>ORDER BY</strong> column(s);<br>
-    <strong>QUIT;</strong></p>
-    <br> 
+        <strong>SELECT</strong> column(s)<br>
+        <strong>FROM</strong> table-name | view-name<br>
+        <strong>WHERE</strong> expression<br>
+        <strong>GROUP BY</strong> column(s)<br>
+        <strong>HAVING</strong> expression<br>
+        <strong>ORDER BY</strong> column(s);<br>
+        <strong>QUIT;</strong>
+    </p>
+    <p> Because PROC SQL implements Structured Query Language, it works somewhat
+        differently from other Base SAS procedures, as described here:
+    <ul>
+        <li>
+            When a PROC SQL statement is executed, PROC SQL continues to run until a
+            QUIT statement.
+        </li>
+        <li>
+            SQL procedure statements are divided into clauses. For example, the most basic
+            SELECT statement contains the SELECT and FROM clauses. Items within
+            clauses are separated with commas in SQL, not with blanks as in other.
+        </li>
+        <li>
+            The SELECT statement, which is used to retrieve data, also automatically writes
+            the output data to the Output window unless you specify the NOPRINT option in
+            the PROC SQL statement.
+        </li>
+        <li>
+            The ORDER BY clause sorts data by columns. In addition, tables do not need to
+            be presorted by a variable for use with PROC SQL. Therefore, you do not need to
+            use the SORT procedure with your PROC SQL programs.
+        </li>
+        <li>
+            A PROC SQL statement runs when you submit it; you do not have to specify a
+            RUN statement. If you follow a PROC SQL statement with a RUN statement,
+            then SAS ignores the RUN statement and submits the statements as.</li>
+    </ul>
+    </p>
+    <br>
     <h1>5. Exercises</h1>
     <p>...
     </p>
