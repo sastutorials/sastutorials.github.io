@@ -833,6 +833,20 @@ If you look at the output, you are going to see that where column names match th
 
 # 4. Save your new dataset!
 
+You can save your new, manipulated dataset with a **PROC EXPORT**.
+
+To do so, paste the following code: 
+
+```
+proc export outfile="HOME_FILE_PATH/terna16_17.xls"
+dbms= xls data=work.terna_matched;
+run;
+```
+
+This is what the code is doing
+
+![proc export](04/../../screenshots/04_basic_manip/proc_export.png)
+
 <a  name="sect5"></a>
 
 # 5. Exercises and extras
