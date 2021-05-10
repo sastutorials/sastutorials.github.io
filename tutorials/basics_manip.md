@@ -766,9 +766,52 @@ Now that we've progressively added each new line of code, we can have a look at 
 
 <a name="subsect6"></a>
 
-## Join datasets
+## Combine datasets
 
--- CAPIRE SE METTER SET E POI COS'ALTRO -- LE PROC?? PROC MERGE PER ESEMPIO-- da finire
+As our last manipulation we are going to combine two datasets - the one we've been working on so far and another one on renewable energy generation in 2017.
+
+There are a variety of methods to combine datasets, but we're going to look at two:
+* Concatenation;
+* One-to-one merging.
+
+Before starting paste the following code which formats and creates new variables for the second dataset too. This is what we've been doing throughout the tutorial, so don't focus too much on the code and let's move on to the methods of combining datasets.
+
+```
+/* working with terna '17 */
+data terna17_formatted; 
+set work.terna17;
+informat date mmddyyyy10. dataset_name $CHAR10. date_upd datetime22.;
+format Biomass 3.1 Wind 3.2 Geothermal 3.1 Hydro 3.1 Photovoltaic 3.1 date date9. year yyyy4.
+dataset_name $CHAR10. seasons seasons. dataset_name $LOWCASE10. date_upd datetime22.;
+dataset_name = "terna 2017";
+seasons = date;
+short_name = propcase(compress(dataset_name, " 20"));
+sum_energy_day = round(sum(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+mean_energy_day_low = floor(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+mean_energy_day_high = ceil(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
+day_month = substr(put(date, DATE9.), 1, 5) || " dd-mmm";
+date_upd = datetime();
+run;
+```
+
+### Concatenation
+
+We can concatenate two or more datasets using the **set statement**, and there are different methods to do it with this same statement. 
+
+Paste the following code on your SAS program.
+
+```
+data terna16_17; 
+set work.terna16_cleaning1 work.terna17_formatted;
+run;
+
+proc print data=work.terna16_17;
+run;
+```
+
+You can see that in the **set statement** the two datasets are written side by side. If you look at the output, you are going to see that where column names match the two datasets are merged one on top of the other.
+
+![terna16_17](04/../../screenshots/04_basic_manip/terna16_17.png)
 
 <a name="sect4"></a>
 
