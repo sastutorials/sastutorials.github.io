@@ -296,7 +296,7 @@ RUN;</div></code></code></pre>
     <p>There are numerous other attributes for this procedure:</p>
     <table>
         <tr>
-            <td>SORTSEQ=</td>
+            <td><strong>SORTSEQ=</strong></td>
             <td>Specify any of the collating sequences listed
                 above (ASCII, EBCDIC, DANISH, FINNISH,
                 ITALIAN, NORWEGIAN, POLISH, SPANISH,
@@ -309,46 +309,65 @@ RUN;</div></code></code></pre>
                 locale appropriate collating sequence</td>
         </tr>
         <tr>
-            <td>DATA=</td>
+            <td><strong>DATA=</strong></td>
             <td>Specify the input data set</td>
         </tr>
         <tr>
-            <td>DATECOPY</td>
+            <td><strong>DATECOPY</strong></td>
             <td>Sort a SAS data set without changing the created and
                 modified dates</td>
         </tr>
         <tr>
-            <td>OUT=</td>
+            <td><strong>OUT=</strong></td>
             <td>Specifies the output data set</td>
         </tr>
         <tr>
-            <td>DUPOUT=</td>
+            <td><strong>DUPOUT=</strong></td>
             <td>Specifies the output data set to which duplicate
                 observations are written</td>
         </tr>
         <tr>
-            <td>EQUALS</td>
+            <td><strong>EQUALS</strong></td>
             <td>Maintain relative order within BY groups</td>
         </tr>
         <tr>
-            <td>NOEQUALS</td>
+            <td><strong>NOEQUALS</strong></td>
             <td>Do not maintain relative order within BY groups</td>
         </tr>
         <tr>
-            <td>NODUPKEY</td>
+            <td><strong>NODUPKEY</strong></td>
             <td>Delete observations with duplicate BY values</td>
         </tr>
         <tr>
-            <td>MODE</td>
-            <td>USS</td>
+            <td><strong>NODUPRECS</strong></td>
+            <td>Delete duplicate observations</td>
         </tr>
         <tr>
-            <td>N</td>
-            <td>VAR</td>
+            <td><strong>OVERWRITE</strong></td>
+            <td>Delete the input data set before the replacement
+                output data set is populated</td>
         </tr>
         <tr>
-            <td>MEDIAN | P50</td>
-            <td>Q3 | P75</td>
+            <td><strong>PRESORTED</strong></td>
+            <td>Specify whether or not the data set is likely already
+                sorted</td>
+        </tr>
+        <tr>
+            <td><strong>REVERSE</strong></td>
+            <td>Reverse the collation order for character
+                variables</td>
+        </tr>
+        <tr>
+            <td><strong>SORTSIZE=</strong></td>
+            <td>Specify the available memory</td>
+        </tr>
+        <tr>
+            <td><strong>FORCE</strong></td>
+            <td>Force redundant sorting</td>
+        </tr>
+        <tr>
+            <td><strong>TAGSORT</strong></td>
+            <td>Reduce temporary disk usage</td>
         </tr>
     </table>
     <br>
