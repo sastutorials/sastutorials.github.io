@@ -293,6 +293,64 @@ RUN;</div></code></code></pre>
     <p>
         <center><img src="/screenshots/05_proc/SORT-DOPO.jpg" class="correction"></center>
     </p>
+    <p>There are numerous other attributes for this procedure:</p>
+    <table>
+        <tr>
+            <td>SORTSEQ=</td>
+            <td>Specify any of the collating sequences listed
+                above (ASCII, EBCDIC, DANISH, FINNISH,
+                ITALIAN, NORWEGIAN, POLISH, SPANISH,
+                SWEDISH, or NATIONAL), the name of any
+                other system provided translation table
+                (POLISH, SPANISH), and the name of a
+                user-created translation table. You can specify
+                an encoding. You can also specify either the
+                keyword LINGUISTIC or UCA to achieve a
+                locale appropriate collating sequence</td>
+        </tr>
+        <tr>
+            <td>DATA=</td>
+            <td>Specify the input data set</td>
+        </tr>
+        <tr>
+            <td>DATECOPY</td>
+            <td>Sort a SAS data set without changing the created and
+                modified dates</td>
+        </tr>
+        <tr>
+            <td>OUT=</td>
+            <td>Specifies the output data set</td>
+        </tr>
+        <tr>
+            <td>DUPOUT=</td>
+            <td>Specifies the output data set to which duplicate
+                observations are written</td>
+        </tr>
+        <tr>
+            <td>EQUALS</td>
+            <td>Maintain relative order within BY groups</td>
+        </tr>
+        <tr>
+            <td>NOEQUALS</td>
+            <td>Do not maintain relative order within BY groups</td>
+        </tr>
+        <tr>
+            <td>NODUPKEY</td>
+            <td>Delete observations with duplicate BY values</td>
+        </tr>
+        <tr>
+            <td>MODE</td>
+            <td>USS</td>
+        </tr>
+        <tr>
+            <td>N</td>
+            <td>VAR</td>
+        </tr>
+        <tr>
+            <td>MEDIAN | P50</td>
+            <td>Q3 | P75</td>
+        </tr>
+    </table>
     <br>
     <h1>6. Exercises</h1>
     <p>...
