@@ -138,6 +138,38 @@ You will see that before the proc contents output we saw before, other two table
 
 ![contents_directory](04/../../screenshots/04_basic_manip/contents_dir.png)
 
+##### Option #2: Memtype
+
+###### What are memtypes? 
+
+*Memtypes* or *Member types* are all the files readable by SAS. These include data, views, catalogs and more. For more information on SAS files, extensions and member types check out this [link](https://v8doc.sas.com/sashtml/win/z1iles.htm).
+
+If we add *memtype = catalog* next to the previous line of code, like so:
+
+```
+proc contents data=work.terna16 directory memtype=catalog;
+run;
+```
+
+We are only going to see information of the directory filtered for catalog memtypes only.
+
+![cont dir catalogs](04/../../screenshots/04_basic_manip/contents_dir_catalog.png)
+
+If we add *memtype = data* this time we are going to see information on the two datasets I have uploaded: terna16 and terna17. 
+
+![contents dir data](04/../../screenshots/04_basic_manip/contents_dir_data.png)
+
+##### Option #3: Out
+
+If you want to save the information from the proc contents into a dataset format, you need to use the *out* option, where you specify the name of the dataset, like so: 
+
+```
+proc contents data=work.terna16 directory memtype=data out=data_dir_info;
+run;
+```
+
+![cont out](04/../../screenshots/04_basic_manip/cont_out.png)
+
 <a name="subsect2"></a>
 
 ## PROC PRINT 
