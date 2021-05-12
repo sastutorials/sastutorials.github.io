@@ -232,7 +232,8 @@ RUN;</div></code></code></pre>
     <p><i>If you already know SQL language, this paragraph is made for you and you will see how to use SQL in SAS.
             If you don't know it, go to this <a href="https://www.w3schools.com/sql/" class="colori">link</a> and start
             learning it.</i></p>
-    <p>The SAS SQL procedure enables you to:<br>
+    <p><i>Since you now know what it is, let's get started!</i><br>
+        The SAS SQL procedure enables you to:<br>
         • retrieve and manipulate data that is stored in tables or views;<br>
         • create tables, views, and indexes on columns in tables;<br>
         • create SAS macro variables that contain values from rows in a query’s result.<br>
@@ -251,33 +252,26 @@ RUN;</div></code></code></pre>
         <strong>ORDER BY</strong> column(s);<br>
         <strong>QUIT;</strong>
     </p>
-    <p> Because PROC SQL implements Structured Query Language, it works somewhat
-        differently from other Base SAS procedures, as described here:
+    <p><i>We can omit some of these</i><br>
+        <strong>Let's see what we can do with this procedure, but more importantly, how we can do it... 
+            and some characteristics</strong><br>
     <ul>
         <li>
             When a PROC SQL statement is executed, PROC SQL continues to run until a
             QUIT statement.
         </li>
-        <li>
-            SQL procedure statements are divided into clauses. For example, the most basic
-            SELECT statement contains the SELECT and FROM clauses. Items within
-            clauses are separated with commas in SQL, not with blanks as in other.
+        <li>Every PROC SQL query must have at least one SELECT
+            statement. The purpose of the SELECT statement is to name the
+            columns that will appear on the report and the order in which they
+            will appear.
         </li>
         <li>
-            The SELECT statement, which is used to retrieve data, also automatically writes
-            the output data to the Output window unless you specify the NOPRINT option in
-            the PROC SQL statement.
         </li>
         <li>
-            The ORDER BY clause sorts data by columns. In addition, tables do not need to
-            be presorted by a variable for use with PROC SQL. Therefore, you do not need to
-            use the SORT procedure with your PROC SQL programs.
+
         </li>
         <p><a name="sect5"></a></p>
-        <li>
-            A PROC SQL statement runs when you submit it; you do not have to specify a
-            RUN statement. If you follow a PROC SQL statement with a RUN statement,
-            then SAS ignores the RUN statement and submits the statements as.</li>
+        <li></li>
     </ul>
     </p>
     <br>
@@ -383,7 +377,8 @@ RUN;</div></code></code></pre>
     <p><a name="sect7"></a></p>
     <br>
     <h1>7. Resources</h1>
-    <p><ul>
+    <p>
+    <ul>
         <li><a href="https://www.w3schools.com/sql/" class="colori">SQL tutorial</a></li>
     </ul>
     </p>
