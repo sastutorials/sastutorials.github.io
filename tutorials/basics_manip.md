@@ -66,13 +66,12 @@ by clicking on the button below.
 
 You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on [data access](/tutorials/accessing_data.html), to learn how to **import them on SAS Studio**.
 
-I am going to assume you have the 6 datasets ready to work with.
-
-![imported_data](../screenshots/04_basic_manip/screen_imported_data.png)
-
 You can make sure that all datasets have been temporarily stored inside the *work* library, with the name you've given. I have called the datasets *ternaN* where N stands for the years 2016 until 2021 (the most recent observation). 
 
-Once you've headed to the library, you can also check the content of each dataset. For instance, open the dropdown menu from Terna16. 
+
+For this tutorial, we are going to work with terna16, and at the end with terna17. 
+
+Once you've headed to the library, you can also check the content of each dataset. For instance, terna16.
 
 ![dropdown](../screenshots/04_basic_manip/dropdown_work.png)
 
@@ -123,6 +122,21 @@ Here is the list of available options:
 | OUT2 = | Specifies an output dataset that contains information about constraints |
 | SHORT | Prints an abbreviated output |
 | VARNUM | Prints a list of the variables by their logical position in the dataset |
+
+Let's see some of them. 
+
+##### Option #1: Directory 
+
+You only need to add the *directory* option on the same line of the *proc contents* statement: 
+
+```
+proc contents data=work.terna16 directory;
+run;
+```
+
+You will see that before the proc contents output we saw before, other two tables appear storing information on the *directory*.
+
+![contents_directory](04/../../screenshots/04_basic_manip/contents_dir.png)
 
 <a name="subsect2"></a>
 
