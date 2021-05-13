@@ -176,7 +176,7 @@ For more information and examples on the *contents procedure* click [here](https
 
 ## PROC PRINT 
 
-Another useful thing to do when getting to know the dataset is to print out its raw data. We do so with the [**PRINT procedure**]:
+Another useful thing to do when getting to know the dataset is to print out its raw data. We do so with the [**PRINT procedure**](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p10qiuo2yicr4qn17rav8kptnjpu.htm):
 
 ```
 /* proc print */ 
