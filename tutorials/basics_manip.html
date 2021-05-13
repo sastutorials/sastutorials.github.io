@@ -6,8 +6,8 @@ subtitle: Learn about different SAS functions to implement in the data step.
 
 <!DOCTYPE html>
     <html>
-<body>
-
+<body class="vscode-body vscode-light">
+<br>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
 <li>
@@ -20,23 +20,27 @@ subtitle: Learn about different SAS functions to implement in the data step.
 <p>Learn about different options to control the output for the entire dataset, for only certain observations and / or variables</p>
 </li>
 </ul>
-<h2 id="structure">Structure</h2>
-<p><a href="#sect1">1. Familiarise with the dataset</a></p>
-<p><a href="#subsect1"><sub>PROC CONTENTS</sub></a></p>
-<p><a href="#subsect2"><sub>PROC PRINT</sub></a></p>
-<p><a href="#sect2">2. Data formatting</a></p>
-<p><a href="#subsect3"><sub>FORMAT and INFORMAT in the DATA STEP</sub></a></p>
-<p><a href="#subsect4"><sub>PROC FORMAT</sub></a></p>
-<p><a href="#sect3"> 3. Features and manipulations</p>
-<p><a href="#subsect5"><sub>Feature engineering</sub></a></p>
-<p><a href="#subsect6"><sub>Join datasets</sub></a></p>
-<p><a href="#sect4">4. Save your new dataset!</a></p>
-<p><a href="#sect5">5. Exercises and extras</a></p>
-<p><a href="#sect6">6. Resources</a></p>
+<h2 id="structure">Structure</h2><br>
+<p><a href="#sect1"><h3>1. Familiarise with the dataset</h3></a></p>
+<p><a href="#subsect1"><sub><h5>PROC CONTENTS</h5></sub></a></p>
+<p><a href="#subsect2"><sub><h5>PROC PRINT</h5></sub></a></p>
+<p><a href="#sect2"><h3>2. Data formatting</h3></a></p>
+<p><a href="#subsect3"><sub><h5>FORMAT and INFORMAT in the DATA STEP</h5></sub></a></p>
+<p><a href="#subsect4"><sub><h5>PROC FORMAT</h5></sub></a></p>
+<p><a href="#sect3"><h3>3. Features and manipulations</h3></p>
+<p><a href="#subsect5"><sub><h5>Feature engineering</h5></sub></a></p>
+<p><a href="#subsect6"><sub><h5>Join datasets</h5></sub></a></p>
+<p><a href="#sect4"><h3>4. Save your new dataset!</h3></a></p>
+<p><a href="#sect5"><h3>5. Exercises and extras</h3></a></p>
+<p><a href="#sect6"><h3>6. Resources</h3></a></p>
+
 <p><a name="sect1"></a></p>
+<br>
+<br>
+<br>
 <h1 id="1-familiarise-with-the-dataset">1. Familiarise with the dataset</h1>
 <p>Every data scientist has a specific workflow to carry out a project: importing, cleaning, analysing dataset(s) and presenting an output, usually through a visual medium. <strong>80% of our work consists of cleaning and preparing the datasets for analysis and modelling</strong>. As you can imagine, raw datasets come in all shapes and forms, and that is way it takes way more time and effort to clean them, sort them, create new variables, than carrying out the analysis and reporting.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\datascience_workflow.png" alt="datascience_workflow"></p>
+<p><center><img src="/screenshots/04_basic_manip/datascience_workflow.png" alt="datascience_workflow"></center></p>
 <p><strong>In this tutorial we are going to learn how to carry out some basic data manipulation with SAS.</strong></p>
 <p>Once you have your data imported on your programming interface, the first thing you need to do is to familiarise with the dataset or series of datasets you are working with.</p>
 <p>You should have your datasets uploaded and imported on SAS
@@ -47,14 +51,18 @@ by clicking on the button below.</p>
         <a href="/terna_data/terna_data.zip"><input type="button" value="DOWNLOAD THE FILE"></a>
     </form>
 </center>
-<p>You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on <a href="/tutorials/accessing_data.html">data access</a>, to learn how to <strong>import them on SAS Studio</strong>.</p>
+<p>You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on <a href="/tutorials/accessing_data.html" class="colori">data access</a>, to learn how to <strong>import them on SAS Studio</strong>.</p>
 <p>You can make sure that all datasets have been temporarily stored inside the <em>work</em> library, with the name you've given. I have called the datasets <em>ternaN</em> where N stands for the years 2016 until 2021 (the most recent observation).</p>
 <p>For this tutorial, we are going to work with terna16, and at the end with terna17.</p>
 <p>Once you've headed to the library, you can also check the content of each dataset. For instance, terna16.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\dropdown_work.png" alt="dropdown"></p>
+<p><center><img src="/screenshots/04_basic_manip/dropdown_work.png" alt="dropdown"></center></p>
 <p>Each variable is accompanied by a symbol which already <strong>gives you information on the format of the variable</strong>. You can see most variables are numeric except <em>date</em>, which is datetime format.</p>
 <p>We can also quickly explore the datasets by executing two procedures: <strong>proc contents</strong> and <strong>proc print</strong>.</p>
+
 <p><a name="subsect1"></a></p>
+<br>
+<br>
+<br>
 <h2 id="proc-contents">PROC CONTENTS</h2>
 <p>Copy the following in a new SAS program (call the program <em>tutorial_basic_manip.sas</em>, if you wish to keep it in the future).</p>
 <pre><code><code><div>/*Executing proc contents on terna16*/
@@ -63,8 +71,8 @@ proc contents data=work.terna16;
 run;
 </div></code></code></pre>
 <p>We want to know <strong>information on the contents</strong> of the dataset called <em>terna16</em>, which we are going to work with throughout this tutorial.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\proc_cont_terna16.png" alt="proc_contents_terna16"></p>
-<p>The proc contents statement gives us a nice overview about the dataset. We are provided with three tables, which you've already explore in the <a href="accessing_data.html">data access</a> tutorial.</p>
+<p><center><img src="/screenshots/04_basic_manip/proc_cont_terna16.png" alt="proc_contents_terna16"></center></p>
+<p>The proc contents statement gives us a nice overview about the dataset. We are provided with three tables, which you've already explore in the <a href="accessing_data.html" class="colori">data access</a> tutorial.</p>
 <ul>
 <li><strong>dataset description</strong>, including: dataset name and the library it is contained within, n of observations, of variables and the maximum length allowed for a data value;</li>
 <li><strong>Engine/host dependent information</strong>: information about how SAS Studio stores and outputs the dataset;</li>
@@ -138,28 +146,32 @@ run;
 run;
 </div></code></code></pre>
 <p>You will see that before the proc contents output we saw before, other two tables appear storing information on the <em>directory</em>.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\contents_dir.png" alt="contents_directory"></p>
+<p><center><img src="/screenshots/04_basic_manip/contents_dir.png" alt="contents_directory"></center></p>
 <h5 id="option-2-memtype">Option #2: Memtype</h5>
 <h6 id="what-are-memtypes">What are memtypes?</h6>
-<p><em>Memtypes</em> or <em>Member types</em> are all the files readable by SAS. These include data, views, catalogs and more. For more information on SAS files, extensions and member types check out this <a href="https://v8doc.sas.com/sashtml/win/z1iles.htm">link</a>.</p>
+<p><em>Memtypes</em> or <em>Member types</em> are all the files readable by SAS. These include data, views, catalogs and more. For more information on SAS files, extensions and member types check out this <a href="https://v8doc.sas.com/sashtml/win/z1iles.htm" class="colori">link</a>.</p>
 <p>If we add <em>memtype = catalog</em> next to the previous line of code, like so:</p>
 <pre><code><code><div>proc contents data=work.terna16 directory memtype=catalog;
 run;
 </div></code></code></pre>
 <p>We are only going to see information of the directory filtered for catalog memtypes only.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\contents_dir_catalog.png" alt="cont dir catalogs"></p>
+<p><center><img src="/screenshots/04_basic_manip/contents_dir_catalog.png" alt="cont dir catalogs"></center></p>
 <p>If we add <em>memtype = data</em> this time we are going to see information on the two datasets I have uploaded: terna16 and terna17.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\contents_dir_data.png" alt="contents dir data"></p>
+<p><center><img src="/screenshots/04_basic_manip/contents_dir_data.png" alt="contents dir data"></center></p>
 <h5 id="option-3-out">Option #3: Out</h5>
 <p>If you want to save the information from the proc contents into a dataset format, you need to use the <em>out</em> option, where you specify the name of the dataset, like so:</p>
 <pre><code><code><div>proc contents data=work.terna16 directory memtype=data out=data_dir_info;
 run;
 </div></code></code></pre>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\cont_out.png" alt="cont out"></p>
-<p>For more information and examples on the <em>contents procedure</em> click <a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/n1hqa4dk5tay0an15nrys1iwr5o2.htm">here</a>.</p>
+<p><center><img src="/screenshots/04_basic_manip/cont_out.png" alt="cont out"></center></p>
+<p>For more information and examples on the <em>contents procedure</em> click <a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/n1hqa4dk5tay0an15nrys1iwr5o2.htm" class="colori">here</a>.</p>
+
 <p><a name="subsect2"></a></p>
+<br>
+<br>
+<br>
 <h2 id="proc-print">PROC PRINT</h2>
-<p>Another useful thing to do when getting to know the dataset is to print out its raw data. We do so with the <a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p10qiuo2yicr4qn17rav8kptnjpu.htm"><strong>PRINT procedure</strong></a>:</p>
+<p>Another useful thing to do when getting to know the dataset is to print out its raw data. We do so with the <a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p10qiuo2yicr4qn17rav8kptnjpu.htm" class="colori"><strong>PRINT procedure</strong></a>:</p>
 <pre><code><code><div>/* proc print */ 
 
 proc print data=work.terna16; 
@@ -184,8 +196,12 @@ run;
 proc print data = work.last10;
 run;
 </div></code></code></pre>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\top_bottom_10.png" alt="top_bottom_10"></p>
+<p><center><img src="/screenshots/04_basic_manip/top_bottom_10.png" alt="top_bottom_10"></center></p>
+
 <p><a name="sect2"></a></p>
+<br>
+<br>
+<br>
 <h1 id="data-formatting">Data formatting</h1>
 <p>Before getting to the actual manipulation of the datasets, you always need to <strong>observe the characteristics of the variables and observations inside each dataset</strong>.</p>
 <p>This way, you can start getting a general <strong>overview</strong> of them, and see if any <strong>formatting changes</strong> need to be made.</p>
@@ -197,10 +213,13 @@ run;
 </ol>
 <p>SAS reads <em>numeric data</em> by default. However, it is necessary to <strong>add specifications</strong> to make SAS read particular types of <strong>numerical</strong> data as well as <strong>other data formats</strong> (or <em>types</em>).</p>
 <p><a name="subsect3"></a></p>
+<br>
+<br>
+<br>
 <h2 id="format-and-informat-in-the-data-step">FORMAT and INFORMAT in the DATA STEP</h2>
-<p>Do you recall the concept of format and informat statements from <a href="tutorials/../accessing_data.html">accessing data</a>?</p>
+<p>Do you recall the concept of format and informat statements from <a href="tutorials/../accessing_data.html" class="colori">accessing data</a>?</p>
 <p>Informats and formats present the same formatting specifications. However, <strong>they are used for very different purposes</strong>. The <strong>informat</strong> statement enables SAS to read a non-standard variable, while the <strong>format</strong> statement allows SAS to display the same variable when printed to the output window or viewed in a viewtable window. This implies that <strong>before the format statement there always needs to be an informat</strong>. In fact, printing an output without having <em>_in_formatted the data</em> first will not display anything because SAS has not been able to read and interpret it.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\in-format-workflow.png" alt="in-format workflow"></p>
+<p><center><img src="/screenshots/04_basic_manip/in-format-workflow.png" alt="in-format workflow"></center></p>
 <p>The syntax does not vary between formats and informats, and it is generally presented as</p>
 <p><strong>(IN)FORMAT<em>w.d</em></strong></p>
 <p>where</p>
@@ -276,7 +295,7 @@ run;
 <li>To format the variables we have specified the <em>w.d</em> options mentioned before. The <em>w.</em> relates to the <strong>total character length set for the value</strong> which we set to 5, while the <em>d</em> refers to the number of decimal places allowed, or 2 in our case.</li>
 </ul>
 <p>You can see the difference between the formatted numeric values and the original format below.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\numeric_formatting.png" alt="numeric_formatting"></p>
+<p><center><img src="/screenshots/04_basic_manip/numeric_formatting.png" alt="numeric_formatting"></center></p>
 <p>Also check what happens if we only wrote an <em>informat statement</em>, instead of the format.</p>
 <pre><code><code><div>/* Numeric data formatting: setting number of decimal places */
 
@@ -285,7 +304,7 @@ set work.terna16;
 informat Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2;
 run;
 </div></code></code></pre>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\wrong_informat-numeric.png" alt="wrong_informat-numeric"></p>
+<p><center><img src="/screenshots/04_basic_manip/wrong_informat-numeric.png" alt="wrong_informat-numeric"></center></p>
 <p>What has changed? <em>Nothing</em>! <strong>The informat does not work as it does not find any value to transform in order to make it compatible with SAS</strong>.</p>
 <h3 id="datetime-informatting">Datetime (in)formatting</h3>
 <p>This table shows a few common examples of (in)formatting types used for date-time values.</p>
@@ -338,7 +357,7 @@ run;
 </tbody>
 </table>
 <p>In our datasets, two are date-time variables: <em>year</em> and <em>date</em>. If you go back to the results from the PROC CONTENTS, you can see that the variable <strong>date</strong> is correctly seen as a date, formatted as <em>MMDDYY10.</em>, while <strong>year</strong> is considered a numeric variable just like the other ones.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\date-year-format-original.png" alt="original_datetime_format"></p>
+<p><center><img src="/screenshots/04_basic_manip/date-year-format-original.png" alt="original_datetime_format"></center></p>
 <p>We can play around with the two variables to see how they change as we change their format.</p>
 <p>Let's have a look at the <em>date</em> variable -- if you remember the proc contents, it identifies the data type as numeric but outputs a string-like variable like a date value.</p>
 <p>Let's try and print out the format with month written in words, not in numbers.</p>
@@ -356,9 +375,9 @@ run;
 proc contents data=work.terna16_formatted1;run;
 </div></code></code></pre>
 <p>You can see that compared to earlier, we have <strong>switched the order of day and month values</strong> and we have also <strong>turned the month to a worded format</strong>.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\date_format_date9.png" alt="date9 format"></p>
+<p><center><img src="/screenshots/04_basic_manip/date_format_date9.png" alt="date9 format"></center></p>
 <p>You can see the contents have changed too, but not the data type, which is still <em>numeric</em>. Remember that this happens because <strong>SAS does not present a built-in recognition for dates</strong>, but only for numeric and character-like data.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\format_numeric_for_dates.png" alt="data type num for dates"></p>
+<p><center><img src="/screenshots/04_basic_manip/format_numeric_for_dates.png" alt="data type num for dates"></center></p>
 <p>Let's try and take this dataset and <strong>remove the day part of the date</strong>. We can do this with the <em>MONYY</em> format.</p>
 <pre><code><code><div>/* Date formatting -- MONYY */
 
@@ -390,7 +409,7 @@ run;
 </li>
 </ul>
 <p>This is what your result should look like, compared to the original dataset without the <em>date</em> variable formatted to MON-YY:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\date_formatting.png" alt="date_formatting"></p>
+<p><center><img src="/screenshots/04_basic_manip/date_formatting.png" alt="date_formatting"></center></p>
 <p>We could have also chosen to display the date with the year showing only two digits - like so:</p>
 <pre><code><code><div>/* Date formatting -- 2-digit year */
 
@@ -404,7 +423,7 @@ run;
 proc print data=work.terna16_formatted2 (obs=10); 
 run; 
 </div></code></code></pre>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\date_formatting_2digit.png" alt="year_2-digit"></p>
+<p><center><img src="/screenshots/04_basic_manip/date_formatting_2digit.png" alt="year_2-digit"></center></p>
 <p>Now, if we wanted to change the format of the <em>year</em> variable, we could use the following code. Paste it in your SAS program.</p>
 <pre><code><code><div>/* Formatting the year variable */
 
@@ -422,13 +441,13 @@ run;
 <li>printing the first 10 observations of the new dataset <em>terna16_year</em>.</li>
 </ul>
 <p>The result should look like this.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\formatting%20the%20year%20variable.png" alt="formatting year"></p>
+<p><center><img src="/screenshots/04_basic_manip/formatting%20the%20year%20variable.png" alt="formatting year"></center></p>
 <p>From the output you don't see any difference, which is normal because we haven't told SAS to change the length of the variable, <strong>we have only specified that it is a year (date-time) type of value</strong>. You can actually see the difference when running the PROC CONTENTS on the data set.</p>
 <pre><code><code><div>proc contents data=work.terna16_year; 
 run; 
 </div></code></code></pre>
 <p>This is the output.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\proc_contents-formatted.png" alt="contents_formatted"></p>
+<p><center><img src="/screenshots/04_basic_manip/proc_contents-formatted.png" alt="contents_formatted"></center></p>
 <p>In that same table you can actually see all the formatting modifications we have applied to the dataset:</p>
 <ul>
 <li>The numeric variables present the maxmimum character length of 5 and the 2 decimal places;</li>
@@ -441,7 +460,7 @@ run;
 proc contents data=work.terna16_year (obs=10);
 run;</p>
 <p>Check out the results below.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\comparing_formats-date.png" alt="comparing_contents"></p>
+<p><center><img src="/screenshots/04_basic_manip/comparing_formats-date.png" alt="comparing_contents"></center></p>
 <h3 id="string-informatting">String (in)formatting</h3>
 <p>This table shows a few common examples of (in)formatting types used for string type values.</p>
 <table>
@@ -510,7 +529,7 @@ run;
 <li>When copying a dataset with the set statement, you also have the possibility to <em>add new variables</em> - whether they are calculated fields, string values, date values, etc. In our case we are creating a new variable called <em>dataset_name</em>, which is going to print a constant string value: <em>Terna 2016</em>.</li>
 </ul>
 <p>You can see the dataset now presents this addition by printing it (proc print) and having a look at the results tab.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\character_var.png" alt="char var"></p>
+<p><center><img src="/screenshots/04_basic_manip/character_var.png" alt="char var"></center></p>
 <p>Okay, now we can start formatting the data. First we can set the informats and formats to be of a specified character data type.</p>
 <pre><code><code><div>/* proc contents data=work.terna16_newvar;
 run; */
@@ -522,9 +541,9 @@ format dataset_name $CHAR10.;
 run; 
 </div></code></code></pre>
 <p>We haven't changed the length of the variable while setting formats and informats and that is why we don't see any difference in the resulting dataset.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\char_var_formatted.png" alt="char_var_formatted"></p>
+<p><center><img src="/screenshots/04_basic_manip/char_var_formatted.png" alt="char_var_formatted"></center></p>
 <p>In this case we can only see the difference when running a PROC CONTENTS.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\char_var_contents.png" alt="char var cont"></p>
+<p><center><img src="/screenshots/04_basic_manip/char_var_contents.png" alt="char var cont"></center></p>
 <p>You can see the difference between proc contents a) and b).</p>
 <ul>
 <li>A) The PROC CONTENTS shows the dataset before formatting and we can see that SAS recognises the variable <em>dataset_name</em> is character variable of length 10;</li>
@@ -540,9 +559,9 @@ format dataset_name $CHAR5.;
 run; 
 </div></code></code></pre>
 <p>We have reduced the maximum character length allowed for the variable from 10 to 5. In this way, the string we have input earlier is cut only showing the word <em>&quot;Terna&quot;</em> out of the entire string.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\char_var_length.png" alt="char_var_length"></p>
+<p><center><img src="/screenshots/04_basic_manip/char_var_length.png" alt="char_var_length"></center></p>
 <p>If we set the character length to be <em>7</em>, for example, we would start to see part of the next &quot;word&quot; (in our case the year 2016).</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\char_var_length7.png" alt="char_var_length7"></p>
+<p><center><img src="/screenshots/04_basic_manip/char_var_length7.png" alt="char_var_length7"></center></p>
 <p>For this reason, remember to format <strong>a reasonable character length</strong> according to the type of string value you want to display.</p>
 <p>Let's do another formatting example. Say we want to set all values for the string variable to be upcase. This is very simple to do with the <em>$UPCASE.</em> formatting specification.</p>
 <p>Paste this code in your program.</p>
@@ -558,10 +577,13 @@ proc print data=work.terna16_newvar_upcase (obs=10);
 run;
 </div></code></code></pre>
 <p>The characters of the string have effectively been converted to upcase.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\char_var_UPCASE.png" alt="char_var_upcase"></p>
+<p><center><img src="/screenshots/04_basic_manip/char_var_UPCASE.png" alt="char_var_upcase"></center></p>
 <p>And we can verify the change in format with the PROC CONTENTS.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\char_var_upcase_contents.png" alt="char_var_cont"></p>
+<p><center><img src="/screenshots/04_basic_manip/char_var_upcase_contents.png" alt="char_var_cont"></center></p>
 <p><a name="subsect4"></a></p>
+<br>
+<br>
+<br>
 <h2 id="proc-format">PROC FORMAT</h2>
 <p>There is another method to define formats and informats, and that is with the <strong>PROC FORMAT</strong>. PROC FORMAT is a procedure creating a mapping of data values into <strong>data labels</strong>, thus formats and informats that can later be <strong>explicitly assigned</strong> to a dataset.</p>
 <p>Therefore, with the PROC FORMAT we can create customised formats and informats that we can store in a library to use whenever it is needed. A very useful tool with a vast range of applications of which we are going to explore a few.</p>
@@ -633,7 +655,7 @@ proc print data=work.terna16_proc_formatted;
 run;
 </div></code></code></pre>
 <p>Once you've run this code, you can see that the variables describing energy generated for each renewable source have changed according to the labels specified in the proc format.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\proc_format_energy.png" alt="proc format energy"></p>
+<p><center><img src="/screenshots/04_basic_manip/proc_format_energy.png" alt="proc format energy"></center></p>
 <p>Make sure you have written <em>value</em> as the statement to define a <em>format</em>. You can check that it won't work as an <em>informat</em> like this:</p>
 <pre><code><code><div>data terna16_proc_formatted;
 set work.terna16_newvar_upcase;
@@ -644,7 +666,7 @@ proc print data=work.terna16_proc_formatted;
 run;
 </div></code></code></pre>
 <p>If you now run the code you will see that nothing has changed in the output - the informat <em>generation.</em> has not worked because it does not exist.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\proc_format_nochange.png" alt="proc format no change - informat"></p>
+<p><center><img src="/screenshots/04_basic_manip/proc_format_nochange.png" alt="proc format no change - informat"></center></p>
 <p>For our last example, we are going to categorise our date variable into the four seasons, following the days of solstice and equinox as our ranges for the four labels. Paste the following code into your SAS program:</p>
 <pre><code><code><div>/* Date values into seasons */ 
 
@@ -667,12 +689,12 @@ run;
 </div></code></code></pre>
 <p>We have created a new variable called <em>seasons</em> to carry out the formatting on the dataset. This way we don't have to overwrite the date variable and we can look at them side by side.</p>
 <p>This is the resulting dataset (I am only showing snippets of it, to demonstrate the four groups corresponding to the seasons):</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\proc_format_seasons.png" alt="proc formatting seasons"></p>
+<p><center><img src="/screenshots/04_basic_manip/proc_format_seasons.png" alt="proc formatting seasons"></center></p>
 <h4 id="formats-and-informats-are-stored-in-a-sas-catalog">Formats and informats are stored in a SAS catalog</h4>
 <p>We can find all the formats and informats we've just creaated are now stored in a SAS catalog.</p>
-<p>Use the code we used in the <a href="#proc-contents">proc contents</a> above, where we printed the directory and filtered the memtype to catalogs only.</p>
+<p>Use the code we used in the <a href="#proc-contents" class="colori">proc contents</a> above, where we printed the directory and filtered the memtype to catalogs only.</p>
 <p>This is the output:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\proc_format_contents.png" alt="proc format catalog"></p>
+<p><center><img src="/screenshots/04_basic_manip/proc_format_contents.png" alt="proc format catalog"></center></p>
 <p>To see the content of the <em>format</em> catalog, paste the following code which uses the <strong>catalog procedure</strong>:</p>
 <pre><code><code><div>/* printing the formats catalog */
 
@@ -681,16 +703,22 @@ contents;
 run;
 </div></code></code></pre>
 <p>You will see this result in the results tab:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\print_format_catalog.png" alt="print format catalog"></p>
+<p><center><img src="/screenshots/04_basic_manip/print_format_catalog.png" alt="print format catalog"></center></p>
 <p><a name="sect3"></a></p>
+<br>
+<br>
+<br>
 <h1 id="3-features-and-manipulations">3. Features and manipulations</h1>
 <p>We have formatted our data and displayed them as we liked.
 Now, we can explore some data manipulation techniques further using <strong>DATA step functions</strong>.</p>
 <h5 id="functions-run-in-cas">Functions run in CAS</h5>
-<p>Some functions explained here can also be run in CAS, while others run in SAS <em>only</em>. If you are interested or need to write functions that run on the CAS server, check out <a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n01f5qrjoh9h4hn1olbdpb5pr2td.htm">this link</a> listing <strong>functions and call routines by category</strong>. Head down to the CAS category to see which functions which are accepted in CAS.</p>
-<p>If you want to initiate a CAS session, follow the section 6 on <em>&quot;How to open a CAS session&quot;</em> from the <strong>data access</strong> tutorial at <a href="https://sastutorials.github.io/tutorials/accessing_data.html#sect6">this link</a>.</p>
-<p>See examples of executing functions that output to CAS or on CAS at <a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n1ajdn61edqo70n1jfu3h5bcu0f5.htm">this link</a>.</p>
+<p>Some functions explained here can also be run in CAS, while others run in SAS <em>only</em>. If you are interested or need to write functions that run on the CAS server, check out <a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n01f5qrjoh9h4hn1olbdpb5pr2td.htm" class="colori">this link</a> listing <strong>functions and call routines by category</strong>. Head down to the CAS category to see which functions which are accepted in CAS.</p>
+<p>If you want to initiate a CAS session, follow the section 6 on <em>&quot;How to open a CAS session&quot;</em> from the <strong>data access</strong> tutorial at <a href="https://sastutorials.github.io/tutorials/accessing_data.html#sect6" class="colori">this link</a>.</p>
+<p>See examples of executing functions that output to CAS or on CAS at <a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n1ajdn61edqo70n1jfu3h5bcu0f5.htm" class="colori">this link</a>.</p>
 <p><a name = "subsect5"></a></p>
+<br>
+<br>
+<br>
 <h2 id="feature-engineering">Feature engineering</h2>
 <p>Let's take the latest dataset with the seasons and make some changes on it. Paste the following code in your SAS program:</p>
 <pre><code><code><div>/* Adding new features to our dataset*/
@@ -716,13 +744,13 @@ proc print data=work.terna16_cleaning (obs=10);
 run;
 </div></code></code></pre>
 <p>There is a lot going on here. We have done some <strong>feature engineering</strong>, which means creating new variables as a result of calculations or conditions from the existing variables. By creating new features, we are also exploring a variety of <strong>DATA step functions</strong> for character, numeric and date variables. This is the output (the first 10 rows of the dataset):</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\FINAL_modif.png" alt="final modif"></p>
+<p><center><img src="/screenshots/04_basic_manip/FINAL_modif.png" alt="final modif"></center></p>
 <p>Don't panic! <strong>Let's go through the code line by line.</strong></p>
 <h3 id="data-terna16_cleaning-drop--year">data terna16_cleaning (drop = year);</h3>
 <h3 id="set-workterna16_seasons">set work.terna16_seasons;</h3>
 <p>Aside from creating a new dataset, we are telling SAS not to copy one variable from the other dataset (<em>work.terna16_seasons</em>), and that variable is <em>year</em>.</p>
 <p>This is what the output looks like having dropped the variable:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\no_year_cleaning.png" alt="no_year_cleaning"></p>
+<p><center><img src="/screenshots/04_basic_manip/no_year_cleaning.png" alt="no_year_cleaning"></center></p>
 <h3 id="informat-date_upd-datetime22">informat date_upd datetime22.;</h3>
 <h3 id="format-dataset_name-lowcase10-date_upd-datetime22-">format dataset_name $LOWCASE10. date_upd datetime22. ;</h3>
 <p>First thing we need to do before the new features is to set any new formats or informats so that SAS can read and display them correctly. In this case, we need to create and informat and format for the new feature <em>date_upd</em>; we are also setting the existing variable <em>dataset_name</em> to <strong>lower case</strong>, so that we could do some data manipulation on the variable which we couldn't formatted as <strong>upper case</strong> as we left it.</p>
@@ -733,27 +761,27 @@ run;
 <li><strong>propcase</strong> returns the new character variable with the first letter converted to <em>uppercase</em>.</li>
 </ul>
 <p>This is what the result looks like (together with the format statement):</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\short_name_cleaning.png" alt="short-name"></p>
+<p><center><img src="/screenshots/04_basic_manip/short_name_cleaning.png" alt="short-name"></center></p>
 <h3 id="sum_energy_day--roundsumwind-geothermal-hydro-photovoltaic-biomass">sum_energy_day = round(sum(Wind, Geothermal, Hydro, Photovoltaic, Biomass));</h3>
 <p>This new variable, <em>sum_energy_day</em> is calculating the total energy generated (GWh) by the 5 renewable energy resources each day. The <strong>sum()</strong> function calculates by row and over different columns that need to be specified - in our case, the renewables.</p>
 <p>Not only we are summing row by row, but we have also wrapped the sum around another numeric function <strong>round()</strong>, which rounds up the value to the nearest integer value (could be <em>either lower or higher</em>). Our result is the total energy generated but rounded up to be an integer, like so:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\sum_cleaning.png" alt="sum"></p>
+<p><center><img src="/screenshots/04_basic_manip/sum_cleaning.png" alt="sum"></center></p>
 <h3 id="mean_energy_day_low--floormeanwind-geothermal-hydro-photovoltaic-biomass">mean_energy_day_low = floor(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));</h3>
 <p>For the new variable <em>mean_energy_day_low</em> we are instead calculating the daily average of energy generated (GWh) across the 5 renewables. The <strong>mean()</strong> functions works just like sum(): it calculates across variables, by row.</p>
 <p>This time, we are rounding the resulting values to the lowest decimal, thanks to the <strong>floor()</strong> numeric function.</p>
 <p>The output with this new feature now looks like this:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\mean_low_cleaning.png" alt="mean low"></p>
+<p><center><img src="/screenshots/04_basic_manip/mean_low_cleaning.png" alt="mean low"></center></p>
 <h3 id="mean_energy_day_high--ceilmeanwind-geothermal-hydro-photovoltaic-biomass">mean_energy_day_high = ceil(mean(Wind, Geothermal, Hydro, Photovoltaic, Biomass));</h3>
 <p>For the variable <em>mean_energy_day_high</em> we are doing exactly the same thing as above, calculating the mean energy generated by day. The difference lies in the <strong>integer rounding function</strong>: in fact, <strong>ceil()</strong> does the opposite of <em>floor()</em>, because it <strong>rounds up the value to the highest integer</strong>, instead of the lowest.</p>
 <p>Just like so:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\mean_high_cleaning.png" alt="mean-high"></p>
+<p><center><img src="/screenshots/04_basic_manip/mean_high_cleaning.png" alt="mean-high"></center></p>
 <h3 id="dif_wind--difwind">dif_Wind = dif(Wind);</h3>
 <h3 id="dif_geothermal--difgeothermal">dif_Geothermal = dif(Geothermal);</h3>
 <h3 id="dif_hydro--difhydro">dif_Hydro = dif(Hydro);</h3>
 <h3 id="dif_photovoltaic--difphotovoltaic">dif_Photovoltaic = dif(Photovoltaic);</h3>
 <h3 id="dif_biomass--difbiomass">dif_Biomass = dif(Biomass);</h3>
 <p>These 5 new variables are called <em>dif_Wind</em>, <em>dif_Geothermal</em>, <em>dif_Hydro</em>, <em>dif_Photovoltaic</em> and <em>dif_Biomass</em>, and reflect the <strong>difference in energy generated from one day to the next</strong> for each renewable energy source. This calculation is possible and quick thanks to the numeric function <strong>dif()</strong>.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\dif_energy_cleaning.png" alt="dif energy"></p>
+<p><center><img src="/screenshots/04_basic_manip/dif_energy_cleaning.png" alt="dif energy"></center></p>
 <h3 id="day_month--substrputdate-date9-1-5---dd-mmm">day_month = substr(put(date, DATE9.), 1, 5) || &quot; dd-mmm&quot;;</h3>
 <p>In the new variable <em>day_month</em> we have nested two functions:</p>
 <ul>
@@ -762,13 +790,16 @@ run;
 </ul>
 <p>Not only, with <strong>substr()</strong> it is also possible to concatenate other string character values, through the <strong><code>||</code></strong> symbol, followed by the new string.</p>
 <p>The new variable looks like this:</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\ddmmm_cleaning.png" alt="ddmmm"></p>
+<p><center><img src="/screenshots/04_basic_manip/ddmmm_cleaning.png" alt="ddmmm"></center></p>
 <h3 id="date_upd--datetime">date_upd = datetime();</h3>
 <p>The last variable we created is <em>date_upd</em>. This simply takes the current date and time values, thanks to the date function <strong>datetime()</strong>. This could be useful if you want to keep track of the date and time of your latest updates, as, whenever you run the code, this variable is going to be updated with the date and time when you did the execution. Remember to create this variable we had to specify informats and formats for SAS to read and display it correctly.</p>
 <p>Now that we've progressively added each new line of code, we can have a look at the final dataset, with the last addition <em>date_upd</em>.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\date_upd_cleaning.png" alt="date upd"></p>
+<p><center><img src="/screenshots/04_basic_manip/date_upd_cleaning.png" alt="date upd"></center></p>
 <p><a name="subsect6"></a></p>
-<h2 id="combine-datasets">Combine datasets</h2>
+<br>
+<br>
+<br>
+<h2 id="join-datasets">Join datasets</h2>
 <p>As our last manipulation we are going to combine two datasets - the one we've been working on so far and another one on renewable energy generation in 2017.</p>
 <p>There are a variety of methods to combine datasets, but we're going to look at two:</p>
 <ul>
@@ -814,8 +845,11 @@ run;
 </div></code></code></pre>
 <p>Whether you decide to use <strong>concatenation</strong> or <strong>match-merging</strong>, the resulting dataset is the same.</p>
 <p>If you look at the output, you are going to see that where column names match the two datasets are merged one on top of the other. Instead, where columns are missing in either dataset SAS automatically fills them as <em>missing</em> values.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\terna16_17.png" alt="terna16_17"></p>
+<p><center><img src="/screenshots/04_basic_manip/terna16_17.png" alt="terna16_17"></center></p>
 <p><a name="sect4"></a></p>
+<br>
+<br>
+<br>
 <h1 id="4-save-your-new-dataset">4. Save your new dataset!</h1>
 <p>You can save your new, manipulated dataset with a <strong>PROC EXPORT</strong>.</p>
 <p>To do so, paste the following code:</p>
@@ -824,21 +858,27 @@ dbms= xls data=work.terna_matched;
 run;
 </div></code></code></pre>
 <p>This is what the code is doing</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\proc_export.png" alt="proc export"></p>
+<p><center><img src="/screenshots/04_basic_manip/proc_export.png" alt="proc export"></center></p>
 <p>You should now see the new dataset on the left-hand side of the interface, which you can then download and save in your local machine.</p>
-<p><img src="file:///c:\Users\achirumbolo\Documents\SAS\sastutorials.github.io\screenshots\04_basic_manip\saved_dataset.png" alt="saved dataset"></p>
+<p><center><img src="/screenshots/04_basic_manip/saved_dataset.png" alt="saved dataset"></center></p>
 <p><a  name="sect5"></a></p>
+<br>
+<br>
+<br>
 <h1 id="5-exercises-and-extras">5. Exercises and extras</h1>
 <p><strong>Try data manipulation on your own!</strong></p>
 <p>You have other 4 datasets at your disposal that you can play with. Clean them, modify them, create new variables, and in the end, merge them all together!</p>
 <p><a name="sect6"></a></p>
+<br>
+<br>
+<br>
 <h1 id="6-resources">6. Resources</h1>
 <ul>
-<li><a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/n1hqa4dk5tay0an15nrys1iwr5o2.htm">PROC CONTENTS</a>;</li>
-<li><a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p10qiuo2yicr4qn17rav8kptnjpu.htm">PROC PRINT</a>;</li>
-<li><a href="http://v8doc.sas.com/sashtml/lrcon/z0920449.htm">Informats and formats by category</a>;</li>
-<li><a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n01f5qrjoh9h4hn1olbdpb5pr2td.htm">Functions and CALL routines by category</a>;</li>
-<li><a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n1ajdn61edqo70n1jfu3h5bcu0f5.htm">Functions in SAS and CAS - examples</a>.</li>
+<li><a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/n1hqa4dk5tay0an15nrys1iwr5o2.htm" class="colori">PROC CONTENTS</a>;</li>
+<li><a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p10qiuo2yicr4qn17rav8kptnjpu.htm" class="colori">PROC PRINT</a>;</li>
+<li><a href="http://v8doc.sas.com/sashtml/lrcon/z0920449.htm" class="colori">Informats and formats by category</a>;</li>
+<li><a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n01f5qrjoh9h4hn1olbdpb5pr2td.htm" class="colori">Functions and CALL routines by category</a>;</li>
+<li><a href="https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n1ajdn61edqo70n1jfu3h5bcu0f5.htm" class="colori">Functions in SAS and CAS - examples</a>.</li>
 </ul>
 
     </body>
