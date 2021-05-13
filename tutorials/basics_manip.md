@@ -693,6 +693,20 @@ This is the output:
 
 ![proc format catalog](04/../../screenshots/04_basic_manip/proc_format_contents.png)
 
+To see the content of the *format* catalog, paste the following code which uses the **catalog procedure**:
+
+```
+/* printing the formats catalog */
+
+proc catalog catalog=formats;
+contents;
+run;
+```
+
+You will see this result in the results tab: 
+
+![print format catalog](04/../../screenshots/04_basic_manip/print_format_catalog.png)
+
 <a name="sect3"></a>
 
 # 3. Features and manipulations
