@@ -298,7 +298,15 @@ QUIT;</div></code></code></pre>
 <center><img src="/screenshots/05_proc/CASESQL.jpg"></center>
 </li>
         <p><a name="sect5"></a></p>
-        <li>
+        <li>The ORDER BY clause will return the data in sorted order: Much
+            like PROC SORT, if the data is already in sorted order, PROC
+            SQL will print a message in the LOG stating the sorting utility was
+            not used.<br>
+            <pre><code><code><div>PROC SQL;
+SELECT STATE, SALES
+FROM USSALES
+ORDER BY STATE, SALES DESC;
+QUIT;</div></code></code></pre>
         </li>
     </ul>
     <br>You want other examples? Go <a
