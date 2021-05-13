@@ -253,8 +253,8 @@ RUN;</div></code></code></pre>
         <strong>QUIT;</strong>
     </p>
     <p><i>We can omit some of these</i><br></p>
-    <p><strong>Let's see what we can do with this procedure, but more importantly, how we can do it... 
-        and some characteristics</strong><br>
+    <p><strong>Let's see what we can do with this procedure, but more importantly, how we can do it...
+            and some characteristics</strong><br>
     <ul>
         <li>
             When a PROC SQL statement is executed, PROC SQL continues to run until a
@@ -271,16 +271,29 @@ RUN;</div></code></code></pre>
             read. The NUMBER option will print a column on the report
             labeled 'ROW' which contains the observation number.<br>
             <i>Let'see an example:</i><br>
-            <center><img src=""></center>
+            <pre><code><code><div>PROC SQL NUMBER;
+SELECT Biomass
+FROM TUTORIAL.terna_test20;
+QUIT;</div></code></code></pre>
+            <center><img src=""></center><br>
+            Alternatively, this would have been the case:<br>
+            <pre><code><code><div>PROC SQL;
+SELECT Biomass
+FROM TUTORIAL.terna_test20;
+QUIT;</div></code></code></pre>
+            <center><img src=""></center><br>
+
         </li>
         <li>
 
         </li>
-        <p><a name="sect5"></a></p> 
+        <p><a name="sect5"></a></p>
         <li>
         </li>
     </ul>
-    <br>You want other examples? Go <a href="https://support.sas.com/resources/papers/proceedings/proceedings/sugi27/p191-27.pdf" class="colori"><strong>here</strong></a>
+    <br>You want other examples? Go <a
+        href="https://support.sas.com/resources/papers/proceedings/proceedings/sugi27/p191-27.pdf"
+        class="colori"><strong>here</strong></a>
     </p>
     <br>
     <h1>5. Proc Sort</h1>
