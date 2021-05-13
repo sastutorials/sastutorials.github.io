@@ -170,34 +170,22 @@ run;
 
 ![cont out](04/../../screenshots/04_basic_manip/cont_out.png)
 
+For more information and examples on the *contents procedure* click [here](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/n1hqa4dk5tay0an15nrys1iwr5o2.htm).
+
 <a name="subsect2"></a>
 
 ## PROC PRINT 
 
-Another useful thing to do when getting to know the dataset is to print out its raw data. 
+Another useful thing to do when getting to know the dataset is to print out its raw data. We do so with the [**PRINT procedure**]:
 
 ```
 /* proc print */ 
 
 proc print data=work.terna16; 
 run; 
-proc print data=work.terna17; 
-run; 
-proc print data=work.terna18; 
-run; 
-proc print data=work.terna19; 
-run; 
-proc print data=work.terna20; 
-run; 
-proc print data=work.terna21; 
-run; 
 ```
 
-Again, the code repeats equally for all datasets. However, if you ran it, you would get the **entire dataset printed in the results tab**. 
-
-We could scroll down to see every single row for each dataset, or we could just tell SAS to **print the top 10 and bottom 10 observations**.
-
-To do so, **copy** the following code: 
+In the results tab you can see the whole dataset has been printed out. We could scroll down to see every single row of terna16, or we could just tell SAS to **print the top 10 and bottom 10 observations**, so as to have a broader and quicker look of it. Copy the following code:
 
 ```
 /* First 10 obs */
@@ -237,7 +225,6 @@ We know that variables can be formatted as either of these three ways:
 3. Datetime
 
 SAS reads *numeric data* by default. However, it is necessary to **add specifications** to make SAS read particular types of **numerical** data as well as **other data formats** (or *types*). 
-
 
 <a name="subsect3"></a>
 
@@ -703,6 +690,14 @@ This is the resulting dataset (I am only showing snippets of it, to demonstrate 
 We have formatted our data and displayed them as we liked. 
 Now, we can explore some data manipulation techniques further using **DATA step functions**.
 
+##### Functions run in CAS
+
+Some functions explained here can also be run in CAS, while others run in SAS *only*. If you are interested or need to write functions that run on the CAS server, check out [this link](https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n01f5qrjoh9h4hn1olbdpb5pr2td.htm) listing **functions and call routines by category**. Head down to the CAS category to see which functions which are accepted in CAS. 
+
+If you want to initiate a CAS session, follow the section 6 on *"How to open a CAS session"* from the **data access** tutorial at [this link](https://sastutorials.github.io/tutorials/accessing_data.html#sect6).
+
+See examples of executing functions that output to CAS or on CAS at [this link](https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n1ajdn61edqo70n1jfu3h5bcu0f5.htm).
+
 <a name = "subsect5"></a>
 
 ## Feature engineering 
@@ -919,5 +914,8 @@ You have other 4 datasets at your disposal that you can play with. Clean them, m
 
 # 6. Resources
 
+* [PROC CONTENTS](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/n1hqa4dk5tay0an15nrys1iwr5o2.htm);
+* [PROC PRINT](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p10qiuo2yicr4qn17rav8kptnjpu.htm);
 * [Informats and formats by category](http://v8doc.sas.com/sashtml/lrcon/z0920449.htm);
-* 
+* [Functions and CALL routines by category](https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n01f5qrjoh9h4hn1olbdpb5pr2td.htm);
+* [Functions in SAS and CAS - examples](https://documentation.sas.com/doc/de/pgmsascdc/9.4_3.5/lefunctionsref/n1ajdn61edqo70n1jfu3h5bcu0f5.htm).
