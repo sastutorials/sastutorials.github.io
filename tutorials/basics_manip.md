@@ -683,6 +683,16 @@ This is the resulting dataset (I am only showing snippets of it, to demonstrate 
 
 ![proc formatting seasons](04/../../screenshots/04_basic_manip/proc_format_seasons.png)
 
+#### Formats and informats are stored in a SAS catalog
+
+We can find all the formats and informats we've just creaated are now stored in a SAS catalog. 
+
+Use the code we used in the [proc contents](#proc-contents) above, where we printed the directory and filtered the memtype to catalogs only.
+
+This is the output:
+
+![proc format catalog](04/../../screenshots/04_basic_manip/proc_format_contents.png)
+
 <a name="sect3"></a>
 
 # 3. Features and manipulations
@@ -866,7 +876,7 @@ Another method to concatenate multiple datasets into one is to use the **merge**
 
 ```
 data terna_matched;
-merge  work.terna16_cleaning1 work.terna17_formatted work.terna18;
+merge  work.terna16_cleaning1 work.terna17_formatted;
 by date;
 run; 
 
