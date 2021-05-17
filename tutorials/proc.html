@@ -25,26 +25,42 @@ subtitle: Learn about the PROC step beyond printing, for sorting and summarising
     <br>
     <h2 id="structure">Structure</h2>
     <p><a href="#sect1">
-            <h5>1. Proc Means</h5>
-        </a></p>
+            <h3>1. Proc Means</h3>
+        </a><br>
+        <a href="subsect1">
+            <h5>Default output</h5>
+        </a><br>
+        <a href="subsect2">
+            <h5>Sum</h5>
+        </a><br>
+        <a href="subsect3">
+            <h5>Average</h5>
+        </a><br>
+        <a href="subsect4">
+            <h5>Median</h5>
+        </a><br>
+        <a href="subsect5">
+            <h5>Mode</h5>
+        </a>
+    </p>
     <p><a href="#sect2">
-            <h5>2. Proc Compare</h5>
+            <h3>2. Proc Compare</h3>
         </a></p>
     <p><a href="#sect3">
-            <h5>3. Proc Freq</h5>
+            <h3>3. Proc Freq</h3>
         </a></p>
     <p><a href="#sect4">
-            <h5>4. Proc Sql & convention</h5>
+            <h3>4. Proc Sql & convention</h3>
         </a></p>
     <p><a href="#sect5">
-            <h5>5. Proc Sort</h5>
+            <h3>5. Proc Sort</h3>
         </a></p>
     <p><a name="sect1"></a></p>
     <p><a href="#sect6">
-            <h5>6. Exercises</h5>
+            <h3>6. Exercises</h3>
         </a></p>
     <p><a href="#sect7">
-            <h5>7. Resources</h5>
+            <h3>7. Resources</h3>
         </a></p>
     <br>
     <h1>1. Proc Means</h1>
@@ -100,6 +116,7 @@ subtitle: Learn about the PROC step beyond printing, for sorting and summarising
             <td>N</td>
             <td>VAR</td>
         </tr>
+        <p><a name="subsect1"></a></p>
         <tr>
             <td>MEDIAN | P50</td>
             <td>Q3 | P75</td>
@@ -112,8 +129,9 @@ subtitle: Learn about the PROC step beyond printing, for sorting and summarising
     <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18;
 RUN;</div></code></code></pre>
     <p>
-        <center><img src="/screenshots/05_proc/Default uscite Proc Means.jpg" alt="Default uscite Proc Means.jpg">
-        </center>
+    <p><a name="subsect2"></a></p>
+    <center><img src="/screenshots/05_proc/Default uscite Proc Means.jpg" alt="Default uscite Proc Means.jpg">
+    </center>
     </p>
     <h5><strong>Sum:</strong></h5>
     <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 SUM;
@@ -126,7 +144,8 @@ RUN;</div></code></code></pre>
 VAR Biomass;
 RUN;</div></code></code></pre>
     <p>
-        <center><img src="/screenshots/05_proc/Somma specifica.jpg" alt="Somma specifica.jpg"></center>
+    <p><a name="subsect3"></a></p>
+    <center><img src="/screenshots/05_proc/Somma specifica.jpg" alt="Somma specifica.jpg"></center>
     </p>
     <h5><strong>Average:</strong></h5>
     <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MEAN;
@@ -139,7 +158,8 @@ RUN;</div></code></code></pre>
 VAR Biomass;
 RUN;</div></code></code></pre>
     <p>
-        <center><img src="/screenshots/05_proc/mediaSingolaProcMeans.jpg" alt="mediaSingolaProcMeans.jpg"></center>
+    <p><a name="subsect4"></a></p>
+    <center><img src="/screenshots/05_proc/mediaSingolaProcMeans.jpg" alt="mediaSingolaProcMeans.jpg"></center>
     </p>
     <h5><strong>Median:</strong></h5>
     <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MEDIAN;
@@ -152,7 +172,8 @@ RUN;</div></code></code></pre>
 VAR Biomass;
 RUN;</div></code></code></pre>
     <p>
-        <center><img src="/screenshots/05_proc/MedianaSingolaProcMeans.jpg" alt="MedianaSingolaProcMeans.jpg"></center>
+    <p><a name="subsect5"></a></p>
+    <center><img src="/screenshots/05_proc/MedianaSingolaProcMeans.jpg" alt="MedianaSingolaProcMeans.jpg"></center>
     </p>
     <h5><strong>Mode:</strong></h5>
     <pre><code><code><div>PROC MEANS DATA=TUTORIAL.terna_test18 MODE;
@@ -307,7 +328,7 @@ SELECT *
 FROM TUTORIAL.terna_test18
 ORDER BY Hydro;
 QUIT;</div></code></code></pre>
-<center><img src="/screenshots/05_proc/orderby.jpg"></center>
+            <center><img src="/screenshots/05_proc/orderby.jpg"></center>
         </li>
     </ul>
     <br>You want other examples? Go
