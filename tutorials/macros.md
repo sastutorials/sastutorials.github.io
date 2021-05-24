@@ -5,3 +5,127 @@ title: Write flexible code with SAS Macros
 subtitle: Learn about the Macro language, and how to integrate them in your program to write flexible and modular code.
 --- 
 
+
+# Learning Objectives 
+
+* Learn about the macro language, its syntax and unique features;
+* Learn about the difference between macros and macro variables;
+* Learn how to use macros to optimise code writing and create modular code that can be recalled at need;
+* Become familiar with the macro language to start programming with more flexibility throughout different SAS programs and ETLs.
+
+# Structure
+
+<a href="#sect1">1. What is the Macro language in SAS?</a>
+
+<a href="#subsect1"><sub>Structure and syntax</sub></a>
+
+<a href="#subsect2"><sub>Macros and macro variables</sub></a>
+
+<a href="#subsect3"><sub>Think %global act local</sub></a>
+
+<a href="#sect2">2. Built-in macro variables</a>
+
+<a href="#subsect4"><sub>The %let and %put macros</sub></a>
+
+<a href="#subsect5"><sub>%if conditions and %do loops</sub></a>
+
+<a href="#sect3">3. Custom macro variables</a>
+
+<a href="#subsect6"><sub>The %macro - %mend couple</sub></a>
+
+<a href="#subsect7"><sub>Adding parameters to the macro variable</sub></a>
+
+<a href="#sect4">4. Data-driven programs</a>
+
+<a href="#subsect8"><sub>DATA step interfaces</sub></a>
+
+* symget
+* symput
+* check out interm sas macro pdf 
+
+<a href="#subsect9"><sub>DATA step functions in macros</sub></a>
+
+<a href="#subsec10"><sub>PROC SQL interfaces</sub></a>
+
+* into
+
+<a href="#sect5">5. Exercise: create an ETL-type program</a>
+
+<a href="#subsect11"><sub>Definition of ETL</sub></a>
+
+<a href="#subsect12"><sub>Download the SAS programs to do the exercise</sub></a>
+
+<a href="#sect6">6. References</a>
+
+
+<a name="sect1"></a>
+
+# 1. What is the Macro language in SAS?
+
+<a name="subsect1"></a>
+
+## Structure and syntax
+
+<a name="subsect2"></a>
+
+## Macros and macro variable
+
+<a name="subsect3"></a>
+
+## Think %global act local 
+
+<a name="sect2"></a>
+
+# 2. Built-in macro variables 
+
+<a name="subsect4"></a>
+
+## The %let and %put macros 
+
+<a name="subsect5"></a>
+
+## %if conditions and %do loops
+
+<a name="sect3"></a>
+
+# 3. Custom macro variables
+
+<a name="subsect6"></a>
+
+## The %macro - %mend couple
+
+<a name="subsect7"></a>
+
+## Adding parameters to the macro variable 
+
+<a name="sect4"></a>
+
+# 4. Data-driven programs
+
+<a name="subsect8"></a>
+
+## Data step interfaces
+
+<a name="subsect9"></a>
+
+## Data step functions in macros
+
+<a name="subsect10"></a>
+
+## PROC SQL interfaces
+
+<a name="sect5"></a>
+
+# 5. Exercise: create and ETL-type program
+
+<a name="subsect11"></a>
+
+## Definition of ETL 
+
+<a name="subsect12"></a>
+
+## Download the SAS programs to do the exercise
+
+<a name="sect6"></a>
+
+# 6. References
