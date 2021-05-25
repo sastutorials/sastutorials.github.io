@@ -62,6 +62,19 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 # 1. What is the Macro language in SAS?
 
+The macro language is an entirely "new world" within SAS, a tool that allows your code to be **dynamic and flexible**.
+
+Syntax and structure of macros can be a bit hard to get a grasp on at first, but they possess great advantages, which include:
+
+* Reduction of regular code;
+* Programming optimisation;
+* Automatic generation of SAS code;
+* Facilitation of information passed from one procedure to the other and from one program to another;
+* Reduced read/write effort on SAS code;
+* Makes programs data-driven, letting SAS decide what to do based on actual daata values.
+
+These advantages can be really understood when using programs that need to be run frequently, perhaps on a daily basis. Otherwise, **macro code takes longer to write and debug** and might become a disadvantage if you decided to use it for simple programs or programs that would only be run a few times.
+
 <a name="subsect1"></a>
 
 ## Structure and syntax
