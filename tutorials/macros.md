@@ -19,8 +19,6 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 <a href="#subsect1"><sub>Structure and syntax</sub></a>
 
-<a href="#subsect2"><sub>Macros, macro variables and macro programs</sub></a>
-
 <a href="#subsect3"><sub>Think %global act local</sub></a>
 
 <a href="#sect2">2. Built-in macro variables</a>
@@ -87,15 +85,11 @@ Here is a schematic view of the workflow.
 
 Essentially, you are writing a program that writes a program, and this is also called **meta-programming**.
 
-The syntax is simple:
-* Use **%** to define an existing or new macro;
-* And **&** followed by **.** to recall a new macro in other parts of code.
+The syntax is simple and defines different types of macros:
+* Macros are called or created by placing a **percent sign** (%) at the start of the word;ù
+* Macro variables are called instead by placing an **ampersand** (&) at the start of the word.
 
-<a name="subsect2"></a>
-
-## Macros, macro variables and macro programs
-
-
+Macros and macro variables can be nested within a macro program. The macro program can also contain more complex logic including complete DATA and PROC steps other than other macros.
 
 <a name="subsect3"></a>
 
