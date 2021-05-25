@@ -70,14 +70,26 @@ Syntax and structure of macros can be a bit hard to get a grasp on at first, but
 * Programming optimisation;
 * Automatic generation of SAS code;
 * Facilitation of information passed from one procedure to the other and from one program to another;
-* Reduced read/write effort on SAS code;
-* Makes programs data-driven, letting SAS decide what to do based on actual daata values.
+* Reduced read/write effort of SAS code;
+* Generation of data-driven programs, letting SAS decide what to do based on actual daata values.
 
 These advantages can be really understood when using programs that need to be run frequently, perhaps on a daily basis. Otherwise, **macro code takes longer to write and debug** and might become a disadvantage if you decided to use it for simple programs or programs that would only be run a few times.
 
 <a name="subsect1"></a>
 
 ## Structure and syntax
+
+The first thing to remember is that, differently from regular SAS code, macros pass through a **Macro processor**, which then generates SAS code. 
+
+Here is a schematic view of the workflow. 
+
+![macro workflow](../screenshots/07_macros/macro_workflow.png)
+
+Essentially, you are writing a program that writes a program, and this is also called **meta-programming**.
+
+The syntax is simple:
+* Use **%** to define an existing or new macro;
+* **&** followed by **.** to recall it
 
 <a name="subsect2"></a>
 
