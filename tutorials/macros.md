@@ -19,7 +19,7 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 <a href="#subsect1"><sub>Structure and syntax</sub></a>
 
-<a href="#subsect2"><sub>Macros and macro variables</sub></a>
+<a href="#subsect2"><sub>Macros, macro variables and macro programs</sub></a>
 
 <a href="#subsect3"><sub>Think %global act local</sub></a>
 
@@ -89,11 +89,13 @@ Essentially, you are writing a program that writes a program, and this is also c
 
 The syntax is simple:
 * Use **%** to define an existing or new macro;
-* **&** followed by **.** to recall it
+* And **&** followed by **.** to recall a new macro in other parts of code.
 
 <a name="subsect2"></a>
 
-## Macros and macro variable
+## Macros, macro variables and macro programs
+
+
 
 <a name="subsect3"></a>
 
