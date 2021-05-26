@@ -19,8 +19,6 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 <a href="#subsect1"><sub>Structure and syntax</sub></a>
 
-<a href="#subsect2"><sub>Macros and macro variables</sub></a>
-
 <a href="#subsect3"><sub>Think %global act local</sub></a>
 
 <a href="#sect2">2. Built-in macro variables</a>
@@ -62,13 +60,36 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 # 1. What is the Macro language in SAS?
 
+The macro language is an entirely "new world" within SAS, a tool that allows your code to be **dynamic and flexible**.
+
+Syntax and structure of macros can be a bit hard to get a grasp on at first, but they possess great advantages, which include:
+
+* Reduction of regular code;
+* Programming optimisation;
+* Automatic generation of SAS code;
+* Facilitation of information passed from one procedure to the other and from one program to another;
+* Reduced read/write effort of SAS code;
+* Generation of data-driven programs, letting SAS decide what to do based on actual daata values.
+
+These advantages can be really understood when using programs that need to be run frequently, perhaps on a daily basis. Otherwise, **macro code takes longer to write and debug** and might become a disadvantage if you decided to use it for simple programs or programs that would only be run a few times.
+
 <a name="subsect1"></a>
 
 ## Structure and syntax
 
-<a name="subsect2"></a>
+The first thing to remember is that, differently from regular SAS code, macros pass through a **Macro processor**, which then generates SAS code. 
 
-## Macros and macro variable
+Here is a schematic view of the workflow. 
+
+![macro workflow](../screenshots/07_macros/macro_workflow.png)
+
+Essentially, you are writing a program that writes a program, and this is also called **meta-programming**.
+
+The syntax is simple and defines different types of macros:
+* Macros are called or created by placing a **percent sign** (%) at the start of the word;ù
+* Macro variables are called instead by placing an **ampersand** (&) at the start of the word.
+
+Macros and macro variables can be nested within a macro program. The macro program can also contain more complex logic including complete DATA and PROC steps other than other macros.
 
 <a name="subsect3"></a>
 
