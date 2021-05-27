@@ -91,6 +91,16 @@ The syntax is simple and defines different types of macros:
 
 Macros and macro variables can be nested within a macro program. The macro program can also contain more complex logic including complete DATA and PROC steps other than other macros.
 
+**inserire un'immagine schematica della spiegazione di sopra.**
+
+<a name="sect2"></a>
+
+# 2. Built-in macro variables 
+
+<a name="subsect4"></a>
+
+## The %let and %put macros 
+
 Let's see an example of creating a macro to a dataset name, still using dataset terna16 from the previous tutorials. 
 
 ```
@@ -117,19 +127,7 @@ This code here instead of printing terna16 now prints terna17.
 
 You can imagine how this process becomes extremely useful when **the same lines of code or variable names are repeated throughout long programs of code**.
 
-<a name="subsect3"></a>
-
-## Think %global act local 
-
-
-
-<a name="sect2"></a>
-
-# 2. Built-in macro variables 
-
-<a name="subsect4"></a>
-
-## The %let and %put macros 
+![macro on multiple programs](../screenshots/07_macros/macro_var_program12.png)
 
 <a name="subsect5"></a>
 
@@ -146,6 +144,12 @@ You can imagine how this process becomes extremely useful when **the same lines 
 <a name="subsect7"></a>
 
 ## Adding parameters to the macro variable 
+
+<a name="subsect3"></a>
+
+## Think %global act local 
+
+The example of macro we have just seen is only applied **inside the program you currently work with**. This means that if we were writing on different programs, we would need to **recreate the same macro in each program for them to work throughout**. 
 
 <a name="sect4"></a>
 
