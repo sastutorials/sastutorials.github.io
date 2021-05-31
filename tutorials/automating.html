@@ -53,6 +53,13 @@ subtitle: Use loops and custom functions to iterate actions, simplify your progr
           or DATA steps. PROC FCMP provides the ability to build functions, CALL routines, and 
           subroutines using DATA step syntax that is stored in a data set.<br>
           <i>PROC FCMP is an interactive procedure. You must terminate the procedure with a QUIT statement.</i><br>
+    <h5>Syntax</h5>
+    <pre><code><code><div>PROC FCMP OUTLIB = libref.data-set.package;
+Function function-name(argument-1<$>,...,argument-n<$>);
+Programming statements;
+Return (expression);
+ENDSUB;
+QUIT;</div></code></code></pre>
     </p>
     <br>
     <h1>Exercise:</h1>
