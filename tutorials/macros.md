@@ -86,14 +86,12 @@ Here is a schematic view of the workflow.
 Essentially, you are writing a program that writes a program, and this is also called **meta-programming**.
 
 The syntax is simple and defines different types of macros:
-* Macros are called or created by placing a **percent sign** (%) at the start of the word;ù
-* Macro variables are called instead by placing an **ampersand** (&) at the start of the word.
+* Macros are called or created by placing a **percent sign** (%) at the start of the word;
+* Macro variables are called instead by placing an **ampersand** (&) at the start of the word and a **period** (.) sign at the end of the word.
 
 Macros and macro variables can be nested within a macro program. The macro program can also contain more complex logic including complete DATA and PROC steps other than other macros.
 
-<a name="subsect3"></a>
-
-## Think %global act local 
+**inserire un'immagine schematica della spiegazione di sopra.**
 
 <a name="sect2"></a>
 
@@ -102,6 +100,34 @@ Macros and macro variables can be nested within a macro program. The macro progr
 <a name="subsect4"></a>
 
 ## The %let and %put macros 
+
+Let's see an example of creating a macro to a dataset name, still using dataset terna16 from the previous tutorials. 
+
+```
+%let ds = terna16;
+
+proc print data = &ds.;
+run;
+```
+
+This code is very simple: as we've previously seen it prints out the dataset called terna16 in its entirety. 
+
+The difference is that we have placed the **dataset name** inside a macro, and we have called this macro **"ds"**. Whenever we need to call the dataset name we **no longer need to write "terna16", but &ds. is enough**.
+
+If we ever wanted to change dataset or dataset name, **we would need to change it in the macro, and not everywhere we use the dataset in the code**, like so:
+
+```
+%let ds = terna17;
+
+proc print data=&ds.;
+run;
+```
+
+This code here instead of printing terna16 now prints terna17. 
+
+You can imagine how this process becomes extremely useful when **the same lines of code or variable names are repeated throughout long programs of code**.
+
+![macro on multiple programs](../screenshots/07_macros/macro_var_program12.png)
 
 <a name="subsect5"></a>
 
@@ -118,6 +144,12 @@ Macros and macro variables can be nested within a macro program. The macro progr
 <a name="subsect7"></a>
 
 ## Adding parameters to the macro variable 
+
+<a name="subsect3"></a>
+
+## Think %global act local 
+
+The example of macro we have just seen is only applied **inside the program you currently work with**. This means that if we were writing on different programs, we would need to **recreate the same macro in each program for them to work throughout**. 
 
 <a name="sect4"></a>
 
