@@ -189,6 +189,10 @@ We can now see that there is no output, but if you check the log **the message f
 
 **Note:** we've added another built-in function in the conditional logic, **%sysfunc**, which is useful as it allows to **execute SAS functions or user-written functions inside a macro**. In this case we've used the function *exist()* to confirm the presence of the dataset in *work*.
 
+## Iterations
+
+
+
 <a name="sect3"></a>
 
 # 3. Custom macro variables
