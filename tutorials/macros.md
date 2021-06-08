@@ -137,13 +137,55 @@ run;
 
 This code here instead of printing terna16 now prints terna17. 
 
-You can imagine how this process becomes extremely useful when **the same lines of code or variable names are repeated throughout long programs of code**.
+You can imagine how this process becomes extremely useful when **the same lines of code or when variable names are repeated throughout long programs of code**.
 
 ![macro on multiple programs](../screenshots/07_macros/macro_var_program12.png)
 
 <a name="subsect5"></a>
 
 ## %if conditions and %do loops
+
+Another type of built-in macros relate to structuring code that requires **conditional logics and/or iterations**. Let's see both. 
+
+## %if - %then %do; %else %do; %end; 
+
+We are going to execute a simple condition: if the file exists then we can print it otherwise we are going to print an error message in the log. 
+
+The code is the following: 
+
+```
+/* macros: conditional logic */
+
+%if %sysfunc(exist(&ds.)) %then %do; 
+    proc print data=&ds.;
+    run;
+%end; 
+%else %do; 
+    %put ========> WARNING: the file &ds does not exist. The operation has been skipped. ;
+%end; 
+```
+
+As you run it you can see that the output does appear as the first condtion applies. 
+
+If we changed the name of the dataset to print that **does not exist in work library**, like so: 
+
+```
+/* macros: conditional logic */
+
+%let ds1 = terna18; 
+
+%if %sysfunc(exist(&ds1.)) %then %do; 
+    proc print data=&ds1.;
+    run;
+%end; 
+%else %do; 
+    %put ========> WARNING: the file &ds1. does not exist. The operation has been skipped. ;
+%end; 
+```
+
+We can now see that there is no output, but if you check the log the message from the second condition appears: 
+
+![2nd cond %if](07/../../screenshots/07_macros/if_2nd_cond.png)
 
 <a name="sect3"></a>
 
