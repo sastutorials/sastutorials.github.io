@@ -187,6 +187,8 @@ We can now see that there is no output, but if you check the log **the message f
 
 ![2nd cond %if](07/../../screenshots/07_macros/if_2nd_cond.png)
 
+**Note:** we've added another built-in function in the conditional logic, **%sysfunc**, which is useful as it allows to **execute SAS functions or user-written functions inside a macro**.
+
 <a name="sect3"></a>
 
 # 3. Custom macro variables
