@@ -147,7 +147,7 @@ You can imagine how this process becomes extremely useful when **the same lines 
 
 Another type of built-in macros relate to structuring code that requires **conditional logics and/or iterations**. Let's see both. 
 
-## %if - %then %do; %else %do; %end; 
+## Conditional logic
 
 We are going to execute a simple condition: if the file exists then we can print it otherwise we are going to print an error message in the log. 
 
@@ -183,7 +183,7 @@ If we changed the name of the dataset to print that **does not exist in work lib
 %end; 
 ```
 
-We can now see that there is no output, but if you check the log the message from the second condition appears: 
+We can now see that there is no output, but if you check the log **the message from the second condition appears**: 
 
 ![2nd cond %if](07/../../screenshots/07_macros/if_2nd_cond.png)
 
