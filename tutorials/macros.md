@@ -114,6 +114,18 @@ This code is very simple: as we've previously seen it prints out the dataset cal
 
 The difference is that we have placed the **dataset name** inside a macro, and we have called this macro **"ds"**. Whenever we need to call the dataset name we **no longer need to write "terna16", but &ds. is enough**.
 
+We can have a look at what the macro contains by printing the content of the macro itself, by using another built-in macro called **%put**. %PUT will print anything written next to it in the **log**, and strings don't require quotes. Let's see this example:
+
+```
+/* printing the macro in the log with %put */
+
+%put   print ==============>  &ds <=============;
+```
+
+Now check the log. 
+
+![put_log](../screenshots/07_macros/put_log.png)
+
 If we ever wanted to change dataset or dataset name, **we would need to change it in the macro, and not everywhere we use the dataset in the code**, like so:
 
 ```
