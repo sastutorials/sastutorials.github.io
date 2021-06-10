@@ -25,7 +25,7 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 <a href="#subsect4"><sub>The %let and %put macros</sub></a>
 
-<a href="#subsect5"><sub>%if conditions and %do loops</sub></a>
+<a href="#subsect5"><sub>Conditional logic</sub></a>
 
 <a href="#sect3">3. Custom macro variables</a>
 
@@ -87,7 +87,9 @@ Essentially, you are writing a program that writes a program, and this is also c
 
 The syntax is simple and defines different types of macros:
 * Macros are called or created by placing a **percent sign** (%) at the start of the word;
-* Macro variables are called instead by placing an **ampersand** (&) at the start of the word and a **period** (.) sign at the end of the word.
+* Macro variables are called instead by placing an **ampersand** (&) at the start of the word and a **period** (.) sign at the end of the word. 
+
+**Note** **that the period sign** is not fundamental but **it's good practice to use**.
 
 Macros and macro variables can be nested within a macro program. The macro program can also contain more complex logic including complete DATA and PROC steps other than other macros.
 
@@ -143,11 +145,9 @@ You can imagine how this process becomes extremely useful when **the same lines 
 
 <a name="subsect5"></a>
 
-## %if conditions and %do loops
-
-Another type of built-in macros relate to structuring code that requires **conditional logics and/or iterations**. Let's see both. 
-
 ## Conditional logic
+
+Another type of built-in macros relates to structuring code that requires execution of a **conditional logic**.
 
 We are going to execute a simple condition: if the file exists then we can print it otherwise we are going to print an error message in the log. 
 
@@ -189,17 +189,38 @@ We can now see that there is no output, but if you check the log **the message f
 
 **Note:** we've added another built-in macro, **%sysfunc**, which is useful as it allows to **execute SAS functions or user-written functions inside a macro-like logic**. In this case we've used the function *exist()* to confirm the presence of the dataset in *work*.
 
-## Iterations
-
-
-
 <a name="sect3"></a>
 
 # 3. Custom macro variables
 
+So far we've seen a few examples of macro variables **which already exist in SAS**. The flexibility of macro language relies in the fact that **we are able to create custom macros to optimise and facilitate our programming**.
+
 <a name="subsect6"></a>
 
 ## The %macro - %mend couple
+
+Just like we said earlier about macros, to create a custom macro variable we first need to specify the *%macro* macro, which initialises the creation of a *new macro*, followed by the *name we want to give to the macro*. Say we want to create a macro called *biomass_modif* - the first thing we need to write is
+
+```
+%macro biomass_modif;
+```
+
+Then we need to write whatever code (written in SAS or combined with more macros) that we want the macro to execute. 
+
+```
+data &ds._biomass (keep = year biomass);
+set &ds.; 
+biomass = biomass * 0.5; 
+run; 
+```
+
+To *close* the macro we need to specify another built-in macro called **%mend**. It is good practice to specify the name of the new macro next to *%mend* too, although not strictly necessary. 
+
+```
+%mend biomass_modif;
+```
+
+![macro mend](07/../../screenshots/07_macros/macro_mend.png)
 
 <a name="subsect7"></a>
 
