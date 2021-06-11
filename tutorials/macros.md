@@ -216,11 +216,11 @@ run;
 
 To *close* the macro we need to specify another built-in macro called **%mend**. It is good practice to specify the name of the new macro next to *%mend* too, although not strictly necessary. 
 
-This is what the macro should look like overall:
-
 ```
 %mend biomass_modif;
 ```
+
+This is what the macro should look like overall:
 
 ![macro mend](07/../../screenshots/07_macros/macro_mend.png)
 
@@ -234,19 +234,19 @@ As you run the line of code above, the macro does execute and creates a new data
 
 ![biomass modif output](07/../../screenshots/07_macros/output_tab_macro_mend.png)
 
+Any time we want to create a new dataset called *terna17_biomass*, it is sufficient to run our new macro *%biomass_modif*. 
+
 <a name="subsect7"></a>
 
 ## Adding parameters to the macro variable 
 
-Any time we want to create a new dataset called *terna17_biomass*, it is sufficient to run our new macro *%biomass_modif*. 
+**Don't you think the code we wrote above is yet not so flexible?**
 
-Don't you think this code is yet not quite flexible? 
+Whenever we execute *%biomass_modif* we will only be able to modify a **specific column** called *biomass* inside of a **speicific dataset** called *terna17*. 
 
-Whenever we execute this macro we will only be able to modify a column called *called biomass* inside terna17. 
+What if we wanted to **modify different datasets** and **different columns**, and what if we wanted to **use a different parameter**, in this case to multiply the variables with? 
 
-What if we wanted to modify different datasets and different columns, and what if we wanted to use a different parameter each time to multiply the variables with? 
-
-We can do so specifying *parameters that need to be input in the macro*. In the following examples, We need to set the parameters next to the macro initialisation.
+We can do so specifying **parameters** that need to be input in the macro. In the following example, we are setting parameters next to the initialisation of the macro.
 
 ```
 %macro variable_modif (lib=, data= , var= , newvar= , num=0.5);  
@@ -256,6 +256,8 @@ set &data.;
 run; 
 %mend variable_modif; 
 ```
+
+As you can see, **the parameters are set within brackets**. If you don't want to leave your parameter open, but want to associate a **default value** to it, you can just specify it within the brackets. We did so with the parameter we called *num*.
 
 Once we call the macro, then we can specify the actual variables that we want the macro to use. 
 
