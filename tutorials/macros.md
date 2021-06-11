@@ -19,11 +19,9 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 <a href="#subsect1"><sub>Structure and syntax</sub></a>
 
-<a href="#subsect3"><sub>Think %global act local</sub></a>
-
 <a href="#sect2">2. Built-in macro variables</a>
 
-<a href="#subsect4"><sub>The %let and %put macros</sub></a>
+<a href="#subsect4"><sub>%Let and %put macros</sub></a>
 
 <a href="#subsect5"><sub>Conditional logic</sub></a>
 
@@ -31,7 +29,11 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 <a href="#subsect6"><sub>The %macro - %mend couple</sub></a>
 
-<a href="#subsect7"><sub>Adding parameters to the macro variable</sub></a>
+<a href="#subsect7"><sub>Adding parameters to the macro</sub></a>
+
+<a href="#"><sub>Iterations</sub></a>
+
+<a href="#subsect3"><sub>Think %global act local</sub></a>
 
 <a href="#sect4">4. Data-driven programs</a>
 
@@ -288,6 +290,10 @@ We could even change the default value of *num* if we wanted to multiply the var
 And this is the resulting output: 
 
 ![change default param](07/../../screenshots/07_macros/change_default_param.png)
+
+## Iterations 
+
+
 
 <a name="subsect3"></a>
 
