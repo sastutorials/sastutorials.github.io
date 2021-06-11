@@ -259,25 +259,27 @@ run;
 
 As you can see, **the parameters are set within brackets** on the line that initialises the macro. If you don't want to leave your parameter open, but want to associate a **default value** to it, you can just specify it within the brackets. We did so, setting *0.5* to be the default value for our *num* parameter. 
 
-Once we call the macro, then we can specify the remaining variables that we want the macro to use. 
+Once we call the macro, then we can specify the remaining variables that we want the macro to use. We don't need to specify the *num* parameter, unless we want to *change* its default value.
 
 ```
-%variable_modif(lib=work, data=terna17, var=biomass ,newvar=  biomass1);
+%variable_modif(lib = work, data = terna17, var = biomass, newvar = biomass1);
 ```
 
-In this case, I've added the same parameters as above, in fact the output is the same. 
+In this case, I've added the same parameters as the macro above *without* *parameters*. in fact the output is the same. 
 
 ![biomass modif output](07/../../screenshots/07_macros/output_tab_macro_mend.png)
 
-Now we can see the true flexibility of this macro: we can change any of the parameters to our need.
+However, it is *now* that we can see the true flexibility of macros: we can change any of the parameters to our need.
 
 ```
 %variable_modif(lib=work, data=terna17, var=Wind,newvar=  wind_modif);
 ```
 
+This time we have set the *var* to be "Wind" and the *newvar* to be called *wind_modif*.
+
 ![output macro param](07/../../screenshots/07_macros/output_macro_parameters.png)
 
-We could even change the default value of *num* if we wanted to multiply the variable say by *2.0*.
+We could even change the default value of *num* if we wanted to multiply the variable, for example by *2.0*.
 
 ```
 %variable_modif(lib=work, data=terna17, var=Wind,newvar=  wind_modif, num=2.0);
