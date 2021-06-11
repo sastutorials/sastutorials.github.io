@@ -244,9 +244,9 @@ Any time we want to create a new dataset called *terna17_biomass*, it is suffici
 
 Whenever we execute *%biomass_modif* we will only be able to modify a **specific column** called *biomass* inside of a **speicific dataset** called *terna17*. 
 
-What if we wanted to **modify different datasets** and **different columns**, and what if we wanted to **use a different parameter**, in this case to multiply the variables with? 
+What if we wanted to **modify different datasets** and **different columns**, and what if we wanted to **use a different parameter**, in this case to multiply the variable with? 
 
-We can do so specifying **parameters** that need to be input in the macro. In the following example, we are setting parameters next to the initialisation of the macro.
+We can do so specifying **parameters** that need to be input in the macro.
 
 ```
 %macro variable_modif (lib=, data= , var= , newvar= , num=0.5);  
@@ -257,9 +257,9 @@ run;
 %mend variable_modif; 
 ```
 
-As you can see, **the parameters are set within brackets**. If you don't want to leave your parameter open, but want to associate a **default value** to it, you can just specify it within the brackets. We did so with the parameter we called *num*.
+As you can see, **the parameters are set within brackets** on the line that initialises the macro. If you don't want to leave your parameter open, but want to associate a **default value** to it, you can just specify it within the brackets. We did so, setting *0.5* to be the default value for our *num* parameter. 
 
-Once we call the macro, then we can specify the actual variables that we want the macro to use. 
+Once we call the macro, then we can specify the remaining variables that we want the macro to use. 
 
 ```
 %variable_modif(lib=work, data=terna17, var=biomass ,newvar=  biomass1);
@@ -269,13 +269,23 @@ In this case, I've added the same parameters as above, in fact the output is the
 
 ![biomass modif output](07/../../screenshots/07_macros/output_tab_macro_mend.png)
 
-Now, we can try changing the parameters to modify another dataset and variable. 
+Now we can see the true flexibility of this macro: we can change any of the parameters to our need.
 
 ```
 %variable_modif(lib=work, data=terna17, var=Wind,newvar=  wind_modif);
 ```
 
 ![output macro param](07/../../screenshots/07_macros/output_macro_parameters.png)
+
+We could even change the default value of *num* if we wanted to multiply the variable say by *2.0*.
+
+```
+%variable_modif(lib=work, data=terna17, var=Wind,newvar=  wind_modif, num=2.0);
+```
+
+And this is the resulting output: 
+
+![change default param](07/../../screenshots/07_macros/change_default_param.png)
 
 <a name="subsect3"></a>
 
