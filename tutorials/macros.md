@@ -199,7 +199,7 @@ So far we've seen a few examples of macro variables **which already exist in SAS
 
 ## The %macro - %mend couple
 
-Just like we said earlier about macros, to create a custom macro variable we first need to specify the *%macro* macro, which initialises the creation of a *new macro*, followed by the *name we want to give to the macro*. Say we want to create a macro called *biomass_modif* - the first thing we need to write is
+To create a custom macro variable we first need to specify the *%macro* macro, which initialises the creation of a *new macro*, followed by the *name we want to give to the macro*. Say we want to create a macro called *biomass_modif* - the first thing we need to write is
 
 ```
 %macro biomass_modif;
@@ -208,13 +208,15 @@ Just like we said earlier about macros, to create a custom macro variable we fir
 Then we need to write whatever code (written in SAS or combined with more macros) that we want the macro to execute. 
 
 ```
-data &ds._biomass (keep = year biomass);
+data &ds._biomass (keep = year biomass1);
 set &ds.; 
-biomass = biomass * 0.5; 
+biomass1 = biomass * 0.5; 
 run; 
 ```
 
 To *close* the macro we need to specify another built-in macro called **%mend**. It is good practice to specify the name of the new macro next to *%mend* too, although not strictly necessary. 
+
+This is what the macro should look like overall:
 
 ```
 %mend biomass_modif;
@@ -222,9 +224,56 @@ To *close* the macro we need to specify another built-in macro called **%mend**.
 
 ![macro mend](07/../../screenshots/07_macros/macro_mend.png)
 
+If you run the code, nothing is output as the macro has been created *not executed*. To recall the macro and execute it you just need to use it like we've used previous built-in macros: 
+
+```
+%biomass_modif;
+```
+
+As you run the line of code above, the macro does execute and creates a new dataset called *terna17_biomass*, which you can see in the *output data* tab.
+
+![biomass modif output](07/../../screenshots/07_macros/output_tab_macro_mend.png)
+
 <a name="subsect7"></a>
 
 ## Adding parameters to the macro variable 
+
+Any time we want to create a new dataset called *terna17_biomass*, it is sufficient to run our new macro *%biomass_modif*. 
+
+Don't you think this code is yet not quite flexible? 
+
+Whenever we execute this macro we will only be able to modify a column called *called biomass* inside terna17. 
+
+What if we wanted to modify different datasets and different columns, and what if we wanted to use a different parameter each time to multiply the variables with? 
+
+We can do so specifying *parameters that need to be input in the macro*. In the following examples, We need to set the parameters next to the macro initialisation.
+
+```
+%macro variable_modif (lib=, data= , var= , newvar= , num=0.5);  
+data &data._&var. (keep = year &newvar.);
+set &data.; 
+&newvar. = &var. * &num.; 
+run; 
+%mend variable_modif; 
+```
+
+Once we call the macro, then we can specify the actual variables that we want the macro to use. 
+
+```
+%variable_modif(lib=work, data=terna17, var=biomass ,newvar=  biomass1);
+```
+
+In this case, I've added the same parameters as above, in fact the output is the same. 
+
+![biomass modif output](07/../../screenshots/07_macros/output_tab_macro_mend.png)
+
+Now, we can try changing the parameters to modify another dataset and variable. 
+
+```
+%variable_modif(lib=work, data=terna17, var=Wind,newvar=  wind_modif);
+```
+
+![output macro param](07/../../screenshots/07_macros/output_macro_parameters.png)
 
 <a name="subsect3"></a>
 
