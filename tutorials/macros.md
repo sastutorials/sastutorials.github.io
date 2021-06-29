@@ -432,9 +432,15 @@ In this way we obtain what we wanted, too, but with the flexibility of writing t
 
 # 4. Data-driven programs
 
+This sections deals with more advanced programming with the macro language, and explains how macro variables and macros can be referenced from outwith the macro facility. 
+
+The following examples will elucidate on how to create code that matches the data available and the processing required, rather than defining the sequence of coding steps to take. This is more commonly called **data-driven programming**.
+
 <a name="subsect8"></a>
 
 ## Data step interfaces
+
+
 
 <a name="subsect9"></a>
 
