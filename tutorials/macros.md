@@ -71,7 +71,7 @@ Syntax and structure of macros can be a bit hard to get a grasp on at first, but
 * Automatic generation of SAS code;
 * Facilitation of information passed from one procedure to the other and from one program to another;
 * Reduced read/write effort of SAS code;
-* Generation of data-driven programs, letting SAS decide what to do based on actual daata values.
+* Generation of data-driven programs, letting SAS decide what to do based on actual data values.
 
 These advantages can be really understood when using programs that need to be run frequently, perhaps on a daily basis. Otherwise, **macro code takes longer to write and debug** and might become a disadvantage if you decided to use it for simple programs or programs that would only be run a few times.
 
@@ -89,13 +89,11 @@ Essentially, you are writing a program that writes a program, and this is also c
 
 The syntax is simple and defines different types of macros:
 * Macros are called or created by placing a **percent sign** (%) at the start of the word;
-* Macro variables are called instead by placing an **ampersand** (&) at the start of the word and a **period** (.) sign at the end of the word. 
-
-**Note** **that the period sign** is not fundamental but **it's good practice to use**.
+* Macro variables are called instead by placing an **ampersand** (&) at the start of the word and a **period** (.) sign at the end of the word. **Note** **that the period sign** is not fundamental but **it's good practice to use**.
 
 Macros and macro variables can be nested within a macro program. The macro program can also contain more complex logic including complete DATA and PROC steps other than other macros.
 
-**inserire un'immagine schematica della spiegazione di sopra.**
+**!!!!!!!Inserire un'immagine schematica della spiegazione di sopra!!!!!!!!!!!**
 
 <a name="sect2"></a>
 
@@ -167,7 +165,7 @@ The code is the following:
 %end; 
 ```
 
-As you run it you can see that the output does appear as the first condtion applies. 
+As you run it you can see that the output does appear as **the first condtion applies**. 
 
 If we changed the name of the dataset to print that **does not exist in work library**, like so: 
 
@@ -201,13 +199,13 @@ So far we've seen a few examples of macro variables **which already exist in SAS
 
 ## The %macro - %mend couple
 
-To create a custom macro variable we first need to specify the *%macro* macro, which initialises the creation of a *new macro*, followed by the *name we want to give to the macro*. Say we want to create a macro called *biomass_modif* - the first thing we need to write is
+To create a custom macro variable we first need to specify *%macro*, which initialises the creation of a *new macro*, followed by the *name we want to give the macro*. Say we want to create a macro called *biomass_modif* - the first thing we need to write is:
 
 ```
 %macro biomass_modif;
 ```
 
-Then we need to write whatever code (written in SAS or combined with more macros) that we want the macro to execute. 
+Then we need to write whatever code (written in SAS or combined with more macros) that we want the macro to execute:
 
 ```
 data &ds._biomass (keep = year biomass1);
@@ -216,7 +214,7 @@ biomass1 = biomass * 0.5;
 run; 
 ```
 
-To *close* the macro we need to specify another built-in macro called **%mend**. It is good practice to specify the name of the new macro next to *%mend* too, although not strictly necessary. 
+To *close* the macro we need to specify another built-in macro called **%mend**. It is good practice to specify the name of the new macro next to *%mend* too, although not strictly necessary. Like so:
 
 ```
 %mend biomass_modif;
@@ -236,13 +234,13 @@ As you run the line of code above, the macro does execute and creates a new data
 
 ![biomass modif output](07/../../screenshots/07_macros/output_tab_macro_mend.png)
 
-Any time we want to create a new dataset called *terna17_biomass*, it is sufficient to run our new macro *%biomass_modif*. 
+Any time we want to create a new dataset called *terna17_biomass*, it is sufficient to run our new macro *%biomass_modif*.
 
 <a name="subsect7"></a>
 
 ## Adding parameters to the macro variable 
 
-**Don't you think the code we wrote above is yet not so flexible?**
+**Don't you think the code we wrote above is yet not that efficient?**
 
 Whenever we execute *%biomass_modif* we will only be able to modify a **specific column** called *biomass* inside of a **speicific dataset** called *terna17*. 
 
@@ -261,7 +259,7 @@ run;
 
 As you can see, **the parameters are set within brackets** on the line that initialises the macro. If you don't want to leave your parameter open, but want to associate a **default value** to it, you can just specify it within the brackets. We did so, setting *0.5* to be the default value for our *num* parameter. 
 
-Once we call the macro, then we can specify the remaining variables that we want the macro to use. We don't need to specify the *num* parameter, unless we want to *change* its default value.
+Once we call the macro, then we can specify the remaining variables that we want the macro to use. We don't need to specify the *num* parameter, unless we want to *change* the default value.
 
 ```
 %variable_modif(lib = work, data = terna17, var = biomass, newvar = biomass1);
@@ -271,13 +269,13 @@ In this case, I've added the same parameters as the macro above *without* *param
 
 ![biomass modif output](07/../../screenshots/07_macros/output_tab_macro_mend.png)
 
-However, it is *now* that we can see the true flexibility of macros: we can change any of the parameters to our need.
+However, it is *now* that we can see the true flexibility of macros: we can change any of the parameters to our need, and modify any variables or dataset we want.
 
 ```
 %variable_modif(lib=work, data=terna17, var=Wind,newvar=  wind_modif);
 ```
 
-This time we have set the *var* to be "Wind" and the *newvar* to be called *wind_modif*.
+This time we have set the *var* to be "Wind" and the *newvar* to be called *wind_modif*, creating a new dataset called *terna17_wind*.
 
 ![output macro param](07/../../screenshots/07_macros/output_macro_parameters.png)
 
@@ -293,7 +291,25 @@ And this is the resulting output:
 
 ## Iterations 
 
+It is also possible to carry out iterations but **only within a macro specification**. Unlike using conditional logic with %if-%then %do parameters both in open code and within a macro, built-in macros like %do and %do %until **cannot be used in open code**.
 
+Let's see an example, where we apply a multiplication on the variable biomass from terna17 and we loop this calculation 10 times, each time incrementing the value of the multiplier. 
+
+```
+%macro count_hundred;   
+%do I=1 %TO 10;  
+%put *** LOOP &I OF 10;  
+data loop_count&I.;
+set &ds.;
+biomass_looped = biomass * &I.;
+Title "Printing dataset loop_count&I.";
+proc print data = loop_count&I. (obs = 10);
+%end;
+%mend;
+%count_hundred;
+```
+
+![do loop](07/../../screenshots/07_macros/doloop.png)
 
 <a name="subsect3"></a>
 
