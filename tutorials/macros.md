@@ -360,7 +360,9 @@ run;
 %biomass_modif;
 ```
 
-The dataset is successfully created. 
+The dataset is created successfully.
+
+![biomass modif1](07/../../screenshots/07_macros/biomass_modif1.png)
 
 However, if we wanted to use the macro *namevar* outside of the macro *biomass_modif*, we would not succeed.
 
@@ -376,7 +378,55 @@ We get the following errors in the log:
 
 ![errors log](07/../../screenshots/07_macros/local_error_log.png)
 
+To solve this issue, we can either insert the print procedure inside the *%biomass_modif*, or we can set the scope of the *%namevar* macro to **%global**.
 
+* Placing the print procedure inside the macro:
+
+```
+%macro biomass_modif;  
+%let namevar = biomass;
+data &ds._biomass (keep = year &namevar);
+set &ds.; 
+&namevar = &namevar * 0.5; 
+run; 
+
+Title "Printing &namevar.";
+proc print data=terna17_biomass (keep= &namevar. obs=10);
+run; 
+
+
+%mend biomass_modif; 
+
+%biomass_modif;
+```
+
+This produces the desired output.
+
+![global_opt1](07/../../screenshots/07_macros/global_opt1.png)
+
+* Specifying the macro variable inside the %global statement:
+
+```
+%macro biomass_modif;  
+%global namevar;
+%let namevar = biomass;
+data &ds._biomass (keep = year &namevar);
+set &ds.; 
+&namevar = &namevar * 0.5; 
+run; 
+%mend biomass_modif; 
+
+%biomass_modif;
+
+
+Title "Printing &namevar. with the global statement";
+proc print data=terna17_biomass (keep= &namevar. obs=10);
+run; 
+```
+
+In this way we obtain what we wanted, too, but with the flexibility of writing the print procedure anywhere we want, without having to execute the entire macro *biomass_modif*.
+
+![global opt 2](../screenshots/07_macros/global_opt2.png)
 
 <a name="sect4"></a>
 
