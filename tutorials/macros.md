@@ -308,8 +308,13 @@ proc print data = loop_count&I. (obs = 10);
 %mend;
 %count_hundred;
 ```
+This is what we see in the results tab: 
 
 ![do loop](07/../../screenshots/07_macros/doloop.png)
+
+And this is what we see printed in the log;
+
+![do loop log](07/../../screenshots/07_macros/doloop_log.png)
 
 <a name="subsect3"></a>
 
