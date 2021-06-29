@@ -440,6 +440,28 @@ The following examples will elucidate on how to create code that matches the dat
 
 ## Data step interfaces
 
+**Data step interfaces** are so called because they represent the tools that allow interaction between a DATA step and a macro. 
+
+These interfaces are used to:
+* pass on information to following DATA steps via macro variables
+* generate and submit SAS statements
+* invoke new or exisiting macros during the execution of a DATA step 
+* delete a macro variable 
+* pass on information about macro variables to a DATA step
+
+The following table shows the list of existing DATA step interfaces. 
+
+| Interface name | Type |Description |
+|:---:|:---:|:---:|
+| CALL EXECUTE | Routine | Executes macros immediately and the generated code within it at the next step boundary |
+| RESOLVE | Function | Resolves *text expression* at execution |
+| CALL SYMDEL | Routine | Deletes a macro variable |
+| SYMEXIST | Function | Verifies existence of a macro variable | 
+| SYMGET | Function | Returns a macro variable at execution |
+| SYMGLOBL | Function | Verifies if macro variable has global scope |
+| SYMLOCAL | Function | Verifies if macro variable has local scope | 
+| CALL SYMPUT | Routines | Assigns DATA step values to macro variables | 
+
 
 
 <a name="subsect9"></a>
