@@ -308,6 +308,9 @@ proc print data = loop_count&I. (obs = 10);
 %mend;
 %count_hundred;
 ```
+
+Interestingly, inside the macro %do loop, the *i* parameter automatically **becomes a macro**, which can be easily applied inside the rest of the macro. In this case, we have used it to create different datasets holding the different values of i, and we have also used i as multiplier for the variables biomass. Note that we are still using the macro &ds., which contains the name of the dataset terna17.
+
 This is what we see in the results tab: 
 
 ![do loop](07/../../screenshots/07_macros/doloop.png)
