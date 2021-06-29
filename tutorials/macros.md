@@ -449,18 +449,18 @@ These interfaces are used to:
 * delete a macro variable 
 * pass on information about macro variables to a DATA step
 
-The following table shows the list of existing DATA step interfaces. 
+The following table shows the list of the most common DATA step interfaces. 
 
-| Interface | Type |Description |
-|:---:|:---:|:---:|
-| **CALL EXECUTE** | Routine | Executes macros immediately and the generated code within it at the next step boundary |
-| **RESOLVE** | Function | Resolves *text expression* at execution |
-| **CALL SYMDEL** | Routine | Deletes a macro variable |
-| **SYMEXIST** | Function | Verifies existence of a macro variable | 
-| **SYMGET** | Function | Returns a macro variable at execution |
-| **SYMGLOBL** | Function | Verifies if macro variable has global scope |
-| **SYMLOCAL** | Function | Verifies if macro variable has local scope | 
-| **CALL SYMPUT** | Routine | Assigns DATA step values to macro variables | 
+| Interface | Type |Description | Syntax |
+|:---:|:---:|:---:|:---:|
+| **CALL EXECUTE** | Routine | Executes macros immediately and the generated code within it at the next step boundary | *CALL EXECUTE(argument)* |
+| **RESOLVE** | Function | Resolves *text expression* at execution | *RESOLVE(argument)* |
+| **CALL SYMDEL** | Routine | Deletes a macro variable | *CALL SYMDEL(macro-var <,option>)* | 
+| **SYMEXIST** | Function | Verifies existence of a macro variable | *SYMEXIST(macro-var)* | 
+| **SYMGET** | Function | Returns a macro variable at execution | *SYMGET(argument)* |
+| **SYMGLOBL** | Function | Verifies if macro variable has global scope | *SYMGLOBL(macro-var)* |
+| **SYMLOCAL** | Function | Verifies if macro variable has local scope | *SYMLOCAL(macro-var)* |
+| **CALL SYMPUT** | Routine | Assigns DATA step values to macro variables | *CALL SYMPUT(macro-var, value)* | 
 
 
 
