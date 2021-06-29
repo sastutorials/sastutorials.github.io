@@ -330,6 +330,54 @@ The scope is assigned with two built-in macros: **%global** and **%local**.
 * **%global** is a statement that creates one or more macro variables that are **available during the entire execution of a SAS session or job and can be referenced anywhere in the program**; 
 * **%local** is a statement that exists only during the execution of the macro in which **the variable(s) is/are created and have no meaning outside of the defining macro**. 
 
+**Macro variables take default scopes depending on where they are being defined.**
+
+* If a macro variable is defined with the **%let** statement, then it will take the *%global* scope as default. 
+
+We've previously seen this happen when we defined the dataset *terna17* as the macro called *ds*.
+
+```
+%let ds = terna17;
+```
+
+If we call the macro variable in any other program and part of the same program, the macro variable would still exist and would execute. 
+
+![macro var pgm 1-2](07/../../screenshots/07_macros/macro_var_program12.png)
+
+* If a macro *is only defined within another macro*, then it only exists when the outer macro is executed.
+
+Let's use the macro *%biomass_modif* we created earlier. Recall the code from below, but with one change. We are going to define a new macro variable inside the macro, to call the variable name *biomass*. Like so: 
+
+```
+%macro biomass_modif;  
+%let namevar = biomass;
+data &ds._biomass (keep = year &namevar);
+set &ds.; 
+&namevar = &namevar * 0.5; 
+run; 
+%mend biomass_modif; 
+
+%biomass_modif;
+```
+
+The dataset is successfully created. 
+
+However, if we wanted to use the macro *namevar* outside of the macro *biomass_modif*, we would not succeed.
+
+```
+Title "Printing &namevar.";
+proc print data=terna17_biomass (keep= &namevar. obs=10);
+run; 
+```
+
+That is because the macro *namevar* has the scope set to *local* as default, by being created inside of the macro *biomass_modif*.
+
+We get the following errors in the log: 
+
+![errors log](07/../../screenshots/07_macros/local_error_log.png)
+
+
+
 <a name="sect4"></a>
 
 # 4. Data-driven programs
