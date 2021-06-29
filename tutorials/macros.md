@@ -321,9 +321,14 @@ And this is what we see printed in the log;
 
 <a name="subsect3"></a>
 
-## Think %global act local 
+## Think %global act %local 
 
-The example of macro we have just seen is only applied **inside the program you currently work with**. This means that if we were writing on different programs, we would need to **recreate the same macro in each program for them to work throughout**. 
+Macro variables can be created by assigning a specific scope to them. **Scope** is meant as **the duration of existence of the macro variable in a session or job, and the application of the variable in the code**.
+
+The scope is assigned with two built-in macros: **%global** and **%local**.
+
+* **%global** is a statement that creates one or more macro variables that are **available during the entire execution of a SAS session or job and can be referenced anywhere in the program**; 
+* **%local** is a statement that exists only during the execution of the macro in which **the variable(s) is/are created and have no meaning outside of the defining macro**. 
 
 <a name="sect4"></a>
 
