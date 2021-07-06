@@ -49,13 +49,13 @@ Studio. If you haven't got them yet, you can download them
 by clicking on the button below.</p>
 <center>
     <form action="AD">
-        <a href="/terna_data/terna_data.zip"><input type="button" value="DOWNLOAD THE FILE"></a>
+        <a href="/terna_data/renewables_data.7z"><input type="button" value="Download the zipped file"></a>
     </form>
 </center>
 <p>You should first extract the files within the zip folder, then upload them on SAS Studio. The files come in three formats, and you might want to check out the tutorial on <a href="/tutorials/accessing_data.html" target = "_blank" class="colori">data access</a>, to learn how to <strong>import them on SAS Studio</strong>.</p>
-<p>You can make sure that all datasets have been temporarily stored inside the <em>work</em> library, with the name you've given. I have called the datasets <em>ternaN</em> where N stands for the years 2016 until 2021 (the most recent observation).</p>
-<p>For this tutorial, we are going to work with terna16, and at the end with terna17.</p>
-<p>Once you've headed to the library, you can also check the content of each dataset. For instance, terna16.</p>
+<p>You can make sure that all datasets have been temporarily stored inside the <em>work</em> library, with the name you've given. I have called the datasets <em>renewablesN</em> where N stands for the years 2016 until 2021 (the most recent observation).</p>
+<p>For this tutorial, we are going to work with renewables16, and at the end with renewables17.</p>
+<p>Once you've headed to the library, you can also check the content of each dataset. For instance, renewables16.</p>
 <p><center><img src="/screenshots/04_basic_manip/dropdown_work.png" alt="dropdown"></center></p>
 <p>Each variable is accompanied by a symbol which already <strong>gives you information on the format of the variable</strong>. You can see most variables are numeric except <em>date</em>, which is datetime format.</p>
 <p>We can also quickly explore the datasets by executing two procedures: <strong>proc contents</strong> and <strong>proc print</strong>.</p>
@@ -66,12 +66,12 @@ by clicking on the button below.</p>
 <br>
 <h2 id="proc-contents">Contents procedure</h2>
 <p>Copy the following in a new SAS program (call the program <em>tutorial_basic_manip.sas</em>, if you wish to keep it in the future).</p>
-<pre><code><code><div>/*Executing proc contents on terna16*/
+<pre><code><code><div>/*Executing proc contents on renewables16*/
 
-proc contents data=work.terna16;
+proc contents data=work.renewables16;
 run;
 </div></code></code></pre>
-<p>We want to know <strong>information on the contents</strong> of the dataset called <em>terna16</em>, which we are going to work with throughout this tutorial.</p>
+<p>We want to know <strong>information on the contents</strong> of the dataset called <em>renewables16</em>, which we are going to work with throughout this tutorial.</p>
 <p><center><img src="/screenshots/04_basic_manip/proc_cont_terna16.png" alt="proc_contents_terna16"></center></p>
 <p>The proc contents statement gives us a nice overview about the dataset. We are provided with three tables, which you've already explore in the <a href="accessing_data.html" target = "_blank" class="colori">data access</a> tutorial.</p>
 <ul>
@@ -143,7 +143,7 @@ run;
 <p>Let's see some of them.</p>
 <h5 id="option-1-directory">Option #1: Directory</h5>
 <p>You only need to add the <em>directory</em> option on the same line of the <em>proc contents</em> statement:</p>
-<pre><code><code><div>proc contents data=work.terna16 directory;
+<pre><code><code><div>proc contents data=work.renewables16 directory;
 run;
 </div></code></code></pre>
 <p>You will see that before the proc contents output we saw before, other two tables appear storing information on the <em>directory</em>.</p>
@@ -152,16 +152,16 @@ run;
 <h6 id="what-are-memtypes">What are memtypes?</h6>
 <p><em>Memtypes</em> or <em>Member types</em> are all the files readable by SAS. These include data, views, catalogs and more. For more information on SAS files, extensions and member types check out this <a href="https://v8doc.sas.com/sashtml/win/z1iles.htm" target = "_blank" class="colori">link</a>.</p>
 <p>If we add <em>memtype = catalog</em> next to the previous line of code, like so:</p>
-<pre><code><code><div>proc contents data=work.terna16 directory memtype=catalog;
+<pre><code><code><div>proc contents data=work.renewables16 directory memtype=catalog;
 run;
 </div></code></code></pre>
 <p>We are only going to see information of the directory filtered for catalog memtypes only.</p>
 <p><center><img src="/screenshots/04_basic_manip/contents_dir_catalog.png" alt="cont dir catalogs"></center></p>
-<p>If we add <em>memtype = data</em> this time we are going to see information on the two datasets I have uploaded: terna16 and terna17.</p>
+<p>If we add <em>memtype = data</em> this time we are going to see information on the two datasets I have uploaded: renewables16 and renewables17.</p>
 <p><center><img src="/screenshots/04_basic_manip/contents_dir_data.png" alt="contents dir data"></center></p>
 <h5 id="option-3-out">Option #3: Out</h5>
 <p>If you want to save the information from the proc contents into a dataset format, you need to use the <em>out</em> option, where you specify the name of the dataset, like so:</p>
-<pre><code><code><div>proc contents data=work.terna16 directory memtype=data out=data_dir_info;
+<pre><code><code><div>proc contents data=work.renewables16 directory memtype=data out=data_dir_info;
 run;
 </div></code></code></pre>
 <p><center><img src="/screenshots/04_basic_manip/cont_out.png" alt="cont out"></center></p>
@@ -175,20 +175,20 @@ run;
 <p>Another useful thing to do when getting to know the dataset is to print out its raw data. We do so with the <a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p10qiuo2yicr4qn17rav8kptnjpu.htm" target = "_blank" class="colori"><strong>PRINT procedure</strong></a>:</p>
 <pre><code><code><div>/* proc print */ 
 
-proc print data=work.terna16; 
+proc print data=work.renewables16; 
 run; 
 </div></code></code></pre>
-<p>In the results tab you can see the whole dataset has been printed out. We could scroll down to see every single row of terna16, or we could just tell SAS to <strong>print the top 10 and bottom 10 observations</strong>, so as to have a broader and quicker look of it. Copy the following code:</p>
+<p>In the results tab you can see the whole dataset has been printed out. We could scroll down to see every single row of renewables16, or we could just tell SAS to <strong>print the top 10 and bottom 10 observations</strong>, so as to have a broader and quicker look of it. Copy the following code:</p>
 <pre><code><code><div>/* First 10 obs */
 
-proc print data = work.terna16 (obs = 10);
+proc print data = work.renewables16 (obs = 10);
 run;
 
 /* Last 10 obs */
 
 data last10;
   do p=max(1,nobs-9) to nobs;
-    set work.terna16 nobs=nobs point=p;
+    set work.renewables16 nobs=nobs point=p;
     output;
   end;
   stop;
@@ -284,14 +284,14 @@ run;
 <p>As you can see from running our last piece of code, the values in the datasets are mostly numeric, but present way too many decimals to be read easily. Some formatting is required.</p>
 <pre><code><code><div>/* Numeric data formatting: setting number of decimal places */
 
-data terna16_formatted; 
-set work.terna16;
+data renewables16_formatted; 
+set work.renewables16;
 format Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2;
 run;
 </div></code></code></pre>
 <p>Let's have a look at the code written.</p>
 <ul>
-<li>There is a new statement: <strong>set</strong>, allowing you to create a new dataset from the copy of an already existing one. In our case, we have copied the dataset <em>terna16</em> to create a new one <em>terna16_formatted</em>, with the changes made on the format of the numeric variables.</li>
+<li>There is a new statement: <strong>set</strong>, allowing you to create a new dataset from the copy of an already existing one. In our case, we have copied the dataset <em>renewables16</em> to create a new one <em>renewables16_formatted</em>, with the changes made on the format of the numeric variables.</li>
 <li>As we said earlier, in this case <strong>we don't need to specify the informat</strong> - SAS does recognise the numeric format, and the <strong>format</strong> statement is enough to change the number of decimal places.</li>
 <li>To format the variables we have specified the <em>w.d</em> options mentioned before. The <em>w.</em> relates to the <strong>total character length set for the value</strong> which we set to 5, while the <em>d</em> refers to the number of decimal places allowed, or 2 in our case.</li>
 </ul>
@@ -300,8 +300,8 @@ run;
 <p>Also check what happens if we only wrote an <em>informat statement</em>, instead of the format.</p>
 <pre><code><code><div>/* Numeric data formatting: setting number of decimal places */
 
-data terna16_formatted; 
-set work.terna16;
+data renewables16_formatted; 
+set work.renewables16;
 informat Biomass 5.2 Wind 5.2 Geothermal 5.2 Hydro 5.2 Photovoltaic 5.2;
 run;
 </div></code></code></pre>
@@ -364,16 +364,16 @@ run;
 <p>Let's try and print out the format with month written in words, not in numbers.</p>
 <pre><code><code><div>/* Date formatting -- DATE9. */
 
-data terna16_formatted1; 
-set work.terna16_formatted; 
+data renewables16_formatted1; 
+set work.renewables16_formatted; 
 informat date mmddyyyy10.;
 format date date9.;
 run; 
 
-proc print data=work.terna16_formatted1 (obs=10); 
+proc print data=work.renewables16_formatted1 (obs=10); 
 run; 
 
-proc contents data=work.terna16_formatted1;run;
+proc contents data=work.renewables16_formatted1;run;
 </div></code></code></pre>
 <p>You can see that compared to earlier, we have <strong>switched the order of day and month values</strong> and we have also <strong>turned the month to a worded format</strong>.</p>
 <p><center><img src="/screenshots/04_basic_manip/date_format_date9.png" alt="date9 format"></center></p>
@@ -382,18 +382,18 @@ proc contents data=work.terna16_formatted1;run;
 <p>Let's try and take this dataset and <strong>remove the day part of the date</strong>. We can do this with the <em>MONYY</em> format.</p>
 <pre><code><code><div>/* Date formatting -- MONYY */
 
-data terna16_formatted2; 
-set work.terna16_formatted1; 
+data renewables16_formatted2; 
+set work.renewables16_formatted1; 
 informat date ddmmyyyy10.; 
 format date monyy7.; 
 run;  
 
-proc print data=work.terna16_formatted1 (obs=10); 
+proc print data=work.renewables16_formatted1 (obs=10); 
 run; 
 </div></code></code></pre>
 <p>Let's break the code down.</p>
 <ul>
-<li>The <strong>set statement</strong> takes the information from an already existing dataset - in this case we are simply <em>overwriting</em> the previously created dataset called <em>terna16_formatted</em>.</li>
+<li>The <strong>set statement</strong> takes the information from an already existing dataset - in this case we are simply <em>overwriting</em> the previously created dataset called <em>renewables16_formatted</em>.</li>
 <li><strong>informat date ddmmyyyy10.</strong>
 <ul>
 <li><em>informat</em> initiates the informat statement;</li>
@@ -415,36 +415,36 @@ run;
 <pre><code><code><div>/* Date formatting -- 2-digit year */
 
 
-data terna16_formatted2; 
-set work.terna16_formatted1; 
+data renewables16_formatted2; 
+set work.renewables16_formatted1; 
 informat date ddmmyyyy10.; 
 format date monyy5.;
 run; 
 
-proc print data=work.terna16_formatted2 (obs=10); 
+proc print data=work.renewables16_formatted2 (obs=10); 
 run; 
 </div></code></code></pre>
 <p><center><img src="/screenshots/04_basic_manip/date_formatting_2digit.png" alt="year_2-digit"></center></p>
 <p>Now, if we wanted to change the format of the <em>year</em> variable, we could use the following code. Paste it in your SAS program.</p>
 <pre><code><code><div>/* Formatting the year variable */
 
-data terna16_year; 
-set work.terna16_formatted1; 
+data renewables16_year; 
+set work.renewables16_formatted1; 
 format year yyyy4.; 
 run; 
-proc print data=work.terna16_year (obs = 10);
+proc print data=work.renewables16_year (obs = 10);
 run; 
 </div></code></code></pre>
 <p>With this code we are:</p>
 <ul>
-<li>taking the variables from <em>terna16_formatted1</em> dataset, which, remember, contains the <em>date</em> variable formatted as mon-yyyy;</li>
+<li>taking the variables from <em>renewables16_formatted1</em> dataset, which, remember, contains the <em>date</em> variable formatted as mon-yyyy;</li>
 <li>using <strong>yyyy4.</strong> to specify that the <em>year</em> variable is a date variable, specifically the year value which must be maximum <em>4 characters long</em>;</li>
-<li>printing the first 10 observations of the new dataset <em>terna16_year</em>.</li>
+<li>printing the first 10 observations of the new dataset <em>renewables16_year</em>.</li>
 </ul>
 <p>The result should look like this.</p>
 <p><center><img src="/screenshots/04_basic_manip/formatting%20the%20year%20variable.png" alt="formatting year"></center></p>
 <p>From the output you don't see any difference, which is normal because we haven't told SAS to change the length of the variable, <strong>we have only specified that it is a year (date-time) type of value</strong>. You can actually see the difference when running the PROC CONTENTS on the data set.</p>
-<pre><code><code><div>proc contents data=work.terna16_year; 
+<pre><code><code><div>proc contents data=work.renewables16_year; 
 run; 
 </div></code></code></pre>
 <p>This is the output.</p>
@@ -457,8 +457,8 @@ run;
 </ul>
 <p>We can compare the two tables from the contents procedure <strong>before</strong> and <strong>after</strong> formatting, to see the difference.</p>
 <p>/* comparison before and after formatting - proc contents */</p>
-<p>proc contents data=work.terna16 (obs=10);
-proc contents data=work.terna16_year (obs=10);
+<p>proc contents data=work.renewables16 (obs=10);
+proc contents data=work.renewables16_year (obs=10);
 run;</p>
 <p>Check out the results below.</p>
 <p><center><img src="/screenshots/04_basic_manip/comparing_formats-date.png" alt="comparing_contents"></center></p>
@@ -516,27 +516,27 @@ run;</p>
 <p>As it is, the dataset doesn't present any string-like variables. We can create a new variable so that we can practice with this type of format.</p>
 <pre><code><code><div>/* Creating a new variable containing the name of the dataset */ 
 
-data terna16_newvar; 
-set work.terna16_year;
-dataset_name = &quot;terna 2016&quot;;
+data renewables16_newvar; 
+set work.renewables16_year;
+dataset_name = &quot;renewables 2016&quot;;
 run;
 
-proc print data=work.terna16_newvar (obs=10);
+proc print data=work.renewables16_newvar (obs=10);
 run;
 </div></code></code></pre>
 <p>Let's understand the code:</p>
 <ul>
 <li>Remember that <strong>set</strong> <em>copies</em> the information or part of it from an already existing dataset to a new one.</li>
-<li>When copying a dataset with the set statement, you also have the possibility to <em>add new variables</em> - whether they are calculated fields, string values, date values, etc. In our case we are creating a new variable called <em>dataset_name</em>, which is going to print a constant string value: <em>Terna 2016</em>.</li>
+<li>When copying a dataset with the set statement, you also have the possibility to <em>add new variables</em> - whether they are calculated fields, string values, date values, etc. In our case we are creating a new variable called <em>dataset_name</em>, which is going to print a constant string value: <em>renewables 2016</em>.</li>
 </ul>
 <p>You can see the dataset now presents this addition by printing it (proc print) and having a look at the results tab.</p>
 <p><center><img src="/screenshots/04_basic_manip/character_var.png" alt="char var"></center></p>
 <p>Okay, now we can start formatting the data. First we can set the informats and formats to be of a specified character data type.</p>
-<pre><code><code><div>/* proc contents data=work.terna16_newvar;
+<pre><code><code><div>/* proc contents data=work.renewables16_newvar;
 run; */
 
-data terna16_newvar_formatted; 
-set work.terna16_newvar;
+data renewables16_newvar_formatted; 
+set work.renewables16_newvar;
 informat dataset_name $CHAR10.;
 format dataset_name $CHAR10.; 
 run; 
@@ -553,13 +553,13 @@ run;
 <p>Let's see what happens if we tried to change the character length of the variable.</p>
 <pre><code><code><div>/* Formatting with smaller character length */
 
-data terna16_newvar_formatted5; 
-set work.terna16_newvar;
+data renewables16_newvar_formatted5; 
+set work.renewables16_newvar;
 informat dataset_name $CHAR5.;
 format dataset_name $CHAR5.; 
 run; 
 </div></code></code></pre>
-<p>We have reduced the maximum character length allowed for the variable from 10 to 5. In this way, the string we have input earlier is cut only showing the word <em>&quot;Terna&quot;</em> out of the entire string.</p>
+<p>We have reduced the maximum character length allowed for the variable from 10 to 5. In this way, the string we have input earlier is cut only showing the word <em>&quot;renewables&quot;</em> out of the entire string.</p>
 <p><center><img src="/screenshots/04_basic_manip/char_var_length.png" alt="char_var_length"></center></p>
 <p>If we set the character length to be <em>7</em>, for example, we would start to see part of the next &quot;word&quot; (in our case the year 2016).</p>
 <p><center><img src="/screenshots/04_basic_manip/char_var_length7.png" alt="char_var_length7"></center></p>
@@ -568,13 +568,13 @@ run;
 <p>Paste this code in your program.</p>
 <pre><code><code><div>/* Format string data type to be UPCASE*/
 
-data terna16_newvar_upcase; 
-set work.terna16_newvar;
+data renewables16_newvar_upcase; 
+set work.renewables16_newvar;
 informat dataset_name $UPCASE10.;
 format dataset_name $UPCASE10.; 
 run; 
 
-proc print data=work.terna16_newvar_upcase (obs=10);
+proc print data=work.renewables16_newvar_upcase (obs=10);
 run;
 </div></code></code></pre>
 <p>The characters of the string have effectively been converted to upcase.</p>
@@ -647,23 +647,23 @@ run;
 </div></code></code></pre>
 <p>Note that to specify the maximum value of the range you need to write <em>high</em> on the right-hand side of the range, while if you wanted to write the minimum value of the range you would need to write <em>low</em> at the left-hand side of the range.</p>
 <p>To apply the format we need to use the format statement, specify the variables to format and write next to them the name of the new format with the <em>period sign</em> at the end of it. Like so:</p>
-<pre><code><code><div>data terna16_proc_formatted;
-set work.terna16_newvar_upcase;
+<pre><code><code><div>data renewables16_proc_formatted;
+set work.renewables16_newvar_upcase;
 format  Biomass Geothermal Hydro Photovoltaic Wind generation.; 
 run; 
 
-proc print data=work.terna16_proc_formatted;
+proc print data=work.renewables16_proc_formatted;
 run;
 </div></code></code></pre>
 <p>Once you've run this code, you can see that the variables describing energy generated for each renewable source have changed according to the labels specified in the proc format.</p>
 <p><center><img src="/screenshots/04_basic_manip/proc_format_energy.png" alt="proc format energy"></center></p>
 <p>Make sure you have written <em>value</em> as the statement to define a <em>format</em>. You can check that it won't work as an <em>informat</em> like this:</p>
-<pre><code><code><div>data terna16_proc_formatted;
-set work.terna16_newvar_upcase;
+<pre><code><code><div>data renewables16_proc_formatted;
+set work.renewables16_newvar_upcase;
 INFORMAT  Biomass Geothermal Hydro Photovoltaic Wind generation.; 
 run; 
 
-proc print data=work.terna16_proc_formatted;
+proc print data=work.renewables16_proc_formatted;
 run;
 </div></code></code></pre>
 <p>If you now run the code you will see that nothing has changed in the output - the informat <em>generation.</em> has not worked because it does not exist.</p>
@@ -679,13 +679,13 @@ value seasons
 	'22SEP2016'd-'21NOV2016'd = &quot;Autumn&quot;
 	'22NOV2016'd-'31DEC2016'd = &quot;Winter&quot;;
 		
-data terna16_seasons; 
-set work.terna16_proc_formatted; 
+data renewables16_seasons; 
+set work.renewables16_proc_formatted; 
 format seasons seasons.; 
 seasons = date;
 run;
 
-proc print data=work.terna16_seasons;
+proc print data=work.renewables16_seasons;
 run;
 </div></code></code></pre>
 <p>We have created a new variable called <em>seasons</em> to carry out the formatting on the dataset. This way we don't have to overwrite the date variable and we can look at them side by side.</p>
@@ -724,8 +724,8 @@ Now, we can explore some data manipulation techniques further using <strong>DATA
 <p>Let's take the latest dataset with the seasons and make some changes on it. Paste the following code in your SAS program:</p>
 <pre><code><code><div>/* Adding new features to our dataset*/
 
-data terna16_cleaning (drop= year); 
-set work.terna16_seasons;
+data renewables16_cleaning (drop= year); 
+set work.renewables16_seasons;
 informat date_upd datetime22.;
 format dataset_name $LOWCASE10. date_upd datetime22. ;
 short_name = propcase(compress(dataset_name, &quot; 20&quot;));
@@ -741,15 +741,15 @@ day_month = substr(put(date, DATE9.), 1, 5) || &quot; dd-mmm&quot;;
 date_upd = datetime();
 run; 
 
-proc print data=work.terna16_cleaning (obs=10);
+proc print data=work.renewables16_cleaning (obs=10);
 run;
 </div></code></code></pre>
 <p>There is a lot going on here. We have done some <strong>feature engineering</strong>, which means creating new variables as a result of calculations or conditions from the existing variables. By creating new features, we are also exploring a variety of <strong>DATA step functions</strong> for character, numeric and date variables. This is the output (the first 10 rows of the dataset):</p>
 <p><center><img src="/screenshots/04_basic_manip/FINAL_modif.png" alt="final modif"></center></p>
 <p>Don't panic! <strong>Let's go through the code line by line.</strong></p>
-<h3 id="data-terna16_cleaning-drop--year">data terna16_cleaning (drop = year);</h3>
-<h3 id="set-workterna16_seasons">set work.terna16_seasons;</h3>
-<p>Aside from creating a new dataset, we are telling SAS not to copy one variable from the other dataset (<em>work.terna16_seasons</em>), and that variable is <em>year</em>.</p>
+<h3 id="data-renewables16_cleaning-drop--year">data renewables16_cleaning (drop = year);</h3>
+<h3 id="set-workrenewables16_seasons">set work.renewables16_seasons;</h3>
+<p>Aside from creating a new dataset, we are telling SAS not to copy one variable from the other dataset (<em>work.renewables16_seasons</em>), and that variable is <em>year</em>.</p>
 <p>This is what the output looks like having dropped the variable:</p>
 <p><center><img src="/screenshots/04_basic_manip/no_year_cleaning.png" alt="no_year_cleaning"></center></p>
 <h3 id="informat-date_upd-datetime22">informat date_upd datetime22.;</h3>
@@ -758,7 +758,7 @@ run;
 <h3 id="short_name--propcasecompressdataset_name--20">short_name = propcase(compress(dataset_name, &quot; 20&quot;));</h3>
 <p>Here we are creating a new variable called <em>short_name</em>, where we are using two new character functions: <strong>compress</strong> and <strong>propcase</strong>.</p>
 <ul>
-<li><strong>compress</strong> removes any delimiter or character string specified, from a character variable. With compress we are removing the <em>blank between the name &quot;terna&quot; and the date, and we are also removing the <strong>20</strong> from the year part of the character string</em>;</li>
+<li><strong>compress</strong> removes any delimiter or character string specified, from a character variable. With compress we are removing the <em>blank between the name &quot;renewables&quot; and the date, and we are also removing the <strong>20</strong> from the year part of the character string</em>;</li>
 <li><strong>propcase</strong> returns the new character variable with the first letter converted to <em>uppercase</em>.</li>
 </ul>
 <p>This is what the result looks like (together with the format statement):</p>
@@ -808,13 +808,13 @@ run;
 <li>Match-merging.</li>
 </ul>
 <p>Before starting paste the following code which formats and creates new variables for the second dataset too. This is what we've been doing throughout the tutorial, so don't focus too much on the code and let's move on to the methods of combining datasets.</p>
-<pre><code><code><div>/* working with terna '17 */
-data terna17_formatted; 
-set work.terna17;
+<pre><code><code><div>/* working with renewables '17 */
+data renewables17_formatted; 
+set work.renewables17;
 informat date mmddyyyy10. dataset_name $CHAR10. date_upd datetime22.;
 format Biomass 3.1 Wind 3.2 Geothermal 3.1 Hydro 3.1 Photovoltaic 3.1 date date9. year yyyy4.
 dataset_name $CHAR10. seasons seasons. dataset_name $LOWCASE10. date_upd datetime22.;
-dataset_name = &quot;terna 2017&quot;;
+dataset_name = &quot;renewables 2017&quot;;
 seasons = date;
 short_name = propcase(compress(dataset_name, &quot; 20&quot;));
 sum_energy_day = round(sum(Wind, Geothermal, Hydro, Photovoltaic, Biomass));
@@ -827,21 +827,21 @@ run;
 <h3 id="concatenation">Concatenation</h3>
 <p>We can concatenate two or more datasets using the <strong>set statement</strong>.</p>
 <p>Paste the following code on your SAS program.</p>
-<pre><code><code><div>data terna16_17; 
-set work.terna16_cleaning1 work.terna17_formatted;
+<pre><code><code><div>data renewables16_17; 
+set work.renewables16_cleaning1 work.renewables17_formatted;
 run;
 
-proc print data=work.terna16_17;
+proc print data=work.renewables16_17;
 run;
 </div></code></code></pre>
 <h3 id="match-merging">Match-merging</h3>
 <p>Another method to concatenate multiple datasets into one is to use the <strong>merge</strong> statement in a DATA step.</p>
-<pre><code><code><div>data terna_matched;
-merge  work.terna16_cleaning1 work.terna17_formatted;
+<pre><code><code><div>data renewables_matched;
+merge  work.renewables16_cleaning1 work.renewables17_formatted;
 by date;
 run; 
 
-proc print data=work.terna_matched;
+proc print data=work.renewables_matched;
 run;
 </div></code></code></pre>
 <p>Whether you decide to use <strong>concatenation</strong> or <strong>match-merging</strong>, the resulting dataset is the same.</p>
@@ -854,8 +854,8 @@ run;
 <h1 id="4-save-your-new-dataset">4. Save your new dataset!</h1>
 <p>You can save your new, manipulated dataset with a <strong>PROC EXPORT</strong>.</p>
 <p>To do so, paste the following code:</p>
-<pre><code><code><div>proc export outfile=&quot;HOME_FILE_PATH/terna16_17.xls&quot;
-dbms= xls data=work.terna_matched;
+<pre><code><code><div>proc export outfile=&quot;HOME_FILE_PATH/renewables16_17.xls&quot;
+dbms= xls data=work.renewables_matched;
 run;
 </div></code></code></pre>
 <p>This is what the code is doing</p>
