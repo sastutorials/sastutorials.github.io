@@ -7,13 +7,14 @@ function myFunction(id) {
     }
   }
 
-  function copyFunction() {
-    const copyText = document.getElementById("myInput").textContent;
-    const textArea = document.createElement('textarea');
-    textArea.textContent = copyText;
-    document.body.append(textArea);
-    textArea.select();
-    document.execCommand("copy");
-  }
-  
-  document.getElementById('button').addEventListener('click', copyFunction);
+  function copia(testo) {
+    var input = document.createElement('input');
+    var area = document.getElementById(testo).value;
+    input.setAttribute('value', area);
+    document.body.appendChild(input);
+    input.select();
+    var risultato = document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('testo copiato: '+ area);
+    return risultato;
+ } 
