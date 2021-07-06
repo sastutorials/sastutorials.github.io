@@ -9,11 +9,13 @@ input[type=button]{
   font-size: 20;
 }
 
-pre.codice{
+div.codice{
   border-radius: 15%;
   border-color: black;
   border-width: 3px;
 }
+
+
 
 a.colori{
   color: #F07D00;

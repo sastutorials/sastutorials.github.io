@@ -6,3 +6,15 @@ function myFunction(id) {
       x.className = x.className.replace("w3-show", "");
     }
   }
+
+  function copia(testo) {
+    var input = document.createElement('input');
+    var area = document.getElementById(testo).value;
+    input.setAttribute('value', area);
+    document.body.appendChild(input);
+    input.select();
+    var risultato = document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('testo copiato: '+ area);
+    return risultato;
+ } 
