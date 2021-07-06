@@ -9,10 +9,10 @@ input[type=button]{
   font-size: 20;
 }
 
-code{
+cdiv.codice{
   font-style: italic;
   background-color: #CF022D;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 a.colori{
