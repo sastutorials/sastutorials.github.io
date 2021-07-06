@@ -7,14 +7,9 @@ function myFunction(id) {
     }
   }
 
-  function copia(testo) {
-    var input = document.createElement('input');
-    var area = document.getElementById(testo).value;
-    input.setAttribute('value', area);
-    document.body.appendChild(input);
-    input.select();
-    var risultato = document.execCommand('copy');
-    document.body.removeChild(input);
-    alert('testo copiato: '+ area);
-    return risultato;
- } 
+  function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    document.execCommand("Copy");
+    alert("Copied the text: " + copyText.value);
+  }
