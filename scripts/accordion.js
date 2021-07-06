@@ -7,13 +7,9 @@ function myFunction(id) {
     }
   }
 
-  function copyFunction() {
-    const copyText = document.getElementById("myInput").textContent;
-    const textArea = document.createElement('textarea');
-    textArea.textContent = copyText;
-    document.body.append(textArea);
-    textArea.select();
-    document.execCommand("copy");
-  }
-  
-  document.getElementById('button').addEventListener('click', copyFunction);
+  document.querySelector("#pulsante-da-premere").onclick = function() {
+    // selezione del contenuto
+    document.querySelector("#testo-da-copiare").select();
+    // copia negli appunti
+    document.execCommand('copy');
+    };
