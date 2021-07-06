@@ -462,8 +462,6 @@ The following table shows the list of the most common DATA step interfaces.
 | **SYMLOCAL** | Function | Verifies if macro variable has local scope | *SYMLOCAL(macro-var)* |
 | **CALL SYMPUT** | Routine | Assigns DATA step values to macro variables | *CALL SYMPUT(macro-var, value)* | 
 
-
-
 <a name="subsect9"></a>
 
 ## Data step functions in macros
