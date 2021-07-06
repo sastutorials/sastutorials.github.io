@@ -9,6 +9,12 @@ input[type=button]{
   font-size: 20;
 }
 
+code{
+  font-style: italic;
+  background-color: #CF022D;
+  opacity: 0.5;
+}
+
 a.colori{
   color: #F07D00;
 }
