@@ -406,7 +406,7 @@ RUN;</div></code></code></pre>
     </p>
     <center>
         <form action="AD">
-            <a href="/terna_data/terna_data.zip"><input type="button" value="DOWNLOAD THE FILE"></a>
+            <a href="/terna_data/terna_data.7z"><input type="button" value="Download the zipped file"></a>
         </form>
     </center>
     <br>
@@ -416,15 +416,15 @@ RUN;</div></code></code></pre>
     </p>
     <h5>1) Proc Import:</h5>
     <p>Let's see how to use it:</p>
-    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test21
-DATAFILE= "/home/u58274931/test_folder/terna21.csv" 
+    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.renewables_test21
+DATAFILE= "/INSERT/YOUR/PATH/HERE/renewables21.csv" 
 DBMS=DLM
 REPLACE;
 DELIMITER=';';
 GETNAMES=YES;
 RUN;
 
-PROC PRINT DATA=TUTORIAL.terna_test21;
+PROC PRINT DATA=TUTORIAL.renewables_test21;
 RUN;</div></code></code></pre>
     <p>
     <ul>
@@ -514,8 +514,8 @@ RUN;</div></code></code></pre>
     </p>
     <h5>2) Data step:</h5>
     <p>Let's see this other method too:</p>
-    <pre><code><code><div>DATA TUTORIAL.terna_test20;
-INFILE "/home/u58274931/test_folder/terna20.csv"
+    <pre><code><code><div>DATA TUTORIAL.renewables_test20;
+INFILE "/INSERT/YOUR/PATH/HERE/renewables20.csv"
 DLM=";"
 MISSOVER 
 FIRSTOBS=1;
@@ -544,30 +544,30 @@ RUN;</div></code></code></pre>
             and xls extensions</strong>.
         Here we go!</p><br>
     <h6>Txt extension with Proc Import</h6>
-    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
-DATAFILE= "/home/u58274931/test_folder/terna19.txt" 
+    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.renewables_test19
+DATAFILE= "/INSERT/YOUR/PATH/HERE/renewables19.txt" 
 DBMS=TAB
 REPLACE;
 GETNAMES=YES;
 RUN;
 
-PROC PRINT DATA=TUTORIAL.terna_test19;
+PROC PRINT DATA=TUTORIAL.renewables_test19;
 RUN;</div></code></code></pre>
     <br>
     <h6>Xls extension with Proc Import</h6>
-    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.terna_test19
-DATAFILE= "/home/u58274931/test_folder/terna19.txt" 
+    <pre><code><code><div>PROC IMPORT OUT= TUTORIAL.renewables_test19
+DATAFILE= "/INSERT/YOUR/PATH/HERE/renewables19.txt" 
 DBMS=TAB
 REPLACE;
 GETNAMES=YES;
 RUN;
     
-PROC PRINT DATA=TUTORIAL.terna_test19;
+PROC PRINT DATA=TUTORIAL.renewables_test19;
 RUN;</div></code></code></pre>
     <p><a name="sect5"></a></p>
     <p><strong>
         We have already seen the 3 main extensions, now test yourself with the remaining files, 
-        so terna16 and terna17, which we will need in future tutorials</strong></p>
+        so renewables16 and renewables17, which we will need in future tutorials</strong></p>
     <br>
     <h1>5. Introduction to Sas Viya and Cas</h1>
     <p><strong>Sas Viya</strong> or Sas Visual Analytics allows you to:
