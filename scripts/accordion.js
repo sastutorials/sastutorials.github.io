@@ -7,9 +7,14 @@ function myFunction(id) {
     }
   }
 
-  document.querySelector("#pulsante-da-premere").onclick = function() {
-    // selezione del contenuto
-    document.querySelector("#testo-da-copiare").select();
-    // copia negli appunti
-    document.execCommand('copy');
-    };
+  function copia(testo) {
+    var input = document.createElement('input');
+    var area = document.getElementById(testo).value;
+    input.setAttribute('value', area);
+    document.body.appendChild(input);
+    input.select();
+    var risultato = document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('testo copiato: '+ area);
+    return risultato;
+ }
