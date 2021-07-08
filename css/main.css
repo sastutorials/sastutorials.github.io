@@ -1,266 +1,320 @@
-input[type=button]{
-  border:darkslategrey;
-  border-width: 4px;
-  border-radius: 20px 70px;
-  color: white;
-  background-color: #CF022D;
-  padding: 7px 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20;
+input[type=button] {
+    border: darkslategrey;
+    border-width: 4px;
+    border-radius: 20px 70px;
+    color: white;
+    background-color: #CF022D;
+    padding: 7px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20;
 }
 
-div.codice{
-  border-radius: 15%;
-  border-color: black;
-  border-width: 3px;
+div.codice {
+    border-radius: 15%;
+    border-color: black;
+    border-width: 3px;
 }
 
-
-
-a.colori{
-  color: #F07D00;
+a.colori {
+    color: #F07D00;
 }
-.icon{
-  width: 15%;
-  height: 15%;
-}
-.views{
-  float:left;
-  width:50%;
 
+.icon {
+    width: 15%;
+    height: 15%;
 }
-img.correction{
-  width: 40%;
-  height: 45%;
+
+.views {
+    float: left;
+    width: 50%;
+}
+
+img.correction {
+    width: 40%;
+    height: 45%;
 }
 
 img {
-  width: 65%;
-  height: 55%;
-}
-* {
-  box-sizing: border-box;
+    width: 65%;
+    height: 55%;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+* {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 .content {
-  max-width: 500px;
-  margin: auto;
+    max-width: 500px;
+    margin: auto;
 }
+
 
 /* Style the body */
+
 body {
-  font-family: Arial, Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
+    font-family: Arial, Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+}
 
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 /* Header/logo Title */
+
 .header {
-  padding: 45px;
-  text-align: center;
-  background: rgb(240,125,0);
-  background: radial-gradient(circle, rgba(240,125,0,1) 0%, rgba(207,2,45,0.9252743333661589) 100%);
-  color: white;
+    padding: 45px;
+    text-align: center;
+    background: rgb(240, 125, 0);
+    background: radial-gradient(circle, rgba(240, 125, 0, 1) 0%, rgba(207, 2, 45, 0.9252743333661589) 100%);
+    color: white;
 }
+
 
 /* Increase the font size of the heading */
+
 .header h1 {
-  font-size: 40px;
+    font-size: 40px;
 }
+
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+
 .navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 
+
 /* Style the navigation bar links */
+
 .navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
 }
 
 
 /* Right-aligned link */
+
 .navbar a.right {
-  float: right;
+    float: right;
 }
+
 
 /* Change color on hover */
+
 .navbar a:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: #ddd;
+    color: black;
 }
 
+
 /* Active/current link */
+
 .navbar a.active {
-  background-color: #666;
-  color: white;
+    background-color: #666;
+    color: white;
 }
 
 .column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
 }
 
 .container {
-  padding: 0 16px;
+    padding: 0 16px;
 }
 
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
-
 
 .button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
 }
 
 .button:hover {
-  background-color: #555;
+    background-color: #555;
 }
 
 @media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
+    .column {
+        width: 100%;
+        display: block;
+    }
 }
+
 
 /* Column container */
-.row {  
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
+
+.row {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
 }
+
 
 /* Create two unequal columns that sits next to each other */
+
+
 /* Sidebar/left column */
+
 .side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
+    -ms-flex: 30%;
+    /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
 }
+
 
 /* Main column */
-.main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
+
+.main {
+    -ms-flex: 70%;
+    /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
 }
+
 
 /* Footer */
+
 .footer {
-  padding: 20px;
-  text-align: center;
-  background: rgb(240,125,0);
-  background: radial-gradient(circle, rgba(240,125,0,1) 0%, rgba(207,2,45,0.9252743333661589) 100%);
-  color: white;
+    padding: 20px;
+    text-align: center;
+    background: rgb(240, 125, 0);
+    background: radial-gradient(circle, rgba(240, 125, 0, 1) 0%, rgba(207, 2, 45, 0.9252743333661589) 100%);
+    color: white;
 }
+
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
+    .row {
+        flex-direction: column;
+    }
 }
+
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
 }
 
+
 /* Style inputs */
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
 }
 
 input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
+
 
 /* Style the container/contact section */
+
 .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
 }
+
 
 /* Create two columns that float next to eachother */
+
 .column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
 }
+
 
 /* Clear floats after the columns */
+
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
+
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
 
+@media screen and (max-width: 600px) {
+    .column,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
