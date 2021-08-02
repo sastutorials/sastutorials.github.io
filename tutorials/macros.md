@@ -240,7 +240,7 @@ Any time we want to create a new dataset called *terna17_biomass*, it is suffici
 
 ## Adding parameters to the macro variable 
 
-**Don't you think the code we wrote above is yet not that efficient?**
+**Don't you think the code we wrote above is yet not so efficient?**
 
 Whenever we execute *%biomass_modif* we will only be able to modify a **specific column** called *biomass* inside of a **speicific dataset** called *terna17*. 
 
@@ -453,18 +453,48 @@ The following table shows the list of the most common DATA step interfaces.
 
 | Interface | Type |Description | Syntax |
 |:---:|:---:|:---:|:---:|
-| **CALL EXECUTE** | Routine | Executes macros immediately and the generated code within it at the next step boundary | *CALL EXECUTE(argument)* |
-| **RESOLVE** | Function | Resolves *text expression* at execution | *RESOLVE(argument)* |
 | **CALL SYMDEL** | Routine | Deletes a macro variable | *CALL SYMDEL(macro-var <,option>)* | 
 | **SYMEXIST** | Function | Verifies existence of a macro variable | *SYMEXIST(macro-var)* | 
 | **SYMGET** | Function | Returns a macro variable at execution | *SYMGET(argument)* |
 | **SYMGLOBL** | Function | Verifies if macro variable has global scope | *SYMGLOBL(macro-var)* |
 | **SYMLOCAL** | Function | Verifies if macro variable has local scope | *SYMLOCAL(macro-var)* |
 | **CALL SYMPUT** | Routine | Assigns DATA step values to macro variables | *CALL SYMPUT(macro-var, value)* | 
+| **CALL EXECUTE** | Routine | Executes macros immediately and the generated code within it at the next step boundary | *CALL EXECUTE(argument)* |
+| **RESOLVE** | Function | Resolves *text expression* at execution | *RESOLVE(argument)* |
 
-Let's see some examples of these interfaces. 
+Let's see examples of a few of these DATA step interfaces.
 
+### CALL SYMDEL 
 
+This function can be useful to delete any unnecessary macros - it allows you to keep your dictionary tables (that we saw with the PROC CONTENTS previously) clean and frees memory, which is always important. 
+
+Let's say we want to delete some of the macros we've created so far: macro *ds*, which defined the dataset name "renewables17".
+
+This function can be used as stand-alone macro variable or as function inside a data step.
+
+Using the function as macro variable will look like the following piece of code. I added a %put before and after the macro to see the difference in the log.
+
+```
+%put  ========> &ds.; 
+
+%symdel ds;
+
+%put  ========>  &ds;
+```
+
+This is what we can see in the log:
+
+[call symdel - macro](../screenshots/01_intro_ptI/Gartner-2019.png)
+
+On the other hand, using the function within a DATA step looks like this:
+
+```
+
+```
+
+### SYMEXIST 
+
+### SYMGET and CALL SYMPUT
 
 <a name="subsect9"></a>
 
