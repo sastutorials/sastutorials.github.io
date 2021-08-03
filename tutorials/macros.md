@@ -506,7 +506,31 @@ As you can see we obtain the same result in both instances.
 
 ### SYMEXIST 
 
+Symexist is an ideal macro variable that allows you to check whether a user defined macro variable exists or not. It is usually used within an if/then logic as this macro returns a *boolean* value (0 = False; 1 = True). 
 
+We can quickly see how it works, following up on the macro *ds* we have just deleted through the function *call symdel*. Let's print a check on the log, which is going to return a boolean value depending on whether the macro variable does exist. 
+
+```
+%put =========== Does the macro exist? ============> %symexist(ds);
+```
+
+Once we've run this simple piece of code, we can check the result to see what the macro *%symexist* has returned: 
+
+![symexist](../screenshots/07_macros/symexist.png)
+
+As you can see, the log prints out a **zero**, confirming the absence of the macro variable. 
+
+Now, if we create the variable once more, and printed out the same sentence in the log, like so: 
+
+```
+%let ds = renewables17; 
+
+%put =========== Does the macro exist? ============> %symexist(ds);
+```
+
+We would see a positive outcome (1 = True) printed in the log: 
+
+![symexist yes](../screenshots/07_macros/symexist_yes.png)
 
 ### SYMGET and CALL SYMPUT
 
