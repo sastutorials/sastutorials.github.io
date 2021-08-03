@@ -484,7 +484,7 @@ Using the function as macro variable will look like the following piece of code.
 
 This is what we can see in the log:
 
-[call symdel - macro](../screenshots/01_intro_ptI/Gartner-2019.png)
+![call symdel - macro](../screenshots/07_macros/call_symdel_1.png)
 
 On the other hand, using the function within a DATA step looks like this:
 
@@ -500,13 +500,13 @@ run;
 
 And this is what we would see in the log: 
 
-[call symdel - function](../screenshots/07_macros/call_symdel_2.png)
+![call symdel - function](../screenshots/07_macros/call_symdel_2.png)
 
 As you can see we obtain the same result in both instances. 
 
-
-
 ### SYMEXIST 
+
+
 
 ### SYMGET and CALL SYMPUT
 
