@@ -520,7 +520,7 @@ Once we've run this simple piece of code, we can check the result to see what th
 
 As you can see, the log prints out a **zero**, confirming the absence of the macro variable. 
 
-Now, if we create the variable once more, and printed out the same sentence in the log, like so: 
+Now, if we created the variable once more, and printed out the same sentence in the log, like so: 
 
 ```
 %let ds = renewables17; 
@@ -532,7 +532,33 @@ We would see a positive outcome (1 = True) printed in the log:
 
 ![symexist yes](../screenshots/07_macros/symexist_yes.png)
 
+You can understand how useful this macro can be in conditional logics. This is the starting point for more complex conditional structures where *%symexist* could be implemented:
+
+```
+%if %symexist(ds) = 1 %then %do;
+data macro_boolean; 
+	macro_name = "ds";
+	existence  = "True"; 
+run; 
+%end; 
+%else %do;
+data macro_boolean; 
+	macro_name = "ds";
+	existence = "False";
+run; 
+%end;
+proc print noobs; 
+```
+
+This piece of code creates a dataset which contains the same macro variable name, but prints out a different value in the *existence* field, depending on how the conditional logic resolves. 
+
+As we last recreated the macro *ds*, the conditional logic is resolved in the first if/then condition. This is what we can see in the *Results* tab. 
+
+![symexist condition](../screenshots/07_macros/symexist_condition.png)
+
 ### SYMGET and CALL SYMPUT
+
+
 
 <a name="subsect9"></a>
 
