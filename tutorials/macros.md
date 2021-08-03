@@ -489,8 +489,22 @@ This is what we can see in the log:
 On the other hand, using the function within a DATA step looks like this:
 
 ```
+%put  ========>  &ds;
 
+data _null_;
+	call symdel('ds');
+run;
+
+%put  ========>  &ds;
 ```
+
+And this is what we would see in the log: 
+
+[call symdel - function](../screenshots/07_macros/call_symdel_2.png)
+
+As you can see we obtain the same result in both instances. 
+
+
 
 ### SYMEXIST 
 
