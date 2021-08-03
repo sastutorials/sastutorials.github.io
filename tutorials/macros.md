@@ -556,7 +556,26 @@ As we last recreated the macro *ds*, the conditional logic is resolved in the fi
 
 ![symexist condition](../screenshots/07_macros/symexist_condition.png)
 
-### SYMGET and CALL SYMPUT
+### CALL SYMPUT and SYMGET
+
+
+
+```
+data renewables17_call_symput; 
+set renewables17(keep = hydro wind date);
+	if hydro > wind then
+		call symput('hydro'||left(_n_), hydro);
+	else;
+		call symput('wind',wind);
+run; 
+
+data hydro_wind (drop = wind hydro); 
+set renewables17_call_symput; 
+hydro_KW = symget('hydro'||left(_n_))*1000; 
+wind_KW = &wind. * 1000; 
+run; 
+proc print;
+```
 
 
 
