@@ -558,6 +558,13 @@ As we last recreated the macro *ds*, the conditional logic is resolved in the fi
 
 ### CALL SYMPUT and SYMGET
 
+The last two data step interfaces we are looking at are also the most frequently used, especially combined as one is the *reciprocal* of the other in bridging communications between a DATA step and the macro facility. 
+
+Here's a schematic diagram of the relationship between CALL SYMPUT and SYMGET. 
+
+![symput and symget](../screenshots/07_macros/symget-symput.png)
+
+
 
 
 ```
@@ -571,8 +578,8 @@ run;
 
 data hydro_wind (drop = wind hydro); 
 set renewables17_call_symput; 
-hydro_KW = symget('hydro'||left(_n_))*1000; 
-wind_KW = &wind. * 1000; 
+    hydro_KW = symget('hydro'||left(_n_))*1000; 
+    wind_KW = &wind. * 1000; 
 run; 
 proc print;
 ```
