@@ -558,13 +558,17 @@ As we last recreated the macro *ds*, the conditional logic is resolved in the fi
 
 ### CALL SYMPUT and SYMGET
 
-The last two data step interfaces we are looking at are also the most frequently used, especially combined as one is the *reciprocal* of the other in bridging communications between a DATA step and the macro facility. 
+The last two data step interfaces we are looking at are also the most frequently used, especially when combined, as one is the *reciprocal* of the other in "bridging communication" between a DATA step and the macro facility. 
 
 Here's a schematic diagram of the relationship between CALL SYMPUT and SYMGET. 
 
 ![symput and symget](../screenshots/07_macros/symget-symput.png)
 
+In short:
+* **CALL SYMPUT** turns an element created inside a DATA step into a *mcaro variable*;
+* **SYMGET** allows the application of a macro variable inside a DATA step.
 
+Let's see a practical example where two variables in a DATA step are first made into macro variables with *call symput*, and then are re-implemented into a second DATA step through *symget*.
 
 ```
 data renewables17_call_symput; 
@@ -583,6 +587,14 @@ run;
 proc print;
 ```
 
+If we break this code down by DATA step: 
+1. In the first DATA step we have created a new dataset called *renewables17_call_symput* from our dataset renewables17
+	* Inside a condition, we are comparing energy levels produced by hydro and wind power:
+    	* If hydro power is greater than wind then the new macro variable called *hydro_n* (where n is the n*th* row) contains the values of hydro power; 
+    	* Otherwise, the new macro called *wind* contains the values of wind power. 
+2. In the second DATA step we have created a new dataset called *hydro_wind*, duplicated from the previous dataset renewables17_call_symput*
+	* We create a new variable called *hydro_KW*, as the result of the content inside the macro *hydro_n* times 1000;
+	* We create a second new variable called *wind_KW*, as the result of the macro *wind* times 1000.
 
 
 <a name="subsect9"></a>
