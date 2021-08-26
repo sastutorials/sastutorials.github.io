@@ -590,8 +590,10 @@ proc print;
 If we break this code down by DATA step: 
 1. In the first DATA step we have created a new dataset called *renewables17_call_symput* from our dataset renewables17
 	* Inside a condition, we are comparing energy levels produced by hydro and wind power:
+
     	* If hydro power is greater than wind then the new macro variable called *hydro_n* (where n is the n*th* row) contains the values of hydro power; 
     	* Otherwise, the new macro called *wind* contains the values of wind power. 
+
 2. In the second DATA step we have created a new dataset called *hydro_wind*, duplicated from the previous dataset renewables17_call_symput*
 	* We create a new variable called *hydro_KW*, as the result of the content inside the macro *hydro_n* times 1000;
 	* We create a second new variable called *wind_KW*, as the result of the macro *wind* times 1000.
