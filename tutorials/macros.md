@@ -600,14 +600,11 @@ If we break this code down by DATA step:
 3. We print the latest dataset. 
 
 
-Let's check the result by clicking on the *Results* tab. 
+Let's check the result by clicking on the *Results* tab.
 
 ![result](07/../../screenshots/07_macros/result-symget-symput.png)
 
-
-<a name="subsect9"></a>
-
-## Data step functions in macros
+As you can see, the *call symput* macro is particularly flexible, and allows to create macro variables which contain a static value (the equivalent of creating a macro with *%let*) or a list of values (in our case, we added the unique row number to the name of the macro with *_n_*).
 
 <a name="subsect10"></a>
 
