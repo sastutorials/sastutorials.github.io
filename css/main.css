@@ -318,3 +318,14 @@ input[type=submit]:hover {
         margin-top: 0;
     }
 }
+
+
+/*div for language switch*/
+
+.lang {
+    position: relative;
+    top: -20px;
+    /* This will move it 20px up */
+    left: 20px;
+    /* This will move it 20px to the right */
+}
