@@ -651,6 +651,10 @@ Let's have a look at the log, to see the two messages, respectively:
 
 ![result](07/../../screenshots/07_macros/result-prcosql_into.png)
 
+We are going to explore PROC SQL interfaces only this far. 
+
+If you're interested in exploring further have a look at [SAS official documentation](https://documentation.sas.com/doc/en/pgmsascdc/v_009/sqlproc/n1tupenuhmu1j0n19d3curl9igt4.htm), [here](https://support.sas.com/resources/papers/proceedings/proceedings/sugi27/p071-27.pdf) and [here](https://www.lexjansen.com/sesug/2018/SESUG2018_Paper-267_Final_PDF.pdf) for some excellent documents with examples. 
+
 <a name="sect5"></a>
 
 # 5. Exercise: create and ETL-type program
