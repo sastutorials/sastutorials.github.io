@@ -566,7 +566,6 @@ Here's a schematic diagram of the relationship between CALL SYMPUT and SYMGET.
 
 
 
-
 ```
 data renewables17_call_symput; 
 set renewables17(keep = hydro wind date);
