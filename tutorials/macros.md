@@ -595,6 +595,7 @@ If we break this code down by DATA step:
 2. In the second DATA step we have created a new dataset called *hydro_wind*, duplicated from the previous dataset renewables17_call_symput*
 	* We create a new variable called *hydro_KW*, as the result of the content inside the macro *hydro_n* times 1000;
 	* We create a second new variable called *wind_KW*, as the result of the macro *wind* times 1000.
+3. We print the latest dataset. 
 
 
 <a name="subsect9"></a>
