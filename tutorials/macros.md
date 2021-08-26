@@ -600,6 +600,11 @@ If we break this code down by DATA step:
 3. We print the latest dataset. 
 
 
+Let's check the result by clicking on the *Results* tab. 
+
+![result](07/../../screenshots/07_macros/result-symget-symput.png)
+
+
 <a name="subsect9"></a>
 
 ## Data step functions in macros
