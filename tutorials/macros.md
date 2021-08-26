@@ -39,15 +39,7 @@ subtitle: Learn about the Macro language, and how to integrate them in your prog
 
 <a href="#subsect8"><sub>DATA step interfaces</sub></a>
 
-* symget
-* symput
-* check out interm sas macro pdf 
-
-<a href="#subsect9"><sub>DATA step functions in macros</sub></a>
-
-<a href="#subsec10"><sub>PROC SQL interfaces</sub></a>
-
-* into
+<a href="#subsec10"><sub>PROC SQL interface</sub></a>
 
 <a href="#sect5">5. Exercise: create an ETL-type program</a>
 
@@ -606,9 +598,58 @@ Let's check the result by clicking on the *Results* tab.
 
 As you can see, the *call symput* macro is particularly flexible, and allows to create macro variables which contain a static value (the equivalent of creating a macro with *%let*) or a list of values (in our case, we added the unique row number to the name of the macro with *_n_*).
 
+There are many more DATA step interfaces which we are not exploring here in detail, but which you can find at this [link](https://www.lexjansen.com/pharmasug/2003/CodersCorner/cc069.pdf) and at this [link](https://v8doc.sas.com/sashtml/macro/z1072359.htm).
+
 <a name="subsect10"></a>
 
-## PROC SQL interfaces
+## PROC SQL interface
+
+Similarly to DATA step interfaces, **PROC SQL interfaces allow to interact between SQL language and the macro facility**. I am assuming you possess some knowedge of SQL and you have looked at our tutorial on [*SAS procedures*](https://sastutorials.github.io/tutorials/proc.html) to apply SQL in SAS through a *PROC SQL*.
+
+In the PROC SQL, we can use the **INTO clause** to select values and store them inside a macro variable. 
+
+*INTO* is much like SYMPUT in the DATA step interface. 
+
+Let's see a couple of examples of its application. 
+
+If we wanted to check whether a table is populated with rows, we could first create a macro that counts the number of rows and then apply a condition where if the macro equates to 0, then the table is empty. 
+
+To do so we can write the following code: 
+
+```
+data trial; 
+format x 10.;
+stop;
+run; 
+
+%macro check_empty(ds);
+proc sql noprint; 
+select count(*) into: count_row
+from &ds.; 
+quit; 
+
+%if &count_row > 0 %then %do; 
+	%put ==========> The table called "&ds." is NOT empty!; 
+%end;
+%else %do; 
+	%put ==========> The table called "&ds." is empty!; 
+%end;
+%mend; 
+
+%check_empty(trial); 
+%check_empty(hydro_wind);
+```
+
+Let's break this code down: 
+1. First, we create a sample dataset called *trial*, which is purposefully left empty. 
+2. Secondly, we create a macro called *check_empty*, where one variable needs to be specified and that is the name of the dataset we want to check for; 
+	* Inside the macro, a SQL procedure is first implemented to count the number of rows in a table; that value is then **stored inside the macro called *"count_row"***. 
+	* An %if-%then/%else condition is applied, to print out a message in the log, depending on whether the table is empty or not. 
+3. Lastly, we check for two tables: the "trial" (which is empty) and the table called *hydro_wind*, which we have previously created. 
+
+Let's have a look at the log, to see the two messages, respectively: 
+
+![result](07/../../screenshots/07_macros/result-prcosql_into.png)
 
 <a name="sect5"></a>
 
